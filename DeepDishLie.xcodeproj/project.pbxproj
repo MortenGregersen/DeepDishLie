@@ -45,6 +45,7 @@
 		5A3EFB0B29F7D53300D75F5E /* DeepDishLie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeepDishLie.entitlements; sourceTree = "<group>"; };
 		5A3EFB0D29F7D53300D75F5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5A3EFB1429F7D87500D75F5E /* LieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LieController.swift; sourceTree = "<group>"; };
+		5A86ABB629F8812200BCF46B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A8A8B0E29F7DB4E00563A78 /* SpeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +70,7 @@
 		5A28A90129F803B100B02EE6 /* DeepDishLieSnapshots */ = {
 			isa = PBXGroup;
 			children = (
+				5A86ABB629F8812200BCF46B /* Info.plist */,
 				5A28A90229F803B100B02EE6 /* DeepDishLieSnapshots.swift */,
 				5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */,
 			);
@@ -272,14 +274,19 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R7YA4RGA8U;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				INFOPLIST_FILE = DeepDishLieSnapshots/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLieSnapshots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = DeepDishLie;
 			};
 			name = Debug;
@@ -291,14 +298,19 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R7YA4RGA8U;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				INFOPLIST_FILE = DeepDishLieSnapshots/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLieSnapshots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = DeepDishLie;
 				VALIDATE_PRODUCT = YES;
 			};
