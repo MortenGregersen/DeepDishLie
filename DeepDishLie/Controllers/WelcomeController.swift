@@ -11,3 +11,11 @@ class WelcomeController: ObservableObject {
     @AppStorage("has-seen-welcome") var hasSeenWelcome = false
     @Published var isShowingWelcome = false
 }
+
+extension WelcomeController {
+    static func forPreview(hasSeenWelcome: Bool) -> WelcomeController {
+        let controller = WelcomeController()
+        controller.hasSeenWelcome = hasSeenWelcome
+        return controller
+    }
+}

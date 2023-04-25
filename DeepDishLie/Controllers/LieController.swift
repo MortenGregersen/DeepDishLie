@@ -139,9 +139,6 @@ class LieController: ObservableObject {
         } catch {
             self.statements = [:]
         }
-        if UserDefaults.standard.bool(forKey: "Demo") {
-            self.statements = [lieCases[4].id: .two, lieCases[7].id: .two]
-        }
     }
 
     func select(statement: LieCase.Statement?, for lieCase: LieCase) {
@@ -179,13 +176,20 @@ struct LieCase: Hashable, Identifiable {
         case one
         case two
         case three
+
+        fileprivate static var randomStatement: Statement {
+            [Self.one, Self.two, Self.three].randomElement()!
+        }
     }
 }
 
 extension LieController {
-    static func forPreview(statements: [LieCase.ID: LieCase.Statement?]) -> LieController {
-        let lieController = LieController()
-        lieController.statements = statements
-        return lieController
+    static func forPreview(numberOfLiesUnsolved: Int) -> LieController {
+        let controller = LieController()
+        let numberOfLiesSolved = controller.unsolvedLieCases.count - numberOfLiesUnsolved
+        controller.statements = controller.unsolvedLieCases.shuffled().prefix(numberOfLiesSolved).map(\.id).reduce(into: [:]) { partialResult, id in
+            partialResult[id] = LieCase.Statement.randomStatement
+        }
+        return controller
     }
 }

@@ -14,19 +14,28 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section("Unsolved lies 🤔") {
-                    ForEach(lieController.unsolvedLieCases) { lieCase in
-                        LieCaseRow(lieCase: lieCase)
+                if !lieController.unsolvedLieCases.isEmpty {
+                    Section("Unsolved lies 🤔") {
+                        ForEach(lieController.unsolvedLieCases) { lieCase in
+                            LieCaseRow(lieCase: lieCase)
+                        }
                     }
                 }
                 Section("Solved lies 🎉") {
-                    ForEach(lieController.solvedLieCases) { lieCase in
-                        LieCaseRow(lieCase: lieCase)
+                    if lieController.solvedLieCases.isEmpty {
+                        Text("No solved lies yet")
+                            .foregroundColor(.secondary)
+                    } else {
+                        ForEach(lieController.solvedLieCases) { lieCase in
+                            LieCaseRow(lieCase: lieCase)
+                        }
                     }
                 }
-                Section("Unfinished lies 😢") {
-                    ForEach(lieController.unfinishedLieCases) { lieCase in
-                        LieCaseRow(lieCase: lieCase)
+                if !lieController.unfinishedLieCases.isEmpty {
+                    Section("Unfinished lies 😢") {
+                        ForEach(lieController.unfinishedLieCases) { lieCase in
+                            LieCaseRow(lieCase: lieCase)
+                        }
                     }
                 }
             }
@@ -76,9 +85,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let lieCase = LieController().lieCases[3]
         ContentView()
-            .environmentObject(WelcomeController())
-            .environmentObject(LieController.forPreview(statements: [lieCase.id: .one]))
+            .environmentObject(WelcomeController.forPreview(hasSeenWelcome: true))
+            .environmentObject(LieController.forPreview(numberOfLiesUnsolved: 3))
     }
 }

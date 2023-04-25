@@ -33,7 +33,6 @@ struct SpeakerView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 36)
                 .clipShape(Circle())
-                
         }
     }
 
@@ -41,7 +40,7 @@ struct SpeakerView: View {
         let lieCase: LieCase
         let statement: LieCase.Statement
         @EnvironmentObject private var lieController: LieController
-        
+
         var body: some View {
             Button {
                 lieController.select(statement: statement, for: lieCase)
@@ -61,9 +60,9 @@ struct SpeakerView: View {
 struct SpeakerView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            let lieCase = LieController().lieCases[1]
+            let lieCase = LieController().lieCases[0]
             SpeakerView(lieCase: lieCase)
-                .environmentObject(LieController.forPreview(statements: [lieCase.id: .two]))
+                .environmentObject(LieController.forPreview(numberOfLiesUnsolved: 0))
         }
     }
 }
