@@ -11,12 +11,21 @@ import SwiftUI
 struct DeepDishLieApp: App {
     @StateObject private var welcomeController = WelcomeController()
     @StateObject private var lieController = LieController()
-    
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(welcomeController)
-                .environmentObject(lieController)
+            TabView {
+                ContentView()
+                    .environmentObject(welcomeController)
+                    .environmentObject(lieController)
+                    .tabItem {
+                        Label("Truths and Lies", systemImage: "person.2.wave.2")
+                    }
+                AboutView()
+                    .tabItem {
+                        Label("About", systemImage: "text.badge.star")
+                    }
+            }
         }
     }
 }

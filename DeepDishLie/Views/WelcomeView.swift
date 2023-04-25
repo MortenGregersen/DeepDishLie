@@ -12,7 +12,7 @@ struct WelcomeView: View {
     @Environment(\.colorScheme) private var colorScheme
     private var backgroundColor: Color {
         if colorScheme == .dark {
-            return .init(uiColor: UIColor(white: 0.1, alpha: 0.5))
+            return .init(uiColor: UIColor(white: 0.1, alpha: 0.7))
         } else {
             return .primary.opacity(0.5)
         }
@@ -26,7 +26,7 @@ struct WelcomeView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 150)
-                    Text("Welcome to DeepDishLie!")
+                    Text("Welcome to Deep Dish Lie!")
                         .font(.title)
                         .fontWeight(.bold)
                     Text("Here you will find the 2 Truths and a Lie that the speakers told in the Slices podcast.")
@@ -52,7 +52,6 @@ struct WelcomeView: View {
             .background(Color(UIColor.systemBackground))
             .cornerRadius(16)
             .padding()
-            .padding(.bottom, 64)
             .shadow(radius: 5)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -34,15 +34,16 @@ struct ContentView: View {
             .navigationDestination(for: LieCase.self) { lieCase in
                 SpeakerView(lieCase: lieCase)
             }
-            .overlay {
-                if welcomeController.isShowingWelcome {
-                    WelcomeView()
-                }
+        }
+        .blur(radius: welcomeController.isShowingWelcome ? 2.0 : 0.0)
+        .overlay {
+            if welcomeController.isShowingWelcome {
+                WelcomeView()
             }
-            .onAppear {
-                if !welcomeController.hasSeenWelcome {
-                    welcomeController.isShowingWelcome = true
-                }
+        }
+        .onAppear {
+            if !welcomeController.hasSeenWelcome {
+                welcomeController.isShowingWelcome = true
             }
         }
     }

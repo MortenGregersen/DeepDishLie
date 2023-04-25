@@ -11,6 +11,7 @@
 		5A28A90C29F803DF00B02EE6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */; };
 		5A28A90E29F86DEC00B02EE6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90D29F86DEC00B02EE6 /* WelcomeView.swift */; };
 		5A28A91029F86E2700B02EE6 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90F29F86E2700B02EE6 /* WelcomeController.swift */; };
+		5A28A91429F8729300B02EE6 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A91329F8729300B02EE6 /* AboutView.swift */; };
 		5A3EFB0629F7D53200D75F5E /* DeepDishLieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */; };
 		5A3EFB0829F7D53200D75F5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0729F7D53200D75F5E /* ContentView.swift */; };
 		5A3EFB0A29F7D53300D75F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0929F7D53300D75F5E /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		5A28A90D29F86DEC00B02EE6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		5A28A90F29F86E2700B02EE6 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
+		5A28A91329F8729300B02EE6 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		5A3EFB0229F7D53200D75F5E /* DeepDishLie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepDishLie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDishLieApp.swift; sourceTree = "<group>"; };
 		5A3EFB0729F7D53200D75F5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				5A3EFB0729F7D53200D75F5E /* ContentView.swift */,
 				5A8A8B0E29F7DB4E00563A78 /* SpeakerView.swift */,
 				5A28A90D29F86DEC00B02EE6 /* WelcomeView.swift */,
+				5A28A91329F8729300B02EE6 /* AboutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A28A91029F86E2700B02EE6 /* WelcomeController.swift in Sources */,
+				5A28A91429F8729300B02EE6 /* AboutView.swift in Sources */,
 				5A28A90E29F86DEC00B02EE6 /* WelcomeView.swift in Sources */,
 				5A3EFB0829F7D53200D75F5E /* ContentView.swift in Sources */,
 				5A3EFB0629F7D53200D75F5E /* DeepDishLieApp.swift in Sources */,

@@ -8,6 +8,6 @@
 import SwiftUI
 
 class WelcomeController: ObservableObject {
-    @AppStorage("has-seen-welcome") var hasSeenWelcome = false
+    @AppStorage("has-seen-welcome4") var hasSeenWelcome = false
     @Published var isShowingWelcome = false
 }
