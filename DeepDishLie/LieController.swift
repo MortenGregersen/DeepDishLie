@@ -147,6 +147,9 @@ struct LieCase: Hashable, Identifiable {
     let statement1: String
     let statement2: String
     let statement3: String
+    var hasStatements: Bool {
+        !(statement1.isEmpty || statement2.isEmpty || statement3.isEmpty)
+    }
 
     enum Statement: String, Codable {
         case one

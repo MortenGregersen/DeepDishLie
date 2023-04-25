@@ -12,14 +12,18 @@ struct SpeakerView: View {
 
     var body: some View {
         List {
-            Section("Statement 1") {
-                LieCaseRow(lieCase: lieCase, statement: .one)
-            }
-            Section("Statement 2") {
-                LieCaseRow(lieCase: lieCase, statement: .two)
-            }
-            Section("Statement 3") {
-                LieCaseRow(lieCase: lieCase, statement: .three)
+            if lieCase.hasStatements {
+                Section("Statement 1") {
+                    LieCaseRow(lieCase: lieCase, statement: .one)
+                }
+                Section("Statement 2") {
+                    LieCaseRow(lieCase: lieCase, statement: .two)
+                }
+                Section("Statement 3") {
+                    LieCaseRow(lieCase: lieCase, statement: .three)
+                }
+            } else {
+                Text("No truths or lies has been given.\nWaiting for the episode of [Slices](https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071) to be released.")
             }
         }
         .navigationTitle(lieCase.speakerName)
@@ -64,7 +68,7 @@ struct SpeakerView: View {
 struct SpeakerView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            let lieCase = LieController().lieCases[0]
+            let lieCase = LieController().lieCases[1]
             SpeakerView(lieCase: lieCase)
                 .environmentObject(LieController.forPreview(statements: [lieCase.id: .two]))
         }
