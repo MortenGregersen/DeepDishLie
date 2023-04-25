@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject private var welcomeController: WelcomeController
     @EnvironmentObject private var lieController: LieController
 
     var body: some View {
@@ -32,6 +33,16 @@ struct ContentView: View {
             .navigationTitle("2 Truths and a Lie")
             .navigationDestination(for: LieCase.self) { lieCase in
                 SpeakerView(lieCase: lieCase)
+            }
+            .overlay {
+                if welcomeController.isShowingWelcome {
+                    WelcomeView()
+                }
+            }
+            .onAppear {
+                if !welcomeController.hasSeenWelcome {
+                    welcomeController.isShowingWelcome = true
+                }
             }
         }
     }
@@ -66,6 +77,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let lieCase = LieController().lieCases[3]
         ContentView()
+            .environmentObject(WelcomeController())
             .environmentObject(LieController.forPreview(statements: [lieCase.id: .one]))
     }
 }

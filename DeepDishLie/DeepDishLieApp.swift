@@ -9,11 +9,13 @@ import SwiftUI
 
 @main
 struct DeepDishLieApp: App {
+    @StateObject private var welcomeController = WelcomeController()
     @StateObject private var lieController = LieController()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(welcomeController)
                 .environmentObject(lieController)
         }
     }

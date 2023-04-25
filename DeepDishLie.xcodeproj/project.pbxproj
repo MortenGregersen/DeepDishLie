@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5A28A90329F803B100B02EE6 /* DeepDishLieSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90229F803B100B02EE6 /* DeepDishLieSnapshots.swift */; };
 		5A28A90C29F803DF00B02EE6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */; };
+		5A28A90E29F86DEC00B02EE6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90D29F86DEC00B02EE6 /* WelcomeView.swift */; };
+		5A28A91029F86E2700B02EE6 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90F29F86E2700B02EE6 /* WelcomeController.swift */; };
 		5A3EFB0629F7D53200D75F5E /* DeepDishLieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */; };
 		5A3EFB0829F7D53200D75F5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0729F7D53200D75F5E /* ContentView.swift */; };
 		5A3EFB0A29F7D53300D75F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0929F7D53300D75F5E /* Assets.xcassets */; };
@@ -32,6 +34,8 @@
 		5A28A90029F803B100B02EE6 /* DeepDishLieSnapshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepDishLieSnapshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A28A90229F803B100B02EE6 /* DeepDishLieSnapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDishLieSnapshots.swift; sourceTree = "<group>"; };
 		5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		5A28A90D29F86DEC00B02EE6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		5A28A90F29F86E2700B02EE6 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		5A3EFB0229F7D53200D75F5E /* DeepDishLie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepDishLie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDishLieApp.swift; sourceTree = "<group>"; };
 		5A3EFB0729F7D53200D75F5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +73,25 @@
 			path = DeepDishLieSnapshots;
 			sourceTree = "<group>";
 		};
+		5A28A91129F86F4E00B02EE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A3EFB0729F7D53200D75F5E /* ContentView.swift */,
+				5A8A8B0E29F7DB4E00563A78 /* SpeakerView.swift */,
+				5A28A90D29F86DEC00B02EE6 /* WelcomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A28A91229F86F5000B02EE6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5A3EFB1429F7D87500D75F5E /* LieController.swift */,
+				5A28A90F29F86E2700B02EE6 /* WelcomeController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		5A3EFAF929F7D53200D75F5E = {
 			isa = PBXGroup;
 			children = (
@@ -91,10 +114,9 @@
 		5A3EFB0429F7D53200D75F5E /* DeepDishLie */ = {
 			isa = PBXGroup;
 			children = (
+				5A28A91229F86F5000B02EE6 /* Controllers */,
+				5A28A91129F86F4E00B02EE6 /* Views */,
 				5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */,
-				5A3EFB0729F7D53200D75F5E /* ContentView.swift */,
-				5A8A8B0E29F7DB4E00563A78 /* SpeakerView.swift */,
-				5A3EFB1429F7D87500D75F5E /* LieController.swift */,
 				5A3EFB0929F7D53300D75F5E /* Assets.xcassets */,
 				5A3EFB0B29F7D53300D75F5E /* DeepDishLie.entitlements */,
 				5A3EFB0C29F7D53300D75F5E /* Preview Content */,
@@ -219,6 +241,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A28A91029F86E2700B02EE6 /* WelcomeController.swift in Sources */,
+				5A28A90E29F86DEC00B02EE6 /* WelcomeView.swift in Sources */,
 				5A3EFB0829F7D53200D75F5E /* ContentView.swift in Sources */,
 				5A3EFB0629F7D53200D75F5E /* DeepDishLieApp.swift in Sources */,
 				5A8A8B0F29F7DB4E00563A78 /* SpeakerView.swift in Sources */,
