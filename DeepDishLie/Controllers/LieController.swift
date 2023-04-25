@@ -111,9 +111,9 @@ class LieController: ObservableObject {
               statement3: "I once traveled to Beijing China to participate in an IoT hackathon"),
         .init(speakerName: "Zach Brass",
               speakerImage: "zach_brass",
-              statement1: "",
-              statement2: "",
-              statement3: "")
+              statement1: "I inherited the world's largest collection of reflex hammers",
+              statement2: "I once had lunch with former UK Speaker of the House John Bercow",
+              statement3: "I am a registered as an air man despite never having flown a plane")
     ].sorted(using: KeyPathComparator(\.speakerName))
 
     var solvedLieCases: [LieCase] {
