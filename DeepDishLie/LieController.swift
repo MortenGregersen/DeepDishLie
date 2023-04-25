@@ -115,6 +115,19 @@ class LieController: ObservableObject {
               statement2: "",
               statement3: "")
     ].sorted(using: KeyPathComparator(\.speakerName))
+
+    var solvedLieCases: [LieCase] {
+        lieCases.filter { $0.hasStatements && statements.keys.contains($0.id) }
+    }
+
+    var unsolvedLieCases: [LieCase] {
+        lieCases.filter { $0.hasStatements && !statements.keys.contains($0.id) }
+    }
+
+    var unfinishedLieCases: [LieCase] {
+        lieCases.filter { !$0.hasStatements }
+    }
+
     private(set) var statements: [LieCase.ID: LieCase.Statement?] = [:]
     @Published var saveError: String?
 
@@ -152,6 +165,14 @@ struct LieCase: Hashable, Identifiable {
     let statement3: String
     var hasStatements: Bool {
         !(statement1.isEmpty || statement2.isEmpty || statement3.isEmpty)
+    }
+
+    func getStatement(_ statement: Statement) -> String {
+        switch statement {
+        case .one: return statement1
+        case .two: return statement2
+        case .three: return statement3
+        }
     }
 
     enum Statement: String, Codable {

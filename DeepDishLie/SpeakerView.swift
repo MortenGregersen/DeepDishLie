@@ -41,20 +41,13 @@ struct SpeakerView: View {
         let lieCase: LieCase
         let statement: LieCase.Statement
         @EnvironmentObject private var lieController: LieController
-        private var text: String {
-            switch statement {
-            case .one: return lieCase.statement1
-            case .two: return lieCase.statement2
-            case .three: return lieCase.statement3
-            }
-        }
-
+        
         var body: some View {
             Button {
                 lieController.select(statement: statement, for: lieCase)
             } label: {
                 HStack {
-                    Text(text)
+                    Text(lieCase.getStatement(statement))
                         .foregroundColor(.primary)
                     Spacer()
                     Image(systemName: lieController.statements[lieCase.id] == statement ? "checkmark.circle.fill" : "circle")

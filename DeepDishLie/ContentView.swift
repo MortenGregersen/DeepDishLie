@@ -12,33 +12,20 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack {
-            List(lieController.lieCases) { lieCase in
-                NavigationLink(value: lieCase) {
-                    HStack {
-                        Image(lieCase.speakerImage)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 50)
-                            .clipShape(Circle())
-                        VStack(alignment: .leading) {
-                            Text(lieCase.speakerName)
-                                .font(.headline)
-                                .foregroundColor(.accentColor)
-                            if lieController.statements[lieCase.id] != nil {
-                                Text("Resolved 🎉")
-                                    .font(.caption)
-                                    .fontWeight(.semibold)
-                            } else {
-                                Text("Unsolved 🤔")
-                                    .font(.caption)
-                            }
-                        }
-                        if lieController.statements[lieCase.id] != nil {
-                            Spacer()
-                            Text("🍕")
-                                .font(.title)
-                                .rotationEffect(.degrees(45))
-                        }
+            List {
+                Section("Unsolved lies 🤔") {
+                    ForEach(lieController.unsolvedLieCases) { lieCase in
+                        LieCaseRow(lieCase: lieCase)
+                    }
+                }
+                Section("Solved lies 🎉") {
+                    ForEach(lieController.solvedLieCases) { lieCase in
+                        LieCaseRow(lieCase: lieCase)
+                    }
+                }
+                Section("Unfinished lies 😢") {
+                    ForEach(lieController.unfinishedLieCases) { lieCase in
+                        LieCaseRow(lieCase: lieCase)
                     }
                 }
             }
@@ -49,8 +36,29 @@ struct ContentView: View {
         }
     }
 
-    private var randomThinkingEmoji: String {
-        String("🤔🧐🕵🏽".randomElement()!)
+    struct LieCaseRow: View {
+        let lieCase: LieCase
+        @EnvironmentObject private var lieController: LieController
+
+        var body: some View {
+            NavigationLink(value: lieCase) {
+                HStack {
+                    Image(lieCase.speakerImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50)
+                        .clipShape(Circle())
+                    VStack(alignment: .leading) {
+                        Text(lieCase.speakerName)
+                            .font(.headline)
+                            .foregroundColor(.accentColor)
+                        if let statement = lieController.statements[lieCase.id] as? LieCase.Statement {
+                            Text("\"\(lieCase.getStatement(statement))\"")
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
