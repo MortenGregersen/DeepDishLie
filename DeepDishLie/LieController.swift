@@ -21,7 +21,7 @@ class LieController: ObservableObject {
               statement3: "I do not know how to play chess"),
         .init(speakerName: "Ben Scheirman",
               speakerImage: "ben_scheirman",
-              statement1: "I have a titanium loom",
+              statement1: "I have a titanium limb",
               statement2: "I can juggle 4 balls at once",
               statement3: "I live next door to a pro baseball player"),
         .init(speakerName: "Curtis Herbert",
