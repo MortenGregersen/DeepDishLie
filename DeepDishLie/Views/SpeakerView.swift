@@ -13,14 +13,14 @@ struct SpeakerView: View {
     var body: some View {
         List {
             if lieCase.hasStatements {
-                Section("Statement 1") {
+                Section {
                     LieCaseRow(lieCase: lieCase, statement: .one)
-                }
-                Section("Statement 2") {
                     LieCaseRow(lieCase: lieCase, statement: .two)
-                }
-                Section("Statement 3") {
                     LieCaseRow(lieCase: lieCase, statement: .three)
+                } header: {
+                    Text("2 Truths and a Lie")
+                } footer: {
+                    Text("Select the one you think is a lie 🤥")
                 }
             } else {
                 Text("No truths or lies has been given.\nWaiting for the episode of [Slices](https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071) to be released.")
