@@ -33,6 +33,8 @@ struct AboutView: View {
                             Text("1/2 day of indie development talks")
                             Text("2 days of Swift and iOS talks")
                         }
+                        Divider()
+                        Link("Go to conference schedule", destination: URL(string: "https://deepdishswift.com/#schedule")!)
                     }
                 }
                 Section("Made by 🧑🏽‍💻") {
@@ -45,21 +47,26 @@ struct AboutView: View {
                             }
                             .frame(maxHeight: .infinity)
                             Spacer(minLength: 8)
-                            Image("Morten")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .clipShape(RoundedRectangle(cornerRadius: 8))
-                                .frame(width: 100)
-                                .padding(.top, 8)
+                            Link(destination: URL(string: "https://CoolYellowOwl.com")!) {
+                                Image("Morten")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                                    .frame(width: 100)
+                                    .padding(.top, 8)
+                            }
                         }
-                        Divider()
+                    }
+                    VStack(alignment: .leading) {
                         HStack {
                             Text("If you read this, I suspect, that you are an **app developer yourself**. If so maybe my app, **[AppDab](https://AppDab.app)**, is something for you?")
                             Spacer(minLength: 8)
-                            Image("AppDabIcon")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 100)
+                            Link(destination: URL(string: "https://AppDab.app")!) {
+                                Image("AppDabIcon")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 100)
+                            }
                         }
                         Text("It is a **native macOS app** for **App Store Connect** and the **Apple Developer Portal**. Find me at the conference and **get a free sticker!** 🎉🕺")
                     }
