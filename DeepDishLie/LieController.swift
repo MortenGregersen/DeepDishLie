@@ -126,6 +126,9 @@ class LieController: ObservableObject {
         } catch {
             self.statements = [:]
         }
+        if UserDefaults.standard.bool(forKey: "Demo") {
+            self.statements = [lieCases[4].id: .two, lieCases[7].id: .two]
+        }
     }
 
     func select(statement: LieCase.Statement?, for lieCase: LieCase) {

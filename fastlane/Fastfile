@@ -1,0 +1,8 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Generate screenshots"
+  lane :screenshots do
+    capture_screenshots
+  end
+end

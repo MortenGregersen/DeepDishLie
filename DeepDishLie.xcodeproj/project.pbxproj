@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A28A90329F803B100B02EE6 /* DeepDishLieSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90229F803B100B02EE6 /* DeepDishLieSnapshots.swift */; };
+		5A28A90C29F803DF00B02EE6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */; };
 		5A3EFB0629F7D53200D75F5E /* DeepDishLieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */; };
 		5A3EFB0829F7D53200D75F5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0729F7D53200D75F5E /* ContentView.swift */; };
 		5A3EFB0A29F7D53300D75F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0929F7D53300D75F5E /* Assets.xcassets */; };
@@ -15,7 +17,21 @@
 		5A8A8B0F29F7DB4E00563A78 /* SpeakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A8B0E29F7DB4E00563A78 /* SpeakerView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5A28A90629F803B100B02EE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A3EFAFA29F7D53200D75F5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A3EFB0129F7D53200D75F5E;
+			remoteInfo = DeepDishLie;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5A28A8FB29F8038800B02EE6 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
+		5A28A90029F803B100B02EE6 /* DeepDishLieSnapshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepDishLieSnapshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A28A90229F803B100B02EE6 /* DeepDishLieSnapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDishLieSnapshots.swift; sourceTree = "<group>"; };
+		5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		5A3EFB0229F7D53200D75F5E /* DeepDishLie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepDishLie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDishLieApp.swift; sourceTree = "<group>"; };
 		5A3EFB0729F7D53200D75F5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,6 +43,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A28A8FD29F803B100B02EE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A3EFAFF29F7D53200D75F5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,10 +60,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A28A90129F803B100B02EE6 /* DeepDishLieSnapshots */ = {
+			isa = PBXGroup;
+			children = (
+				5A28A90229F803B100B02EE6 /* DeepDishLieSnapshots.swift */,
+				5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */,
+			);
+			path = DeepDishLieSnapshots;
+			sourceTree = "<group>";
+		};
 		5A3EFAF929F7D53200D75F5E = {
 			isa = PBXGroup;
 			children = (
 				5A3EFB0429F7D53200D75F5E /* DeepDishLie */,
+				5A28A90129F803B100B02EE6 /* DeepDishLieSnapshots */,
+				5A28A8FB29F8038800B02EE6 /* fastlane */,
 				5A3EFB0329F7D53200D75F5E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				5A3EFB0229F7D53200D75F5E /* DeepDishLie.app */,
+				5A28A90029F803B100B02EE6 /* DeepDishLieSnapshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,6 +113,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5A28A8FF29F803B100B02EE6 /* DeepDishLieSnapshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A28A90829F803B100B02EE6 /* Build configuration list for PBXNativeTarget "DeepDishLieSnapshots" */;
+			buildPhases = (
+				5A28A8FC29F803B100B02EE6 /* Sources */,
+				5A28A8FD29F803B100B02EE6 /* Frameworks */,
+				5A28A8FE29F803B100B02EE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A28A90729F803B100B02EE6 /* PBXTargetDependency */,
+			);
+			name = DeepDishLieSnapshots;
+			productName = DeepDishLieSnapshots;
+			productReference = 5A28A90029F803B100B02EE6 /* DeepDishLieSnapshots.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		5A3EFB0129F7D53200D75F5E /* DeepDishLie */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A3EFB1129F7D53300D75F5E /* Build configuration list for PBXNativeTarget "DeepDishLie" */;
@@ -105,6 +158,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					5A28A8FF29F803B100B02EE6 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 5A3EFB0129F7D53200D75F5E;
+					};
 					5A3EFB0129F7D53200D75F5E = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -124,11 +181,19 @@
 			projectRoot = "";
 			targets = (
 				5A3EFB0129F7D53200D75F5E /* DeepDishLie */,
+				5A28A8FF29F803B100B02EE6 /* DeepDishLieSnapshots */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5A28A8FE29F803B100B02EE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A3EFB0029F7D53200D75F5E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -141,6 +206,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5A28A8FC29F803B100B02EE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A28A90329F803B100B02EE6 /* DeepDishLieSnapshots.swift in Sources */,
+				5A28A90C29F803DF00B02EE6 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A3EFAFE29F7D53200D75F5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -154,7 +228,54 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5A28A90729F803B100B02EE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A3EFB0129F7D53200D75F5E /* DeepDishLie */;
+			targetProxy = 5A28A90629F803B100B02EE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		5A28A90929F803B100B02EE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R7YA4RGA8U;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLieSnapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DeepDishLie;
+			};
+			name = Debug;
+		};
+		5A28A90A29F803B100B02EE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R7YA4RGA8U;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLieSnapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DeepDishLie;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		5A3EFB0F29F7D53300D75F5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -347,6 +468,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5A28A90829F803B100B02EE6 /* Build configuration list for PBXNativeTarget "DeepDishLieSnapshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A28A90929F803B100B02EE6 /* Debug */,
+				5A28A90A29F803B100B02EE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5A3EFAFD29F7D53200D75F5E /* Build configuration list for PBXProject "DeepDishLie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
