@@ -11,6 +11,8 @@
 		5A3EFB0829F7D53200D75F5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0729F7D53200D75F5E /* ContentView.swift */; };
 		5A3EFB0A29F7D53300D75F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0929F7D53300D75F5E /* Assets.xcassets */; };
 		5A3EFB0E29F7D53300D75F5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0D29F7D53300D75F5E /* Preview Assets.xcassets */; };
+		5A3EFB1529F7D87500D75F5E /* LieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFB1429F7D87500D75F5E /* LieController.swift */; };
+		5A8A8B0F29F7DB4E00563A78 /* SpeakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A8B0E29F7DB4E00563A78 /* SpeakerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		5A3EFB0929F7D53300D75F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A3EFB0B29F7D53300D75F5E /* DeepDishLie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeepDishLie.entitlements; sourceTree = "<group>"; };
 		5A3EFB0D29F7D53300D75F5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5A3EFB1429F7D87500D75F5E /* LieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LieController.swift; sourceTree = "<group>"; };
+		5A8A8B0E29F7DB4E00563A78 /* SpeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */,
 				5A3EFB0729F7D53200D75F5E /* ContentView.swift */,
+				5A8A8B0E29F7DB4E00563A78 /* SpeakerView.swift */,
+				5A3EFB1429F7D87500D75F5E /* LieController.swift */,
 				5A3EFB0929F7D53300D75F5E /* Assets.xcassets */,
 				5A3EFB0B29F7D53300D75F5E /* DeepDishLie.entitlements */,
 				5A3EFB0C29F7D53300D75F5E /* Preview Content */,
@@ -141,6 +147,8 @@
 			files = (
 				5A3EFB0829F7D53200D75F5E /* ContentView.swift in Sources */,
 				5A3EFB0629F7D53200D75F5E /* DeepDishLieApp.swift in Sources */,
+				5A8A8B0F29F7DB4E00563A78 /* SpeakerView.swift in Sources */,
+				5A3EFB1529F7D87500D75F5E /* LieController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
