@@ -25,13 +25,19 @@ struct ContentView: View {
                                 .font(.headline)
                                 .foregroundColor(.accentColor)
                             if lieController.statements[lieCase.id] != nil {
-                                Text("Resolved 🎉🍕")
+                                Text("Resolved 🎉")
                                     .font(.caption)
                                     .fontWeight(.semibold)
                             } else {
-                                Text("Unsolved \(randomThinkingEmoji)")
+                                Text("Unsolved 🤔")
                                     .font(.caption)
                             }
+                        }
+                        if lieController.statements[lieCase.id] != nil {
+                            Spacer()
+                            Text("🍕")
+                                .font(.title)
+                                .rotationEffect(.degrees(45))
                         }
                     }
                 }
