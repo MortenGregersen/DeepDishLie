@@ -36,7 +36,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("DeepDishLie")
+            .navigationTitle("2 Truths and a Lie")
             .navigationDestination(for: LieCase.self) { lieCase in
                 SpeakerView(lieCase: lieCase)
             }
