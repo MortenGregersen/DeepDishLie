@@ -21,7 +21,7 @@ struct SpeakerView: View {
                 } header: {
                     Text("2 Truths and a Lie")
                 } footer: {
-                    Text("Select the one you think is a lie 🤥")
+                    Text("Choose the false statement once you have talked to the person and found out which of the three statements is untrue 🤥")
                 }
             } else {
                 Text("No truths or lies has been given.\nWaiting for the episode of [Slices](https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071) to be released.")
