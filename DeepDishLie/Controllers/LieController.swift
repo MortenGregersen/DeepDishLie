@@ -8,12 +8,14 @@
 import SwiftUI
 
 class LieController: ObservableObject {
-    @Published private(set) var lieCases: [LieCase]
+    @Published private var lieCases: [LieCase]
+    var validLieCases: [LieCase] { lieCases.filter(\.hasStatements) }
+    var solvedLieCasesCount: Int { validLieCases.filter { statements.keys.contains($0.id) }.count }
     @Published var expandedLieCases = Set<LieCase.ID>()
     @AppStorage("statements") private var statementsData = Data()
     private(set) var statements: [LieCase.ID: LieCase.Statement?] = [:]
     @Published var saveError: String?
-    static let cachedJsonFilename = "LieCases.json"
+    private static let cachedJsonFilename = "LieCases.json"
 
     init() {
         if let lieCases = Self.loadCachedLieCases() {
@@ -101,11 +103,9 @@ struct LieCase: Codable, Hashable, Identifiable {
 }
 
 extension LieController {
-    static func forPreview(numberOfLiesUnsolved: Int) -> LieController {
+    static func forPreview(numberOfLiesSolved: Int) -> LieController {
         let controller = LieController()
-//        let unsolvedLieCases = controller.unsolvedLieCases.filter { $0.speakerName != "Josh Holtz" }
-//        let numberOfLiesSolved = unsolvedLieCases.count - numberOfLiesUnsolved + 1
-        controller.statements = controller.lieCases.shuffled().prefix(controller.lieCases.count - numberOfLiesUnsolved).map(\.id).reduce(into: [:]) { partialResult, id in
+        controller.statements = controller.lieCases.shuffled().prefix(numberOfLiesSolved).map(\.id).reduce(into: [:]) { partialResult, id in
             partialResult[id] = LieCase.Statement.randomStatement
         }
         return controller

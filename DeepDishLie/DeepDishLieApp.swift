@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct DeepDishLieApp: App {
     @StateObject private var welcomeController = WelcomeController()
-    @StateObject private var lieController: LieController = inDemoMode ? .forPreview(numberOfLiesUnsolved: 4) : .init()
+    @StateObject private var lieController: LieController = inDemoMode ? .forPreview(numberOfLiesSolved: 10) : .init()
     static let inDemoMode = UserDefaults.standard.bool(forKey: "Demo")
 
     var body: some Scene {

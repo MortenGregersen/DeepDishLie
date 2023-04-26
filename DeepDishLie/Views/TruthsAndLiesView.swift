@@ -12,15 +12,39 @@ struct TruthsAndLiesView: View {
     @EnvironmentObject private var lieController: LieController
     @Environment(\.colorScheme) private var colorScheme
 
+    private var headerEmoji: String {
+        let solvedLieCasesCount = lieController.solvedLieCasesCount
+        if solvedLieCasesCount == 0 { return "🙁" }
+        else if solvedLieCasesCount < 5 { return "😕" }
+        else if solvedLieCasesCount < 10 { return "🙂" }
+        else if solvedLieCasesCount < 15 { return "😃" }
+        else if solvedLieCasesCount < lieController.validLieCases.count { return "😆" }
+        else { return "🤩" }
+    }
+
     var body: some View {
         NavigationStack {
             List {
                 Section {
-                    ForEach(lieController.lieCases) { lieCase in
+                    ForEach(lieController.validLieCases) { lieCase in
                         LieCaseRow(lieCase: lieCase)
                     }
                 } header: {
-                    
+                    VStack(spacing: 4) {
+                        HStack {
+                            Text("Progress")
+                            Spacer()
+                            Text("\(lieController.solvedLieCasesCount) out of \(lieController.validLieCases.count) solved \(headerEmoji)")
+                        }
+                        .foregroundColor(.accentColor)
+                        HStack(spacing: 0) {
+                            ForEach(0 ..< lieController.validLieCases.count, id: \.self) { index in
+                                Text("🍕")
+                                    .grayscale(index < lieController.solvedLieCasesCount ? 0.0 : 1.0)
+                            }
+                        }
+                    }
+                    .padding(.vertical, 4)
                 }
             }
             .listStyle(.inset)
@@ -78,7 +102,7 @@ struct TruthsAndLiesView: View {
             }
         }
     }
-    
+
     struct LieCaseStatementRow: View {
         let lieCase: LieCase
         let statement: LieCase.Statement
@@ -104,6 +128,6 @@ struct TruthsAndLiesView_Previews: PreviewProvider {
     static var previews: some View {
         TruthsAndLiesView()
             .environmentObject(WelcomeController.forPreview(hasSeenWelcome: true))
-            .environmentObject(LieController.forPreview(numberOfLiesUnsolved: 10))
+            .environmentObject(LieController.forPreview(numberOfLiesSolved: 20))
     }
 }
