@@ -35,10 +35,10 @@ class LieController: ObservableObject {
             self.lieCases = try! JSONDecoder().decode([LieCase].self, from: jsonData)
         }
         do {
-            self.statements = try JSONDecoder().decode([LieCase.ID: LieCase.Statement?].self, from: statementsData)
-        } catch {
-            self.statements = [:]
-        }
+            if !DeepDishLieApp.inDemoMode {
+                self.statements = try JSONDecoder().decode([LieCase.ID: LieCase.Statement?].self, from: statementsData)
+            }
+        } catch {}
     }
 
     private static func loadCachedLieCases() -> [LieCase]? {

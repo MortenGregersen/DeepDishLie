@@ -28,7 +28,9 @@ struct DeepDishLieApp: App {
                     }
             }
             .task {
-                await lieController.fetchLieCases()
+                if !Self.inDemoMode {
+                    await lieController.fetchLieCases()
+                }
             }
         }
     }
