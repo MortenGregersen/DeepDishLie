@@ -49,7 +49,7 @@ class LieController: ObservableObject {
 
     @MainActor func fetchLieCases() async {
         do {
-            let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/live-update/DeepDishLie/LieCases.json")!
+            let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/main/DeepDishLie/LieCases.json")!
             let (data, response) = try await URLSession.shared.data(from: url)
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
             lieCases = try JSONDecoder().decode([LieCase].self, from: data)
