@@ -105,7 +105,7 @@ struct LieCase: Codable, Hashable, Identifiable {
 extension LieController {
     static func forPreview(numberOfLiesSolved: Int) -> LieController {
         let controller = LieController()
-        controller.statements = controller.lieCases.shuffled().prefix(numberOfLiesSolved).map(\.id).reduce(into: [:]) { partialResult, id in
+        controller.statements = controller.validLieCases.shuffled().prefix(numberOfLiesSolved).map(\.id).reduce(into: [:]) { partialResult, id in
             partialResult[id] = LieCase.Statement.randomStatement
         }
         return controller

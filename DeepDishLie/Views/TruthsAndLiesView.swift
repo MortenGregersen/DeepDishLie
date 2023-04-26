@@ -31,19 +31,39 @@ struct TruthsAndLiesView: View {
                     }
                 } header: {
                     VStack(spacing: 4) {
-                        HStack {
-                            Text("Progress")
-                            Spacer()
-                            Text("\(lieController.solvedLieCasesCount) out of \(lieController.validLieCases.count) solved \(headerEmoji)")
-                        }
-                        .foregroundColor(.accentColor)
-                        HStack(spacing: 0) {
-                            ForEach(0 ..< lieController.validLieCases.count, id: \.self) { index in
-                                Text("🍕")
-                                    .grayscale(index < lieController.solvedLieCasesCount ? 0.0 : 1.0)
+                        if lieController.solvedLieCasesCount == lieController.validLieCases.count {
+                            HStack {
+                                Text("🎉")
+                                    .font(.system(size: 72))
+                                    .scaleEffect(x: -1, y: 1)
+                                Image("DeepDishLieLogo")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 150)
+                                Text("🎉")
+                                    .font(.system(size: 72))
+                            }
+                            Text("Well done!")
+                                .font(.largeTitle)
+                            Text("You have found all of the lies")
+                                .padding(.bottom, 8)
+                        } else {
+                            HStack {
+                                Text("Progress")
+                                Spacer()
+                                Text("\(lieController.solvedLieCasesCount) out of \(lieController.validLieCases.count) solved \(headerEmoji)")
+                            }
+
+                            HStack(spacing: 0) {
+                                ForEach(0 ..< lieController.validLieCases.count, id: \.self) { index in
+                                    Text("🍕")
+                                        .grayscale(index < lieController.solvedLieCasesCount ? 0.0 : 1.0)
+                                }
                             }
                         }
                     }
+                    .foregroundColor(.accentColor)
+                    .frame(maxWidth: .infinity)
                     .padding(.vertical, 4)
                 }
             }
@@ -128,6 +148,6 @@ struct TruthsAndLiesView_Previews: PreviewProvider {
     static var previews: some View {
         TruthsAndLiesView()
             .environmentObject(WelcomeController.forPreview(hasSeenWelcome: true))
-            .environmentObject(LieController.forPreview(numberOfLiesSolved: 20))
+            .environmentObject(LieController.forPreview(numberOfLiesSolved: 19))
     }
 }
