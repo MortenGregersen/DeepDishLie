@@ -10,6 +10,7 @@ import SwiftUI
 struct TruthsAndLiesView: View {
     @EnvironmentObject private var welcomeController: WelcomeController
     @EnvironmentObject private var lieController: LieController
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         NavigationStack {
@@ -40,6 +41,9 @@ struct TruthsAndLiesView: View {
 //                }
             }
             .navigationTitle("2 Truths and a Lie")
+            .toolbarBackground(Color("DarkAccentColor"), for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarColorScheme(.dark, for: .navigationBar)
             .navigationDestination(for: LieCase.self) { lieCase in
                 SpeakerView(lieCase: lieCase)
             }

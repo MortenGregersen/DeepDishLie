@@ -11,7 +11,7 @@ struct AboutView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section {
+                Section("The app 🤥") {
                     Text("Deep Dish Lie was made for the attendees at the Deep Dish Swift conference 2023.")
                 }
                 Section("The conference 🍕") {
@@ -37,7 +37,7 @@ struct AboutView: View {
                         Link("Go to conference schedule", destination: URL(string: "https://deepdishswift.com/#schedule")!)
                     }
                 }
-                Section("Made by 🧑🏽‍💻") {
+                Section("The developer 🧑🏽‍💻") {
                     VStack(alignment: .leading) {
                         HStack(alignment: .top) {
                             VStack(alignment: .leading, spacing: 8) {
@@ -59,7 +59,7 @@ struct AboutView: View {
                     }
                     VStack(alignment: .leading) {
                         HStack {
-                            Text("If you read this, I suspect, that you are an **app developer yourself**. If so maybe my app, **[AppDab](https://AppDab.app)**, is something for you?")
+                            Text("If you read this, I suspect, that you are an **app developer yourself**. If so, maybe my app, **[AppDab](https://AppDab.app)**, is something for you?")
                             Spacer(minLength: 8)
                             Link(destination: URL(string: "https://AppDab.app")!) {
                                 Image("AppDabIcon")
@@ -74,6 +74,10 @@ struct AboutView: View {
                 }
             }
             .navigationTitle("About Deep Dish Lie")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color("DarkAccentColor"), for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarColorScheme(.dark, for: .navigationBar)
         }
     }
 }
