@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  TruthsAndLiesView.swift
 //  DeepDishLie
 //
 //  Created by Morten Bjerg Gregersen on 25/04/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TruthsAndLiesView: View {
     @EnvironmentObject private var welcomeController: WelcomeController
     @EnvironmentObject private var lieController: LieController
 
@@ -83,9 +83,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct TruthsAndLiesView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TruthsAndLiesView()
             .environmentObject(WelcomeController.forPreview(hasSeenWelcome: true))
             .environmentObject(LieController.forPreview(numberOfLiesUnsolved: 3))
     }

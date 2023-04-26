@@ -16,7 +16,7 @@ struct DeepDishLieApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                ContentView()
+                TruthsAndLiesView()
                     .environmentObject(welcomeController)
                     .environmentObject(lieController)
                     .tabItem {
