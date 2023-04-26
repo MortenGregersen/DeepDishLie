@@ -16,7 +16,10 @@ final class ScoreWondersUITests: XCTestCase {
         app.launch()
         snapshot("1-Welcome")
         app.buttons["Let's go!"].tap()
-        app.staticTexts["Charlie Chapman"].tap()
+        let charlie = app.staticTexts["Charlie Chapman"]
+        guard charlie.waitForExistence(timeout: 4) else { XCTFail(); return }
+        charlie.tap()
+        guard app.staticTexts["I've step foot on every US State, except Alaska"].waitForExistence(timeout: 4) else { XCTFail(); return }
         snapshot("2-Speakers")
     }
 }
