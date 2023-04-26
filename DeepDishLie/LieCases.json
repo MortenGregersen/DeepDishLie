@@ -1,0 +1,149 @@
+[
+    {
+        "speakerName": "Ariel Michaeli",
+        "speakerImage": "ariel_michaeli",
+        "statement1": "I play guitar. I've been playing for years. I am not great",
+        "statement2": "I dropped out of college",
+        "statement3": "I started my first (real) company when I was 16 or 17"
+    },
+    {
+        "speakerName": "Ben Proothi",
+        "speakerImage": "ben_proothi",
+        "statement1": "The first iPhone that I ever had was an iPhone 6",
+        "statement2": "My dad went viral on TikTok",
+        "statement3": "I do not know how to play chess"
+    },
+    {
+        "speakerName": "Ben Scheirman",
+        "speakerImage": "ben_scheirman",
+        "statement1": "I have a titanium limb",
+        "statement2": "I can juggle 4 balls at once",
+        "statement3": "I live next door to a pro baseball player"
+    },
+    {
+        "speakerName": "Charlie Chapman",
+        "speakerImage": "charlie_chapman",
+        "statement1": "I've step foot on every US State, except Alaska",
+        "statement2": "I've never left the continent of North America, until last summer",
+        "statement3": "My first real job was selling digital cameras at the new defunct Circuit City"
+    },
+    {
+        "speakerName": "Curtis Herbert",
+        "speakerImage": "curtis_herbert",
+        "statement1": "I have my pilot's license",
+        "statement2": "I am a surprisingly good dancer",
+        "statement3": "I have lived in Japan for 6 months"
+    },
+    {
+        "speakerName": "Danijela Vrzan",
+        "speakerImage": "danijela_vrzan",
+        "statement1": "I was a semi professional musician",
+        "statement2": "I have a green belt in karate",
+        "statement3": "I know how to lie"
+    },
+    {
+        "speakerName": "Ellen Shapiro",
+        "speakerImage": "ellen_shapiro",
+        "statement1": "I have 2 cats. They are both named after musicians",
+        "statement2": "I speak (at least at conversational level) 4 languages",
+        "statement3": "My first job when I was out in Los Angeles, was as an intern at the Ellen DeGeneres show, right after they went on the air"
+    },
+    {
+        "speakerName": "Emmanuel Crouvisier",
+        "speakerImage": "emmanuel_crouvisier",
+        "statement1": "I drive an electric car every day",
+        "statement2": "I've never had a speeding ticket",
+        "statement3": "I used to hate Apple entirely until the iPod came out"
+    },
+    {
+        "speakerName": "Josh Holtz",
+        "speakerImage": "josh_holtz",
+        "statement1": "The first programming language that I learned was Java",
+        "statement2": "I can do a backflip",
+        "statement3": "I can speak Japanese"
+    },
+    {
+        "speakerName": "Kai Dombrowski",
+        "speakerImage": "kai_dombrowski",
+        "statement1": "",
+        "statement2": "",
+        "statement3": ""
+    },
+    {
+        "speakerName": "Malin Sundberg",
+        "speakerImage": "malin_sundberg",
+        "statement1": "",
+        "statement2": "",
+        "statement3": ""
+    },
+    {
+        "speakerName": "Marc Aupont",
+        "speakerImage": "marc_aupont",
+        "statement1": "I am the oldest of 5",
+        "statement2": "I am a father of 3",
+        "statement3": "I've loved programming since childhood"
+    },
+    {
+        "speakerName": "Mikaela Caron",
+        "speakerImage": "mikaela_caron",
+        "statement1": "My first iPhone was an iPhone 4S",
+        "statement2": "I have an M1 Max MacBook Pro",
+        "statement3": "I have never shipped a Vapor project"
+    },
+    {
+        "speakerName": "Paul Hudson",
+        "speakerImage": "paul_hudson",
+        "statement1": "Before getting into app development, my specialism was women in ancient Greece",
+        "statement2": "Both my parents are church ministers",
+        "statement3": "I volunteer at my kid's school, teaching the girls there app development with Swift"
+    },
+    {
+        "speakerName": "Rudrank Riyam",
+        "speakerImage": "rudrank_riyam",
+        "statement1": "I sleep 10-12 hours every day",
+        "statement2": "I recently discovered that I love cross platform development",
+        "statement3": "Most of the code that I have written the past few weeks is by ChatGPT"
+    },
+    {
+        "speakerName": "Simon B. Støvring",
+        "speakerImage": "simon_storving",
+        "statement1": "I am volunteering as a scout leader",
+        "statement2": "I am volunteering at a local craft beer bar",
+        "statement3": "I am volunteering at a large music festival"
+    },
+    {
+        "speakerName": "Tunde Adegoroye",
+        "speakerImage": "tunde_adegoroye",
+        "statement1": "I used to play for a football academy when I was younger in high school",
+        "statement2": "I enjoy eating dry cereal",
+        "statement3": "I'm on TV on a TV show in the background, eating a McDonald's apple pie"
+    },
+    {
+        "speakerName": "Via Fairchild",
+        "speakerImage": "via_fairchild",
+        "statement1": "I own a unicycle",
+        "statement2": "I climbed and summitted Mount Fuji",
+        "statement3": "I have thalassophobia (fear of deep bodies of water)"
+    },
+    {
+        "speakerName": "Vince Davis",
+        "speakerImage": "vince_davis",
+        "statement1": "I have aspirations of being a pilot",
+        "statement2": "I love to take vacations in cold areas",
+        "statement3": "I have been to 10 countries"
+    },
+    {
+        "speakerName": "Vui Nguyen",
+        "speakerImage": "vui_nguyen",
+        "statement1": "I once caught a kokanee salmon",
+        "statement2": "I once caught a northern pike",
+        "statement3": "I once traveled to Beijing China to participate in an IoT hackathon"
+    },
+    {
+        "speakerName": "Zach Brass",
+        "speakerImage": "zach_brass",
+        "statement1": "I inherited the world's largest collection of reflex hammers",
+        "statement2": "I once had lunch with former UK Speaker of the House John Bercow",
+        "statement3": "I am a registered as an air man despite never having flown a plane"
+    }
+]
