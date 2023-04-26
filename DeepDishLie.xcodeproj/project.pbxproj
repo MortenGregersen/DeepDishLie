@@ -19,6 +19,7 @@
 		5A3EFB1529F7D87500D75F5E /* LieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFB1429F7D87500D75F5E /* LieController.swift */; };
 		5A4D713329F91C0400F7101C /* LieCases.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A4D713229F91C0400F7101C /* LieCases.json */; };
 		5A8A8B0F29F7DB4E00563A78 /* SpeakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A8B0E29F7DB4E00563A78 /* SpeakerView.swift */; };
+		5A994C4E29F9255D00F799ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A994C4D29F9255D00F799ED /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5A4D713229F91C0400F7101C /* LieCases.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LieCases.json; sourceTree = "<group>"; };
 		5A8A8B0E29F7DB4E00563A78 /* SpeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerView.swift; sourceTree = "<group>"; };
 		5A994C4C29F924E700F799ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5A994C4D29F9255D00F799ED /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				5A3EFB0B29F7D53300D75F5E /* DeepDishLie.entitlements */,
 				5A3EFB0C29F7D53300D75F5E /* Preview Content */,
 				5A4D713229F91C0400F7101C /* LieCases.json */,
+				5A994C4D29F9255D00F799ED /* LaunchScreen.storyboard */,
 			);
 			path = DeepDishLie;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A3EFB0E29F7D53300D75F5E /* Preview Assets.xcassets in Resources */,
+				5A994C4E29F9255D00F799ED /* LaunchScreen.storyboard in Resources */,
 				5A3EFB0A29F7D53300D75F5E /* Assets.xcassets in Resources */,
 				5A4D713329F91C0400F7101C /* LieCases.json in Resources */,
 			);
@@ -439,6 +443,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -480,6 +485,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
