@@ -27,6 +27,9 @@ struct DeepDishLieApp: App {
                         Label("About", systemImage: "text.badge.star")
                     }
             }
+            .task {
+                await lieController.fetchLieCases()
+            }
         }
     }
 }

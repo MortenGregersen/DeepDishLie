@@ -17,6 +17,7 @@
 		5A3EFB0A29F7D53300D75F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0929F7D53300D75F5E /* Assets.xcassets */; };
 		5A3EFB0E29F7D53300D75F5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0D29F7D53300D75F5E /* Preview Assets.xcassets */; };
 		5A3EFB1529F7D87500D75F5E /* LieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFB1429F7D87500D75F5E /* LieController.swift */; };
+		5A4D713329F91C0400F7101C /* LieCases.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A4D713229F91C0400F7101C /* LieCases.json */; };
 		5A8A8B0F29F7DB4E00563A78 /* SpeakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A8B0E29F7DB4E00563A78 /* SpeakerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		5A3EFB0B29F7D53300D75F5E /* DeepDishLie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeepDishLie.entitlements; sourceTree = "<group>"; };
 		5A3EFB0D29F7D53300D75F5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5A3EFB1429F7D87500D75F5E /* LieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LieController.swift; sourceTree = "<group>"; };
+		5A4D713229F91C0400F7101C /* LieCases.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LieCases.json; sourceTree = "<group>"; };
 		5A86ABB629F8812200BCF46B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A8A8B0E29F7DB4E00563A78 /* SpeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 				5A3EFB0929F7D53300D75F5E /* Assets.xcassets */,
 				5A3EFB0B29F7D53300D75F5E /* DeepDishLie.entitlements */,
 				5A3EFB0C29F7D53300D75F5E /* Preview Content */,
+				5A4D713229F91C0400F7101C /* LieCases.json */,
 			);
 			path = DeepDishLie;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			files = (
 				5A3EFB0E29F7D53300D75F5E /* Preview Assets.xcassets in Resources */,
 				5A3EFB0A29F7D53300D75F5E /* Assets.xcassets in Resources */,
+				5A4D713329F91C0400F7101C /* LieCases.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
