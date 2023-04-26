@@ -25,25 +25,37 @@ class LieController: ObservableObject {
     @AppStorage("statements") private var statementsData = Data()
     private(set) var statements: [LieCase.ID: LieCase.Statement?] = [:]
     @Published var saveError: String?
+    static let cachedJsonFilename = "LieCases.json"
 
     init() {
-        let jsonData = try! Data(contentsOf: Bundle.main.url(forResource: "LieCases", withExtension: "json")!)
-        self.lieCases = try! JSONDecoder().decode([LieCase].self, from: jsonData)
+        if let lieCases = Self.loadCachedLieCases() {
+            self.lieCases = lieCases
+        } else {
+            let jsonData = try! Data(contentsOf: Bundle.main.url(forResource: "LieCases", withExtension: "json")!)
+            self.lieCases = try! JSONDecoder().decode([LieCase].self, from: jsonData)
+        }
         do {
             self.statements = try JSONDecoder().decode([LieCase.ID: LieCase.Statement?].self, from: statementsData)
         } catch {
             self.statements = [:]
         }
     }
-    
+
+    private static func loadCachedLieCases() -> [LieCase]? {
+        guard let cacheFolderURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first,
+              let cachedJsonData = try? Data(contentsOf: cacheFolderURL.appending(component: cachedJsonFilename)) else { return nil }
+        return try? JSONDecoder().decode([LieCase].self, from: cachedJsonData)
+    }
+
     @MainActor func fetchLieCases() async {
         do {
             let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/live-update/DeepDishLie/LieCases.json")!
             let (data, response) = try await URLSession.shared.data(from: url)
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
-            self.lieCases = try JSONDecoder().decode([LieCase].self, from: data)
+            lieCases = try JSONDecoder().decode([LieCase].self, from: data)
+            guard let cacheFolderURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else { return }
+            try data.write(to: cacheFolderURL.appending(component: Self.cachedJsonFilename))
         } catch {
-            print(error)
             // Do nothing
         }
     }
