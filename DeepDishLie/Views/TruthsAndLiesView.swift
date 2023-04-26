@@ -12,16 +12,6 @@ struct TruthsAndLiesView: View {
     @EnvironmentObject private var lieController: LieController
     @Environment(\.colorScheme) private var colorScheme
 
-    private var headerEmoji: String {
-        let solvedLieCasesCount = lieController.solvedLieCasesCount
-        if solvedLieCasesCount == 0 { return "🙁" }
-        else if solvedLieCasesCount < 5 { return "😕" }
-        else if solvedLieCasesCount < 10 { return "🙂" }
-        else if solvedLieCasesCount < 15 { return "😃" }
-        else if solvedLieCasesCount < lieController.validLieCases.count { return "😆" }
-        else { return "🤩" }
-    }
-
     var body: some View {
         NavigationStack {
             List {
@@ -86,7 +76,17 @@ struct TruthsAndLiesView: View {
         }
     }
 
-    struct LieCaseRow: View {
+    private var headerEmoji: String {
+        let solvedLieCasesCount = lieController.solvedLieCasesCount
+        if solvedLieCasesCount == 0 { return "🙃" }
+        else if solvedLieCasesCount < 5 { return "🙂" }
+        else if solvedLieCasesCount < 10 { return "😉" }
+        else if solvedLieCasesCount < 15 { return "😃" }
+        else if solvedLieCasesCount < lieController.validLieCases.count { return "😆" }
+        else { return "🤩" }
+    }
+
+    private struct LieCaseRow: View {
         let lieCase: LieCase
         @EnvironmentObject private var lieController: LieController
         private var isExpanded: Binding<Bool> {
@@ -123,7 +123,7 @@ struct TruthsAndLiesView: View {
         }
     }
 
-    struct LieCaseStatementRow: View {
+    private struct LieCaseStatementRow: View {
         let lieCase: LieCase
         let statement: LieCase.Statement
         @EnvironmentObject private var lieController: LieController
@@ -148,6 +148,6 @@ struct TruthsAndLiesView_Previews: PreviewProvider {
     static var previews: some View {
         TruthsAndLiesView()
             .environmentObject(WelcomeController.forPreview(hasSeenWelcome: true))
-            .environmentObject(LieController.forPreview(numberOfLiesSolved: 19))
+            .environmentObject(LieController.forPreview(numberOfLiesSolved: 11))
     }
 }
