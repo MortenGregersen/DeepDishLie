@@ -16,9 +16,7 @@ final class ScoreWondersUITests: XCTestCase {
         app.launch()
         snapshot("1-Welcome")
         app.buttons["Let's go!"].tap()
+        app.staticTexts["Charlie Chapman"].tap()
         snapshot("2-Speakers")
-        app.staticTexts["Josh Holtz"].tap()
-        app.staticTexts["I can do a backflip"].tap()
-        snapshot("3-Josh")
     }
 }
