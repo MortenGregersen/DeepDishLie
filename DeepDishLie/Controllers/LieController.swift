@@ -9,19 +9,7 @@ import SwiftUI
 
 class LieController: ObservableObject {
     @Published private(set) var lieCases: [LieCase]
-
-    var solvedLieCases: [LieCase] {
-        lieCases.filter { $0.hasStatements && statements.keys.contains($0.id) }
-    }
-
-    var unsolvedLieCases: [LieCase] {
-        lieCases.filter { $0.hasStatements && !statements.keys.contains($0.id) }
-    }
-
-    var unfinishedLieCases: [LieCase] {
-        lieCases.filter { !$0.hasStatements }
-    }
-
+    @Published var expandedLieCases = Set<LieCase.ID>()
     @AppStorage("statements") private var statementsData = Data()
     private(set) var statements: [LieCase.ID: LieCase.Statement?] = [:]
     @Published var saveError: String?
@@ -56,15 +44,25 @@ class LieController: ObservableObject {
             guard let cacheFolderURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else { return }
             try data.write(to: cacheFolderURL.appending(component: Self.cachedJsonFilename))
         } catch {
-            // Do nothing
+            // Fail silently
         }
     }
 
-    @MainActor func select(statement: LieCase.Statement?, for lieCase: LieCase) {
+    @MainActor func select(statement: LieCase.Statement, for lieCase: LieCase) {
         let oldStatement = statements[lieCase.id]
-        statements[lieCase.id] = statement
+        if oldStatement == statement {
+            statements[lieCase.id] = nil
+        } else {
+            statements[lieCase.id] = statement
+            _ = withAnimation {
+                expandedLieCases.remove(lieCase.id)
+            }
+        }
         do {
-            statementsData = try JSONEncoder().encode(statements)
+            let statementsData = try JSONEncoder().encode(statements)
+            withAnimation {
+                self.statementsData = statementsData
+            }
         } catch {
             saveError = "Could not save you guess. (\(error.localizedDescription))"
             statements[lieCase.id] = oldStatement
@@ -105,9 +103,9 @@ struct LieCase: Codable, Hashable, Identifiable {
 extension LieController {
     static func forPreview(numberOfLiesUnsolved: Int) -> LieController {
         let controller = LieController()
-        let unsolvedLieCases = controller.unsolvedLieCases.filter { $0.speakerName != "Josh Holtz" }
-        let numberOfLiesSolved = unsolvedLieCases.count - numberOfLiesUnsolved + 1
-        controller.statements = unsolvedLieCases.shuffled().prefix(numberOfLiesSolved).map(\.id).reduce(into: [:]) { partialResult, id in
+//        let unsolvedLieCases = controller.unsolvedLieCases.filter { $0.speakerName != "Josh Holtz" }
+//        let numberOfLiesSolved = unsolvedLieCases.count - numberOfLiesUnsolved + 1
+        controller.statements = controller.lieCases.shuffled().prefix(controller.lieCases.count - numberOfLiesUnsolved).map(\.id).reduce(into: [:]) { partialResult, id in
             partialResult[id] = LieCase.Statement.randomStatement
         }
         return controller

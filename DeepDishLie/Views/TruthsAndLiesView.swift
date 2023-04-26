@@ -15,38 +15,19 @@ struct TruthsAndLiesView: View {
     var body: some View {
         NavigationStack {
             List {
-                if !lieController.unsolvedLieCases.isEmpty {
-                    Section("Unsolved lies 🤔") {
-                        ForEach(lieController.unsolvedLieCases) { lieCase in
-                            LieCaseRow(lieCase: lieCase)
-                        }
+                Section {
+                    ForEach(lieController.lieCases) { lieCase in
+                        LieCaseRow(lieCase: lieCase)
                     }
+                } header: {
+                    
                 }
-                Section("Solved lies 🎉") {
-                    if lieController.solvedLieCases.isEmpty {
-                        Text("No solved lies yet")
-                            .foregroundColor(.secondary)
-                    } else {
-                        ForEach(lieController.solvedLieCases) { lieCase in
-                            LieCaseRow(lieCase: lieCase)
-                        }
-                    }
-                }
-//                if !lieController.unfinishedLieCases.isEmpty {
-//                    Section("Unfinished lies 😢") {
-//                        ForEach(lieController.unfinishedLieCases) { lieCase in
-//                            LieCaseRow(lieCase: lieCase)
-//                        }
-//                    }
-//                }
             }
+            .listStyle(.inset)
             .navigationTitle("2 Truths and a Lie")
             .toolbarBackground(Color("DarkAccentColor"), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
-            .navigationDestination(for: LieCase.self) { lieCase in
-                SpeakerView(lieCase: lieCase)
-            }
         }
         .blur(radius: welcomeController.isShowingWelcome ? 2.0 : 0.0)
         .overlay {
@@ -64,9 +45,21 @@ struct TruthsAndLiesView: View {
     struct LieCaseRow: View {
         let lieCase: LieCase
         @EnvironmentObject private var lieController: LieController
+        private var isExpanded: Binding<Bool> {
+            .init {
+                lieController.expandedLieCases.contains(lieCase.id)
+            } set: {
+                if $0 { lieController.expandedLieCases.insert(lieCase.id) }
+                else { lieController.expandedLieCases.remove(lieCase.id) }
+            }
+        }
 
         var body: some View {
-            NavigationLink(value: lieCase) {
+            DisclosureGroup(isExpanded: isExpanded) {
+                LieCaseStatementRow(lieCase: lieCase, statement: .one)
+                LieCaseStatementRow(lieCase: lieCase, statement: .two)
+                LieCaseStatementRow(lieCase: lieCase, statement: .three)
+            } label: {
                 HStack {
                     Image(lieCase.speakerImage)
                         .resizable()
@@ -78,9 +71,29 @@ struct TruthsAndLiesView: View {
                             .font(.headline)
                             .foregroundColor(.accentColor)
                         if let statement = lieController.statements[lieCase.id] as? LieCase.Statement {
-                            Text("\"\(lieCase.getStatement(statement))\"")
+                            Text("**Lie:** ") + Text("\"\(lieCase.getStatement(statement))\"")
                         }
                     }
+                }
+            }
+        }
+    }
+    
+    struct LieCaseStatementRow: View {
+        let lieCase: LieCase
+        let statement: LieCase.Statement
+        @EnvironmentObject private var lieController: LieController
+
+        var body: some View {
+            Button {
+                lieController.select(statement: statement, for: lieCase)
+            } label: {
+                HStack {
+                    Text(lieCase.getStatement(statement))
+                        .foregroundColor(.primary)
+                    Spacer()
+                    Image(systemName: lieController.statements[lieCase.id] == statement ? "checkmark.circle.fill" : "circle")
+                        .font(.title2)
                 }
             }
         }
@@ -91,6 +104,6 @@ struct TruthsAndLiesView_Previews: PreviewProvider {
     static var previews: some View {
         TruthsAndLiesView()
             .environmentObject(WelcomeController.forPreview(hasSeenWelcome: true))
-            .environmentObject(LieController.forPreview(numberOfLiesUnsolved: 3))
+            .environmentObject(LieController.forPreview(numberOfLiesUnsolved: 10))
     }
 }
