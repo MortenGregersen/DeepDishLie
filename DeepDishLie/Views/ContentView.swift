@@ -51,7 +51,7 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            if !welcomeController.hasSeenWelcome {
+            if !welcomeController.hasSeenWelcome || DeepDishLieApp.inDemoMode {
                 welcomeController.isShowingWelcome = true
             }
         }

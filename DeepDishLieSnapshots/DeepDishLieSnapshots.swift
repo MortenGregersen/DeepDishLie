@@ -14,8 +14,11 @@ final class ScoreWondersUITests: XCTestCase {
         app.launchArguments.append("true")
         setupSnapshot(app)
         app.launch()
-        snapshot("1-Speakers")
+        snapshot("1-Welcome")
+        app.buttons["Let's go!"].tap()
+        snapshot("2-Speakers")
         app.staticTexts["Josh Holtz"].tap()
-        snapshot("2-Josh")
+        app.staticTexts["I can do a backflip"].tap()
+        snapshot("3-Josh")
     }
 }

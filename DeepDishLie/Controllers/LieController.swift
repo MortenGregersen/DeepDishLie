@@ -186,8 +186,9 @@ struct LieCase: Hashable, Identifiable {
 extension LieController {
     static func forPreview(numberOfLiesUnsolved: Int) -> LieController {
         let controller = LieController()
-        let numberOfLiesSolved = controller.unsolvedLieCases.count - numberOfLiesUnsolved
-        controller.statements = controller.unsolvedLieCases.shuffled().prefix(numberOfLiesSolved).map(\.id).reduce(into: [:]) { partialResult, id in
+        let unsolvedLieCases = controller.unsolvedLieCases.filter { $0.speakerName != "Josh Holtz" }
+        let numberOfLiesSolved = unsolvedLieCases.count - numberOfLiesUnsolved + 1
+        controller.statements = unsolvedLieCases.shuffled().prefix(numberOfLiesSolved).map(\.id).reduce(into: [:]) { partialResult, id in
             partialResult[id] = LieCase.Statement.randomStatement
         }
         return controller

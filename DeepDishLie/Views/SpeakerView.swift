@@ -60,9 +60,10 @@ struct SpeakerView: View {
 struct SpeakerView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            let lieCase = LieController().lieCases[0]
+            let lieController = LieController.forPreview(numberOfLiesUnsolved: 0)
+            let lieCase = lieController.solvedLieCases.first!
             SpeakerView(lieCase: lieCase)
-                .environmentObject(LieController.forPreview(numberOfLiesUnsolved: 0))
+                .environmentObject(lieController)
         }
     }
 }
