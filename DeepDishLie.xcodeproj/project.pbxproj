@@ -44,7 +44,6 @@
 		5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDishLieApp.swift; sourceTree = "<group>"; };
 		5A3EFB0729F7D53200D75F5E /* TruthsAndLiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruthsAndLiesView.swift; sourceTree = "<group>"; };
 		5A3EFB0929F7D53300D75F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5A3EFB0B29F7D53300D75F5E /* DeepDishLie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeepDishLie.entitlements; sourceTree = "<group>"; };
 		5A3EFB0D29F7D53300D75F5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5A3EFB1429F7D87500D75F5E /* LieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LieController.swift; sourceTree = "<group>"; };
 		5A4D713229F91C0400F7101C /* LieCases.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LieCases.json; sourceTree = "<group>"; };
@@ -122,15 +121,14 @@
 		5A3EFB0429F7D53200D75F5E /* DeepDishLie */ = {
 			isa = PBXGroup;
 			children = (
-				5A994C4C29F924E700F799ED /* Info.plist */,
 				5A28A91229F86F5000B02EE6 /* Controllers */,
 				5A28A91129F86F4E00B02EE6 /* Views */,
 				5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */,
 				5A3EFB0929F7D53300D75F5E /* Assets.xcassets */,
-				5A3EFB0B29F7D53300D75F5E /* DeepDishLie.entitlements */,
-				5A3EFB0C29F7D53300D75F5E /* Preview Content */,
 				5A4D713229F91C0400F7101C /* LieCases.json */,
 				5A994C4D29F9255D00F799ED /* LaunchScreen.storyboard */,
+				5A994C4C29F924E700F799ED /* Info.plist */,
+				5A3EFB0C29F7D53300D75F5E /* Preview Content */,
 			);
 			path = DeepDishLie;
 			sourceTree = "<group>";
@@ -428,7 +426,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DeepDishLie/DeepDishLie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DeepDishLie/Preview Content\"";
@@ -470,7 +467,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DeepDishLie/DeepDishLie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DeepDishLie/Preview Content\"";
