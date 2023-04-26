@@ -8,7 +8,7 @@
 import SwiftUI
 
 class LieController: ObservableObject {
-    let lieCases: [LieCase] = [
+    private let lieCases: [LieCase] = [
         .init(speakerName: "Ariel Michaeli",
               speakerImage: "ariel_michaeli",
               statement1: "I play guitar. I've been playing for years. I am not great",
@@ -26,9 +26,9 @@ class LieController: ObservableObject {
               statement3: "I live next door to a pro baseball player"),
         .init(speakerName: "Charlie Chapman",
               speakerImage: "charlie_chapman",
-              statement1: "",
-              statement2: "",
-              statement3: ""),
+              statement1: "I've step foot on every US State, except Alaska",
+              statement2: "I've never left the continent of North America, until last summer",
+              statement3: "My first real job was selling digital cameras at the new defunct Circuit City"),
         .init(speakerName: "Curtis Herbert",
               speakerImage: "curtis_herbert",
               statement1: "I have my pilot's license",

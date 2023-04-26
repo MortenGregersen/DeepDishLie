@@ -31,13 +31,13 @@ struct ContentView: View {
                         }
                     }
                 }
-                if !lieController.unfinishedLieCases.isEmpty {
-                    Section("Unfinished lies 😢") {
-                        ForEach(lieController.unfinishedLieCases) { lieCase in
-                            LieCaseRow(lieCase: lieCase)
-                        }
-                    }
-                }
+//                if !lieController.unfinishedLieCases.isEmpty {
+//                    Section("Unfinished lies 😢") {
+//                        ForEach(lieController.unfinishedLieCases) { lieCase in
+//                            LieCaseRow(lieCase: lieCase)
+//                        }
+//                    }
+//                }
             }
             .navigationTitle("2 Truths and a Lie")
             .navigationDestination(for: LieCase.self) { lieCase in

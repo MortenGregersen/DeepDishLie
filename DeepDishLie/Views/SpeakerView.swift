@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SpeakerView: View {
     let lieCase: LieCase
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         List {
@@ -28,11 +29,22 @@ struct SpeakerView: View {
         }
         .navigationTitle(lieCase.speakerName)
         .toolbar {
-            Image(lieCase.speakerImage)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 36)
-                .clipShape(Circle())
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Label("2 Truths and a Lie", systemImage: "chevron.left")
+                        .fontWeight(.bold)
+                }
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Image(lieCase.speakerImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 36)
+                    .clipShape(Circle())
+                    .navigationBarBackButtonHidden(true)
+            }
         }
     }
 
