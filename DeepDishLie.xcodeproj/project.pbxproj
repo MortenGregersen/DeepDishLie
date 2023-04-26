@@ -48,6 +48,7 @@
 		5A3EFB1429F7D87500D75F5E /* LieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LieController.swift; sourceTree = "<group>"; };
 		5A4D713229F91C0400F7101C /* LieCases.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LieCases.json; sourceTree = "<group>"; };
 		5A8A8B0E29F7DB4E00563A78 /* SpeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerView.swift; sourceTree = "<group>"; };
+		5A994C4C29F924E700F799ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +120,7 @@
 		5A3EFB0429F7D53200D75F5E /* DeepDishLie */ = {
 			isa = PBXGroup;
 			children = (
+				5A994C4C29F924E700F799ED /* Info.plist */,
 				5A28A91229F86F5000B02EE6 /* Controllers */,
 				5A28A91129F86F4E00B02EE6 /* Views */,
 				5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */,
@@ -430,6 +432,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeepDishLie/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -470,6 +473,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeepDishLie/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
