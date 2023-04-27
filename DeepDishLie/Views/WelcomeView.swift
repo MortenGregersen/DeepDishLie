@@ -29,7 +29,7 @@ struct WelcomeView: View {
                     Text("Welcome to Deep Dish Lie!")
                         .font(.title)
                         .fontWeight(.bold)
-                    Text("Here you will find the 2 Truths and a Lie that the speakers told in the Slices podcast.")
+                    Text("Here you will find the 2 Truths and a Lie that the speakers told in the [Slices](https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071) podcast.")
                     Text("See if you can guess the lie, and approach the speakers and find out if you guessed correctly.")
                     Text("Have a nice Deep Dish Swift!")
                         .fontWeight(.semibold)
