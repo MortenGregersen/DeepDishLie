@@ -11,12 +11,21 @@ struct TruthsAndLiesView: View {
     @EnvironmentObject private var welcomeController: WelcomeController
     @EnvironmentObject private var lieController: LieController
     @Environment(\.colorScheme) private var colorScheme
+    @State private var sortOrder = CaseSortOrder.abcAsc
 
     var body: some View {
+        let sortComparator: (LieCase, LieCase) -> Bool = { case1, case2 in
+            switch sortOrder {
+            case .abcAsc: return case1.speakerName < case2.speakerName
+            case .abcDesc: return case1.speakerName > case2.speakerName
+            case .solvedAsc: return lieController.statements[case1.id] != nil && lieController.statements[case2.id] == nil
+            case .solvedDesc: return lieController.statements[case1.id] == nil && lieController.statements[case2.id] != nil
+            }
+        }
         NavigationStack {
             List {
                 Section {
-                    ForEach(lieController.validLieCases) { lieCase in
+                    ForEach(lieController.validLieCases.sorted(by: sortComparator)) { lieCase in
                         LieCaseRow(lieCase: lieCase)
                     }
                 } header: {
@@ -62,6 +71,15 @@ struct TruthsAndLiesView: View {
             .toolbarBackground(Color("DarkAccentColor"), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbar {
+                Picker("Sort order", selection: $sortOrder) {
+                    ForEach(CaseSortOrder.allCases) { sortOrder in
+                        Label(sortOrder.title, systemImage: sortOrder.systemImage)
+                            .labelStyle(.titleAndIcon)
+                            .tag(sortOrder)
+                    }
+                }
+            }
         }
         .blur(radius: welcomeController.isShowingWelcome ? 2.0 : 0.0)
         .overlay {
@@ -72,6 +90,29 @@ struct TruthsAndLiesView: View {
         .onAppear {
             if !welcomeController.hasSeenWelcome || DeepDishLieApp.inDemoMode {
                 welcomeController.isShowingWelcome = true
+            }
+        }
+    }
+
+    private enum CaseSortOrder: String, CaseIterable, Identifiable {
+        case abcAsc
+        case abcDesc
+        case solvedAsc
+        case solvedDesc
+
+        var id: String { rawValue }
+
+        var title: String {
+            switch self {
+            case .abcAsc, .abcDesc: return "ABC"
+            case .solvedAsc, .solvedDesc: return "Solved"
+            }
+        }
+
+        var systemImage: String {
+            switch self {
+            case .abcAsc, .solvedAsc: return "arrow.down"
+            case .abcDesc, .solvedDesc: return "arrow.up"
             }
         }
     }
