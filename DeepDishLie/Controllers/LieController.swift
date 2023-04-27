@@ -15,6 +15,7 @@ class LieController: ObservableObject {
     @AppStorage("statements") private var statementsData = Data()
     private(set) var statements: [LieCase.ID: LieCase.Statement?] = [:]
     @Published var saveError: String?
+    @Published var confettiTrigger = 0
     private static let cachedJsonFilename = "LieCases.json"
 
     init() {
@@ -54,10 +55,14 @@ class LieController: ObservableObject {
         let oldStatement = statements[lieCase.id]
         if oldStatement == statement {
             statements[lieCase.id] = nil
+            confettiTrigger = 0
         } else {
             statements[lieCase.id] = statement
             _ = withAnimation {
                 expandedLieCases.remove(lieCase.id)
+            }
+            if statements.keys.count == validLieCases.count {
+                confettiTrigger = 1
             }
         }
         do {

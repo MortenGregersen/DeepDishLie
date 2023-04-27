@@ -5,6 +5,7 @@
 //  Created by Morten Bjerg Gregersen on 25/04/2023.
 //
 
+import ConfettiSwiftUI
 import SwiftUI
 
 struct TruthsAndLiesView: View {
@@ -67,6 +68,7 @@ struct TruthsAndLiesView: View {
                 }
             }
             .listStyle(.inset)
+            .confettiCannon(counter: $lieController.confettiTrigger, num: 1, confettis: [.text("🍕"), .text("🤥"), .text("🍕"), .text("🤩")], confettiSize: 40, repetitions: 120, repetitionInterval: 0.08)
             .navigationTitle("2 Truths and a Lie")
             .toolbarBackground(Color("DarkAccentColor"), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
