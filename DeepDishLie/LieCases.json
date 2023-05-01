@@ -18,7 +18,7 @@
         "speakerImage": "ben_scheirman",
         "statement1": "I have a titanium limb",
         "statement2": "I can juggle 4 balls at once",
-        "statement3": "I live next door to a pro baseball player"
+        "statement3": "I used to live next door to a pro baseball player"
     },
     {
         "speakerName": "Charlie Chapman",
@@ -65,16 +65,16 @@
     {
         "speakerName": "Kai Dombrowski",
         "speakerImage": "kai_dombrowski",
-        "statement1": "",
-        "statement2": "",
-        "statement3": ""
+        "statement1": "I have lived in 4 different countries",
+        "statement2": "I’ve worked as a barista in Australia",
+        "statement3": "I can dunk a basketball"
     },
     {
         "speakerName": "Malin Sundberg",
         "speakerImage": "malin_sundberg",
-        "statement1": "",
-        "statement2": "",
-        "statement3": ""
+        "statement1": "I am part of a beach volleyball team in Canada",
+        "statement2": "I’ve worked as a barista in Australia",
+        "statement3": "I was part of a theatre group for 5+ years in Sweden"
     },
     {
         "speakerName": "Marc Aupont",
