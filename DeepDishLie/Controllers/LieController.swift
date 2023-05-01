@@ -84,6 +84,7 @@ struct LieCase: Codable, Hashable, Identifiable {
     let statement1: String
     let statement2: String
     let statement3: String
+    let lie: Statement?
     var hasStatements: Bool {
         !(statement1.isEmpty || statement2.isEmpty || statement3.isEmpty)
     }

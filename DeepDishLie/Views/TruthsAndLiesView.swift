@@ -132,14 +132,6 @@ struct TruthsAndLiesView: View {
     private struct LieCaseRow: View {
         let lieCase: LieCase
         @EnvironmentObject private var lieController: LieController
-        private var isExpanded: Binding<Bool> {
-            .init {
-                lieController.expandedLieCases.contains(lieCase.id)
-            } set: {
-                if $0 { lieController.expandedLieCases.insert(lieCase.id) }
-                else { lieController.expandedLieCases.remove(lieCase.id) }
-            }
-        }
 
         var body: some View {
             DisclosureGroup(isExpanded: isExpanded) {
@@ -153,6 +145,9 @@ struct TruthsAndLiesView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 50)
                         .clipShape(Circle())
+                        .overlay(alignment: .bottomTrailing) {
+                            Text(resultSymbol ?? "")
+                        }
                     VStack(alignment: .leading) {
                         Text(lieCase.speakerName)
                             .font(.headline)
@@ -163,6 +158,21 @@ struct TruthsAndLiesView: View {
                     }
                 }
             }
+        }
+
+        private var isExpanded: Binding<Bool> {
+            .init {
+                lieController.expandedLieCases.contains(lieCase.id)
+            } set: {
+                if $0 { lieController.expandedLieCases.insert(lieCase.id) }
+                else { lieController.expandedLieCases.remove(lieCase.id) }
+            }
+        }
+
+        private var resultSymbol: String? {
+            guard let selectedStatement = lieController.statements[lieCase.id],
+                  let lieStatement = lieCase.lie else { return nil }
+            return selectedStatement == lieStatement ? "✅" : "❌"
         }
     }
 
