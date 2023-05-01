@@ -32,14 +32,16 @@
         "speakerImage": "curtis_herbert",
         "statement1": "I have my pilot's license",
         "statement2": "I am a surprisingly good dancer",
-        "statement3": "I have lived in Japan for 6 months"
+        "statement3": "I have lived in Japan for 6 months",
+        "lie": "two"
     },
     {
         "speakerName": "Danijela Vrzan",
         "speakerImage": "danijela_vrzan",
         "statement1": "I was a semi professional musician",
         "statement2": "I have a green belt in karate",
-        "statement3": "I know how to lie"
+        "statement3": "I know how to lie",
+        "lie": "three"
     },
     {
         "speakerName": "Ellen Shapiro",
@@ -60,7 +62,8 @@
         "speakerImage": "josh_holtz",
         "statement1": "The first programming language that I learned was Java",
         "statement2": "I can do a backflip",
-        "statement3": "I can speak Japanese"
+        "statement3": "I can speak Japanese",
+        "lie": "one"
     },
     {
         "speakerName": "Kai Dombrowski",
@@ -116,7 +119,8 @@
         "speakerImage": "tunde_adegoroye",
         "statement1": "I used to play for a football academy when I was younger in high school",
         "statement2": "I enjoy eating dry cereal",
-        "statement3": "I'm on TV on a TV show in the background, eating a McDonald's apple pie"
+        "statement3": "I'm on TV on a TV show in the background, eating a McDonald's apple pie",
+        "lie": "one"
     },
     {
         "speakerName": "Via Fairchild",
@@ -137,7 +141,8 @@
         "speakerImage": "vui_nguyen",
         "statement1": "I once caught a kokanee salmon",
         "statement2": "I once caught a northern pike",
-        "statement3": "I once traveled to Beijing China to participate in an IoT hackathon"
+        "statement3": "I once traveled to Beijing China to participate in an IoT hackathon",
+        "lie": "one"
     },
     {
         "speakerName": "Zach Brass",
