@@ -70,14 +70,16 @@
         "speakerImage": "kai_dombrowski",
         "statement1": "I have lived in 4 different countries",
         "statement2": "I’ve worked as a barista in Australia",
-        "statement3": "I can dunk a basketball"
+        "statement3": "I can dunk a basketball",
+        "lie": "two"
     },
     {
         "speakerName": "Malin Sundberg",
         "speakerImage": "malin_sundberg",
         "statement1": "I am part of a beach volleyball team in Canada",
         "statement2": "I’ve worked as a barista in Australia",
-        "statement3": "I was part of a theatre group for 5+ years in Sweden"
+        "statement3": "I was part of a theatre group for 5+ years in Sweden",
+        "lie": "one"
     },
     {
         "speakerName": "Marc Aupont",
