@@ -92,7 +92,8 @@
         "speakerImage": "marc_aupont",
         "statement1": "I am the oldest of 5",
         "statement2": "I am a father of 3",
-        "statement3": "I've loved programming since childhood"
+        "statement3": "I've loved programming since childhood",
+        "lie": "three"
     },
     {
         "speakerName": "Mikaela Caron",
