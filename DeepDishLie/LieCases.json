@@ -60,7 +60,8 @@
         "speakerImage": "emmanuel_crouvisier",
         "statement1": "I drive an electric car every day",
         "statement2": "I've never had a speeding ticket",
-        "statement3": "I used to hate Apple entirely until the iPod came out"
+        "statement3": "I used to hate Apple entirely until the iPod came out",
+        "lie": "one"
     },
     {
         "speakerName": "Josh Holtz",
@@ -146,7 +147,8 @@
         "speakerImage": "vince_davis",
         "statement1": "I have aspirations of being a pilot",
         "statement2": "I love to take vacations in cold areas",
-        "statement3": "I have been to 10 countries"
+        "statement3": "I have been to 10 countries",
+        "lie": "two"
     },
     {
         "speakerName": "Vui Nguyen",
