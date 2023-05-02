@@ -112,7 +112,8 @@
         "speakerImage": "rudrank_riyam",
         "statement1": "I sleep 10-12 hours every day",
         "statement2": "I recently discovered that I love cross platform development",
-        "statement3": "Most of the code that I have written the past few weeks is by ChatGPT"
+        "statement3": "Most of the code that I have written the past few weeks is by ChatGPT",
+        "lie": "two"
     },
     {
         "speakerName": "Simon B. Støvring",
@@ -158,6 +159,7 @@
         "speakerImage": "zach_brass",
         "statement1": "I inherited the world's largest collection of reflex hammers",
         "statement2": "I once had lunch with former UK Speaker of the House John Bercow",
-        "statement3": "I am a registered as an air man despite never having flown a plane"
+        "statement3": "I am a registered as an air man despite never having flown a plane",
+        "lie": "two"
     }
 ]
