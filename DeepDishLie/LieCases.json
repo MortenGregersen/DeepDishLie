@@ -19,7 +19,8 @@
         "speakerImage": "ben_scheirman",
         "statement1": "I have a titanium limb",
         "statement2": "I can juggle 4 balls at once",
-        "statement3": "I used to live next door to a pro baseball player"
+        "statement3": "I used to live next door to a pro baseball player",
+        "lie": "two"
     },
     {
         "speakerName": "Charlie Chapman",
@@ -103,7 +104,8 @@
         "speakerImage": "paul_hudson",
         "statement1": "Before getting into app development, my specialism was women in ancient Greece",
         "statement2": "Both my parents are church ministers",
-        "statement3": "I volunteer at my kid's school, teaching the girls there app development with Swift"
+        "statement3": "I volunteer at my kid's school, teaching the girls there app development with Swift",
+        "lie": "three"
     },
     {
         "speakerName": "Rudrank Riyam",
