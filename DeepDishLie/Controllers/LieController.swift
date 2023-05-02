@@ -11,6 +11,7 @@ class LieController: ObservableObject {
     @Published private var lieCases: [LieCase]
     var validLieCases: [LieCase] { lieCases.filter(\.hasStatements) }
     var solvedLieCasesCount: Int { validLieCases.filter { statements.keys.contains($0.id) }.count }
+    var allSolved: Bool { solvedLieCasesCount == validLieCases.count }
     @Published var expandedLieCases = Set<LieCase.ID>()
     @AppStorage("statements") private var statementsData = Data()
     private(set) var statements: [LieCase.ID: LieCase.Statement?] = [:]

@@ -26,12 +26,8 @@ struct TruthsAndLiesView: View {
         NavigationStack {
             List {
                 Section {
-                    ForEach(lieController.validLieCases.sorted(by: sortComparator)) { lieCase in
-                        LieCaseRow(lieCase: lieCase)
-                    }
-                } header: {
-                    VStack(spacing: 4) {
-                        if lieController.solvedLieCasesCount == lieController.validLieCases.count {
+                    if lieController.allSolved {
+                        VStack(spacing: 4) {
                             HStack {
                                 Text("🎉")
                                     .font(.system(size: 72))
@@ -47,7 +43,17 @@ struct TruthsAndLiesView: View {
                                 .font(.largeTitle)
                             Text("You have found all of the lies")
                                 .padding(.bottom, 8)
-                        } else {
+                        }
+                        .foregroundColor(.accentColor)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 4)
+                    }
+                    ForEach(lieController.validLieCases.sorted(by: sortComparator)) { lieCase in
+                        LieCaseRow(lieCase: lieCase)
+                    }
+                } header: {
+                    if !lieController.allSolved {
+                        VStack(spacing: 4) {
                             HStack {
                                 Text("Progress")
                                 Spacer()
@@ -61,10 +67,10 @@ struct TruthsAndLiesView: View {
                                 }
                             }
                         }
+                        .foregroundColor(.accentColor)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 4)
                     }
-                    .foregroundColor(.accentColor)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 4)
                 }
             }
             .listStyle(.inset)
