@@ -4,7 +4,8 @@
         "speakerImage": "ariel_michaeli",
         "statement1": "I play guitar. I've been playing for years. I am not great",
         "statement2": "I dropped out of college",
-        "statement3": "I started my first (real) company when I was 16 or 17"
+        "statement3": "I started my first (real) company when I was 16 or 17",
+        "lie": "two"
     },
     {
         "speakerName": "Ben Proothi",
@@ -25,7 +26,8 @@
         "speakerImage": "charlie_chapman",
         "statement1": "I've step foot on every US State, except Alaska",
         "statement2": "I've never left the continent of North America, until last summer",
-        "statement3": "My first real job was selling digital cameras at the new defunct Circuit City"
+        "statement3": "My first real job was selling digital cameras at the new defunct Circuit City",
+        "lie": "one"
     },
     {
         "speakerName": "Curtis Herbert",
@@ -93,7 +95,8 @@
         "speakerImage": "mikaela_caron",
         "statement1": "My first iPhone was an iPhone 4S",
         "statement2": "I have an M1 Max MacBook Pro",
-        "statement3": "I have never shipped a Vapor project"
+        "statement3": "I have never shipped a Vapor project",
+        "lie": "one"
     },
     {
         "speakerName": "Paul Hudson",
@@ -114,7 +117,8 @@
         "speakerImage": "simon_storving",
         "statement1": "I am volunteering as a scout leader",
         "statement2": "I am volunteering at a local craft beer bar",
-        "statement3": "I am volunteering at a large music festival"
+        "statement3": "I am volunteering at a large music festival",
+        "lie": "three"
     },
     {
         "speakerName": "Tunde Adegoroye",
@@ -129,7 +133,8 @@
         "speakerImage": "via_fairchild",
         "statement1": "I own a unicycle",
         "statement2": "I climbed and summitted Mount Fuji",
-        "statement3": "I have thalassophobia (fear of deep bodies of water)"
+        "statement3": "I have thalassophobia (fear of deep bodies of water)",
+        "lie": "one"
     },
     {
         "speakerName": "Vince Davis",
