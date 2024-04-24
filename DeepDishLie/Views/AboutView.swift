@@ -11,8 +11,8 @@ struct AboutView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section("The app 🤥") {
-                    Text("Deep Dish Lie was made for the attendees at the Deep Dish Swift conference 2023.")
+                Section("The app ❤️") {
+                    Text("Deep Dish Unofficial was made for the attendees at the Deep Dish Swift conference 2024.")
                 }
                 Section("The conference 🍕") {
                     VStack(alignment: .leading) {
@@ -41,11 +41,11 @@ struct AboutView: View {
                             VStack(alignment: .leading, spacing: 8) {
                                 Text("This app was made by me, **Morten Bjerg Gregersen**")
                                 Text("You can find me at the **Deep Dish Swift this year**.")
-                                Text("A **list of my apps** are available on **[CoolYellowOwl.com](https://CoolYellowOwl.com)**")
+                                Text("Find my apps on **[AtterdagApps.com](https://CoolYellowOwl.com)**")
                             }
                             .frame(maxHeight: .infinity)
                             Spacer(minLength: 8)
-                            Link(destination: URL(string: "https://CoolYellowOwl.com")!) {
+                            Link(destination: URL(string: "https://AtterdagApps.com")!) {
                                 Image("Morten")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -66,7 +66,7 @@ struct AboutView: View {
                                     .frame(width: 100)
                             }
                         }
-                        Text("It is a **native macOS app** for **App Store Connect** and the **Apple Developer Portal**. Find me at the conference and **get a free sticker!** 🎉🕺")
+                        Text("It is a **native macOS and iOS app** for **App Store Connect**. Find me at the conference and **get a free sticker!** 🎉🕺")
                     }
                     .padding(.bottom, 8)
                 }
@@ -76,9 +76,9 @@ struct AboutView: View {
                     Text("Simon Bachmann for [ConfettiSwiftUI](https://github.com/simibac/ConfettiSwiftUI).")
                 }
             }
-            .navigationTitle("About Deep Dish Lie")
+            .navigationTitle("About Deep Dish Unofficial")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color("DarkAccentColor"), for: .navigationBar)
+            .toolbarBackground(Color.accentColor, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
         }
