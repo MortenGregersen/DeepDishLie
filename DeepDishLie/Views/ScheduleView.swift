@@ -58,17 +58,19 @@ private struct EventRow: View {
             }
             if let speakers = event.speakers {
                 Spacer()
-                ForEach(speakers) { speaker in
-                    Image(speaker.image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 50)
-                        .clipShape(Circle())
-                        .background {
-                            Circle()
-                                .fill(Color.accentColor)
-                                .frame(width: 54, height: 54)
-                        }
+                VStack(alignment: .trailing) {
+                    ForEach(speakers) { speaker in
+                        Image(speaker.image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 50)
+                            .clipShape(Circle())
+                            .background {
+                                Circle()
+                                    .fill(Color.accentColor)
+                                    .frame(width: 54, height: 54)
+                            }
+                    }
                 }
             }
         }
