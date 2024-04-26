@@ -22,7 +22,6 @@ class ScheduleController {
             self.events = events
         } else {
             let jsonData = try! Data(contentsOf: Bundle.main.url(forResource: "Schedule", withExtension: "json")!)
-            
             self.events = try! Self.decoder.decode([Event].self, from: jsonData)
         }
     }
