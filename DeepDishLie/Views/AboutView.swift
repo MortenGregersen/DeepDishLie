@@ -12,7 +12,7 @@ struct AboutView: View {
         NavigationStack {
             List {
                 Section("The app ❤️") {
-                    Text("Deep Dish Unofficial was made for the attendees at the Deep Dish Swift conference 2024.")
+                    Text("Deep Dish Unofficial was made for the attendees at the Deep Dish Swift 2024 conference.")
                 }
                 Section("The conference 🍕") {
                     VStack(alignment: .leading) {
