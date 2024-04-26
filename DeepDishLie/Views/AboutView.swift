@@ -13,26 +13,28 @@ struct AboutView: View {
             List {
                 Section("The app ❤️") {
                     Text("Deep Dish Unofficial was made for the attendees at the Deep Dish Swift 2024 conference.")
+                    HStack {
+                        Text("It is open source and available on [GitHub](https://github.com/MortenGregersen/DeepDishLie).")
+                        Spacer()
+                        Image("github")
+                            .renderingMode(.template)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40)
+                    }
                 }
                 Section("The conference 🍕") {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("Deep Dish Swift")
-                                    .font(.title)
-                                Text("A supreme **Swift** developer conference being served in **Chicago, Illinois**. [Read more](https://deepdishswift.com).")
-                            }
-                            Spacer(minLength: 8)
-                            Image("DeepDishSwiftLogo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 100)
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Deep Dish Swift")
+                                .font(.title)
+                            Text("A supreme **Swift** developer conference being served in **Chicago, Illinois**. [Read more](https://deepdishswift.com).")
                         }
-                        Divider()
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("1/2 day of indie development talks")
-                            Text("2 days of Swift and iOS talks")
-                        }
+                        Spacer(minLength: 8)
+                        Image("DeepDishSwiftLogo")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 100)
                     }
                 }
                 Section("The developer 🧑🏽‍💻") {
@@ -73,7 +75,6 @@ struct AboutView: View {
                 Section("Thanks go out to 😍") {
                     Text("Josh for organizing [Deep Dish Swift](https://deepdishswift.com).")
                     Text("Kai and Malin for making the [Slices](https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071) podcast up to the conference.")
-                    Text("Simon Bachmann for [ConfettiSwiftUI](https://github.com/simibac/ConfettiSwiftUI).")
                 }
             }
             .navigationTitle("About Deep Dish Unofficial")
