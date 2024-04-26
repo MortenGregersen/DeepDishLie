@@ -17,11 +17,10 @@ struct DeepDishLieApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                TruthsAndLiesView()
-                    .environmentObject(welcomeController)
-                    .environmentObject(lieController)
+                ScheduleView()
+                    .environment(scheduleController)
                     .tabItem {
-                        Label("Truths and Lies", systemImage: "person.2.wave.2")
+                        Label("Schedule", systemImage: "person.2.wave.2")
                     }
                 AboutView()
                     .tabItem {

@@ -22,14 +22,24 @@
         "start": "2024-05-05T13:45:00-05:00",
         "end": "2024-05-05T14:30:00-05:00",
         "description": "Mining for iOS Nuggets: Unearthing Valuable Swift and SwiftUI Techniques",
-        "speakers": ["Stewart Lynch"]
+        "speakers": [
+            {
+                "name": "Stewart Lynch",
+                "image": "stewart_lynch"
+            }
+        ]
     },
     {
         "id": "dave-delong",
         "start": "2024-05-05T14:45:00-05:00",
         "end": "2024-05-05T15:30:00-05:00",
         "description": "The Temporal Axis of Space-Time",
-        "speakers": ["Dave DeLong"]
+        "speakers": [
+            {
+                "name": "Dave DeLong",
+                "image": "dave_delong"
+            }
+        ]
     },
     {
         "id": "break-sunday",
@@ -42,14 +52,28 @@
         "start": "2024-05-05T16:00:00-05:00",
         "end": "2024-05-05T16:45:00-05:00",
         "description": "So You Want to Make a Vision Pro App",
-        "speakers": ["Jamie", "Jay"]
+        "speakers": [
+            {
+                "name": "Jamie Blumberg",
+                "image": "jamie_blumberg"
+            },
+            {
+                "name": "Jay Soumphount",
+                "image": "jay_soumphount"
+            }
+        ]
     },
     {
         "id": "james-dempsey",
         "start": "2024-05-05T17:00:00-05:00",
         "end": "2024-05-05T17:45:00-05:00",
         "description": "Adventures in Swift Evolution",
-        "speakers": ["James Dempsey"]
+        "speakers": [
+            {
+                "name": "James Dempsey",
+                "image": "james_dempsey"
+            }
+        ]
     },
     {
         "id": "breakfast-monday",
@@ -68,21 +92,36 @@
         "start": "2024-05-06T09:00:00-05:00",
         "end": "2024-05-06T09:45:00-05:00",
         "description": "The Art of Balanced Life",
-        "speakers": ["Krzysztof Zablocki"]
+        "speakers": [
+            {
+                "name": "Krzysztof Zablocki",
+                "image": "krzysztof_zablocki"
+            }
+        ]
     },
     {
         "id": "kim-arnett",
         "start": "2024-05-06T10:00:00-05:00",
         "end": "2024-05-06T10:45:00-05:00",
         "description": "A Swift Introduction to Accessibility",
-        "speakers": ["Kim Arnett"]
+        "speakers": [
+            {
+                "name": "Kim Arnett",
+                "image": "kim_arnett"
+            }
+        ]
     },
     {
         "id": "jordi-bruin",
         "start": "2024-05-06T11:00:00-05:00",
         "end": "2024-05-06T11:45:00-05:00",
         "description": "Shipping a Solution in 30 Minutes",
-        "speakers": ["Jordi Bruin"]
+        "speakers": [
+            {
+                "name": "Jordi Bruin",
+                "image": "jordi_bruin"
+            }
+        ]
     },
     {
         "id": "lunch-monday",
@@ -95,21 +134,36 @@
         "start": "2024-05-06T13:00:00-05:00",
         "end": "2024-05-06T13:45:00-05:00",
         "description": "Building a User-Centric App",
-        "speakers": ["Christian Selig"]
+        "speakers": [
+            {
+                "name": "Christian Selig",
+                "image": "christian_selig"
+            }
+        ]
     },
     {
         "id": "chris-vasselli",
         "start": "2024-05-06T14:00:00-05:00",
         "end": "2024-05-06T14:45:00-05:00",
         "description": "Automation for App Localization",
-        "speakers": ["Chris Vasselli"]
+        "speakers": [
+            {
+                "name": "Chris Vasselli",
+                "image": "chris_vasselli"
+            }
+        ]
     },
     {
         "id": "ariel-michaeli",
         "start": "2024-05-06T15:00:00-05:00",
         "end": "2024-05-06T15:45:00-05:00",
         "description": "Live ASO Roast: You Bring the App, I’ll 'Tell You What’s Wrong'",
-        "speakers": ["Ariel Michaeli"]
+        "speakers": [
+            {
+                "name": "Ariel Michaeli",
+                "image": "ariel_michaeli"
+            }
+        ]
     },
     {
         "id": "break-monday",
@@ -154,21 +208,36 @@
         "start": "2024-05-07T09:00:00-05:00",
         "end": "2024-05-07T09:45:00-05:00",
         "description": "Design-Driven Development",
-        "speakers": ["Craig Clayton"]
+        "speakers": [
+            {
+                "name": "Craig Clayton",
+                "image": "craig_clayton"
+            }
+        ]
     },
     {
         "id": "brad-larson",
         "start": "2024-05-07T10:00:00-05:00",
         "end": "2024-05-07T10:45:00-05:00",
         "description": "Language-integrated Machine Learning Using Differentiable Swift",
-        "speakers": ["Brad Larson"]
+        "speakers": [
+            {
+                "name": "Brad Larson",
+                "image": "brad_larson"
+            }
+        ]
     },
     {
         "id": "jessie-linden",
         "start": "2024-05-07T11:00:00-05:00",
         "end": "2024-05-07T11:45:00-05:00",
         "description": "Grand Gestures in SwiftUI",
-        "speakers": ["Jessie Linden"]
+        "speakers": [
+            {
+                "name": "Jessie Linden",
+                "image": "jessie_linden"
+            }
+        ]
     },
     {
         "id": "lunch-tuesday",
@@ -181,21 +250,36 @@
         "start": "2024-05-07T13:00:00-05:00",
         "end": "2024-05-07T13:45:00-05:00",
         "description": "Diving Deep into Sendable",
-        "speakers": ["Tim Condon"]
+        "speakers": [
+            {
+                "name": "Tim Condon",
+                "image": "tim_condon"
+            }
+        ]
     },
     {
         "id": "kabir-oberai",
         "start": "2024-05-07T14:00:00-05:00",
         "end": "2024-05-07T14:45:00-05:00",
         "description": "Is Your App Secure? Revelations a Jedi Wouldn’t Tell You",
-        "speakers": ["Kabir Oberai"]
+        "speakers": [
+            {
+                "name": "Kabir Oberai",
+                "image": "kabir_oberai"
+            }
+        ]
     },
     {
         "id": "daniel-steinberg",
         "start": "2024-05-07T15:00:00-05:00",
         "end": "2024-05-07T15:45:00-05:00",
         "description": "The Simple Ingredients of a SwiftData App",
-        "speakers": ["Daniel Steinberg"]
+        "speakers": [
+            {
+                "name": "Daniel Steinberg",
+                "image": "daniel_steinberg"
+            }
+        ]
     },
     {
         "id": "concert",
@@ -214,7 +298,12 @@
         "start": "2024-05-07T17:00:00-05:00",
         "end": "2024-05-07T17:45:00-05:00",
         "description": "Closing Keynote",
-        "speakers": ["Dave DeLong"]
+        "speakers": [
+            {
+                "name": "Dave DeLong",
+                "image": "dave_delong"
+            }
+        ]
     },
     {
         "id": "closing-words",
