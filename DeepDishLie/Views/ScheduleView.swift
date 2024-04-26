@@ -25,7 +25,7 @@ struct ScheduleView: View {
                 }
             }
             .listStyle(.inset)
-            .navigationTitle("Schedule")
+            .navigationTitle("Schedule 🍕")
             .toolbarBackground(Color.accentColor, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
