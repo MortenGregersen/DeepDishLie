@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1919FA2BD963900092AF29 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1919F92BD963900092AF29 /* ScheduleView.swift */; };
+		5A1919FC2BD963DD0092AF29 /* Schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A1919FB2BD963DD0092AF29 /* Schedule.json */; };
+		5A1919FE2BDAFF020092AF29 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1919FD2BDAFF020092AF29 /* ScheduleController.swift */; };
+		5A191A012BDBCBE20092AF29 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A191A002BDBCBE20092AF29 /* Day.swift */; };
+		5A191A032BDBCBEF0092AF29 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A191A022BDBCBEF0092AF29 /* Event.swift */; };
+		5A191A052BDBCBFF0092AF29 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A191A042BDBCBFF0092AF29 /* Speaker.swift */; };
+		5A191A092BDBCF8A0092AF29 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 5A191A082BDBCF8A0092AF29 /* Algorithms */; };
 		5A28A90329F803B100B02EE6 /* DeepDishLieSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90229F803B100B02EE6 /* DeepDishLieSnapshots.swift */; };
 		5A28A90C29F803DF00B02EE6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */; };
 		5A28A90E29F86DEC00B02EE6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90D29F86DEC00B02EE6 /* WelcomeView.swift */; };
@@ -33,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A1919F92BD963900092AF29 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		5A1919FB2BD963DD0092AF29 /* Schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Schedule.json; sourceTree = "<group>"; };
+		5A1919FD2BDAFF020092AF29 /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
+		5A191A002BDBCBE20092AF29 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		5A191A022BDBCBEF0092AF29 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		5A191A042BDBCBFF0092AF29 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		5A28A8FB29F8038800B02EE6 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 		5A28A90029F803B100B02EE6 /* DeepDishLieSnapshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepDishLieSnapshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A28A90229F803B100B02EE6 /* DeepDishLieSnapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDishLieSnapshots.swift; sourceTree = "<group>"; };
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A191A092BDBCF8A0092AF29 /* Algorithms in Frameworks */,
 				5A89AFBF29FA6B0600F0AD90 /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +84,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A1919FF2BDBCBDD0092AF29 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A191A002BDBCBE20092AF29 /* Day.swift */,
+				5A191A022BDBCBEF0092AF29 /* Event.swift */,
+				5A191A042BDBCBFF0092AF29 /* Speaker.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A191A072BDBCF8A0092AF29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5A28A90129F803B100B02EE6 /* DeepDishLieSnapshots */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +115,7 @@
 			children = (
 				5A3EFB0729F7D53200D75F5E /* TruthsAndLiesView.swift */,
 				5A28A90D29F86DEC00B02EE6 /* WelcomeView.swift */,
+				5A1919F92BD963900092AF29 /* ScheduleView.swift */,
 				5A28A91329F8729300B02EE6 /* AboutView.swift */,
 			);
 			path = Views;
@@ -94,6 +126,7 @@
 			children = (
 				5A3EFB1429F7D87500D75F5E /* LieController.swift */,
 				5A28A90F29F86E2700B02EE6 /* WelcomeController.swift */,
+				5A1919FD2BDAFF020092AF29 /* ScheduleController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -105,6 +138,7 @@
 				5A28A90129F803B100B02EE6 /* DeepDishLieSnapshots */,
 				5A28A8FB29F8038800B02EE6 /* fastlane */,
 				5A3EFB0329F7D53200D75F5E /* Products */,
+				5A191A072BDBCF8A0092AF29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,11 +154,13 @@
 		5A3EFB0429F7D53200D75F5E /* DeepDishLie */ = {
 			isa = PBXGroup;
 			children = (
+				5A1919FF2BDBCBDD0092AF29 /* Models */,
 				5A28A91229F86F5000B02EE6 /* Controllers */,
 				5A28A91129F86F4E00B02EE6 /* Views */,
 				5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */,
 				5A3EFB0929F7D53300D75F5E /* Assets.xcassets */,
 				5A4D713229F91C0400F7101C /* LieCases.json */,
+				5A1919FB2BD963DD0092AF29 /* Schedule.json */,
 				5A994C4D29F9255D00F799ED /* LaunchScreen.storyboard */,
 				5A994C4C29F924E700F799ED /* Info.plist */,
 				5A3EFB0C29F7D53300D75F5E /* Preview Content */,
@@ -176,6 +212,7 @@
 			name = DeepDishLie;
 			packageProductDependencies = (
 				5A89AFBE29FA6B0600F0AD90 /* ConfettiSwiftUI */,
+				5A191A082BDBCF8A0092AF29 /* Algorithms */,
 			);
 			productName = DeepDishLie;
 			productReference = 5A3EFB0229F7D53200D75F5E /* DeepDishLie.app */;
@@ -211,6 +248,7 @@
 			mainGroup = 5A3EFAF929F7D53200D75F5E;
 			packageReferences = (
 				5A89AFBD29FA6B0600F0AD90 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				5A191A062BDBCF830092AF29 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = 5A3EFB0329F7D53200D75F5E /* Products */;
 			projectDirPath = "";
@@ -234,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1919FC2BD963DD0092AF29 /* Schedule.json in Resources */,
 				5A3EFB0E29F7D53300D75F5E /* Preview Assets.xcassets in Resources */,
 				5A994C4E29F9255D00F799ED /* LaunchScreen.storyboard in Resources */,
 				5A3EFB0A29F7D53300D75F5E /* Assets.xcassets in Resources */,
@@ -260,6 +299,11 @@
 				5A28A91029F86E2700B02EE6 /* WelcomeController.swift in Sources */,
 				5A28A91429F8729300B02EE6 /* AboutView.swift in Sources */,
 				5A28A90E29F86DEC00B02EE6 /* WelcomeView.swift in Sources */,
+				5A1919FA2BD963900092AF29 /* ScheduleView.swift in Sources */,
+				5A191A032BDBCBEF0092AF29 /* Event.swift in Sources */,
+				5A191A052BDBCBFF0092AF29 /* Speaker.swift in Sources */,
+				5A1919FE2BDAFF020092AF29 /* ScheduleController.swift in Sources */,
+				5A191A012BDBCBE20092AF29 /* Day.swift in Sources */,
 				5A3EFB0829F7D53200D75F5E /* TruthsAndLiesView.swift in Sources */,
 				5A3EFB0629F7D53200D75F5E /* DeepDishLieApp.swift in Sources */,
 				5A3EFB1529F7D87500D75F5E /* LieController.swift in Sources */,
@@ -449,7 +493,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.2;
@@ -490,7 +534,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.2;
@@ -540,6 +584,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5A191A062BDBCF830092AF29 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 		5A89AFBD29FA6B0600F0AD90 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
@@ -551,6 +603,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5A191A082BDBCF8A0092AF29 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A191A062BDBCF830092AF29 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
 		5A89AFBE29FA6B0600F0AD90 /* ConfettiSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A89AFBD29FA6B0600F0AD90 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
