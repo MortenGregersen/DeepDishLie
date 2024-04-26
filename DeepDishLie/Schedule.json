@@ -1,24 +1,18 @@
 [
     {
-        "id": "registration-opens",
+        "id": "practical-registration-opens",
         "start": "2024-05-05T11:00:00-05:00",
         "end": "2024-05-05T12:45:00-05:00",
         "description": "Registration opens"
     },
     {
-        "id": "event-intro",
+        "id": "practical-intro",
         "start": "2024-05-05T12:45:00-05:00",
         "end": "2024-05-05T13:00:00-05:00",
         "description": "Event intro",
-        "speakers": [
-            {
-                "name": "Josh Holtz",
-                "image": "josh_holtz"
-            }
-        ]
     },
     {
-        "id": "opening-keynote",
+        "id": "special-opening-keynote",
         "start": "2024-05-05T13:00:00-05:00",
         "end": "2024-05-05T13:45:00-05:00",
         "description": "Opening keynote",
@@ -30,7 +24,7 @@
         ]
     },
     {
-        "id": "stewart-lynch",
+        "id": "session-stewart-lynch",
         "start": "2024-05-05T13:45:00-05:00",
         "end": "2024-05-05T14:30:00-05:00",
         "description": "Mining for iOS Nuggets: Unearthing Valuable Swift and SwiftUI Techniques",
@@ -42,7 +36,7 @@
         ]
     },
     {
-        "id": "dave-delong",
+        "id": "session-dave-delong",
         "start": "2024-05-05T14:45:00-05:00",
         "end": "2024-05-05T15:30:00-05:00",
         "description": "The Temporal Axis of Space-Time",
@@ -57,10 +51,9 @@
         "id": "break-sunday",
         "start": "2024-05-05T15:30:00-05:00",
         "end": "2024-05-05T16:00:00-05:00",
-        "description": "Break"
     },
     {
-        "id": "jamie-jay",
+        "id": "session-jamie-jay",
         "start": "2024-05-05T16:00:00-05:00",
         "end": "2024-05-05T16:45:00-05:00",
         "description": "So You Want to Make a Vision Pro App",
@@ -76,7 +69,7 @@
         ]
     },
     {
-        "id": "james-dempsey",
+        "id": "session-james-dempsey",
         "start": "2024-05-05T17:00:00-05:00",
         "end": "2024-05-05T17:45:00-05:00",
         "description": "Adventures in Swift Evolution",
@@ -90,23 +83,16 @@
     {
         "id": "breakfast-monday",
         "start": "2024-05-06T07:30:00-05:00",
-        "end": "2024-05-06T08:55:00-05:00",
-        "description": "Breakfast (provided by Deep Dish Swift)"
+        "end": "2024-05-06T08:55:00-05:00"
     },
     {
-        "id": "morning-welcome-monday",
+        "id": "practical-morning-welcome-monday",
         "start": "2024-05-06T08:55:00-05:00",
         "end": "2024-05-06T09:00:00-05:00",
-        "description": "Morning welcome",
-        "speakers": [
-            {
-                "name": "Josh Holtz",
-                "image": "josh_holtz"
-            }
-        ]
+        "description": "Morning welcome"
     },
     {
-        "id": "krzysztof-zablocki",
+        "id": "session-krzysztof-zablocki",
         "start": "2024-05-06T09:00:00-05:00",
         "end": "2024-05-06T09:45:00-05:00",
         "description": "The Art of Balanced Life",
@@ -118,7 +104,7 @@
         ]
     },
     {
-        "id": "kim-arnett",
+        "id": "session-kim-arnett",
         "start": "2024-05-06T10:00:00-05:00",
         "end": "2024-05-06T10:45:00-05:00",
         "description": "A Swift Introduction to Accessibility",
@@ -130,7 +116,7 @@
         ]
     },
     {
-        "id": "jordi-bruin",
+        "id": "session-jordi-bruin",
         "start": "2024-05-06T11:00:00-05:00",
         "end": "2024-05-06T11:45:00-05:00",
         "description": "Shipping a Solution in 30 Minutes",
@@ -144,11 +130,10 @@
     {
         "id": "lunch-monday",
         "start": "2024-05-06T11:45:00-05:00",
-        "end": "2024-05-06T13:00:00-05:00",
-        "description": "Lunch (provided by Deep Dish Swift)"
+        "end": "2024-05-06T13:00:00-05:00"
     },
     {
-        "id": "christian-selig",
+        "id": "session-christian-selig",
         "start": "2024-05-06T13:00:00-05:00",
         "end": "2024-05-06T13:45:00-05:00",
         "description": "Building a User-Centric App",
@@ -160,7 +145,7 @@
         ]
     },
     {
-        "id": "chris-vasselli",
+        "id": "session-chris-vasselli",
         "start": "2024-05-06T14:00:00-05:00",
         "end": "2024-05-06T14:45:00-05:00",
         "description": "Automation for App Localization",
@@ -172,7 +157,7 @@
         ]
     },
     {
-        "id": "ariel-michaeli",
+        "id": "session-ariel-michaeli",
         "start": "2024-05-06T15:00:00-05:00",
         "end": "2024-05-06T15:45:00-05:00",
         "description": "Live ASO Roast: You Bring the App, I’ll 'Tell You What’s Wrong'",
@@ -186,11 +171,10 @@
     {
         "id": "break-monday",
         "start": "2024-05-06T15:45:00-05:00",
-        "end": "2024-05-06T16:15:00-05:00",
-        "description": "Break"
+        "end": "2024-05-06T16:15:00-05:00"
     },
     {
-        "id": "launched-live",
+        "id": "special-launched-live",
         "start": "2024-05-06T16:15:00-05:00",
         "end": "2024-05-06T17:30:00-05:00",
         "description": "Launched Live with special guest",
@@ -208,14 +192,6 @@
             {
                 "url": "https://launchedfm.com/",
                 "description": "Launched"
-            },
-            {
-                "url": "https://twitter.com/_chuckyc",
-                "description": "Charlie Chapman"
-            },
-            {
-                "url": "https://twitter.com/seanallen_ev",
-                "description": "Sean Allen"
             }
         ]
     },
@@ -223,10 +199,9 @@
         "id": "breakfast-tuesday",
         "start": "2024-05-07T07:30:00-05:00",
         "end": "2024-05-07T08:55:00-05:00",
-        "description": "Breakfast (provided by Deep Dish Swift)"
     },
     {
-        "id": "morning-welcome-tuesday",
+        "id": "practical-morning-welcome-tuesday",
         "start": "2024-05-07T08:55:00-05:00",
         "end": "2024-05-07T09:00:00-05:00",
         "description": "Morning welcome",
@@ -238,7 +213,7 @@
         ]
     },
     {
-        "id": "craig-clayton",
+        "id": "session-craig-clayton",
         "start": "2024-05-07T09:00:00-05:00",
         "end": "2024-05-07T09:45:00-05:00",
         "description": "Design-Driven Development",
@@ -250,7 +225,7 @@
         ]
     },
     {
-        "id": "brad-larson",
+        "id": "session-brad-larson",
         "start": "2024-05-07T10:00:00-05:00",
         "end": "2024-05-07T10:45:00-05:00",
         "description": "Language-integrated Machine Learning Using Differentiable Swift",
@@ -262,7 +237,7 @@
         ]
     },
     {
-        "id": "jessie-linden",
+        "id": "session-jessie-linden",
         "start": "2024-05-07T11:00:00-05:00",
         "end": "2024-05-07T11:45:00-05:00",
         "description": "Grand Gestures in SwiftUI",
@@ -280,7 +255,7 @@
         "description": "Lunch (provided by Deep Dish Swift)"
     },
     {
-        "id": "tim-condon",
+        "id": "session-tim-condon",
         "start": "2024-05-07T13:00:00-05:00",
         "end": "2024-05-07T13:45:00-05:00",
         "description": "Diving Deep into Sendable",
@@ -292,7 +267,7 @@
         ]
     },
     {
-        "id": "kabir-oberai",
+        "id": "session-kabir-oberai",
         "start": "2024-05-07T14:00:00-05:00",
         "end": "2024-05-07T14:45:00-05:00",
         "description": "Is Your App Secure? Revelations a Jedi Wouldn’t Tell You",
@@ -304,7 +279,7 @@
         ]
     },
     {
-        "id": "daniel-steinberg",
+        "id": "session-daniel-steinberg",
         "start": "2024-05-07T15:00:00-05:00",
         "end": "2024-05-07T15:45:00-05:00",
         "description": "The Simple Ingredients of a SwiftData App",
@@ -316,7 +291,7 @@
         ]
     },
     {
-        "id": "concert",
+        "id": "special-concert",
         "start": "2024-05-07T16:00:00-05:00",
         "end": "2024-05-07T16:45:00-05:00",
         "description": "Musical performance",
@@ -334,7 +309,7 @@
         ]
     },
     {
-        "id": "closing-keynote",
+        "id": "special-closing-keynote",
         "start": "2024-05-07T17:00:00-05:00",
         "end": "2024-05-07T17:45:00-05:00",
         "description": "Closing Keynote",
@@ -346,7 +321,7 @@
         ]
     },
     {
-        "id": "closing-words",
+        "id": "practical-closing-words",
         "start": "2024-05-07T17:45:00-05:00",
         "end": "2024-05-07T18:00:00-05:00",
         "description": "Closing Words",

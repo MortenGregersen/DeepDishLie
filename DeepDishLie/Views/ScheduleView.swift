@@ -17,6 +17,7 @@ struct ScheduleView: View {
                     ForEach(day.events) { event in
                         EventRow(event: event)
                     }
+                    .listRowInsets(.init(top: 8, leading: 12, bottom: 8, trailing: 12))
                 } header: {
                     Text(day.name)
                         .font(.title2)
@@ -24,7 +25,8 @@ struct ScheduleView: View {
                         .foregroundStyle(Color.accentColor)
                 }
             }
-            .listStyle(.inset)
+            .listStyle(.plain)
+            
             .navigationTitle("Schedule 🍕")
             .toolbarBackground(Color.accentColor, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
@@ -54,10 +56,11 @@ private struct EventRow: View {
                     .font(.headline)
                 if let speakers = event.speakers {
                     Text(ListFormatter.localizedString(byJoining: speakers.map(\.name)))
+                        .foregroundStyle(.secondary)
                 }
             }
             if let speakers = event.speakers {
-                Spacer()
+                Spacer(minLength: 12)
                 VStack(alignment: .trailing) {
                     ForEach(speakers) { speaker in
                         Image(speaker.image)
