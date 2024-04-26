@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,36 +17,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
-                                <rect key="frame" x="0.0" y="832" width="393" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DeepDishLieLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Sch-TK-JPZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DeepDishSwiftLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Sch-TK-JPZ">
                                 <rect key="frame" x="53" y="197.66666666666663" width="287" height="282"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="287" id="CuZ-C0-u7M"/>
                                     <constraint firstAttribute="height" constant="282" id="E6q-cJ-0CH"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep Dish Lie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RN2-ht-PMn">
-                                <rect key="frame" x="58" y="494.66666666666674" width="277" height="53"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
-                                <color key="textColor" red="0.99607843137254903" green="0.89411764705882346" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5g-hR-sCw">
+                                <rect key="frame" x="0.0" y="479.66666666666674" width="393" height="99"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep Dish Swift" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RN2-ht-PMn">
+                                        <rect key="frame" x="35" y="8" width="323" height="53"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
+                                        <color key="textColor" name="AccentColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unofficial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vbN-1u-l7e">
+                                        <rect key="frame" x="200.66666666666663" y="60.999999999999943" width="172.33333333333337" height="38"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                        <color key="textColor" name="AccentColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="vbN-1u-l7e" secondAttribute="bottom" id="89u-M1-cE7"/>
+                                    <constraint firstAttribute="trailing" secondItem="vbN-1u-l7e" secondAttribute="trailing" constant="20" symbolic="YES" id="KCi-Nl-Rv1"/>
+                                    <constraint firstItem="vbN-1u-l7e" firstAttribute="top" secondItem="RN2-ht-PMn" secondAttribute="bottom" id="Ol7-Am-X6o"/>
+                                    <constraint firstItem="RN2-ht-PMn" firstAttribute="top" secondItem="e5g-hR-sCw" secondAttribute="top" constant="8" id="Y3C-mh-6RX"/>
+                                    <constraint firstItem="RN2-ht-PMn" firstAttribute="centerX" secondItem="e5g-hR-sCw" secondAttribute="centerX" id="YCr-5r-wGt"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
-                        <color key="backgroundColor" name="DarkAccentColor"/>
                         <constraints>
-                            <constraint firstItem="RN2-ht-PMn" firstAttribute="centerX" secondItem="Sch-TK-JPZ" secondAttribute="centerX" id="1s6-kJ-upe"/>
-                            <constraint firstItem="RN2-ht-PMn" firstAttribute="top" secondItem="Sch-TK-JPZ" secondAttribute="bottom" constant="15" id="3ES-Iv-cGy"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="5cz-MP-9tL"/>
                             <constraint firstItem="Sch-TK-JPZ" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" constant="-100" id="HNH-y1-c30"/>
+                            <constraint firstItem="e5g-hR-sCw" firstAttribute="top" secondItem="Sch-TK-JPZ" secondAttribute="bottom" id="Mgt-lc-xkv"/>
                             <constraint firstItem="Sch-TK-JPZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SJo-CB-j3B"/>
-                            <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="20" symbolic="YES" id="SfN-ll-jLj"/>
-                            <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
+                            <constraint firstItem="e5g-hR-sCw" firstAttribute="trailing" secondItem="Bcu-3y-fUS" secondAttribute="trailing" id="mKk-sF-9hT"/>
+                            <constraint firstItem="e5g-hR-sCw" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="rNW-Q7-xuu"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -56,9 +66,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DeepDishLieLogo" width="860" height="848"/>
-        <namedColor name="DarkAccentColor">
-            <color red="0.56499999761581421" green="0.23899999260902405" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="DeepDishSwiftLogo" width="220" height="225"/>
+        <namedColor name="AccentColor">
+            <color red="0.7839999794960022" green="0.25099998712539673" blue="0.24300000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
