@@ -9,8 +9,6 @@ import SwiftUI
 
 @main
 struct DeepDishLieApp: App {
-    @StateObject private var welcomeController = WelcomeController()
-    @StateObject private var lieController: LieController = inDemoMode ? .forPreview(numberOfLiesSolved: 10) : .init()
     @State private var scheduleController = ScheduleController()
     static let inDemoMode = UserDefaults.standard.bool(forKey: "Demo")
 
@@ -29,7 +27,6 @@ struct DeepDishLieApp: App {
             }
             .task {
                 if !Self.inDemoMode {
-                    await lieController.fetchLieCases()
                     await scheduleController.fetchEvents()
                 }
             }
