@@ -9,38 +9,13 @@ import SwiftUI
 
 struct ScheduleView: View {
     @Environment(ScheduleController.self) private var scheduleController
-    
+
     var body: some View {
         NavigationStack {
             List(scheduleController.days) { day in
                 Section {
                     ForEach(day.events) { event in
-                        HStack(alignment: .top) {
-                            VStack {
-                                Text(event.start.formatted(date: .omitted, time: .shortened))
-                                Text(event.end.formatted(date: .omitted, time: .shortened))
-                            }
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(Color.accentColor)
-                            VStack(alignment: .leading) {
-                                Text(event.description)
-                                    .font(.headline)
-                                if let speakers = event.speakers {
-                                    Text(ListFormatter.localizedString(byJoining: speakers.map(\.name)))
-                                }
-                            }
-                            if let speakers = event.speakers {
-                                Spacer()
-                                ForEach(speakers) { speaker in
-                                    Image(speaker.image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 50)
-                                        .clipShape(Circle())
-                                }
-                            }
-                        }
+                        EventRow(event: event)
                     }
                 } header: {
                     Text(day.name)
@@ -54,6 +29,79 @@ struct ScheduleView: View {
             .toolbarBackground(Color.accentColor, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
+        }
+    }
+}
+
+private struct EventRow: View {
+    let event: Event
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
+    var body: some View {
+        HStack(alignment: .top) {
+            VStack {
+                Text(event.start.formatted(date: .omitted, time: .shortened))
+                Text(event.end.formatted(date: .omitted, time: .shortened))
+            }
+            .font(.subheadline)
+            .fontWeight(.semibold)
+            .foregroundStyle(Color.accentColor)
+            .containerRelativeFrame(.horizontal) { length, _ in
+                length / dateFrameDivider
+            }
+            VStack(alignment: .leading) {
+                Text(event.description)
+                    .font(.headline)
+                if let speakers = event.speakers {
+                    Text(ListFormatter.localizedString(byJoining: speakers.map(\.name)))
+                }
+            }
+            if let speakers = event.speakers {
+                Spacer()
+                ForEach(speakers) { speaker in
+                    Image(speaker.image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 50)
+                        .clipShape(Circle())
+                        .background {
+                            Circle()
+                                .fill(Color.accentColor)
+                                .frame(width: 54, height: 54)
+                        }
+                }
+            }
+        }
+    }
+    
+    private var dateFrameDivider: CGFloat {
+        switch dynamicTypeSize {
+        case .xSmall:
+            6
+        case .small:
+            6
+        case .medium:
+            6
+        case .large:
+            5
+        case .xLarge:
+            5
+        case .xxLarge:
+            4
+        case .xxxLarge:
+            4
+        case .accessibility1:
+            3
+        case .accessibility2:
+            3
+        case .accessibility3:
+            2
+        case .accessibility4:
+            2
+        case .accessibility5:
+            2
+        @unknown default:
+            5
         }
     }
 }
