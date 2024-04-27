@@ -37,6 +37,7 @@ struct ScheduleView: View {
 private struct EventRow: View {
     let event: Event
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     private static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
@@ -67,18 +68,13 @@ private struct EventRow: View {
             }
             if let speakers = event.speakers {
                 Spacer(minLength: 12)
-                VStack(alignment: .trailing) {
-                    ForEach(speakers) { speaker in
-                        Image(speaker.image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 50)
-                            .clipShape(Circle())
-                            .background {
-                                Circle()
-                                    .fill(Color.accentColor)
-                                    .frame(width: 54, height: 54)
-                            }
+                if horizontalSizeClass == .compact {
+                    VStack(alignment: .trailing) {
+                        speakerImages(speakers: speakers)
+                    }
+                } else {
+                    HStack {
+                        speakerImages(speakers: speakers)
                     }
                 }
             } else if let emoji = event.emoji {
@@ -95,6 +91,21 @@ private struct EventRow: View {
             }
         }
         .listRowBackground(listRowBackgroundColor)
+    }
+
+    private func speakerImages(speakers: [Speaker]) -> some View {
+        ForEach(speakers) { speaker in
+            Image(speaker.image)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 50)
+                .clipShape(Circle())
+                .background {
+                    Circle()
+                        .fill(Color.accentColor)
+                        .frame(width: 54, height: 54)
+                }
+        }
     }
 
     private var listRowBackgroundColor: Color? {
