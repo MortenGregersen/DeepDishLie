@@ -92,7 +92,7 @@ struct WeatherView: View {
     }
 
     @ViewBuilder private func verdict(weather: Weather) -> some View {
-        let info = if weather.currentWeather.temperature.converted(to: .fahrenheit).value > 70 {
+        let info = if weather.currentWeather.temperature.converted(to: .fahrenheit).value < 70 {
             (emoji: "🥶", text: "Chris Wu doesn't like this weather... 👎")
         } else {
             (emoji: "💚", text: "Chris Wu loves this weather! 👍")
