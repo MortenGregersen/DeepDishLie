@@ -73,8 +73,8 @@ struct AboutView: View {
                     .padding(.bottom, 8)
                 }
                 Section("Thanks go out to 😍") {
-                    Text("Josh for organizing [Deep Dish Swift](https://deepdishswift.com).")
-                    Text("Kai and Malin for making the [Slices](https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071) podcast up to the conference.")
+                    Text("Josh and Kari for organizing [Deep Dish Swift](https://deepdishswift.com) 🍕")
+                    Text("Kai and Malin for making the [Slices](https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071) podcast up to the conference 🎧")
                 }
             }
             .navigationTitle("About Deep Dish Unofficial")
