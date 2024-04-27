@@ -36,7 +36,8 @@ class ScheduleController {
     @MainActor func fetchEvents() async {
         do {
             let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/main/DeepDishLie/Schedule.json")!
-            let (data, response) = try await URLSession.shared.data(from: url)
+            let urlRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
+            let (data, response) = try await URLSession.shared.data(for: urlRequest)
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
             days = try chunkUpEvents(Self.decoder.decode([Event].self, from: data))
             guard let cacheFolderURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else { return }
