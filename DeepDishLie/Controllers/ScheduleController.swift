@@ -35,7 +35,7 @@ class ScheduleController {
 
     @MainActor func fetchEvents() async {
         do {
-            let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/schedule/DeepDishLie/Schedule.json")!
+            let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/main/DeepDishLie/Schedule.json")!
             let (data, response) = try await URLSession.shared.data(from: url)
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
             days = try chunkUpEvents(Self.decoder.decode([Event].self, from: data))

@@ -82,19 +82,19 @@
     },
     {
         "id": "breakfast-monday",
-        "start": "2024-05-06T07:30:00-05:00",
-        "end": "2024-05-06T08:55:00-05:00"
+        "start": "2024-05-06T07:00:00-05:00",
+        "end": "2024-05-06T08:30:00-05:00"
     },
     {
         "id": "practical-morning-welcome-monday",
-        "start": "2024-05-06T08:55:00-05:00",
-        "end": "2024-05-06T09:00:00-05:00",
+        "start": "2024-05-06T08:30:00-05:00",
+        "end": "2024-05-06T08:35:00-05:00",
         "description": "Morning welcome"
     },
     {
         "id": "session-krzysztof-zablocki",
-        "start": "2024-05-06T09:00:00-05:00",
-        "end": "2024-05-06T09:45:00-05:00",
+        "start": "2024-05-06T08:35:00-05:00",
+        "end": "2024-05-06T09:15:00-05:00",
         "description": "The Art of Balanced Life",
         "speakers": [
             {
@@ -105,8 +105,8 @@
     },
     {
         "id": "session-kim-arnett",
-        "start": "2024-05-06T10:00:00-05:00",
-        "end": "2024-05-06T10:45:00-05:00",
+        "start": "2024-05-06T09:30:00-05:00",
+        "end": "2024-05-06T10:10:00-05:00",
         "description": "A Swift Introduction to Accessibility",
         "speakers": [
             {
@@ -116,9 +116,21 @@
         ]
     },
     {
+        "id": "session-craig-clayton",
+        "start": "2024-05-06T10:20:00-05:00",
+        "end": "2024-05-06T11:00:00-05:00",
+        "description": "Design-Driven Development",
+        "speakers": [
+            {
+                "name": "Craig Clayton",
+                "image": "craig_clayton"
+            }
+        ]
+    },
+    {
         "id": "session-jordi-bruin",
-        "start": "2024-05-06T11:00:00-05:00",
-        "end": "2024-05-06T11:45:00-05:00",
+        "start": "2024-05-06T11:10:00-05:00",
+        "end": "2024-05-06T11:50:00-05:00",
         "description": "Shipping a Solution in 30 Minutes",
         "speakers": [
             {
@@ -207,16 +219,10 @@
         "description": "Morning welcome"
     },
     {
-        "id": "session-craig-clayton",
+        "id": "special-apple",
         "start": "2024-05-07T09:00:00-05:00",
-        "end": "2024-05-07T09:45:00-05:00",
-        "description": "Design-Driven Development",
-        "speakers": [
-            {
-                "name": "Craig Clayton",
-                "image": "craig_clayton"
-            }
-        ]
+        "end": "2024-05-07T10:00:00-05:00",
+        "description": "Apple Event Watch Party"
     },
     {
         "id": "session-brad-larson",
@@ -246,7 +252,7 @@
         "id": "lunch-tuesday",
         "start": "2024-05-07T11:45:00-05:00",
         "end": "2024-05-07T13:00:00-05:00",
-        "description": "Lunch (provided by Deep Dish Swift)"
+        "description": "Lunch"
     },
     {
         "id": "session-tim-condon",

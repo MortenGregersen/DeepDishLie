@@ -37,12 +37,19 @@ struct ScheduleView: View {
 private struct EventRow: View {
     let event: Event
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    private static let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .none
+        dateFormatter.timeStyle = .short
+        dateFormatter.timeZone = TimeZone(identifier: "America/Chicago")
+        return dateFormatter
+    }()
 
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
             VStack(alignment: .trailing) {
-                Text(event.start.formatted(date: .omitted, time: .shortened))
-                Text(event.end.formatted(date: .omitted, time: .shortened))
+                Text(Self.dateFormatter.string(from: event.start))
+                Text(Self.dateFormatter.string(from: event.end))
             }
             .font(.subheadline)
             .fontWeight(.semibold)

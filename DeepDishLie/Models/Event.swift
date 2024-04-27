@@ -92,6 +92,8 @@ enum Event: Decodable, Identifiable {
                 return "☀️"
             } else if session.id.hasPrefix("special-concert") {
                 return "🎸"
+            } else if session.id.hasPrefix("special-apple") {
+                return "🍎"
             } else if session.id.hasPrefix("practical-closing") {
                 return "👋"
             }
