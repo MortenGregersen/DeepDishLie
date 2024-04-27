@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0574E22BDD889E00D87585 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0574E12BDD889E00D87585 /* WeatherView.swift */; };
 		5A1919FA2BD963900092AF29 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1919F92BD963900092AF29 /* ScheduleView.swift */; };
 		5A1919FC2BD963DD0092AF29 /* Schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A1919FB2BD963DD0092AF29 /* Schedule.json */; };
 		5A1919FE2BDAFF020092AF29 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1919FD2BDAFF020092AF29 /* ScheduleController.swift */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A0574E12BDD889E00D87585 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		5A0574E32BDD8BC400D87585 /* DeepDishLie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeepDishLie.entitlements; sourceTree = "<group>"; };
 		5A1919F92BD963900092AF29 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		5A1919FB2BD963DD0092AF29 /* Schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Schedule.json; sourceTree = "<group>"; };
 		5A1919FD2BDAFF020092AF29 /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				5A1919F92BD963900092AF29 /* ScheduleView.swift */,
+				5A0574E12BDD889E00D87585 /* WeatherView.swift */,
 				5A28A91329F8729300B02EE6 /* AboutView.swift */,
 			);
 			path = Views;
@@ -150,6 +154,7 @@
 				5A4D713229F91C0400F7101C /* LieCases.json */,
 				5A1919FB2BD963DD0092AF29 /* Schedule.json */,
 				5A994C4D29F9255D00F799ED /* LaunchScreen.storyboard */,
+				5A0574E32BDD8BC400D87585 /* DeepDishLie.entitlements */,
 				5A994C4C29F924E700F799ED /* Info.plist */,
 				5A3EFB0C29F7D53300D75F5E /* Preview Content */,
 			);
@@ -291,6 +296,7 @@
 				5A1919FE2BDAFF020092AF29 /* ScheduleController.swift in Sources */,
 				5A191A012BDBCBE20092AF29 /* Day.swift in Sources */,
 				5A3EFB0629F7D53200D75F5E /* DeepDishLieApp.swift in Sources */,
+				5A0574E22BDD889E00D87585 /* WeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DeepDishLie/DeepDishLie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
@@ -506,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DeepDishLie/DeepDishLie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;

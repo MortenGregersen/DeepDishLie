@@ -20,6 +20,10 @@ struct DeepDishLieApp: App {
                     .tabItem {
                         Label("Schedule", systemImage: "person.2.wave.2")
                     }
+                WeatherView()
+                    .tabItem {
+                        Label("Wu with the Weather", systemImage: "thermometer.sun.fill")
+                    }
                 AboutView()
                     .tabItem {
                         Label("About", systemImage: "text.badge.star")
