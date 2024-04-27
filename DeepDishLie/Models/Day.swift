@@ -10,5 +10,5 @@ import Foundation
 struct Day: Identifiable {
     var id: String { name }
     let name: String
-    let events: [Event]
+    var events: [Event]
 }

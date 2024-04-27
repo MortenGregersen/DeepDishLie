@@ -5,7 +5,6 @@
 //  Created by Morten Bjerg Gregersen on 25/04/2024.
 //
 
-import Algorithms
 import Foundation
 
 @Observable
@@ -51,10 +50,18 @@ class ScheduleController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         dateFormatter.timeZone = TimeZone(identifier: "America/Chicago")
-        return events.chunked(on: { dateFormatter.string(from: $0.start) })
-            .map { dayName, events in
-                Day(name: dayName, events: Array(events))
+        return events
+            .reduce(into: [String: Day]()) { partialResult, event in
+                let dayName = dateFormatter.string(from: event.start)
+                if var day = partialResult[dayName] {
+                    day.events.append(event)
+                    day.events.sort(using: KeyPathComparator(\Event.start))
+                    partialResult[dayName] = day
+                } else {
+                    partialResult[dayName] = .init(name: dayName, events: [event])
+                }
             }
+            .map(\.value)
     }
 }
 
