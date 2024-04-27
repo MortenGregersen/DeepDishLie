@@ -21,7 +21,6 @@
 		5A3EFB0629F7D53200D75F5E /* DeepDishLieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */; };
 		5A3EFB0A29F7D53300D75F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0929F7D53300D75F5E /* Assets.xcassets */; };
 		5A3EFB0E29F7D53300D75F5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0D29F7D53300D75F5E /* Preview Assets.xcassets */; };
-		5A89AFBF29FA6B0600F0AD90 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A89AFBE29FA6B0600F0AD90 /* ConfettiSwiftUI */; };
 		5A994C4E29F9255D00F799ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A994C4D29F9255D00F799ED /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +69,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A191A092BDBCF8A0092AF29 /* Algorithms in Frameworks */,
-				5A89AFBF29FA6B0600F0AD90 /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +199,6 @@
 			);
 			name = DeepDishLie;
 			packageProductDependencies = (
-				5A89AFBE29FA6B0600F0AD90 /* ConfettiSwiftUI */,
 				5A191A082BDBCF8A0092AF29 /* Algorithms */,
 			);
 			productName = DeepDishLie;
@@ -237,7 +234,6 @@
 			);
 			mainGroup = 5A3EFAF929F7D53200D75F5E;
 			packageReferences = (
-				5A89AFBD29FA6B0600F0AD90 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 				5A191A062BDBCF830092AF29 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = 5A3EFB0329F7D53200D75F5E /* Products */;
@@ -588,14 +584,6 @@
 				minimumVersion = 1.2.0;
 			};
 		};
-		5A89AFBD29FA6B0600F0AD90 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -603,11 +591,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A191A062BDBCF830092AF29 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
-		};
-		5A89AFBE29FA6B0600F0AD90 /* ConfettiSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5A89AFBD29FA6B0600F0AD90 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
-			productName = ConfettiSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
