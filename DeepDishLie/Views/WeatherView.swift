@@ -20,10 +20,10 @@ struct WeatherView: View {
                 if let weather {
                     Spacer()
                     Text("The temperature in Rosemont is")
-                    Text(weather.currentWeather.temperature.formatted())
+                    Text(weather.currentWeather.temperature.formatted(.measurement(width: .narrow, numberFormatStyle: .number.precision(.fractionLength(1)))))
                         .font(.system(size: 80))
                         .fontWeight(.semibold)
-                    Text("Feels like \(weather.currentWeather.apparentTemperature.formatted())")
+                    Text("Feels like \(weather.currentWeather.apparentTemperature.formatted(.measurement(width: .narrow, numberFormatStyle: .number.precision(.fractionLength(1)))))")
                         .font(.title2)
                     Spacer()
                     verdict(weather: weather)
