@@ -80,6 +80,33 @@ enum Event: Decodable, Identifiable {
         }
     }
 
+    var emoji: String? {
+        switch self {
+        case .practical(let session),
+             .special(let session):
+            if session.id.hasPrefix("practical-registration") {
+                return "🪪"
+            } else if session.id.hasPrefix("practical-intro") {
+                return "🤗"
+            } else if session.id.hasPrefix("practical-morning-welcome") {
+                return "☀️"
+            } else if session.id.hasPrefix("special-concert") {
+                return "🎸"
+            } else if session.id.hasPrefix("practical-closing") {
+                return "👋"
+            }
+            return nil
+        case .pause:
+            return "☕️"
+        case .breakfast:
+            return "🥐"
+        case .lunch:
+            return "🥪"
+        default:
+            return nil
+        }
+    }
+
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let id = try container.decode(String.self, forKey: .id)

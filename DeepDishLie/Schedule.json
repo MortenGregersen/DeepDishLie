@@ -9,7 +9,7 @@
         "id": "practical-intro",
         "start": "2024-05-05T12:45:00-05:00",
         "end": "2024-05-05T13:00:00-05:00",
-        "description": "Event intro",
+        "description": "Event intro"
     },
     {
         "id": "special-opening-keynote",
@@ -204,13 +204,7 @@
         "id": "practical-morning-welcome-tuesday",
         "start": "2024-05-07T08:55:00-05:00",
         "end": "2024-05-07T09:00:00-05:00",
-        "description": "Morning welcome",
-        "speakers": [
-            {
-                "name": "Josh Holtz",
-                "image": "josh_holtz"
-            }
-        ]
+        "description": "Morning welcome"
     },
     {
         "id": "session-craig-clayton",
@@ -295,12 +289,6 @@
         "start": "2024-05-07T16:00:00-05:00",
         "end": "2024-05-07T16:45:00-05:00",
         "description": "Musical performance",
-        "speakers": [
-            {
-                "name": "James Dempsey and the Breakpoints",
-                "image": "james_dempsey"
-            }
-        ],
         "links": [
             {
                 "url": "https://jamesdempsey.net/music",
@@ -324,12 +312,6 @@
         "id": "practical-closing-words",
         "start": "2024-05-07T17:45:00-05:00",
         "end": "2024-05-07T18:00:00-05:00",
-        "description": "Closing Words",
-        "speakers": [
-            {
-                "name": "Josh Holtz",
-                "image": "josh_holtz"
-            }
-        ]
+        "description": "Closing Words"
     }
 ]

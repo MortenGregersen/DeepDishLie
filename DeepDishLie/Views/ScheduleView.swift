@@ -15,26 +15,9 @@ struct ScheduleView: View {
             List(scheduleController.days) { day in
                 Section {
                     ForEach(day.events) { event in
-                        switch event {
-                        case .practical(let session):
-                            Text(session.description)
-                                .listRowBackground(Color.accentColor.opacity(0.2))
-                        case .session(let session):
-                            EventRow(event: session)
-                        case .special(let session):
-                            Text(session.description)
-                                .listRowBackground(Color.accentColor.opacity(0.1))
-                        case .breakfast(let event):
-                            Text(event.id)
-                                .listRowBackground(Color.accentColor.opacity(0.5))
-                        case .lunch(let event):
-                            Text(event.id)
-                        case .pause(let event):
-                            Text(event.id)
-                        }
-                        
+                        EventRow(event: event)
+                            .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
                     }
-                    .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
                 } header: {
                     Text(day.name)
                         .font(.title2)
@@ -43,7 +26,7 @@ struct ScheduleView: View {
                 }
             }
             .listStyle(.plain)
-            
+
             .navigationTitle("Schedule 🍕")
             .toolbarBackground(Color.accentColor, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
@@ -53,7 +36,7 @@ struct ScheduleView: View {
 }
 
 private struct EventRow: View {
-    let event: Session
+    let event: Event
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
@@ -92,10 +75,39 @@ private struct EventRow: View {
                             }
                     }
                 }
+            } else if let emoji = event.emoji {
+                Spacer(minLength: 12)
+                VStack(alignment: .trailing) {
+                    VStack {
+                        Text(emoji)
+                            .font(.largeTitle)
+                    }
+                    .frame(width: 50, height: 50)
+                    .background(Color.accentColor)
+                    .clipShape(Circle())
+                }
             }
         }
+        .listRowBackground(listRowBackgroundColor)
     }
-    
+
+    private var listRowBackgroundColor: Color? {
+        switch event {
+        case .practical:
+            Color.accentColor.opacity(0.2)
+        case .session:
+            nil
+        case .special:
+            Color.accentColor.opacity(0.1)
+        case .pause:
+            Color.accentColor.opacity(0.3)
+        case .breakfast:
+            Color.accentColor.opacity(0.4)
+        case .lunch:
+            Color.accentColor.opacity(0.4)
+        }
+    }
+
     private var dateFrameDivider: CGFloat {
         switch dynamicTypeSize {
         case .xSmall:
