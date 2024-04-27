@@ -125,7 +125,7 @@ private struct EventRow: View {
         case .large:
             5
         case .xLarge:
-            5
+            4
         case .xxLarge:
             4
         case .xxxLarge:
