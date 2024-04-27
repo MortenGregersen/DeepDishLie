@@ -15,9 +15,26 @@ struct ScheduleView: View {
             List(scheduleController.days) { day in
                 Section {
                     ForEach(day.events) { event in
-                        EventRow(event: event)
+                        switch event {
+                        case .practical(let session):
+                            Text(session.description)
+                                .listRowBackground(Color.accentColor.opacity(0.2))
+                        case .session(let session):
+                            EventRow(event: session)
+                        case .special(let session):
+                            Text(session.description)
+                                .listRowBackground(Color.accentColor.opacity(0.1))
+                        case .breakfast(let event):
+                            Text(event.id)
+                                .listRowBackground(Color.accentColor.opacity(0.5))
+                        case .lunch(let event):
+                            Text(event.id)
+                        case .pause(let event):
+                            Text(event.id)
+                        }
+                        
                     }
-                    .listRowInsets(.init(top: 8, leading: 12, bottom: 8, trailing: 12))
+                    .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
                 } header: {
                     Text(day.name)
                         .font(.title2)
@@ -36,12 +53,12 @@ struct ScheduleView: View {
 }
 
 private struct EventRow: View {
-    let event: Event
+    let event: Session
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
-        HStack(alignment: .top) {
-            VStack {
+        HStack(alignment: .top, spacing: 0) {
+            VStack(alignment: .trailing) {
                 Text(event.start.formatted(date: .omitted, time: .shortened))
                 Text(event.end.formatted(date: .omitted, time: .shortened))
             }
