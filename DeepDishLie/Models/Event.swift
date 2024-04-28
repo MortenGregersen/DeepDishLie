@@ -133,6 +133,14 @@ enum Event: Decodable, Identifiable {
         case end
         case speakers
     }
+    
+    static let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .none
+        dateFormatter.timeStyle = .short
+        dateFormatter.timeZone = TimeZone(identifier: "America/Chicago")
+        return dateFormatter
+    }()
 }
 
 struct Break: Decodable, Identifiable {

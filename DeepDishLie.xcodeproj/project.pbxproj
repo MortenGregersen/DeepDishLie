@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0467EA2BDEC81300F01462 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0467E92BDEC81300F01462 /* EventView.swift */; };
 		5A0574E22BDD889E00D87585 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0574E12BDD889E00D87585 /* WeatherView.swift */; };
 		5A1919FA2BD963900092AF29 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1919F92BD963900092AF29 /* ScheduleView.swift */; };
 		5A1919FC2BD963DD0092AF29 /* Schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A1919FB2BD963DD0092AF29 /* Schedule.json */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A0467E92BDEC81300F01462 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		5A0574E12BDD889E00D87585 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		5A0574E32BDD8BC400D87585 /* DeepDishLie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeepDishLie.entitlements; sourceTree = "<group>"; };
 		5A1919F92BD963900092AF29 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				5A1919F92BD963900092AF29 /* ScheduleView.swift */,
+				5A0467E92BDEC81300F01462 /* EventView.swift */,
 				5A0574E12BDD889E00D87585 /* WeatherView.swift */,
 				5A28A91329F8729300B02EE6 /* AboutView.swift */,
 			);
@@ -280,6 +283,7 @@
 				5A28A91429F8729300B02EE6 /* AboutView.swift in Sources */,
 				5A1919FA2BD963900092AF29 /* ScheduleView.swift in Sources */,
 				5A191A032BDBCBEF0092AF29 /* Event.swift in Sources */,
+				5A0467EA2BDEC81300F01462 /* EventView.swift in Sources */,
 				5A191A052BDBCBFF0092AF29 /* Speaker.swift in Sources */,
 				5A1919FE2BDAFF020092AF29 /* ScheduleController.swift in Sources */,
 				5A191A012BDBCBE20092AF29 /* Day.swift in Sources */,

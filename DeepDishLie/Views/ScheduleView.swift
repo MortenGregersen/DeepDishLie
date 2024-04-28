@@ -15,7 +15,7 @@ struct ScheduleView: View {
             List(scheduleController.days) { day in
                 Section {
                     ForEach(day.events) { event in
-                        EventRow(event: event)
+                        EventRow(dayName: day.name, event: event)
                             .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
                     }
                 } header: {
@@ -35,58 +35,56 @@ struct ScheduleView: View {
 }
 
 private struct EventRow: View {
+    let dayName: String
     let event: Event
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    private static let dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .none
-        dateFormatter.timeStyle = .short
-        dateFormatter.timeZone = TimeZone(identifier: "America/Chicago")
-        return dateFormatter
-    }()
 
     var body: some View {
-        HStack(alignment: .top, spacing: 0) {
-            VStack(alignment: .trailing) {
-                Text(Self.dateFormatter.string(from: event.start))
-                Text(Self.dateFormatter.string(from: event.end))
-            }
-            .font(.subheadline)
-            .fontWeight(.semibold)
-            .foregroundStyle(Color.accentColor)
-            .containerRelativeFrame(.horizontal) { length, _ in
-                length / dateFrameDivider
-            }
-            VStack(alignment: .leading) {
-                Text(event.description)
-                    .font(.headline)
-                if let speakers = event.speakers {
-                    Text(ListFormatter.localizedString(byJoining: speakers.map(\.name)))
-                        .foregroundStyle(.secondary)
-                }
-            }
-            if let speakers = event.speakers {
-                Spacer(minLength: 12)
-                if horizontalSizeClass == .compact {
-                    VStack(alignment: .trailing) {
-                        speakerImages(speakers: speakers)
-                    }
-                } else {
-                    HStack {
-                        speakerImages(speakers: speakers)
-                    }
-                }
-            } else if let emoji = event.emoji {
-                Spacer(minLength: 12)
+        NavigationLink {
+            EventView(dayName: dayName, event: event)
+        } label: {
+            HStack(alignment: .top, spacing: 0) {
                 VStack(alignment: .trailing) {
-                    VStack {
-                        Text(emoji)
-                            .font(.largeTitle)
+                    Text(Event.dateFormatter.string(from: event.start))
+                    Text(Event.dateFormatter.string(from: event.end))
+                }
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .foregroundStyle(Color.accentColor)
+                .containerRelativeFrame(.horizontal) { length, _ in
+                    length / dateFrameDivider
+                }
+                VStack(alignment: .leading) {
+                    Text(event.description)
+                        .font(.headline)
+                    if let speakers = event.speakers {
+                        Text(ListFormatter.localizedString(byJoining: speakers.map(\.name)))
+                            .foregroundStyle(.secondary)
                     }
-                    .frame(width: 50, height: 50)
-                    .background(Color.accentColor)
-                    .clipShape(Circle())
+                }
+                if let speakers = event.speakers {
+                    Spacer(minLength: 12)
+                    if horizontalSizeClass == .compact {
+                        VStack(alignment: .trailing) {
+                            speakerImages(speakers: speakers)
+                        }
+                    } else {
+                        HStack {
+                            speakerImages(speakers: speakers)
+                        }
+                    }
+                } else if let emoji = event.emoji {
+                    Spacer(minLength: 12)
+                    VStack(alignment: .trailing) {
+                        VStack {
+                            Text(emoji)
+                                .font(.largeTitle)
+                        }
+                        .frame(width: 50, height: 50)
+                        .background(Color.accentColor)
+                        .clipShape(Circle())
+                    }
                 }
             }
         }
