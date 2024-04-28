@@ -72,9 +72,14 @@ struct AboutView: View {
                     }
                     .padding(.bottom, 8)
                 }
-                Section("Thanks go out to 😍") {
+                Section {
                     Text("Josh and Kari for organizing [Deep Dish Swift](https://deepdishswift.com) 🍕")
                     Text("Kai and Malin for making the [Slices](https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071) podcast up to the conference 🎧")
+                } header: {
+                    Text("Thanks go out to 😍")
+                } footer: {
+                    Text("Version \(Bundle.main.infoDictionary!["CFBundleShortVersionString"]!) (\(Bundle.main.infoDictionary!["CFBundleVersion"]!))")
+                        .frame(maxWidth: .infinity)
                 }
             }
             .navigationTitle("About Deep Dish Unofficial")
