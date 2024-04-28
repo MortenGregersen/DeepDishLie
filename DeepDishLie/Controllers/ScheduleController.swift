@@ -62,6 +62,7 @@ class ScheduleController {
                 }
             }
             .map(\.value)
+            .sorted(using: KeyPathComparator(\.events.first?.start))
     }
 }
 
