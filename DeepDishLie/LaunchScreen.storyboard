@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -13,27 +13,27 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DeepDishSwiftLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Sch-TK-JPZ">
-                                <rect key="frame" x="53" y="197.66666666666663" width="287" height="282"/>
+                                <rect key="frame" x="368.5" y="444" width="287" height="282"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="287" id="CuZ-C0-u7M"/>
                                     <constraint firstAttribute="height" constant="282" id="E6q-cJ-0CH"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5g-hR-sCw">
-                                <rect key="frame" x="0.0" y="479.66666666666674" width="393" height="99"/>
+                                <rect key="frame" x="0.0" y="726" width="1024" height="99"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep Dish Swift" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RN2-ht-PMn">
-                                        <rect key="frame" x="35" y="8" width="323" height="53"/>
+                                        <rect key="frame" x="350.5" y="8" width="323" height="53"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
                                         <color key="textColor" name="AccentColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unofficial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vbN-1u-l7e">
-                                        <rect key="frame" x="200.66666666666663" y="60.999999999999943" width="172.33333333333337" height="38"/>
+                                        <rect key="frame" x="501" y="61" width="172.5" height="38"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                         <color key="textColor" name="AccentColor"/>
                                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="vbN-1u-l7e" secondAttribute="bottom" id="89u-M1-cE7"/>
-                                    <constraint firstAttribute="trailing" secondItem="vbN-1u-l7e" secondAttribute="trailing" constant="20" symbolic="YES" id="KCi-Nl-Rv1"/>
+                                    <constraint firstItem="vbN-1u-l7e" firstAttribute="trailing" secondItem="RN2-ht-PMn" secondAttribute="trailing" id="I9j-Ai-hlA"/>
                                     <constraint firstItem="vbN-1u-l7e" firstAttribute="top" secondItem="RN2-ht-PMn" secondAttribute="bottom" id="Ol7-Am-X6o"/>
                                     <constraint firstItem="RN2-ht-PMn" firstAttribute="top" secondItem="e5g-hR-sCw" secondAttribute="top" constant="8" id="Y3C-mh-6RX"/>
                                     <constraint firstItem="RN2-ht-PMn" firstAttribute="centerX" secondItem="e5g-hR-sCw" secondAttribute="centerX" id="YCr-5r-wGt"/>
