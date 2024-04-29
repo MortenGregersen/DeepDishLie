@@ -12,4 +12,8 @@ struct Speaker: Decodable, Identifiable {
     let name: String
     let image: String
     let links: Links?
+    var firstName: String {
+        guard let firstName = name.split(separator: " ").first else { return name }
+        return String(firstName)
+    }
 }

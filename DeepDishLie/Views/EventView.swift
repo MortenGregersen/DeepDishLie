@@ -69,7 +69,7 @@ struct EventView: View {
             if let speakers = event.speakers {
                 ForEach(speakers) { speaker in
                     if let links = speaker.links {
-                        linksSection(links: links, header: speakers.count > 1 ? speaker.name : nil)
+                        linksSection(links: links, header: "Connect with \(speaker.firstName)")
                     }
                 }
             }
@@ -81,7 +81,7 @@ struct EventView: View {
         .toolbarColorScheme(.dark, for: .navigationBar)
     }
 
-    private func linksSection(links: Links, header: String? = nil) -> some View {
+    private func linksSection(links: Links, header: String?) -> some View {
         Section {
             if let githubURL = links.github {
                 socialButton(url: githubURL, text: "GitHub", image: Image("github"))
@@ -124,6 +124,6 @@ struct EventView: View {
 
 #Preview {
     NavigationStack {
-        EventView(dayName: "Sunday", event: ScheduleController.forPreview().days[1].events[11])
+        EventView(dayName: "Sunday", event: ScheduleController.forPreview().days[1].events[9])
     }
 }
