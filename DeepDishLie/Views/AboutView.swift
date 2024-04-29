@@ -59,7 +59,7 @@ struct AboutView: View {
                     }
                     VStack(alignment: .leading) {
                         HStack {
-                            Text("If you read this, I suspect, that you are an **app developer yourself**. If so, maybe my app, **[AppDab](https://AppDab.app)**, is something for you?")
+                            Text("If you attend the conference, I suspect, that you are an **app developer yourself**. If so, maybe my app, **[AppDab](https://AppDab.app)**, is something for you?")
                             Spacer(minLength: 8)
                             Link(destination: URL(string: "https://AppDab.app")!) {
                                 Image("AppDabIcon")
