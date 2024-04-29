@@ -38,7 +38,7 @@ struct DeepDishLieApp: App {
             .task {
                 if !Self.inDemoMode {
                     await scheduleController.fetchEvents()
-                    await giveawayController.fetchWinners()
+                    await giveawayController.fetchGiveawayInfo()
                 }
             }
         }
