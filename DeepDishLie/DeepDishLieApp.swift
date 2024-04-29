@@ -22,7 +22,11 @@ struct DeepDishLieApp: App {
                     }
                 WeatherView()
                     .tabItem {
-                        Label("Wu with the Weather", systemImage: "thermometer.sun.fill")
+                        Label("Wu with the Weather", systemImage: "thermometer.sun")
+                    }
+                GiveawayView()
+                    .tabItem {
+                        Label("Giveaway", systemImage: "app.gift")
                     }
                 AboutView()
                     .tabItem {
