@@ -12,6 +12,8 @@ struct WeatherView: View {
     @State private var weather: Weather?
     @State private var fetching = false
     @State private var errorFetching: Error?
+    @State private var attribution: WeatherAttribution?
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.openURL) private var openURL
 
     var body: some View {
@@ -19,12 +21,26 @@ struct WeatherView: View {
             VStack {
                 if let weather {
                     Spacer()
-                    Text("The temperature in Rosemont is")
-                    Text(weather.currentWeather.temperature.formatted(.measurement(width: .narrow, numberFormatStyle: .number.precision(.fractionLength(1)))))
-                        .font(.system(size: 80))
-                        .fontWeight(.semibold)
-                    Text("Feels like \(weather.currentWeather.apparentTemperature.formatted(.measurement(width: .narrow, numberFormatStyle: .number.precision(.fractionLength(1)))))")
-                        .font(.title2)
+                    VStack(spacing: 0) {
+                        Text("The temperature in Rosemont is")
+                        Text(weather.currentWeather.temperature.formatted(.measurement(width: .narrow, numberFormatStyle: .number.precision(.fractionLength(1)))))
+                            .font(.system(size: 80))
+                            .fontWeight(.semibold)
+                        Text("Feels like \(weather.currentWeather.apparentTemperature.formatted(.measurement(width: .narrow, numberFormatStyle: .number.precision(.fractionLength(1)))))")
+                            .font(.title2)
+                        if let attribution {
+                            Link(destination: attribution.legalPageURL) {
+                                let imageUrl = colorScheme == .light ? attribution.combinedMarkLightURL : attribution.combinedMarkDarkURL
+                                AsyncImage(url: imageUrl) { image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(height: 10)
+                                } placeholder: {}
+                            }
+                            .padding(.top, 8)
+                        }
+                    }
                     Spacer()
                     verdict(weather: weather)
                     Spacer()
@@ -112,6 +128,7 @@ struct WeatherView: View {
         do {
             let timestamp = Date.timeIntervalSinceReferenceDate
             weather = try await WeatherService.shared.weather(for: .init(latitude: 41.97445788476879, longitude: -87.86374531902608))
+            attribution = try await WeatherService.shared.attribution
             if Date.timeIntervalSinceReferenceDate - timestamp < 1 {
                 try await Task.sleep(for: .seconds(0.5))
             }
