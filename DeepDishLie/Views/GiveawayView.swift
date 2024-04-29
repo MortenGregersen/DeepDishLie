@@ -35,7 +35,7 @@ struct GiveawayView: View {
                     Text("1 year of AppDab Pro")
                         .font(.title)
                         .fontWeight(.semibold)
-                    Text("As part of **Deep Dish Swift 2024**,\n**five lucky attendees** will have the chance\nto win **a year of AppDab Pro**!")
+                    Text("As part of **Deep Dish Swift 2024**,\n**five lucky attendees** will win\n**a year of AppDab Pro**!")
                         .multilineTextAlignment(.center)
                         .padding(.top, 8)
                     if let winners = giveawayController.winners, !winners.isEmpty {
@@ -89,6 +89,7 @@ struct GiveawayView: View {
                 Spacer()
             }
             .navigationTitle("AppDab Giveaway")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Color.accent, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
