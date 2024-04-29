@@ -13,11 +13,11 @@ struct EventView: View {
     @Environment(\.openURL) private var openURL
 
     var body: some View {
-        NavigationStack {
-            List {
-                if let speakers = event.speakers {
-                    let imageHeight = speakers.count == 1 ? 200 : 300 / CGFloat(speakers.count)
-                    HStack(spacing: 16) {
+        List {
+            if let speakers = event.speakers {
+                Grid(alignment: .center, horizontalSpacing: 24) {
+                    GridRow(alignment: .center) {
+                        let imageHeight = speakers.count == 1 ? 200 : 300 / CGFloat(speakers.count)
                         Spacer()
                         ForEach(speakers) { speaker in
                             Image(speaker.image)
@@ -34,50 +34,51 @@ struct EventView: View {
                         }
                         Spacer()
                     }
-                } else if let emoji = event.emoji {
-                    HStack {
-                        Spacer()
-                        VStack {
-                            Text(emoji)
-                                .font(.system(size: 120))
-                        }
-                        .frame(width: 200, height: 200)
-                        .background(Color.accentColor)
-                        .clipShape(Circle())
-                        Spacer()
+                }
+                .padding(.top)
+            } else if let emoji = event.emoji {
+                HStack {
+                    Spacer()
+                    VStack {
+                        Text(emoji)
+                            .font(.system(size: 120))
                     }
+                    .frame(width: 200, height: 200)
+                    .background(Color.accentColor)
+                    .clipShape(Circle())
+                    Spacer()
                 }
-                VStack(alignment: .leading) {
-                    Text(event.description)
-                        .font(.title)
-                    if let speakers = event.speakers {
-                        Text(ListFormatter.localizedString(byJoining: speakers.map(\.name)))
-                            .foregroundStyle(.secondary)
-                    }
-                }
-                .listRowSeparator(.hidden, edges: .top)
-                Text("\(dayName) \(Event.dateFormatter.string(from: event.start)) - \(Event.dateFormatter.string(from: event.end))")
-                    .listRowBackground(Color.accentColor)
-                    .font(.headline)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.white)
-                if let links = event.links {
-                    linksSection(links: links, header: links.name)
-                }
+            }
+            VStack(alignment: .leading) {
+                Text(event.description)
+                    .font(.title)
                 if let speakers = event.speakers {
-                    ForEach(speakers) { speaker in
-                        if let links = speaker.links {
-                            linksSection(links: links, header: speakers.count > 1 ? speaker.name : nil)
-                        }
+                    Text(ListFormatter.localizedString(byJoining: speakers.map(\.name)))
+                        .foregroundStyle(.secondary)
+                }
+            }
+            .listRowSeparator(.hidden, edges: .top)
+            Text("\(dayName) \(Event.dateFormatter.string(from: event.start)) - \(Event.dateFormatter.string(from: event.end))")
+                .listRowBackground(Color.accentColor)
+                .font(.headline)
+                .fontWeight(.semibold)
+                .foregroundStyle(.white)
+            if let links = event.links {
+                linksSection(links: links, header: links.name)
+            }
+            if let speakers = event.speakers {
+                ForEach(speakers) { speaker in
+                    if let links = speaker.links {
+                        linksSection(links: links, header: speakers.count > 1 ? speaker.name : nil)
                     }
                 }
             }
-            .listStyle(.plain)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.accentColor, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarColorScheme(.dark, for: .navigationBar)
         }
+        .listStyle(.plain)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(Color.accentColor, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
     }
 
     private func linksSection(links: Links, header: String? = nil) -> some View {
@@ -121,5 +122,7 @@ struct EventView: View {
 }
 
 #Preview {
-    EventView(dayName: "Sunday", event: ScheduleController.forPreview().days[1].events[11])
+    NavigationStack {
+        EventView(dayName: "Sunday", event: ScheduleController.forPreview().days[1].events[11])
+    }
 }
