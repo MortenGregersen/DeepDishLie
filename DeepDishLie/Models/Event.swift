@@ -79,6 +79,17 @@ enum Event: Decodable, Identifiable {
             nil
         }
     }
+    
+    var links: Links? {
+        switch self {
+        case .practical(let session),
+             .session(let session),
+             .special(let session):
+            session.links
+        default:
+            nil
+        }
+    }
 
     var emoji: String? {
         switch self {
@@ -155,4 +166,5 @@ struct Session: Decodable, Identifiable {
     let end: Date
     let description: String
     let speakers: [Speaker]?
+    let links: Links?
 }

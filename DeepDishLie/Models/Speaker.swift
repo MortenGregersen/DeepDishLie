@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Speaker: Codable, Identifiable {
+struct Speaker: Decodable, Identifiable {
     var id: String { name }
     let name: String
     let image: String
+    let links: Links?
 }

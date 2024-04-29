@@ -17,14 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DeepDishSwiftLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Sch-TK-JPZ">
-                                <rect key="frame" x="368.5" y="444" width="287" height="282"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="287" id="CuZ-C0-u7M"/>
-                                    <constraint firstAttribute="height" constant="282" id="E6q-cJ-0CH"/>
-                                </constraints>
+                                <rect key="frame" x="402" y="472.5" width="220" height="225"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5g-hR-sCw">
-                                <rect key="frame" x="0.0" y="726" width="1024" height="99"/>
+                                <rect key="frame" x="0.0" y="697.5" width="1024" height="99"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep Dish Swift" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RN2-ht-PMn">
                                         <rect key="frame" x="350.5" y="8" width="323" height="53"/>

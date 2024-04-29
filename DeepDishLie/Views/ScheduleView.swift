@@ -103,6 +103,7 @@ private struct EventRow: View {
                         .fill(Color.accentColor)
                         .frame(width: 54, height: 54)
                 }
+                .shadow(color: .accent, radius: 1, x: 0, y: 1)
         }
     }
 

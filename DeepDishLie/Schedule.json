@@ -19,7 +19,13 @@
         "speakers": [
             {
                 "name": "Sommer Panage",
-                "image": "sommer_panage"
+                "image": "sommer_panage",
+                "links": {
+                    "github": "https://github.com/spanage",
+                    "mastodon": "https://macaw.social/@sommer",
+                    "twitter": "https://twitter.com/sommer",
+                    "website": "https://sommerpanage.com"
+                }
             }
         ]
     },
@@ -31,7 +37,14 @@
         "speakers": [
             {
                 "name": "Stewart Lynch",
-                "image": "stewart_lynch"
+                "image": "stewart_lynch",
+                "links": {
+                    "github": "https://github.com/StewartLynch",
+                    "mastodon": "https://iosdev.space/@StewartLynch",
+                    "twitter": "https://twitter.com/StewartLynch",
+                    "youtube": "https://www.youtube.com/@StewartLynch",
+                    "website": "https://www.createchsol.com"
+                }
             }
         ]
     },
@@ -43,7 +56,12 @@
         "speakers": [
             {
                 "name": "Dave DeLong",
-                "image": "dave_delong"
+                "image": "dave_delong",
+                "links": {
+                    "github": "https://github.com/davedelong",
+                    "mastodon": "https://mastodon.social/@davedelong",
+                    "website": "https://davedelong.com"
+                }
             }
         ]
     },
@@ -60,7 +78,13 @@
         "speakers": [
             {
                 "name": "Jamie Blumberg",
-                "image": "jamie_blumberg"
+                "image": "jamie_blumberg",
+                "links": {
+                    "github": "https://github.com/JamBlumberg",
+                    "mastodon": "https://hachyderm.io/@jamie_blumberg",
+                    "twitter": "https://twitter.com/jamie_blumberg",
+                    "website": "https://jamberg.me"
+                }
             },
             {
                 "name": "Jay Soumphount",
@@ -76,7 +100,13 @@
         "speakers": [
             {
                 "name": "James Dempsey",
-                "image": "james_dempsey"
+                "image": "james_dempsey",
+                "links": {
+                    "github": "https://github.com/dempseyatgithub",
+                    "mastodon": "https://mastodon.social/@jamesdempsey",
+                    "twitter": "https://www.twitter.com/jamesdempsey",
+                    "website": "https://jamesdempsey.net"
+                }
             }
         ]
     },
@@ -99,7 +129,12 @@
         "speakers": [
             {
                 "name": "Krzysztof Zablocki",
-                "image": "krzysztof_zablocki"
+                "image": "krzysztof_zablocki",
+                "links": {
+                    "github": "https://github.com/krzysztofzablocki",
+                    "twitter": "https://twitter.com/merowing_",
+                    "website": "https://www.merowing.info"
+                }
             }
         ]
     },
@@ -111,7 +146,12 @@
         "speakers": [
             {
                 "name": "Kim Arnett",
-                "image": "kim_arnett"
+                "image": "kim_arnett",
+                "links": {
+                    "github": "https://github.com/karnett",
+                    "twitter": "https://twitter.com/kaydacode",
+                    "website": "http://kimarnett.com/"
+                }
             }
         ]
     },
@@ -123,7 +163,12 @@
         "speakers": [
             {
                 "name": "Craig Clayton",
-                "image": "craig_clayton"
+                "image": "craig_clayton",
+                "links": {
+                    "mastodon": "https://mastodon.cloud/@thedevme",
+                    "twitter": "https://twitter.com/thedevme",
+                    "youtube": "https://www.youtube.com/c/DesigntoSwiftUI"
+                }
             }
         ]
     },
@@ -135,7 +180,13 @@
         "speakers": [
             {
                 "name": "Jordi Bruin",
-                "image": "jordi_bruin"
+                "image": "jordi_bruin",
+                "links": {
+                    "github": "https://github.com/jordibruin",
+                    "mastodon": "https://mastodon.online/@jordibruin",
+                    "twitter": "https://twitter.com/jordibruin",
+                    "website": "http://www.jordibruin.com/"
+                }
             }
         ]
     },
@@ -152,7 +203,12 @@
         "speakers": [
             {
                 "name": "Christian Selig",
-                "image": "christian_selig"
+                "image": "christian_selig",
+                "links": {
+                    "mastodon": "https://mastodon.social/@christianselig",
+                    "twitter": "https://twitter.com/christianselig",
+                    "website": "https://christianselig.com"
+                }
             }
         ]
     },
@@ -164,7 +220,12 @@
         "speakers": [
             {
                 "name": "Chris Vasselli",
-                "image": "chris_vasselli"
+                "image": "chris_vasselli",
+                "links": {
+                    "github": "https://github.com/chrisvasselli",
+                    "mastodon": "https://mstdn.social/@chrisvasselli",
+                    "twitter": "https://twitter.com/chrisvasselli"
+                }
             }
         ]
     },
@@ -176,7 +237,11 @@
         "speakers": [
             {
                 "name": "Ariel Michaeli",
-                "image": "ariel_michaeli"
+                "image": "ariel_michaeli",
+                "links": {
+                    "twitter": "https://twitter.com/arielmichaeli",
+                    "website": "https://appfigures.com"
+                }
             }
         ]
     },
@@ -193,19 +258,32 @@
         "speakers": [
             {
                 "name": "Charlie Chapman",
-                "image": "charlie_chapman"
+                "image": "charlie_chapman",
+                "links": {
+                    "github": "https://github.com/charliemchapman",
+                    "mastodon": "https://mastodon.social/@charliemchapman",
+                    "twitter": "https://twitter.com/_chuckyc",
+                    "website": "https://charliemchapman.com"
+                }
             },
             {
                 "name": "Sean Allen",
-                "image": "sean_allen"
+                "image": "sean_allen",
+                "links": {
+                    "github": "https://github.com/SAllen0400",
+                    "mastodon": "https://mastodon.social/@seanallen_dev",
+                    "twitter": "https://twitter.com/seanallen_dev",
+                    "youtube": "https://t.co/QPdBKUY896",
+                    "website": "https://seanallen.teachable.com"
+                }
             }
         ],
-        "links": [
-            {
-                "url": "https://launchedfm.com/",
-                "description": "Launched"
-            }
-        ]
+        "links": {
+            "name": "Launched",
+            "mastodon": "https://mastodon.social/@Launched",
+            "twitter": "https://twitter.com/LaunchedFM",
+            "website": "https://launchedfm.com/"
+        }
     },
     {
         "id": "breakfast-tuesday",
@@ -232,7 +310,13 @@
         "speakers": [
             {
                 "name": "Brad Larson",
-                "image": "brad_larson"
+                "image": "brad_larson",
+                "links": {
+                    "github": "https://github.com/BradLarson",
+                    "mastodon": "https://hachyderm.io/@bradlarson",
+                    "twitter": "https://twitter.com/bradlarson",
+                    "website": "http://www.sunsetlakesoftware.com"
+                }
             }
         ]
     },
@@ -244,7 +328,14 @@
         "speakers": [
             {
                 "name": "Jessie Linden",
-                "image": "jessie_linden"
+                "image": "jessie_linden",
+                "links": {
+                    "github": "https://github.com/jessielinden",
+                    "mastodon": "https://mastodon.online/@jessielinden",
+                    "twitter": "https://twitter.com/jessielinden",
+                    "youtube": "https://www.youtube.com/@jessielinden2961",
+                    "website": "https://www.jessielinden.com"
+                }
             }
         ]
     },
@@ -262,7 +353,13 @@
         "speakers": [
             {
                 "name": "Tim Condon",
-                "image": "tim_condon"
+                "image": "tim_condon",
+                "links": {
+                    "github": "https://github.com/0xTim",
+                    "mastodon": "https://hachyderm.io/@0xTim",
+                    "twitter": "https://twitter.com/0xTim",
+                    "website": "https://www.timc.dev"
+                }
             }
         ]
     },
@@ -274,7 +371,13 @@
         "speakers": [
             {
                 "name": "Kabir Oberai",
-                "image": "kabir_oberai"
+                "image": "kabir_oberai",
+                "links": {
+                    "github": "https://github.com/kabiroberai",
+                    "mastodon": "http://mastodon.social/@kabiroberai",
+                    "twitter": "https://twitter.com/kabiroberai",
+                    "website": "https://kabiroberai.com"
+                }
             }
         ]
     },
@@ -286,7 +389,11 @@
         "speakers": [
             {
                 "name": "Daniel Steinberg",
-                "image": "daniel_steinberg"
+                "image": "daniel_steinberg",
+                "links": {
+                    "mastodon": "https://mastodon.social/@dimsumthinking",
+                    "website": "https://dimsumthinking.com"
+                }
             }
         ]
     },
@@ -295,12 +402,10 @@
         "start": "2024-05-07T16:00:00-05:00",
         "end": "2024-05-07T16:45:00-05:00",
         "description": "Musical performance by James Dempsey and the Breakpoints",
-        "links": [
-            {
-                "url": "https://jamesdempsey.net/music",
-                "description": "James Dempsey and the Breakpoints"
-            }
-        ]
+        "links": {
+            "name": "James Dempsey and the Breakpoints",
+            "website": "https://jamesdempsey.net/music"
+        }
     },
     {
         "id": "special-closing-keynote",
@@ -310,7 +415,12 @@
         "speakers": [
             {
                 "name": "Dave DeLong",
-                "image": "dave_delong"
+                "image": "dave_delong",
+                "links": {
+                    "github": "https://github.com/davedelong",
+                    "mastodon": "https://mastodon.social/@davedelong",
+                    "website": "https://davedelong.com"
+                }
             }
         ]
     },
