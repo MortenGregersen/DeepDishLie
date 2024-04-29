@@ -9,15 +9,44 @@ import Foundation
 
 @Observable
 class GiveawayController {
+    private(set) var winners: [String]?
+    private static let cachedJsonFilename = "Winners.json"
+    
     var hasJoinedGiveaway: Bool {
         didSet { UserDefaults.standard.set(hasJoinedGiveaway, forKey: "has-joined-giveaway") }
     }
 
     init() {
         self.hasJoinedGiveaway = UserDefaults.standard.bool(forKey: "has-joined-giveaway")
+        if let winners = Self.loadCachedWinners() {
+            self.winners = winners
+        } else {
+            let jsonData = try! Data(contentsOf: Bundle.main.url(forResource: "Winners", withExtension: "json")!)
+            self.winners = try! JSONDecoder().decode([String].self, from: jsonData)
+        }
     }
     
-    func joinTheGiveaway(name: String, email: String) async throws {
+    private static func loadCachedWinners() -> [String]? {
+        guard let cacheFolderURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first,
+              let cachedJsonData = try? Data(contentsOf: cacheFolderURL.appending(component: cachedJsonFilename)) else { return nil }
+        return try? JSONDecoder().decode([String].self, from: cachedJsonData)
+    }
+    
+    @MainActor func fetchWinners() async {
+        do {
+            let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/main/DeepDishLie/Winners.json")!
+            let urlRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
+            let (data, response) = try await URLSession.shared.data(for: urlRequest)
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
+            winners = try JSONDecoder().decode([String].self, from: data)
+            guard let cacheFolderURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else { return }
+            try data.write(to: cacheFolderURL.appending(component: Self.cachedJsonFilename))
+        } catch {
+            // Fail silently
+        }
+    }
+    
+    @MainActor func joinTheGiveaway(name: String, email: String) async throws {
         guard let name = name.addingPercentEncoding(withAllowedCharacters: .alphanumerics),
               let email = email.addingPercentEncoding(withAllowedCharacters: .alphanumerics) else {
             throw GiveawayError.encodingInputFailed
@@ -30,7 +59,7 @@ class GiveawayController {
             .data(using: .utf8)
         let (_, response) = try await URLSession.shared.data(for: urlRequest)
         if let httpResponse = response as? HTTPURLResponse {
-            if httpResponse.statusCode != 200 {
+            if httpResponse.statusCode == 200 {
                 hasJoinedGiveaway = true
                 return
             }
