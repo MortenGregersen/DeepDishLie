@@ -40,7 +40,6 @@ struct GiveawayView: View {
                         .padding(.top, 8)
                     if let winners = giveawayController.winners, !winners.isEmpty {
                         VStack(alignment: .leading) {
-                            
                             Text("Winners:")
                                 .font(.headline)
                             ForEach(winners, id: \.self) { winner in
