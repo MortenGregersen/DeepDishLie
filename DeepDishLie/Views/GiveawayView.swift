@@ -47,7 +47,7 @@ struct GiveawayView: View {
                             Text("Good luck! 🍀")
                                 .font(.title2)
                         }
-                            .padding(.vertical, 16)
+                        .padding(.vertical, 16)
                     } else {
                         Button("Join the Giveaway") {
                             showsJoiningForm = true
@@ -59,9 +59,10 @@ struct GiveawayView: View {
                     }
                     VStack(spacing: 8) {
                         Text("When joining, participants may choose to enter their email address to receive updates about future releases of [AppDab](https://AppDab.app).\n**This is not required to win.**")
-                        Text("The prize must be collected from Morten Bjerg Gregersen by the end of Wednesday.")
+                        Text("The prize must be collected from Morten Bjerg Gregersen before the end of the conference.")
                             .fontWeight(.semibold)
                     }
+                    .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
                 }
