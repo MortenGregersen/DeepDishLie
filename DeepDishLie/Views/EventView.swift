@@ -113,6 +113,7 @@ struct EventView: View {
                 Text(text)
             } icon: {
                 image
+                    .renderingMode(.template)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }
