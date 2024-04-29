@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GiveawayView: View {
     @State private var showsJoiningForm = false
-    @State private var giveawayController = GiveawayController()
+    @Environment(GiveawayController.self) private var giveawayController
 
     var body: some View {
         NavigationStack {
@@ -38,7 +38,25 @@ struct GiveawayView: View {
                     Text("As part of **Deep Dish Swift 2024**,\n**five lucky attendees** will have the chance\nto win **a year of AppDab Pro**!")
                         .multilineTextAlignment(.center)
                         .padding(.top, 8)
-                    if giveawayController.hasJoinedGiveaway {
+                    if let winners = giveawayController.winners, !winners.isEmpty {
+                        VStack(alignment: .leading) {
+                            
+                            Text("Winners:")
+                                .font(.headline)
+                            ForEach(winners, id: \.self) { winner in
+                                Text(winner)
+                            }
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, 12)
+                        .background(Color.accentColor.opacity(0.4))
+                        .cornerRadius(10)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.accentColor, lineWidth: 3)
+                        }
+                        .padding(.vertical)
+                    } else if giveawayController.hasJoinedGiveaway {
                         VStack {
                             Text("You have joined the Giveaway! ")
                                 .font(.title)
@@ -71,7 +89,7 @@ struct GiveawayView: View {
                 Spacer()
             }
             .navigationTitle("AppDab Giveaway")
-            .toolbarBackground(Color.accentColor, for: .navigationBar)
+            .toolbarBackground(Color.accent, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .sheet(isPresented: $showsJoiningForm) {
@@ -84,4 +102,5 @@ struct GiveawayView: View {
 
 #Preview {
     GiveawayView()
+        .environment(GiveawayController())
 }

@@ -34,7 +34,7 @@ class GiveawayController {
     
     @MainActor func fetchWinners() async {
         do {
-            let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/main/DeepDishLie/Winners.json")!
+            let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/winners/DeepDishLie/Winners.json")!
             let urlRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }

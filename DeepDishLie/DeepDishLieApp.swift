@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct DeepDishLieApp: App {
     @State private var scheduleController = ScheduleController()
+    @State private var giveawayController = GiveawayController()
     static let inDemoMode = UserDefaults.standard.bool(forKey: "Demo")
 
     var body: some Scene {
@@ -25,6 +26,7 @@ struct DeepDishLieApp: App {
                         Label("Wu with the Weather", systemImage: "thermometer.sun")
                     }
                 GiveawayView()
+                    .environment(giveawayController)
                     .tabItem {
                         Label("Giveaway", systemImage: "app.gift")
                     }
@@ -36,6 +38,7 @@ struct DeepDishLieApp: App {
             .task {
                 if !Self.inDemoMode {
                     await scheduleController.fetchEvents()
+                    await giveawayController.fetchWinners()
                 }
             }
         }
