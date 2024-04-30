@@ -24,6 +24,7 @@
 		5A5C4F162BDFA2EC0088F4C3 /* GiveawayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C4F152BDFA2EC0088F4C3 /* GiveawayController.swift */; };
 		5A5C4F182BDFA7F40088F4C3 /* GiveawayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C4F172BDFA7F30088F4C3 /* GiveawayView.swift */; };
 		5A5C4F222BDFDE2C0088F4C3 /* Giveaway.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C4F212BDFDE2C0088F4C3 /* Giveaway.json */; };
+		5A5C4F242BE0D24B0088F4C3 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C4F232BE0D24B0088F4C3 /* WeatherController.swift */; };
 		5A89F8B52BDF7DD500307D02 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89F8B42BDF7DD500307D02 /* Links.swift */; };
 		5A994C4E29F9255D00F799ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A994C4D29F9255D00F799ED /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		5A5C4F152BDFA2EC0088F4C3 /* GiveawayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveawayController.swift; sourceTree = "<group>"; };
 		5A5C4F172BDFA7F30088F4C3 /* GiveawayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveawayView.swift; sourceTree = "<group>"; };
 		5A5C4F212BDFDE2C0088F4C3 /* Giveaway.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Giveaway.json; sourceTree = "<group>"; };
+		5A5C4F232BE0D24B0088F4C3 /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
 		5A89F8B42BDF7DD500307D02 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		5A994C4C29F924E700F799ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A994C4D29F9255D00F799ED /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				5A1919FD2BDAFF020092AF29 /* ScheduleController.swift */,
+				5A5C4F232BE0D24B0088F4C3 /* WeatherController.swift */,
 				5A5C4F152BDFA2EC0088F4C3 /* GiveawayController.swift */,
 			);
 			path = Controllers;
@@ -299,6 +302,7 @@
 				5A0467EA2BDEC81300F01462 /* EventView.swift in Sources */,
 				5A191A052BDBCBFF0092AF29 /* Speaker.swift in Sources */,
 				5A5C4F182BDFA7F40088F4C3 /* GiveawayView.swift in Sources */,
+				5A5C4F242BE0D24B0088F4C3 /* WeatherController.swift in Sources */,
 				5A5C4F162BDFA2EC0088F4C3 /* GiveawayController.swift in Sources */,
 				5A89F8B52BDF7DD500307D02 /* Links.swift in Sources */,
 				5A1919FE2BDAFF020092AF29 /* ScheduleController.swift in Sources */,

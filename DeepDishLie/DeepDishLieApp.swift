@@ -10,7 +10,9 @@ import SwiftUI
 @main
 struct DeepDishLieApp: App {
     @State private var scheduleController = ScheduleController()
+    @State private var weatherController = WeatherController()
     @State private var giveawayController = GiveawayController()
+    @Environment(\.scenePhase) private var scenePhase
     static let inDemoMode = UserDefaults.standard.bool(forKey: "Demo")
 
     var body: some Scene {
@@ -22,6 +24,7 @@ struct DeepDishLieApp: App {
                         Label("Schedule", systemImage: "person.2.wave.2")
                     }
                 WeatherView()
+                    .environment(weatherController)
                     .tabItem {
                         Label("Wu with the Weather", systemImage: "thermometer.sun")
                     }
@@ -35,10 +38,13 @@ struct DeepDishLieApp: App {
                         Label("About", systemImage: "text.badge.star")
                     }
             }
-            .task {
-                if !Self.inDemoMode {
-                    await scheduleController.fetchEvents()
-                    await giveawayController.fetchGiveawayInfo()
+            .onChange(of: scenePhase) { oldValue, newValue in
+                if newValue == .active {
+                    Task {
+                        await scheduleController.fetchEvents()
+                        await weatherController.fetchWeather()
+                        await giveawayController.fetchGiveawayInfo()
+                    }
                 }
             }
         }
