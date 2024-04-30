@@ -17,6 +17,7 @@ final class ScoreWondersUITests: XCTestCase {
         let tabBar = app.tabBars["Tab Bar"]
         snapshot("1-Schedule")
         tabBar.buttons["Wu with the Weather"].tap()
+        guard app.staticTexts["Forecast data provided by"].waitForExistence(timeout: 10) else { XCTFail(); return }
         snapshot("2-Weather")
         tabBar.buttons["About"].tap()
         snapshot("3-About")
