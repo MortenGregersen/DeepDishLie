@@ -14,7 +14,7 @@ class WeatherController {
     private(set) var fetching = false
     private(set) var errorFetching: Error?
     private(set) var attribution: WeatherAttribution?
-    
+
     func fetchWeather() async {
         fetching = true
         defer { fetching = false }
@@ -28,5 +28,13 @@ class WeatherController {
         } catch {
             errorFetching = error
         }
+    }
+}
+
+extension WeatherController {
+    static func forPreview() -> WeatherController {
+        let controller = WeatherController()
+        Task { await controller.fetchWeather() }
+        return controller
     }
 }

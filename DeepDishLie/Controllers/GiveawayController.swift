@@ -46,3 +46,9 @@ struct GiveawayInfo: Decodable {
     let channel: String
     let winners: [String]
 }
+
+extension GiveawayController {
+    static func forPreview() -> GiveawayController {
+        .init()
+    }
+}

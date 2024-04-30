@@ -82,5 +82,5 @@ struct GiveawayView: View {
 
 #Preview {
     GiveawayView()
-        .environment(GiveawayController())
+        .environment(GiveawayController.forPreview())
 }

@@ -139,4 +139,5 @@ struct WeatherView: View {
 
 #Preview {
     WeatherView()
+        .environment(WeatherController.forPreview())
 }
