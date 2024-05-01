@@ -145,13 +145,14 @@ enum Event: Decodable, Identifiable {
         case speakers
     }
     
-    static let dateFormatter: DateFormatter = {
+    static func dateFormatter(useLocalTimezone: Bool, use24hourClock: Bool) -> DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-        dateFormatter.timeZone = TimeZone(identifier: "America/Chicago")
+        dateFormatter.locale = use24hourClock ? Locale(identifier: "da_DK") : Locale(identifier: "en_US")
+        dateFormatter.timeZone = useLocalTimezone ? TimeZone.current : TimeZone(identifier: "America/Chicago")
         return dateFormatter
-    }()
+    }
 }
 
 struct Break: Decodable, Identifiable {

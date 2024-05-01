@@ -10,9 +10,12 @@ import SwiftUI
 struct EventView: View {
     let dayName: String
     let event: Event
+    @State private var shownUrl: PresentedURL?
     @Environment(\.openURL) private var openURL
+    @Environment(SettingsController.self) private var settingsController
 
     var body: some View {
+        let dateFormatter = Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock)
         List {
             if let speakers = event.speakers {
                 Grid(alignment: .center, horizontalSpacing: 24) {
@@ -58,7 +61,7 @@ struct EventView: View {
                 }
             }
             .listRowSeparator(.hidden, edges: .top)
-            Text("\(dayName) \(Event.dateFormatter.string(from: event.start)) - \(Event.dateFormatter.string(from: event.end))")
+            Text("\(dayName) \(dateFormatter.string(from: event.start)) - \(dateFormatter.string(from: event.end))")
                 .listRowBackground(Color.accentColor)
                 .font(.headline)
                 .fontWeight(.semibold)
@@ -79,6 +82,11 @@ struct EventView: View {
         .toolbarBackground(Color.accentColor, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarColorScheme(.dark, for: .navigationBar)
+        .sheet(item: $shownUrl) { presentedUrl in
+            SafariView(url: presentedUrl.url)
+                .edgesIgnoringSafeArea(.all)
+                .presentationCompactAdaptation(.fullScreenCover)
+        }
     }
 
     private func linksSection(links: Links, header: String?) -> some View {
@@ -107,7 +115,11 @@ struct EventView: View {
 
     private func socialButton(url: URL, text: String, image: Image) -> some View {
         Button {
-            openURL(url)
+            if settingsController.openLinksInApp {
+                shownUrl = .init(url: url)
+            } else {
+                openURL(url)
+            }
         } label: {
             Label {
                 Text(text)
@@ -119,6 +131,11 @@ struct EventView: View {
             }
             .foregroundStyle(.primary)
         }
+    }
+
+    private struct PresentedURL: Identifiable {
+        let id = UUID()
+        let url: URL
     }
 }
 
