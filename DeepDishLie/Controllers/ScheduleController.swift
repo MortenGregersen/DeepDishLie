@@ -68,6 +68,6 @@ class ScheduleController {
 
 extension ScheduleController {
     static func forPreview() -> ScheduleController {
-        return .init()
+        .init()
     }
 }

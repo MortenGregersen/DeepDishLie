@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ScheduleView: View {
+    @State private var showsSettings = false
+    @Environment(SettingsController.self) private var settingsController
     @Environment(ScheduleController.self) private var scheduleController
 
     var body: some View {
+        let dateFormatter = Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock)
         NavigationStack {
             List(scheduleController.days) { day in
                 Section {
                     ForEach(day.events) { event in
-                        EventRow(dayName: day.name, event: event)
+                        EventRow(dayName: day.name, event: event, dateFormatter: dateFormatter)
                             .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
                     }
                 } header: {
@@ -30,6 +33,16 @@ struct ScheduleView: View {
             .toolbarBackground(Color.accentColor, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbar {
+                Button {
+                    showsSettings = true
+                } label: {
+                    Label("Settings", systemImage: "gear")
+                }
+            }
+            .sheet(isPresented: $showsSettings) {
+                SettingsView()
+            }
         }
     }
 }
@@ -37,6 +50,7 @@ struct ScheduleView: View {
 private struct EventRow: View {
     let dayName: String
     let event: Event
+    let dateFormatter: DateFormatter
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
@@ -46,8 +60,8 @@ private struct EventRow: View {
         } label: {
             HStack(alignment: .top, spacing: 0) {
                 VStack(alignment: .trailing) {
-                    Text(Event.dateFormatter.string(from: event.start))
-                    Text(Event.dateFormatter.string(from: event.end))
+                    Text(dateFormatter.string(from: event.start))
+                    Text(dateFormatter.string(from: event.end))
                 }
                 .font(.subheadline)
                 .fontWeight(.semibold)
@@ -158,5 +172,6 @@ private struct EventRow: View {
 
 #Preview {
     ScheduleView()
+        .environment(SettingsController.forPreview())
         .environment(ScheduleController.forPreview())
 }

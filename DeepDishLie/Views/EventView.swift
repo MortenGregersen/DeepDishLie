@@ -11,8 +11,10 @@ struct EventView: View {
     let dayName: String
     let event: Event
     @Environment(\.openURL) private var openURL
+    @Environment(SettingsController.self) private var settingsController
 
     var body: some View {
+        let dateFormatter = Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock)
         List {
             if let speakers = event.speakers {
                 Grid(alignment: .center, horizontalSpacing: 24) {
@@ -58,7 +60,7 @@ struct EventView: View {
                 }
             }
             .listRowSeparator(.hidden, edges: .top)
-            Text("\(dayName) \(Event.dateFormatter.string(from: event.start)) - \(Event.dateFormatter.string(from: event.end))")
+            Text("\(dayName) \(dateFormatter.string(from: event.start)) - \(dateFormatter.string(from: event.end))")
                 .listRowBackground(Color.accentColor)
                 .font(.headline)
                 .fontWeight(.semibold)

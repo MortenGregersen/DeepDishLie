@@ -27,6 +27,8 @@
 		5A5C4F242BE0D24B0088F4C3 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C4F232BE0D24B0088F4C3 /* WeatherController.swift */; };
 		5A89F8B52BDF7DD500307D02 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89F8B42BDF7DD500307D02 /* Links.swift */; };
 		5A994C4E29F9255D00F799ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A994C4D29F9255D00F799ED /* LaunchScreen.storyboard */; };
+		5AEF0C8F2BE2222C00BA47DF /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF0C8E2BE2222C00BA47DF /* SettingsController.swift */; };
+		5AEF0C912BE246CC00BA47DF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF0C902BE246CC00BA47DF /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		5A89F8B42BDF7DD500307D02 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		5A994C4C29F924E700F799ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A994C4D29F9255D00F799ED /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5AEF0C8E2BE2222C00BA47DF /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		5AEF0C902BE246CC00BA47DF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 				5A0574E12BDD889E00D87585 /* WeatherView.swift */,
 				5A5C4F172BDFA7F30088F4C3 /* GiveawayView.swift */,
 				5A28A91329F8729300B02EE6 /* AboutView.swift */,
+				5AEF0C902BE246CC00BA47DF /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 				5A1919FD2BDAFF020092AF29 /* ScheduleController.swift */,
 				5A5C4F232BE0D24B0088F4C3 /* WeatherController.swift */,
 				5A5C4F152BDFA2EC0088F4C3 /* GiveawayController.swift */,
+				5AEF0C8E2BE2222C00BA47DF /* SettingsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -304,8 +310,10 @@
 				5A5C4F182BDFA7F40088F4C3 /* GiveawayView.swift in Sources */,
 				5A5C4F242BE0D24B0088F4C3 /* WeatherController.swift in Sources */,
 				5A5C4F162BDFA2EC0088F4C3 /* GiveawayController.swift in Sources */,
+				5AEF0C912BE246CC00BA47DF /* SettingsView.swift in Sources */,
 				5A89F8B52BDF7DD500307D02 /* Links.swift in Sources */,
 				5A1919FE2BDAFF020092AF29 /* ScheduleController.swift in Sources */,
+				5AEF0C8F2BE2222C00BA47DF /* SettingsController.swift in Sources */,
 				5A191A012BDBCBE20092AF29 /* Day.swift in Sources */,
 				5A3EFB0629F7D53200D75F5E /* DeepDishLieApp.swift in Sources */,
 				5A0574E22BDD889E00D87585 /* WeatherView.swift in Sources */,

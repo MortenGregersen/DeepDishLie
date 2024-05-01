@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct DeepDishLieApp: App {
+    @State private var settingsController = SettingsController()
     @State private var scheduleController = ScheduleController()
     @State private var weatherController = WeatherController()
     @State private var giveawayController = GiveawayController()
@@ -38,7 +39,8 @@ struct DeepDishLieApp: App {
                         Label("About", systemImage: "text.badge.star")
                     }
             }
-            .onChange(of: scenePhase) { oldValue, newValue in
+            .environment(settingsController)
+            .onChange(of: scenePhase) { _, newValue in
                 if newValue == .active {
                     Task {
                         await scheduleController.fetchEvents()
