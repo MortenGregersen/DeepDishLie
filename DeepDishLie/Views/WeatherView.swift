@@ -9,9 +9,19 @@ import SwiftUI
 import WeatherKit
 
 struct WeatherView: View {
+    @Environment(SettingsController.self) private var settingsController
     @Environment(WeatherController.self) private var weatherController
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.openURL) private var openURL
+    private var measurementFormatter: MeasurementFormatter {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.minimumFractionDigits = 1
+        numberFormatter.maximumFractionDigits = 1
+        let formatter = MeasurementFormatter()
+        formatter.unitOptions = .providedUnit
+        formatter.numberFormatter = numberFormatter
+        return formatter
+    }
 
     var body: some View {
         NavigationStack {
@@ -20,10 +30,10 @@ struct WeatherView: View {
                     if let weather = weatherController.weather {
                         VStack(spacing: 0) {
                             Text("The temperature in Rosemont is")
-                            Text(weather.currentWeather.temperature.formatted(.measurement(width: .narrow, numberFormatStyle: .number.precision(.fractionLength(1)))))
+                            Text(measurementFormatter.string(from: temperature(from: weather)))
                                 .font(.system(size: 80))
                                 .fontWeight(.semibold)
-                            Text("Feels like \(weather.currentWeather.apparentTemperature.formatted(.measurement(width: .narrow, numberFormatStyle: .number.precision(.fractionLength(1)))))")
+                            Text("Feels like \(measurementFormatter.string(from: apparentTemperature(from: weather)))")
                                 .font(.title2)
                         }
                         .padding(.top, 24)
@@ -117,6 +127,14 @@ struct WeatherView: View {
                 .disabled(weatherController.weather == nil || weatherController.fetching)
             }
         }
+    }
+
+    private func temperature(from weather: Weather) -> Measurement<UnitTemperature> {
+        weather.currentWeather.temperature.converted(to: settingsController.useCelcius ? .celsius : .fahrenheit)
+    }
+    
+    private func apparentTemperature(from weather: Weather) -> Measurement<UnitTemperature> {
+        weather.currentWeather.apparentTemperature.converted(to: settingsController.useCelcius ? .celsius : .fahrenheit)
     }
 
     @ViewBuilder private func verdict(weather: Weather) -> some View {

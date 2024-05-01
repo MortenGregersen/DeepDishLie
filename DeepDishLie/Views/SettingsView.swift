@@ -27,6 +27,15 @@ struct SettingsView: View {
                     } label: {
                         Label("Time format", systemImage: "clock.badge.checkmark")
                     }
+                Section("Weather") {
+                    Picker(selection: $settingsController.useCelcius) {
+                        Text("Wrong (°F)")
+                            .tag(false)
+                        Text("Right (°C)")
+                            .tag(true)
+                    } label: {
+                        Label("Temperature scale", systemImage: settingsController.useCelcius ? "thermometer.low" : "thermometer.high")
+                    }
                 }
             }
             .navigationTitle("Settings")
