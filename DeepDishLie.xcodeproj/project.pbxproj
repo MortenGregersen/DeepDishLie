@@ -21,6 +21,8 @@
 		5A28DB422BE276530047A8CF /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28DB412BE276530047A8CF /* SafariView.swift */; };
 		5A28DB452BE294910047A8CF /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A28DB442BE294910047A8CF /* ConfettiSwiftUI */; };
 		5A28DB482BE297740047A8CF /* UIWindow+ShakeNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28DB472BE297740047A8CF /* UIWindow+ShakeNotification.swift */; };
+		5A28DB4A2BE2D35B0047A8CF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28DB492BE2D35B0047A8CF /* WelcomeView.swift */; };
+		5A28DB4C2BE2D37B0047A8CF /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28DB4B2BE2D37B0047A8CF /* WelcomeController.swift */; };
 		5A3EFB0629F7D53200D75F5E /* DeepDishLieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */; };
 		5A3EFB0A29F7D53300D75F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0929F7D53300D75F5E /* Assets.xcassets */; };
 		5A3EFB0E29F7D53300D75F5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0D29F7D53300D75F5E /* Preview Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		5A28A91329F8729300B02EE6 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		5A28DB412BE276530047A8CF /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		5A28DB472BE297740047A8CF /* UIWindow+ShakeNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+ShakeNotification.swift"; sourceTree = "<group>"; };
+		5A28DB492BE2D35B0047A8CF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		5A28DB4B2BE2D37B0047A8CF /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		5A3EFB0229F7D53200D75F5E /* DeepDishLie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepDishLie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDishLieApp.swift; sourceTree = "<group>"; };
 		5A3EFB0929F7D53300D75F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 		5A28A91129F86F4E00B02EE6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A28DB492BE2D35B0047A8CF /* WelcomeView.swift */,
 				5A1919F92BD963900092AF29 /* ScheduleView.swift */,
 				5A0467E92BDEC81300F01462 /* EventView.swift */,
 				5A0574E12BDD889E00D87585 /* WeatherView.swift */,
@@ -139,10 +144,11 @@
 		5A28A91229F86F5000B02EE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5A28DB4B2BE2D37B0047A8CF /* WelcomeController.swift */,
+				5AEF0C8E2BE2222C00BA47DF /* SettingsController.swift */,
 				5A1919FD2BDAFF020092AF29 /* ScheduleController.swift */,
 				5A5C4F232BE0D24B0088F4C3 /* WeatherController.swift */,
 				5A5C4F152BDFA2EC0088F4C3 /* GiveawayController.swift */,
-				5AEF0C8E2BE2222C00BA47DF /* SettingsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -323,6 +329,7 @@
 				5A28DB482BE297740047A8CF /* UIWindow+ShakeNotification.swift in Sources */,
 				5A28A91429F8729300B02EE6 /* AboutView.swift in Sources */,
 				5A1919FA2BD963900092AF29 /* ScheduleView.swift in Sources */,
+				5A28DB4C2BE2D37B0047A8CF /* WelcomeController.swift in Sources */,
 				5A191A032BDBCBEF0092AF29 /* Event.swift in Sources */,
 				5A0467EA2BDEC81300F01462 /* EventView.swift in Sources */,
 				5A191A052BDBCBFF0092AF29 /* Speaker.swift in Sources */,
@@ -333,6 +340,7 @@
 				5A89F8B52BDF7DD500307D02 /* Links.swift in Sources */,
 				5A1919FE2BDAFF020092AF29 /* ScheduleController.swift in Sources */,
 				5AEF0C8F2BE2222C00BA47DF /* SettingsController.swift in Sources */,
+				5A28DB4A2BE2D35B0047A8CF /* WelcomeView.swift in Sources */,
 				5A28DB422BE276530047A8CF /* SafariView.swift in Sources */,
 				5A191A012BDBCBE20092AF29 /* Day.swift in Sources */,
 				5A3EFB0629F7D53200D75F5E /* DeepDishLieApp.swift in Sources */,

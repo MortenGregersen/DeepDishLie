@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ScheduleView: View {
     @State private var showsSettings = false
+    @Environment(WelcomeController.self) private var welcomeController
     @Environment(SettingsController.self) private var settingsController
     @Environment(ScheduleController.self) private var scheduleController
 
@@ -17,32 +18,17 @@ struct ScheduleView: View {
         let dateFormatter = Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock)
         @Bindable var settingsController = settingsController
         NavigationStack {
-            ZStack {
-                List(scheduleController.days) { day in
-                    Section {
-                        ForEach(day.events) { event in
-                            EventRow(dayName: day.name, event: event, dateFormatter: dateFormatter)
-                                .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
-                        }
-                    } header: {
-                        Text(day.name)
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundStyle(Color.accentColor)
+            List(scheduleController.days) { day in
+                Section {
+                    ForEach(day.events) { event in
+                        EventRow(dayName: day.name, event: event, dateFormatter: dateFormatter)
+                            .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
                     }
-                }
-                VStack {
-                    ConfettiCannon(counter: $settingsController.confettiTrigger,
-                                   num: 10,
-                                   confettis: [.text("🍕")],
-                                   confettiSize: 50,
-                                   rainHeight: 1200,
-                                   fadesOut: true,
-                                   openingAngle: .degrees(180),
-                                   closingAngle: .degrees(0),
-                                   radius: 160,
-                                   repetitionInterval: 1)
-                    Spacer()
+                } header: {
+                    Text(day.name)
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundStyle(Color.accentColor)
                 }
             }
             .listStyle(.plain)
@@ -63,6 +49,52 @@ struct ScheduleView: View {
             .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
                 settingsController.triggerConfetti()
             }
+            .overlay(alignment: .bottom) {
+                if welcomeController.hasJustSeenWelcome && settingsController.randomConfettiIntensity > 4 {
+                    VStack {
+                        Button {
+                            welcomeController.hasJustSeenWelcome = false
+                            showsSettings = true
+                        } label: {
+                            HStack(alignment: .center) {
+                                Text("🤪")
+                                    .font(.largeTitle)
+                                Text("Okay... not that much!")
+                                    .fontWeight(.semibold)
+                            }
+                            .frame(maxWidth: .infinity)
+                        }
+                        .shadow(color: Color.accentColor, radius: 20)
+                        Button {
+                            welcomeController.hasJustSeenWelcome = false
+                        } label: {
+                            HStack(alignment: .center) {
+                                Text("😍")
+                                    .font(.largeTitle)
+                                Text("This is just awesome!")
+                                    .fontWeight(.semibold)
+                            }
+                            .frame(maxWidth: .infinity)
+                        }
+                        .shadow(color: Color.accentColor, radius: 20)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .padding(.bottom)
+                    .padding(.horizontal)
+                }
+            }
+        }
+        .overlay(alignment: .top) {
+            ConfettiCannon(counter: $settingsController.confettiTrigger,
+                           num: 10,
+                           confettis: [.text("🍕")],
+                           confettiSize: 50,
+                           rainHeight: 1200,
+                           fadesOut: true,
+                           openingAngle: .degrees(180),
+                           closingAngle: .degrees(0),
+                           radius: 160,
+                           repetitionInterval: 1)
         }
     }
 }

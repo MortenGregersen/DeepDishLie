@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct DeepDishLieApp: App {
+    @State private var welcomeController = WelcomeController()
     @State private var settingsController = SettingsController()
     @State private var scheduleController = ScheduleController()
     @State private var weatherController = WeatherController()
@@ -39,6 +40,7 @@ struct DeepDishLieApp: App {
                         Label("About", systemImage: "text.badge.star")
                     }
             }
+            .environment(welcomeController)
             .environment(settingsController)
             .onChange(of: scenePhase) { _, newValue in
                 if newValue == .active {
@@ -47,6 +49,18 @@ struct DeepDishLieApp: App {
                         await weatherController.fetchWeather()
                         await giveawayController.fetchGiveawayInfo()
                     }
+                }
+            }
+            .onAppear {
+                if !welcomeController.hasSeenWelcome || DeepDishLieApp.inDemoMode {
+                    welcomeController.showsWelcome = true
+                }
+            }
+            .overlay {
+                if welcomeController.showsWelcome {
+                    WelcomeView()
+                        .environment(welcomeController)
+                        .environment(settingsController)
                 }
             }
         }

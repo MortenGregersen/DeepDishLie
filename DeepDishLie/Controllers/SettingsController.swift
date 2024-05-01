@@ -19,7 +19,14 @@ class SettingsController {
     }}
     var randomConfettiIntensity: Double { didSet {
         UserDefaults.standard.set(randomConfettiIntensity, forKey: "random-confetti-intensity")
-        restartConfettiTimer()
+        if enableRandomConfetti {
+            restartConfettiTimer()
+            if randomConfettiIntensity == 5 {
+                triggerConfetti()
+                triggerConfetti()
+                triggerConfetti()
+            }
+        }
     }}
     var useLocalTimezone: Bool { didSet { UserDefaults.standard.set(useLocalTimezone, forKey: "use-local-timezone") }}
     var use24hourClock: Bool { didSet { UserDefaults.standard.set(useLocalTimezone, forKey: "use-24-hour-clock") }}
@@ -52,7 +59,9 @@ class SettingsController {
         self.openLinksInApp = UserDefaults.standard.bool(forKey: "open-links-in-app")
         self.useCelcius = UserDefaults.standard.bool(forKey: "use-fahrenheit")
 
-        startConfettiTimer()
+        if enableRandomConfetti {
+            startConfettiTimer()
+        }
     }
 
     func triggerConfetti() {
