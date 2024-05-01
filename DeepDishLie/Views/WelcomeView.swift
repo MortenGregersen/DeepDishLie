@@ -43,6 +43,7 @@ struct WelcomeView: View {
                             Label { Text("Love it!") } icon: { Text("😍") }
                                 .frame(maxWidth: .infinity)
                         }
+                        .font(.title)
                         Button {
                             dismiss(withFeeling: .like)
                         } label: {
