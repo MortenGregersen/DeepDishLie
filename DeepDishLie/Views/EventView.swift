@@ -10,6 +10,7 @@ import SwiftUI
 struct EventView: View {
     let dayName: String
     let event: Event
+    @State private var shownUrl: PresentedURL?
     @Environment(\.openURL) private var openURL
     @Environment(SettingsController.self) private var settingsController
 
@@ -81,6 +82,11 @@ struct EventView: View {
         .toolbarBackground(Color.accentColor, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarColorScheme(.dark, for: .navigationBar)
+        .sheet(item: $shownUrl) { presentedUrl in
+            SafariView(url: presentedUrl.url)
+                .edgesIgnoringSafeArea(.all)
+                .presentationCompactAdaptation(.fullScreenCover)
+        }
     }
 
     private func linksSection(links: Links, header: String?) -> some View {
@@ -109,7 +115,11 @@ struct EventView: View {
 
     private func socialButton(url: URL, text: String, image: Image) -> some View {
         Button {
-            openURL(url)
+            if settingsController.openLinksInApp {
+                shownUrl = .init(url: url)
+            } else {
+                openURL(url)
+            }
         } label: {
             Label {
                 Text(text)
@@ -121,6 +131,11 @@ struct EventView: View {
             }
             .foregroundStyle(.primary)
         }
+    }
+
+    private struct PresentedURL: Identifiable {
+        let id = UUID()
+        let url: URL
     }
 }
 

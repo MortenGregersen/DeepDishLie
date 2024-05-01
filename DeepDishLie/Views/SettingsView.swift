@@ -27,6 +27,10 @@ struct SettingsView: View {
                     } label: {
                         Label("Time format", systemImage: "clock.badge.checkmark")
                     }
+                    Toggle(isOn: $settingsController.openLinksInApp) {
+                        Label("Open social links in-app", systemImage: "link.circle")
+                    }
+                }
                 Section("Weather") {
                     Picker(selection: $settingsController.useCelcius) {
                         Text("Wrong (°F)")
