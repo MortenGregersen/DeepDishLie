@@ -19,6 +19,8 @@
 		5A28A90C29F803DF00B02EE6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */; };
 		5A28A91429F8729300B02EE6 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A91329F8729300B02EE6 /* AboutView.swift */; };
 		5A28DB422BE276530047A8CF /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28DB412BE276530047A8CF /* SafariView.swift */; };
+		5A28DB452BE294910047A8CF /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A28DB442BE294910047A8CF /* ConfettiSwiftUI */; };
+		5A28DB482BE297740047A8CF /* UIWindow+ShakeNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28DB472BE297740047A8CF /* UIWindow+ShakeNotification.swift */; };
 		5A3EFB0629F7D53200D75F5E /* DeepDishLieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */; };
 		5A3EFB0A29F7D53300D75F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0929F7D53300D75F5E /* Assets.xcassets */; };
 		5A3EFB0E29F7D53300D75F5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0D29F7D53300D75F5E /* Preview Assets.xcassets */; };
@@ -58,6 +60,7 @@
 		5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		5A28A91329F8729300B02EE6 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		5A28DB412BE276530047A8CF /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		5A28DB472BE297740047A8CF /* UIWindow+ShakeNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+ShakeNotification.swift"; sourceTree = "<group>"; };
 		5A3EFB0229F7D53200D75F5E /* DeepDishLie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepDishLie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDishLieApp.swift; sourceTree = "<group>"; };
 		5A3EFB0929F7D53300D75F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A28DB452BE294910047A8CF /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +147,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		5A28DB462BE297630047A8CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A28DB472BE297740047A8CF /* UIWindow+ShakeNotification.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5A3EFAF929F7D53200D75F5E = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +178,7 @@
 		5A3EFB0429F7D53200D75F5E /* DeepDishLie */ = {
 			isa = PBXGroup;
 			children = (
+				5A28DB462BE297630047A8CF /* Extensions */,
 				5A1919FF2BDBCBDD0092AF29 /* Models */,
 				5A28A91229F86F5000B02EE6 /* Controllers */,
 				5A28A91129F86F4E00B02EE6 /* Views */,
@@ -224,6 +237,7 @@
 			);
 			name = DeepDishLie;
 			packageProductDependencies = (
+				5A28DB442BE294910047A8CF /* ConfettiSwiftUI */,
 			);
 			productName = DeepDishLie;
 			productReference = 5A3EFB0229F7D53200D75F5E /* DeepDishLie.app */;
@@ -258,6 +272,7 @@
 			);
 			mainGroup = 5A3EFAF929F7D53200D75F5E;
 			packageReferences = (
+				5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = 5A3EFB0329F7D53200D75F5E /* Products */;
 			projectDirPath = "";
@@ -305,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A28DB482BE297740047A8CF /* UIWindow+ShakeNotification.swift in Sources */,
 				5A28A91429F8729300B02EE6 /* AboutView.swift in Sources */,
 				5A1919FA2BD963900092AF29 /* ScheduleView.swift in Sources */,
 				5A191A032BDBCBEF0092AF29 /* Event.swift in Sources */,
@@ -608,6 +624,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A28DB442BE294910047A8CF /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A3EFAFA29F7D53200D75F5E /* Project object */;
 }

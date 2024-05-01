@@ -5,6 +5,7 @@
 //  Created by Morten Bjerg Gregersen on 24/04/2024.
 //
 
+import ConfettiSwiftUI
 import SwiftUI
 
 struct ScheduleView: View {
@@ -14,18 +15,34 @@ struct ScheduleView: View {
 
     var body: some View {
         let dateFormatter = Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock)
+        @Bindable var settingsController = settingsController
         NavigationStack {
-            List(scheduleController.days) { day in
-                Section {
-                    ForEach(day.events) { event in
-                        EventRow(dayName: day.name, event: event, dateFormatter: dateFormatter)
-                            .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
+            ZStack {
+                List(scheduleController.days) { day in
+                    Section {
+                        ForEach(day.events) { event in
+                            EventRow(dayName: day.name, event: event, dateFormatter: dateFormatter)
+                                .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
+                        }
+                    } header: {
+                        Text(day.name)
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color.accentColor)
                     }
-                } header: {
-                    Text(day.name)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundStyle(Color.accentColor)
+                }
+                VStack {
+                    ConfettiCannon(counter: $settingsController.confettiTrigger,
+                                   num: 10,
+                                   confettis: [.text("🍕")],
+                                   confettiSize: 50,
+                                   rainHeight: 1200,
+                                   fadesOut: true,
+                                   openingAngle: .degrees(180),
+                                   closingAngle: .degrees(0),
+                                   radius: 160,
+                                   repetitionInterval: 1)
+                    Spacer()
                 }
             }
             .listStyle(.plain)
@@ -42,6 +59,9 @@ struct ScheduleView: View {
             }
             .sheet(isPresented: $showsSettings) {
                 SettingsView()
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
+                settingsController.triggerConfetti()
             }
         }
     }

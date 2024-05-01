@@ -15,6 +15,23 @@ struct SettingsView: View {
         @Bindable var settingsController = settingsController
         NavigationStack {
             Form {
+                Section("General") {
+                    Toggle(isOn: $settingsController.enableRandomConfetti) {
+                        Label {
+                            Text("Random pizza confetti")
+                        } icon: {
+                            Text("🍕")
+                        }
+                    }
+                    if settingsController.enableRandomConfetti {
+                        LabeledContent {
+                            Slider(value: $settingsController.randomConfettiIntensity, in: 1...5, step: 1)
+                        } label: {
+                            Label("Intensity", systemImage: "bubbles.and.sparkles")
+                                .padding(.trailing)
+                        }
+                    }
+                }
                 Section("Schedule") {
                     Toggle(isOn: $settingsController.useLocalTimezone) {
                         Label("Use local time zone", systemImage: "globe.europe.africa")
@@ -42,6 +59,7 @@ struct SettingsView: View {
                     }
                 }
             }
+            .animation(.default, value: settingsController.enableRandomConfetti)
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Color.accentColor, for: .navigationBar)
