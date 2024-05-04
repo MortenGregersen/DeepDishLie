@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TelemetryClient
 
 @main
 struct DeepDishLieApp: App {
@@ -16,6 +17,12 @@ struct DeepDishLieApp: App {
     @State private var giveawayController = GiveawayController()
     @Environment(\.scenePhase) private var scenePhase
     static let inDemoMode = UserDefaults.standard.bool(forKey: "Demo")
+
+    init() {
+        if !Self.inDemoMode {
+            TelemetryManager.initialize(with: .init(appID: "5DD04C64-E9D4-4FB0-AAD6-A48330771CBF"))
+        }
+    }
 
     var body: some Scene {
         WindowGroup {
@@ -44,6 +51,9 @@ struct DeepDishLieApp: App {
             .environment(settingsController)
             .onChange(of: scenePhase) { _, newValue in
                 if newValue == .active {
+                    if !Self.inDemoMode {
+                        TelemetryManager.send("confettiStatus", floatValue: settingsController.randomConfettiIntensity)
+                    }
                     Task {
                         await scheduleController.fetchEvents()
                         await weatherController.fetchWeather()

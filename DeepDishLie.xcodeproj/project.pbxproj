@@ -23,6 +23,7 @@
 		5A28DB482BE297740047A8CF /* UIWindow+ShakeNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28DB472BE297740047A8CF /* UIWindow+ShakeNotification.swift */; };
 		5A28DB4A2BE2D35B0047A8CF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28DB492BE2D35B0047A8CF /* WelcomeView.swift */; };
 		5A28DB4C2BE2D37B0047A8CF /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28DB4B2BE2D37B0047A8CF /* WelcomeController.swift */; };
+		5A28DB742BE5FB5F0047A8CF /* TelemetryClient in Frameworks */ = {isa = PBXBuildFile; productRef = 5A28DB732BE5FB5F0047A8CF /* TelemetryClient */; };
 		5A3EFB0629F7D53200D75F5E /* DeepDishLieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0529F7D53200D75F5E /* DeepDishLieApp.swift */; };
 		5A3EFB0A29F7D53300D75F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0929F7D53300D75F5E /* Assets.xcassets */; };
 		5A3EFB0E29F7D53300D75F5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFB0D29F7D53300D75F5E /* Preview Assets.xcassets */; };
@@ -93,6 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A28DB452BE294910047A8CF /* ConfettiSwiftUI in Frameworks */,
+				5A28DB742BE5FB5F0047A8CF /* TelemetryClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +246,7 @@
 			name = DeepDishLie;
 			packageProductDependencies = (
 				5A28DB442BE294910047A8CF /* ConfettiSwiftUI */,
+				5A28DB732BE5FB5F0047A8CF /* TelemetryClient */,
 			);
 			productName = DeepDishLie;
 			productReference = 5A3EFB0229F7D53200D75F5E /* DeepDishLie.app */;
@@ -279,6 +282,7 @@
 			mainGroup = 5A3EFAF929F7D53200D75F5E;
 			packageReferences = (
 				5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftClient" */,
 			);
 			productRefGroup = 5A3EFB0329F7D53200D75F5E /* Products */;
 			projectDirPath = "";
@@ -642,6 +646,14 @@
 				minimumVersion = 1.1.0;
 			};
 		};
+		5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TelemetryDeck/SwiftClient";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -649,6 +661,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
+		};
+		5A28DB732BE5FB5F0047A8CF /* TelemetryClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftClient" */;
+			productName = TelemetryClient;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

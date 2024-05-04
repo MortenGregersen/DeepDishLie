@@ -35,21 +35,6 @@ class SettingsController {
 
     var confettiTrigger = 0
     private var timer: Timer?
-    private var randomConfettiInterval: TimeInterval {
-        let range: ClosedRange<TimeInterval> = switch randomConfettiIntensity {
-        case 5:
-            0...3
-        case 4:
-            5...15
-        case 3:
-            15...30
-        case 2:
-            30...45
-        default:
-            45...60
-        }
-        return TimeInterval.random(in: range)
-    }
 
     init() {
         self.enableRandomConfetti = UserDefaults.standard.bool(forKey: "enable-random-confetti")
@@ -69,9 +54,7 @@ class SettingsController {
     }
 
     private func startConfettiTimer() {
-        let timeInterval = randomConfettiInterval
-        print(#function, timeInterval)
-        timer = .scheduledTimer(withTimeInterval: timeInterval, repeats: false, block: { [weak self] _ in
+        timer = .scheduledTimer(withTimeInterval: randomConfettiInterval(), repeats: false, block: { [weak self] _ in
             self?.triggerConfetti()
             self?.startConfettiTimer()
         })
@@ -84,6 +67,22 @@ class SettingsController {
     private func restartConfettiTimer() {
         stopConfettiTimer()
         startConfettiTimer()
+    }
+    
+    private func randomConfettiInterval() -> TimeInterval {
+        let range: ClosedRange<TimeInterval> = switch randomConfettiIntensity {
+        case 5:
+            0...3
+        case 4:
+            5...15
+        case 3:
+            15...30
+        case 2:
+            30...45
+        default:
+            45...60
+        }
+        return TimeInterval.random(in: range)
     }
 }
 
