@@ -121,13 +121,19 @@ struct EventView: View {
                 openURL(url)
             }
         } label: {
-            Label {
-                Text(text)
-            } icon: {
+            HStack(alignment: .center, spacing: 12) {
                 image
                     .renderingMode(.template)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .frame(width: 30)
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(text)
+                        .font(.subheadline)
+                    Text(url.absoluteString)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
             }
             .foregroundStyle(.primary)
         }
