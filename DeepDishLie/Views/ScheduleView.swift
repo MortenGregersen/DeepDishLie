@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ScheduleView: View {
     @State private var showsSettings = false
+    @State private var toolbarRerenderTrigger = false
     @Environment(WelcomeController.self) private var welcomeController
     @Environment(SettingsController.self) private var settingsController
     @Environment(ScheduleController.self) private var scheduleController
@@ -33,7 +34,7 @@ struct ScheduleView: View {
             }
             .listStyle(.plain)
             .navigationTitle("Schedule 🍕")
-            .toolbarBackground(Color.accentColor, for: .navigationBar)
+            .toolbarBackground(toolbarRerenderTrigger ? Color.accentColor : Color.accentColor.opacity(0.99999999), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbar {
@@ -43,14 +44,18 @@ struct ScheduleView: View {
                     Label("Settings", systemImage: "gear")
                 }
             }
-            .sheet(isPresented: $showsSettings) {
+            .sheet(isPresented: $showsSettings, onDismiss: {
+                // There is a bug in SwiftUI where the navigation bar looses its color (turning gray)
+                // when a sheet is dismissed. This will trigger a rerender after the dismiss.
+                toolbarRerenderTrigger.toggle()
+            }, content: {
                 SettingsView()
-            }
+            })
             .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
                 settingsController.triggerConfetti()
             }
             .overlay(alignment: .bottom) {
-                if welcomeController.hasJustSeenWelcome && settingsController.randomConfettiIntensity > 4 {
+                if welcomeController.hasJustSeenWelcome, settingsController.randomConfettiIntensity > 4 {
                     VStack {
                         Button {
                             welcomeController.hasJustSeenWelcome = false
