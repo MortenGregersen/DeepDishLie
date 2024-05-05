@@ -34,7 +34,8 @@ struct ScheduleView: View {
             }
             .listStyle(.plain)
             .navigationTitle("Schedule 🍕")
-            .toolbarBackground(toolbarRerenderTrigger ? Color.accentColor : Color.accentColor.opacity(0.99999999), for: .navigationBar)
+            .toolbarBackground(toolbarRerenderTrigger ? Color.accentColor : Color.accentColor.opacity(0.99999999),
+                               for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbar {
@@ -48,9 +49,9 @@ struct ScheduleView: View {
                 // There is a bug in SwiftUI where the navigation bar looses its color (turning gray)
                 // when a sheet is dismissed. This will trigger a rerender after the dismiss.
                 toolbarRerenderTrigger.toggle()
-            }, content: {
+            }) {
                 SettingsView()
-            })
+            }
             .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
                 settingsController.triggerConfetti()
             }
