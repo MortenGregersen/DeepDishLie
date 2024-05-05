@@ -30,20 +30,19 @@
         ]
     },
     {
-        "id": "session-stewart-lynch",
+        "id": "session-matt-massicotte",
         "start": "2024-05-05T13:45:00-05:00",
         "end": "2024-05-05T14:30:00-05:00",
-        "description": "Mining for iOS Nuggets: Unearthing Valuable Swift and SwiftUI Techniques",
+        "description": "It'll be a surprise!",
         "speakers": [
             {
-                "name": "Stewart Lynch",
-                "image": "stewart_lynch",
+                "name": "Matt Massicotte",
+                "image": "matt_massicotte",
                 "links": {
-                    "github": "https://github.com/StewartLynch",
-                    "mastodon": "https://iosdev.space/@StewartLynch",
-                    "twitter": "https://twitter.com/StewartLynch",
-                    "youtube": "https://www.youtube.com/@StewartLynch",
-                    "website": "https://www.createchsol.com"
+                    "github": "https://github.com/mattmassicotte",
+                    "mastodon": "https://mastodon.social/@mattiem",
+                    "twitter": "https://twitter.com/mattie",
+                    "website": "https://www.massicotte.org/"
                 }
             }
         ]
