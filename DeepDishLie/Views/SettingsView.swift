@@ -49,13 +49,15 @@ struct SettingsView: View {
                     }
                 }
                 Section("Weather") {
-                    Picker(selection: $settingsController.useCelcius) {
+                    Picker(selection: $settingsController.temperatureScale) {
                         Text("Wrong (°F)")
-                            .tag(false)
+                            .tag(TemperatureScale.fahrenheit)
                         Text("Right (°C)")
-                            .tag(true)
+                            .tag(TemperatureScale.celsius)
+                        Text("Weird (K)")
+                            .tag(TemperatureScale.kelvin)
                     } label: {
-                        Label("Temperature scale", systemImage: settingsController.useCelcius ? "thermometer.low" : "thermometer.high")
+                        Label("Temperature scale", systemImage: settingsController.temperatureScale.systemImage)
                     }
                 }
             }

@@ -31,7 +31,7 @@ class SettingsController {
     var useLocalTimezone: Bool { didSet { UserDefaults.standard.set(useLocalTimezone, forKey: "use-local-timezone") }}
     var use24hourClock: Bool { didSet { UserDefaults.standard.set(useLocalTimezone, forKey: "use-24-hour-clock") }}
     var openLinksInApp: Bool { didSet { UserDefaults.standard.set(openLinksInApp, forKey: "open-links-in-app") }}
-    var useCelcius: Bool { didSet { UserDefaults.standard.set(useCelcius, forKey: "use-celcius") }}
+    var temperatureScale: TemperatureScale { didSet { UserDefaults.standard.set(temperatureScale.rawValue, forKey: "temperature-scale") }}
 
     var confettiTrigger = 0
     private var timer: Timer?
@@ -42,7 +42,14 @@ class SettingsController {
         self.useLocalTimezone = UserDefaults.standard.bool(forKey: "use-local-timezone")
         self.use24hourClock = UserDefaults.standard.bool(forKey: "use-24-hour-clock")
         self.openLinksInApp = UserDefaults.standard.bool(forKey: "open-links-in-app")
-        self.useCelcius = UserDefaults.standard.bool(forKey: "use-fahrenheit")
+        if UserDefaults.standard.bool(forKey: "use-celcius") {
+            temperatureScale = .celsius
+        } else if let temperatureScaleRawValue = UserDefaults.standard.string(forKey: "temperature-scale"),
+                  let temperatureScale = TemperatureScale(rawValue: temperatureScaleRawValue) {
+            self.temperatureScale = temperatureScale
+        } else {
+            temperatureScale = .fahrenheit
+        }
 
         if enableRandomConfetti {
             startConfettiTimer()
@@ -68,7 +75,7 @@ class SettingsController {
         stopConfettiTimer()
         startConfettiTimer()
     }
-    
+
     private func randomConfettiInterval() -> TimeInterval {
         let range: ClosedRange<TimeInterval> = switch randomConfettiIntensity {
         case 5:
@@ -83,6 +90,28 @@ class SettingsController {
             45...60
         }
         return TimeInterval.random(in: range)
+    }
+}
+
+enum TemperatureScale: String {
+    case fahrenheit
+    case celsius
+    case kelvin
+    
+    var unit: UnitTemperature {
+        switch self {
+        case .fahrenheit: .fahrenheit
+        case .celsius: .celsius
+        case .kelvin: .kelvin
+        }
+    }
+    
+    var systemImage: String {
+        switch self {
+        case .fahrenheit: "thermometer.low"
+        case .celsius: "thermometer.high"
+        case .kelvin: "thermometer.medium"
+        }
     }
 }
 

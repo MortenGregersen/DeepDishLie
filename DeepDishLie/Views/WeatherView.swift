@@ -130,11 +130,11 @@ struct WeatherView: View {
     }
 
     private func temperature(from weather: Weather) -> Measurement<UnitTemperature> {
-        weather.currentWeather.temperature.converted(to: settingsController.useCelcius ? .celsius : .fahrenheit)
+        weather.currentWeather.temperature.converted(to: settingsController.temperatureScale.unit)
     }
     
     private func apparentTemperature(from weather: Weather) -> Measurement<UnitTemperature> {
-        weather.currentWeather.apparentTemperature.converted(to: settingsController.useCelcius ? .celsius : .fahrenheit)
+        weather.currentWeather.apparentTemperature.converted(to: settingsController.temperatureScale.unit)
     }
 
     @ViewBuilder private func verdict(weather: Weather) -> some View {
