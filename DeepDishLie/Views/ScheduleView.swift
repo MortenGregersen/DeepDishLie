@@ -44,8 +44,8 @@ struct ScheduleView: View {
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarColorScheme(.dark, for: .navigationBar)
                 .toolbar {
-                    HStack {
-                        if let currentDateId {
+                    if let currentDateId {
+                        ToolbarItem(placement: .topBarLeading) {
                             Button {
                                 withAnimation {
                                     proxy.scrollTo(currentDateId, anchor: .center)
@@ -54,6 +54,8 @@ struct ScheduleView: View {
                                 Label("Now", systemImage: "clock")
                             }
                         }
+                    }
+                    ToolbarItem(placement: .topBarTrailing) {
                         Button {
                             showsSettings = true
                         } label: {
@@ -273,7 +275,7 @@ extension Event {
             .primary
         }
     }
-    
+
     var subtitleTextColor: Color {
         if isHappeningNow {
             .init(uiColor: UIColor.systemBackground)
