@@ -11,6 +11,7 @@ import SwiftUI
 struct ScheduleView: View {
     @State private var showsSettings = false
     @State private var toolbarRerenderTrigger = false
+    @Environment(\.requestReview) private var requestReview
     @Environment(WelcomeController.self) private var welcomeController
     @Environment(SettingsController.self) private var settingsController
     @Environment(ScheduleController.self) private var scheduleController
@@ -51,6 +52,11 @@ struct ScheduleView: View {
                 toolbarRerenderTrigger.toggle()
             }) {
                 SettingsView()
+            }
+            .onAppear {
+                if welcomeController.hasSeenWelcome {
+                    requestReview()
+                }
             }
             .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
                 settingsController.triggerConfetti()
