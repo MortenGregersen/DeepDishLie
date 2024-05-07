@@ -164,7 +164,7 @@ private struct EventRow: View {
                         .foregroundStyle(event.titleTextColor)
                     if let speakers = event.speakers {
                         Text(ListFormatter.localizedString(byJoining: speakers.map(\.name)))
-                            .foregroundStyle(event.titleTextColor)
+                            .foregroundStyle(event.subtitleTextColor)
                     }
                 }
                 if let speakers = event.speakers {
@@ -271,6 +271,14 @@ extension Event {
             .init(uiColor: UIColor.systemBackground)
         } else {
             .primary
+        }
+    }
+    
+    var subtitleTextColor: Color {
+        if isHappeningNow {
+            .init(uiColor: UIColor.systemBackground)
+        } else {
+            .secondary
         }
     }
 }
