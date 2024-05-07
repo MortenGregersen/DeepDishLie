@@ -46,6 +46,17 @@ class ScheduleController {
         }
     }
 
+    var currentDateEvent: Event? {
+        for day in days {
+            for event in day.events {
+                if event.isHappeningNow {
+                    return event
+                }
+            }
+        }
+        return nil
+    }
+
     private func chunkUpEvents(_ events: [Event]) -> [Day] {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"

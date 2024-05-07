@@ -10,6 +10,8 @@ import StoreKit
 import SwiftUI
 
 struct ScheduleView: View {
+    @State private var timer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
+
     @State private var showsSettings = false
     @State private var toolbarRerenderTrigger = false
     @Environment(\.requestReview) private var requestReview
@@ -17,83 +19,103 @@ struct ScheduleView: View {
     @Environment(SettingsController.self) private var settingsController
     @Environment(ScheduleController.self) private var scheduleController
 
+    @State private var currentDateID: String?
+
     var body: some View {
         let dateFormatter = Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock)
         @Bindable var settingsController = settingsController
         NavigationStack {
-            List(scheduleController.days) { day in
-                Section {
-                    ForEach(day.events) { event in
-                        EventRow(dayName: day.name, event: event, dateFormatter: dateFormatter)
-                            .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
+            ScrollViewReader { proxy in
+                List(scheduleController.days) { day in
+                    Section {
+                        ForEach(day.events) { event in
+                            EventRow(dayName: day.name, event: event, dateFormatter: dateFormatter)
+                                .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
+                        }
+                    } header: {
+                        Text(day.name)
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color.accentColor)
                     }
-                } header: {
-                    Text(day.name)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundStyle(Color.accentColor)
                 }
-            }
-            .listStyle(.plain)
-            .navigationTitle("Schedule 🍕")
-            .toolbarBackground(toolbarRerenderTrigger ? Color.accentColor : Color.accentColor.opacity(0.99999999),
-                               for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarColorScheme(.dark, for: .navigationBar)
-            .toolbar {
-                Button {
-                    showsSettings = true
-                } label: {
-                    Label("Settings", systemImage: "gear")
-                }
-            }
-            .sheet(isPresented: $showsSettings, onDismiss: {
-                // There is a bug in SwiftUI where the navigation bar looses its color (turning gray)
-                // when a sheet is dismissed. This will trigger a rerender after the dismiss.
-                toolbarRerenderTrigger.toggle()
-            }) {
-                SettingsView()
-            }
-            .onAppear {
-                if welcomeController.hasSeenWelcome {
-                    requestReview()
-                }
-            }
-            .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
-                settingsController.triggerConfetti()
-            }
-            .overlay(alignment: .bottom) {
-                if welcomeController.hasJustSeenWelcome, settingsController.randomConfettiIntensity > 4 {
-                    VStack {
+                .listStyle(.plain)
+                .navigationTitle("Schedule 🍕")
+                .toolbarBackground(toolbarRerenderTrigger ? Color.accentColor : Color.accentColor.opacity(0.99999999),
+                                   for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbarColorScheme(.dark, for: .navigationBar)
+                .toolbar {
+                    HStack {
+                        if let currentDateID {
+                            Button {
+                                withAnimation {
+                                    proxy.scrollTo(currentDateID, anchor: .center)
+                                }
+                            } label: {
+                                Label("Now", systemImage: "clock")
+                            }
+                        }
                         Button {
-                            welcomeController.hasJustSeenWelcome = false
                             showsSettings = true
                         } label: {
-                            HStack(alignment: .center) {
-                                Text("🤪")
-                                    .font(.largeTitle)
-                                Text("Okay... not that much!")
-                                    .fontWeight(.semibold)
-                            }
-                            .frame(maxWidth: .infinity)
+                            Label("Settings", systemImage: "gear")
                         }
-                        .shadow(color: Color.accentColor, radius: 20)
-                        Button {
-                            welcomeController.hasJustSeenWelcome = false
-                        } label: {
-                            HStack(alignment: .center) {
-                                Text("😍")
-                                    .font(.largeTitle)
-                                Text("This is just awesome!")
-                                    .fontWeight(.semibold)
-                            }
-                            .frame(maxWidth: .infinity)
-                        }
-                        .shadow(color: Color.accentColor, radius: 20)
                     }
-                    .buttonStyle(.borderedProminent)
-                    .padding(.bottom)
-                    .padding(.horizontal)
+                }
+                .sheet(isPresented: $showsSettings, onDismiss: {
+                    // There is a bug in SwiftUI where the navigation bar looses its color (turning gray)
+                    // when a sheet is dismissed. This will trigger a rerender after the dismiss.
+                    toolbarRerenderTrigger.toggle()
+                }) {
+                    SettingsView()
+                }
+                .onAppear {
+                    currentDateID = scheduleController.currentDateEvent?.id
+                    if let currentDateID {
+                        proxy.scrollTo(currentDateID, anchor: .center)
+                    }
+                    if welcomeController.hasSeenWelcome, !welcomeController.hasRequestedReview {
+                        welcomeController.hasRequestedReview = true
+                        requestReview()
+                    }
+                }
+                .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
+                    settingsController.triggerConfetti()
+                }
+                .overlay(alignment: .bottom) {
+                    if welcomeController.hasJustSeenWelcome, settingsController.randomConfettiIntensity > 4 {
+                        VStack {
+                            Button {
+                                welcomeController.hasJustSeenWelcome = false
+                                showsSettings = true
+                            } label: {
+                                HStack(alignment: .center) {
+                                    Text("🤪")
+                                        .font(.largeTitle)
+                                    Text("Okay... not that much!")
+                                        .fontWeight(.semibold)
+                                }
+                                .frame(maxWidth: .infinity)
+                            }
+                            .shadow(color: Color.accentColor, radius: 20)
+                            Button {
+                                welcomeController.hasJustSeenWelcome = false
+                            } label: {
+                                HStack(alignment: .center) {
+                                    Text("😍")
+                                        .font(.largeTitle)
+                                    Text("This is just awesome!")
+                                        .fontWeight(.semibold)
+                                }
+                                .frame(maxWidth: .infinity)
+                            }
+                            .shadow(color: Color.accentColor, radius: 20)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .padding(.bottom)
+                        .padding(.horizontal)
+                    }
                 }
             }
         }
@@ -108,6 +130,8 @@ struct ScheduleView: View {
                            closingAngle: .degrees(0),
                            radius: 160,
                            repetitionInterval: 1)
+        }.onReceive(timer) { _ in
+            currentDateID = scheduleController.currentDateEvent?.id
         }
     }
 }
@@ -128,18 +152,20 @@ private struct EventRow: View {
                     Text(dateFormatter.string(from: event.start))
                     Text(dateFormatter.string(from: event.end))
                 }
+                .padding(.trailing, 2)
                 .font(.subheadline)
                 .fontWeight(.semibold)
-                .foregroundStyle(Color.accentColor)
+                .foregroundStyle(event.dateTextColor)
                 .containerRelativeFrame(.horizontal) { length, _ in
                     length / dateFrameDivider
                 }
                 VStack(alignment: .leading) {
                     Text(event.description)
                         .font(.headline)
+                        .foregroundStyle(event.titleTextColor)
                     if let speakers = event.speakers {
                         Text(ListFormatter.localizedString(byJoining: speakers.map(\.name)))
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(event.titleTextColor)
                     }
                 }
                 if let speakers = event.speakers {
@@ -187,19 +213,22 @@ private struct EventRow: View {
     }
 
     private var listRowBackgroundColor: Color? {
-        switch event {
+        if event.isHappeningNow {
+            return Color.accentColor
+        }
+        return switch event {
         case .practical:
-            Color.accentColor.opacity(0.2)
+            Color.accentColor.opacity(0.1)
         case .session:
             nil
         case .special:
             Color.accentColor.opacity(0.1)
         case .pause:
-            Color.accentColor.opacity(0.3)
+            Color.accentColor.opacity(0.1)
         case .breakfast:
-            Color.accentColor.opacity(0.4)
+            Color.accentColor.opacity(0.1)
         case .lunch:
-            Color.accentColor.opacity(0.4)
+            Color.accentColor.opacity(0.1)
         }
     }
 
@@ -231,6 +260,28 @@ private struct EventRow: View {
             2
         @unknown default:
             5
+        }
+    }
+}
+
+extension Event {
+    var isHappeningNow: Bool {
+        self.start...end ~= Date()
+    }
+
+    var dateTextColor: Color {
+        if isHappeningNow {
+            return Color(uiColor: UIColor.lightText)
+        } else {
+            return .accentColor
+        }
+    }
+
+    var titleTextColor: Color {
+        if isHappeningNow {
+            return Color(uiColor: UIColor.systemBackground)
+        } else {
+            return Color.primary//(uiColor: UIColor.)
         }
     }
 }
