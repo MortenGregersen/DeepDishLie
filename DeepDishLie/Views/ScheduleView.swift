@@ -213,23 +213,13 @@ private struct EventRow: View {
     }
 
     private var listRowBackgroundColor: Color? {
-        if event.isHappeningNow {
-            return Color.accentColor
+        guard event.isHappeningNow else {
+            return switch event {
+            case .session: nil
+            default: Color.accentColor.opacity(0.1)
+            }
         }
-        return switch event {
-        case .practical:
-            Color.accentColor.opacity(0.1)
-        case .session:
-            nil
-        case .special:
-            Color.accentColor.opacity(0.1)
-        case .pause:
-            Color.accentColor.opacity(0.1)
-        case .breakfast:
-            Color.accentColor.opacity(0.1)
-        case .lunch:
-            Color.accentColor.opacity(0.1)
-        }
+        return Color.accentColor
     }
 
     private var dateFrameDivider: CGFloat {
