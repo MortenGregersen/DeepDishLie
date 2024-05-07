@@ -266,22 +266,22 @@ private struct EventRow: View {
 
 extension Event {
     var isHappeningNow: Bool {
-        self.start...end ~= Date()
+        start ... end ~= Date()
     }
 
     var dateTextColor: Color {
         if isHappeningNow {
-            return Color(uiColor: UIColor.lightText)
+            .init(uiColor: UIColor.lightText)
         } else {
-            return .accentColor
+            .accentColor
         }
     }
 
     var titleTextColor: Color {
         if isHappeningNow {
-            return Color(uiColor: UIColor.systemBackground)
+            .init(uiColor: UIColor.systemBackground)
         } else {
-            return Color.primary//(uiColor: UIColor.)
+            .primary
         }
     }
 }
