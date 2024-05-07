@@ -11,15 +11,13 @@ import SwiftUI
 
 struct ScheduleView: View {
     @State private var timer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
-
+    @State private var currentDateId: String?
     @State private var showsSettings = false
     @State private var toolbarRerenderTrigger = false
     @Environment(\.requestReview) private var requestReview
     @Environment(WelcomeController.self) private var welcomeController
     @Environment(SettingsController.self) private var settingsController
     @Environment(ScheduleController.self) private var scheduleController
-
-    @State private var currentDateID: String?
 
     var body: some View {
         let dateFormatter = Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock)
@@ -47,10 +45,10 @@ struct ScheduleView: View {
                 .toolbarColorScheme(.dark, for: .navigationBar)
                 .toolbar {
                     HStack {
-                        if let currentDateID {
+                        if let currentDateId {
                             Button {
                                 withAnimation {
-                                    proxy.scrollTo(currentDateID, anchor: .center)
+                                    proxy.scrollTo(currentDateId, anchor: .center)
                                 }
                             } label: {
                                 Label("Now", systemImage: "clock")
@@ -71,9 +69,9 @@ struct ScheduleView: View {
                     SettingsView()
                 }
                 .onAppear {
-                    currentDateID = scheduleController.currentDateEvent?.id
-                    if let currentDateID {
-                        proxy.scrollTo(currentDateID, anchor: .center)
+                    currentDateId = scheduleController.currentDateEvent?.id
+                    if let currentDateId {
+                        proxy.scrollTo(currentDateId, anchor: .center)
                     }
                     if welcomeController.hasSeenWelcome, !welcomeController.hasRequestedReview {
                         welcomeController.hasRequestedReview = true
@@ -130,8 +128,9 @@ struct ScheduleView: View {
                            closingAngle: .degrees(0),
                            radius: 160,
                            repetitionInterval: 1)
-        }.onReceive(timer) { _ in
-            currentDateID = scheduleController.currentDateEvent?.id
+        }
+        .onReceive(timer) { _ in
+            currentDateId = scheduleController.currentDateEvent?.id
         }
     }
 }
