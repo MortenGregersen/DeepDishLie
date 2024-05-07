@@ -153,7 +153,6 @@ private struct EventRow: View {
                     Text(dateFormatter.string(from: event.start))
                     Text(dateFormatter.string(from: event.end))
                 }
-                .padding(.trailing, 2)
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .foregroundStyle(event.dateTextColor)
