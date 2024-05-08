@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class ScoreWondersUITests: XCTestCase {
+final class DeepDishLieSnapshots: XCTestCase {
     @MainActor func testAppStoreScreenshots() async throws {
         let app = XCUIApplication()
         app.launchArguments.append("-Demo")
