@@ -12,7 +12,7 @@ struct AboutView: View {
         NavigationStack {
             List {
                 Section("The app ❤️") {
-                    Text("Deep Dish Unofficial was made for the attendees at the Deep Dish Swift 2024 conference.")
+                    Text("Deep Dish Unofficial was made for the attendees at the Deep Dish Swift 2025 conference.")
                     HStack {
                         Text("It is open source and available on [GitHub](https://github.com/MortenGregersen/DeepDishLie).")
                         Spacer()
@@ -74,7 +74,7 @@ struct AboutView: View {
                 }
                 Section {
                     Text("Josh and Kari for organizing [Deep Dish Swift](https://deepdishswift.com) 🍕")
-                    Text("Kai and Malin for making the [Slices](https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071) podcast up to the conference 🎧")
+//                    Text("Kai and Malin for making the [Slices](https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071) podcast up to the conference 🎧")
                     Text("Simon Bachmann for [ConfettiSwiftUI](https://github.com/simibac/ConfettiSwiftUI) 🎉")
                 } header: {
                     Text("Thanks go out to 😍")
