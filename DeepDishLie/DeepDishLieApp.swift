@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import TelemetryClient
+import TelemetryDeck
 
 @main
 struct DeepDishLieApp: App {
@@ -20,7 +20,7 @@ struct DeepDishLieApp: App {
 
     init() {
         if !Self.inDemoMode {
-            TelemetryManager.initialize(with: .init(appID: "5DD04C64-E9D4-4FB0-AAD6-A48330771CBF"))
+            TelemetryDeck.initialize(config: .init(appID: "5DD04C64-E9D4-4FB0-AAD6-A48330771CBF"))
         }
     }
 
@@ -52,7 +52,7 @@ struct DeepDishLieApp: App {
             .onChange(of: scenePhase) { _, newValue in
                 if newValue == .active {
                     if !Self.inDemoMode {
-                        TelemetryManager.send("confettiStatus", floatValue: settingsController.randomConfettiIntensity)
+                        TelemetryDeck.signal("confettiStatus", floatValue: settingsController.randomConfettiIntensity)
                     }
                     Task {
                         await scheduleController.fetchEvents()

@@ -120,7 +120,7 @@ struct ScheduleView: View {
             }
         }
         .overlay(alignment: .top) {
-            ConfettiCannon(counter: $settingsController.confettiTrigger,
+            ConfettiCannon(trigger: $settingsController.confettiTrigger,
                            num: 10,
                            confettis: [.text("🍕")],
                            confettiSize: 50,

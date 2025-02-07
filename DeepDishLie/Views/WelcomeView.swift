@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import TelemetryClient
+import TelemetryDeck
 
 struct WelcomeView: View {
     @Environment(WelcomeController.self) private var welcomeController
@@ -83,7 +83,7 @@ struct WelcomeView: View {
 
     private func dismiss(withFeeling feeling: Feeling) {
         if !DeepDishLieApp.inDemoMode {
-            TelemetryManager.send("initialConfettiIntensity", floatValue: feeling.confettiIntensity)
+            TelemetryDeck.signal("initialConfettiIntensity", floatValue: feeling.confettiIntensity)
         }
         withAnimation {
             settingsController.enableRandomConfetti = feeling != .dislike

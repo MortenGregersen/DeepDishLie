@@ -282,7 +282,7 @@
 			mainGroup = 5A3EFAF929F7D53200D75F5E;
 			packageReferences = (
 				5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
-				5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftClient" */,
+				5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */,
 			);
 			productRefGroup = 5A3EFB0329F7D53200D75F5E /* Products */;
 			projectDirPath = "";
@@ -640,18 +640,18 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
+				minimumVersion = 2.0.0;
 			};
 		};
-		5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftClient" */ = {
+		5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/TelemetryDeck/SwiftClient";
+			repositoryURL = "https://github.com/TelemetryDeck/SwiftSDK";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.1;
+				minimumVersion = 2.7.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -664,7 +664,7 @@
 		};
 		5A28DB732BE5FB5F0047A8CF /* TelemetryClient */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftClient" */;
+			package = 5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */;
 			productName = TelemetryClient;
 		};
 /* End XCSwiftPackageProductDependency section */
