@@ -61,17 +61,10 @@ struct DeepDishLieApp: App {
                     }
                 }
             }
-            .onAppear {
-                if !welcomeController.hasSeenWelcome || DeepDishLieApp.inDemoMode {
-                    welcomeController.showsWelcome = true
-                }
-            }
-            .overlay {
-                if welcomeController.showsWelcome {
-                    WelcomeView()
-                        .environment(welcomeController)
-                        .environment(settingsController)
-                }
+            .fullScreenCover(isPresented: $welcomeController.showsWelcome) {
+                WelcomeView()
+                    .environment(welcomeController)
+                    .environment(settingsController)
             }
         }
     }

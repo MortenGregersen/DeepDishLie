@@ -9,76 +9,80 @@ import SwiftUI
 import TelemetryDeck
 
 struct WelcomeView: View {
+    @State private var showsTitle = false
+    @State private var showsButtons = false
     @Environment(WelcomeController.self) private var welcomeController
     @Environment(SettingsController.self) private var settingsController
-    @Environment(\.colorScheme) private var colorScheme
-
-    private var backgroundColor: Color {
-        if colorScheme == .dark {
-            .init(uiColor: UIColor(white: 0.1, alpha: 0.7))
-        } else {
-            .primary.opacity(0.5)
-        }
-    }
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
-        VStack {
+        ScrollView {
             VStack {
-                VStack(spacing: 12) {
-                    Image("DeepDishSwiftLogo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 150)
-                    Text("Welcome to Deep Dish Unofficial!")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    Text("Here you will find the conference schedule and a quick weather forecast.")
-                    Text("Have a nice Deep Dish Swift!")
-                        .fontWeight(.semibold)
-                    Divider()
-                    Text("How do you feel about pizza?")
+                VStack(spacing: 0) {
+                    FlickeringPizzaView(repeating: true)
+                        .frame(width: 250)
+                    VStack(alignment: .trailing) {
+                        Text("Deep Dish Swift")
+                            .font(.system(size: 40, weight: .bold))
+                        Text("Unofficial")
+                            .font(.custom("Chalkduster", fixedSize: 26))
+                    }
+                    .opacity(showsTitle ? 1.0 : 0.0)
+                }
+                .padding(.top, dynamicTypeSize.isAccessibilitySize ? 0 : 24)
+                .padding(.bottom, 24)
+                if showsButtons {
                     VStack {
-                        Button {
-                            dismiss(withFeeling: .love)
-                        } label: {
-                            Label { Text("Love it!") } icon: { Text("😍") }
-                                .frame(maxWidth: .infinity)
-                        }
-                        .font(.title)
-                        Button {
-                            dismiss(withFeeling: .like)
-                        } label: {
-                            Label { Text("Like it") } icon: { Text("😋") }
-                                .frame(maxWidth: .infinity)
-                        }
-                        Button {
-                            dismiss(withFeeling: .okay)
-                        } label: {
-                            Label { Text("It's okay...") } icon: { Text("😑") }
-                                .frame(maxWidth: .infinity)
-                        }
-                        Button {
-                            dismiss(withFeeling: .dislike)
-                        } label: {
-                            Label { Text("Don't like it") } icon: { Text("🤢") }
-                                .frame(maxWidth: .infinity)
+                        Text("How do you feel about pizza?")
+                        VStack {
+                            Button {
+                                dismiss(withFeeling: .love)
+                            } label: {
+                                Label { Text("Love it!") } icon: { Text("😍") }
+                                    .frame(maxWidth: .infinity)
+                            }
+                            .font(.title)
+                            Button {
+                                dismiss(withFeeling: .like)
+                            } label: {
+                                Label { Text("Like it") } icon: { Text("😋") }
+                                    .frame(maxWidth: .infinity)
+                            }
+                            Button {
+                                dismiss(withFeeling: .okay)
+                            } label: {
+                                Label { Text("It's okay...") } icon: { Text("😑") }
+                                    .frame(maxWidth: .infinity)
+                            }
+                            Button {
+                                dismiss(withFeeling: .dislike)
+                            } label: {
+                                Label { Text("Don't like it") } icon: { Text("🤢") }
+                                    .frame(maxWidth: .infinity)
+                            }
                         }
                     }
                     .padding(.horizontal)
                     .font(.title3)
                     .buttonStyle(.borderedProminent)
+                    .transition(.opacity.combined(with: .move(edge: .bottom)))
                 }
-                .multilineTextAlignment(.center)
-                .padding()
-                .padding(.vertical, 8)
             }
-            .background(Color(UIColor.systemBackground))
-            .cornerRadius(16)
-            .padding()
-            .shadow(radius: 5)
+            .multilineTextAlignment(.center)
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal)
+            .padding(.bottom)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(backgroundColor)
+        .foregroundStyle(.white)
+        .background(Color("SplashBackground"))
+        .onAppear {
+            withAnimation(.easeInOut(duration: 2.0)) {
+                showsTitle = true
+            }
+            withAnimation(.bouncy(duration: 1.0)) {
+                showsButtons = true
+            }
+        }
     }
 
     private func dismiss(withFeeling feeling: Feeling) {
@@ -113,10 +117,7 @@ struct WelcomeView: View {
 }
 
 #Preview {
-    Color.red
-        .overlay {
-            WelcomeView()
-                .environment(SettingsController.forPreview())
-                .environment(WelcomeController.forPreview(hasSeenWelcome: false))
-        }
+    WelcomeView()
+        .environment(SettingsController.forPreview())
+        .environment(WelcomeController.forPreview(hasSeenWelcome: false))
 }

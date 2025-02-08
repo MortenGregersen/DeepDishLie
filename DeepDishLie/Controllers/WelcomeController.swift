@@ -9,14 +9,19 @@ import SwiftUI
 
 @Observable
 class WelcomeController {
-    var hasSeenWelcome: Bool { didSet { UserDefaults.standard.set(hasSeenWelcome, forKey: "has-seen-welcome-2024") }}
-    var hasRequestedReview: Bool { didSet { UserDefaults.standard.set(hasRequestedReview, forKey: "has-seen-review-2024") }}
-    var showsWelcome = false
+    var hasSeenWelcome: Bool { didSet { UserDefaults.standard.set(hasSeenWelcome, forKey: hasSeenWelcomeKey) }}
+    var hasRequestedReview: Bool { didSet { UserDefaults.standard.set(hasRequestedReview, forKey: hasSeenReviewKey) }}
+    var showsWelcome: Bool
     var hasJustSeenWelcome = false
+    
+    private let hasSeenWelcomeKey = "has-seen-welcome-2025"
+    private let hasSeenReviewKey = "has-seen-review-2025"
 
     init() {
-        self.hasSeenWelcome = UserDefaults.standard.bool(forKey: "has-seen-welcome-2024")
-        self.hasRequestedReview = UserDefaults.standard.bool(forKey: "has-seen-review-2024")
+        let hasSeenWelcome = UserDefaults.standard.bool(forKey: hasSeenWelcomeKey)
+        self.hasSeenWelcome = hasSeenWelcome
+        self.hasRequestedReview = UserDefaults.standard.bool(forKey: hasSeenReviewKey)
+        showsWelcome = !hasSeenWelcome || DeepDishLieApp.inDemoMode
     }
 }
 
