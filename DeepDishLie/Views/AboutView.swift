@@ -31,10 +31,10 @@ struct AboutView: View {
                             Text("A supreme **Swift** developer conference being served in **Chicago, Illinois**. [Read more](https://deepdishswift.com).")
                         }
                         Spacer(minLength: 8)
-                        Image("DeepDishSwiftLogo")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
+                        FlickeringPizzaView(repeating: true)
                             .frame(width: 80)
+                            .padding(8)
+                            .background(Circle().fill(Color.splashBackground))
                     }
                 }
                 Section("The developer 🧑🏽‍💻") {
