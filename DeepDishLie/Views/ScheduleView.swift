@@ -93,7 +93,7 @@ struct ScheduleView: View {
                                 HStack(alignment: .center) {
                                     Text("🤪")
                                         .font(.largeTitle)
-                                    Text("Okay... not that much!")
+                                    Text("Okay... I don't love it that much!")
                                         .fontWeight(.semibold)
                                 }
                                 .frame(maxWidth: .infinity)

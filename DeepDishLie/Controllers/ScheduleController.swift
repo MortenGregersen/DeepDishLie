@@ -10,6 +10,7 @@ import Foundation
 @Observable
 class ScheduleController {
     private(set) var days: [Day] = []
+    var firstEventDate: Date? { days.first?.events.first?.start }
     private static let cachedJsonFilename = "Schedule.json"
     private static let decoder: JSONDecoder = {
         let decoder = JSONDecoder()
