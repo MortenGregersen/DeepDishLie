@@ -163,12 +163,13 @@ private struct EventRow: View {
                     Text(event.description)
                         .font(.headline)
                         .foregroundStyle(event.titleTextColor)
+                        .italic(event.toBeDetermined)
                     if let speakers = event.speakers {
-                        Text(ListFormatter.localizedString(byJoining: speakers.map(\.name)))
+                        Text(speakers.map(\.name).formatted(.list(type: .and)))
                             .foregroundStyle(event.subtitleTextColor)
                     }
                 }
-                if let speakers = event.speakers {
+                if let speakers = event.speakers, !speakers.isEmpty {
                     Spacer(minLength: 12)
                     if horizontalSizeClass == .compact {
                         VStack(alignment: .trailing) {
@@ -187,7 +188,7 @@ private struct EventRow: View {
                                 .font(.largeTitle)
                         }
                         .frame(width: 50, height: 50)
-                        .background(Color.accentColor)
+                        .background(Color.accentColor.opacity(event.toBeDetermined ? 0.5 : 1.0))
                         .clipShape(Circle())
                     }
                 }
@@ -271,7 +272,7 @@ extension Event {
         if isHappeningNow {
             .init(uiColor: UIColor.systemBackground)
         } else {
-            .primary
+            toBeDetermined ? .secondary : .primary
         }
     }
 

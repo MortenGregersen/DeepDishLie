@@ -17,7 +17,7 @@ struct EventView: View {
     var body: some View {
         let dateFormatter = Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock)
         List {
-            if let speakers = event.speakers {
+            if let speakers = event.speakers, !speakers.isEmpty {
                 Grid(alignment: .center, horizontalSpacing: 24) {
                     GridRow(alignment: .center) {
                         let imageHeight = speakers.count == 1 ? 200 : 300 / CGFloat(speakers.count)
@@ -56,7 +56,7 @@ struct EventView: View {
                 Text(event.description)
                     .font(.title)
                 if let speakers = event.speakers {
-                    Text(ListFormatter.localizedString(byJoining: speakers.map(\.name)))
+                    Text(speakers.map(\.name).formatted(.list(type: .and)))
                         .foregroundStyle(.secondary)
                 }
             }

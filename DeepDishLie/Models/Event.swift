@@ -79,7 +79,7 @@ enum Event: Decodable, Identifiable {
             nil
         }
     }
-    
+
     var links: Links? {
         switch self {
         case .practical(let session),
@@ -93,9 +93,12 @@ enum Event: Decodable, Identifiable {
 
     var emoji: String? {
         switch self {
-        case .practical(let session),
+        case .session(let session),
+             .practical(let session),
              .special(let session):
-            if session.id.hasPrefix("practical-registration") {
+            if let emoji = session.emoji {
+                return emoji
+            } else if session.id.hasPrefix("practical-registration") {
                 return "🪪"
             } else if session.id.hasPrefix("practical-intro") {
                 return "🤗"
@@ -115,9 +118,12 @@ enum Event: Decodable, Identifiable {
             return "🥐"
         case .lunch:
             return "🥪"
-        default:
-            return nil
         }
+    }
+
+    var toBeDetermined: Bool {
+        guard case .session(let session) = self else { return false }
+        return session.id.hasPrefix("session-tbd")
     }
 
     init(from decoder: any Decoder) throws {
@@ -144,7 +150,7 @@ enum Event: Decodable, Identifiable {
         case end
         case speakers
     }
-    
+
     static func dateFormatter(useLocalTimezone: Bool, use24hourClock: Bool) -> DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
@@ -167,5 +173,6 @@ struct Session: Decodable, Identifiable {
     let end: Date
     let description: String
     let speakers: [Speaker]?
+    let emoji: String?
     let links: Links?
 }
