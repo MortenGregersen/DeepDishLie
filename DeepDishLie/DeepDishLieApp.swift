@@ -42,7 +42,7 @@ struct DeepDishLieApp: App {
                 WeatherView()
                     .environment(weatherController)
                     .tabItem {
-                        Label("Wu with the Weather", systemImage: "thermometer.sun")
+                        Label("Weather", systemImage: "thermometer.sun")
                     }
                 GiveawayView()
                     .environment(giveawayController)
