@@ -145,8 +145,37 @@
                 "links": {
                     "github": "https://github.com/charliemchapman",
                     "mastodon": "https://mastodon.social/@charliemchapman",
+                    "threads": "https://www.threads.net/@charliemchapman",
                     "twitter": "https://twitter.com/_chuckyc",
                     "website": "https://charliemchapman.com"
+                }
+            },
+            {
+                "name": "Ryan Ashcraft",
+                "image": "ryan_ashcraft",
+                "links": {
+                    "github": "https://github.com/ryanashcraft",
+                    "mastodon": "https://mastodon.social/@ryanashcraft",
+                    "bluesky": "https://bsky.app/profile/ryanashcraft.com",
+                    "twitter": "https://twitter.com/ryanashcraft",
+                    "website": "https://ryanashcraft.com"
+                }
+            },
+            {
+                "name": "Neem Serra",
+                "image": "neem_serra",
+                "links": {
+                    "github": "https://github.com/teamneem",
+                    "twitter": "https://twitter.com/TeamNeem",
+                    "website": "https://neemserra.com/about/"
+                }
+            },
+            {
+                "name": "Edward Sánchez",
+                "image": "edward_sanchez",
+                "links": {
+                    "twitter": "https://twitter.com/edwardsanchez",
+                    "website": "https://edwardsanchez.design"
                 }
             }
         ],
