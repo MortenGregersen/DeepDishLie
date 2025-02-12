@@ -35,7 +35,7 @@ struct GiveawayView: View {
                     Text("1 year of AppDab Pro")
                         .font(.title)
                         .fontWeight(.semibold)
-                    Text("As part of **Deep Dish Swift 2024**,\n**five lucky attendees** will win\n**a year of AppDab Pro!**")
+                    Text("As part of **Deep Dish Swift 2025**,\n**five lucky attendees** will win\n**a year of AppDab Pro!**")
                         .multilineTextAlignment(.center)
                         .padding(.top, 8)
                     VStack {
@@ -50,7 +50,7 @@ struct GiveawayView: View {
                                 }
                             }
                         } else if !giveawayInfo.channel.isEmpty {
-                            Text("Join the raffle by going to the **\(giveawayInfo.channel)** channel in the Deep Dish Swift 2024 Discord")
+                            Text("Join the raffle by going to the **\(giveawayInfo.channel)** channel in the Deep Dish Swift 2025 Discord")
                                 .font(.title3)
                         } else {
                             Text("Information on how to attend will be announced at the conference.")

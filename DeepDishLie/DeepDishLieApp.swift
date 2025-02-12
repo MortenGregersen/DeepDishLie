@@ -44,11 +44,11 @@ struct DeepDishLieApp: App {
                     .tabItem {
                         Label("Weather", systemImage: "thermometer.sun")
                     }
-                GiveawayView()
-                    .environment(giveawayController)
-                    .tabItem {
-                        Label("Giveaway", systemImage: "app.gift")
-                    }
+//                GiveawayView()
+//                    .environment(giveawayController)
+//                    .tabItem {
+//                        Label("Giveaway", systemImage: "app.gift")
+//                    }
                 AboutView()
                     .tabItem {
                         Label("About", systemImage: "text.badge.star")
