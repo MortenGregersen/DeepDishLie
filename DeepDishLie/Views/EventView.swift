@@ -13,6 +13,7 @@ struct EventView: View {
     @State private var shownUrl: PresentedURL?
     @Environment(\.openURL) private var openURL
     @Environment(SettingsController.self) private var settingsController
+    private let headerImageHeight: CGFloat = 30
 
     var body: some View {
         let dateFormatter = Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock)
@@ -67,12 +68,33 @@ struct EventView: View {
                 .fontWeight(.semibold)
                 .foregroundStyle(.white)
             if let links = event.links {
-                linksSection(links: links, header: links.name)
+                linksSection(links: links, header: {
+                    if let name = links.name {
+                        Text(name)
+                    }
+                })
             }
             if let speakers = event.speakers {
                 ForEach(speakers) { speaker in
                     if let links = speaker.links {
-                        linksSection(links: links, header: "Connect with \(speaker.firstName)")
+                        linksSection(links: links, header: {
+                            Label {
+                                Text("Connect with \(speaker.firstName)")
+                            } icon: {
+                                Image(speaker.image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(height: headerImageHeight)
+                                    .clipShape(Circle())
+                                    .background {
+                                        Circle()
+                                            .fill(Color.accentColor)
+                                            .frame(width: headerImageHeight * 1.05, height: headerImageHeight * 1.05)
+                                    }
+                                    .shadow(color: .accent, radius: 2)
+                            }
+                            .foregroundStyle(.primary)
+                        })
                     }
                 }
             }
@@ -89,13 +111,19 @@ struct EventView: View {
         }
     }
 
-    private func linksSection(links: Links, header: String?) -> some View {
+    private func linksSection(links: Links, @ViewBuilder header: @escaping () -> some View) -> some View {
         Section {
             if let githubURL = links.github {
                 socialButton(url: githubURL, text: "GitHub", image: Image("github"))
             }
             if let mastodonURL = links.mastodon {
                 socialButton(url: mastodonURL, text: "Mastodon", image: Image("mastodon"))
+            }
+            if let blueskyURL = links.bluesky {
+                socialButton(url: blueskyURL, text: "Bluesky", image: Image("bluesky"))
+            }
+            if let threadsURL = links.threads {
+                socialButton(url: threadsURL, text: "Threads", image: Image("threads"))
             }
             if let twitterURL = links.twitter {
                 socialButton(url: twitterURL, text: "Twitter", image: Image("twitter"))
@@ -107,9 +135,7 @@ struct EventView: View {
                 socialButton(url: websiteURL, text: "Website", image: Image(systemName: "globe"))
             }
         } header: {
-            if let header {
-                Text(header)
-            }
+            header()
         }
     }
 

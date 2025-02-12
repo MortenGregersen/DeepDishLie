@@ -197,20 +197,28 @@ private struct EventRow: View {
         .listRowBackground(listRowBackgroundColor)
     }
 
-    private func speakerImages(speakers: [Speaker]) -> some View {
-        ForEach(speakers) { speaker in
-            Image(speaker.image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 50)
-                .clipShape(Circle())
-                .background {
-                    Circle()
-                        .fill(Color.accentColor)
-                        .frame(width: 54, height: 54)
-                }
-                .shadow(color: .accent, radius: 1, x: 0, y: 1)
+    @ViewBuilder private func speakerImages(speakers: [Speaker]) -> some View {
+        if speakers.count > 2, let speaker = speakers.first {
+            speakerImage(speaker)
+        } else {
+            ForEach(speakers) { speaker in
+                speakerImage(speaker)
+            }
         }
+    }
+
+    private func speakerImage(_ speaker: Speaker) -> some View {
+        Image(speaker.image)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(height: 50)
+            .clipShape(Circle())
+            .background {
+                Circle()
+                    .fill(Color.accentColor)
+                    .frame(width: 54, height: 54)
+            }
+            .shadow(color: .accent, radius: 1, x: 0, y: 1)
     }
 
     private var listRowBackgroundColor: Color? {
