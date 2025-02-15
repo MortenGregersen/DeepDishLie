@@ -1,6 +1,6 @@
 //
 //  GiveawayController.swift
-//  DeepDishLie
+//  DeepDishCore
 //
 //  Created by Morten Bjerg Gregersen on 29/04/2024.
 //
@@ -8,11 +8,11 @@
 import Foundation
 
 @Observable
-class GiveawayController {
-    private(set) var giveawayInfo: GiveawayInfo
+public class GiveawayController {
+    public private(set) var giveawayInfo: GiveawayInfo
     private static let cachedJsonFilename = "Giveaway.json"
 
-    init() {
+    public init() {
         if let cachedResponse = Self.loadCachedResponse() {
             giveawayInfo = cachedResponse
         } else {
@@ -27,7 +27,7 @@ class GiveawayController {
         return try? JSONDecoder().decode(GiveawayInfo.self, from: cachedJsonData)
     }
 
-    @MainActor func fetchGiveawayInfo() async {
+    @MainActor public func fetchGiveawayInfo() async {
         do {
             let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/main/DeepDishLie/Giveaway.json")!
             let urlRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
@@ -42,12 +42,7 @@ class GiveawayController {
     }
 }
 
-struct GiveawayInfo: Decodable {
-    let channel: String
-    let winners: [String]
-}
-
-extension GiveawayController {
+public extension GiveawayController {
     static func forPreview() -> GiveawayController {
         .init()
     }

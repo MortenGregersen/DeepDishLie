@@ -5,6 +5,7 @@
 //  Created by Morten Bjerg Gregersen on 01/05/2024.
 //
 
+import DeepDishCore
 import SwiftUI
 
 struct SettingsView: View {
@@ -25,7 +26,7 @@ struct SettingsView: View {
                     }
                     if settingsController.enableRandomConfetti {
                         LabeledContent {
-                            Slider(value: $settingsController.randomConfettiIntensity, in: 1...5, step: 1)
+                            Slider(value: $settingsController.randomConfettiIntensity, in: 1 ... 5, step: 1)
                         } label: {
                             Label("Intensity", systemImage: "bubbles.and.sparkles")
                                 .padding(.trailing)

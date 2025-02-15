@@ -1,6 +1,6 @@
 //
 //  ScheduleController.swift
-//  DeepDishLie
+//  DeepDishCore
 //
 //  Created by Morten Bjerg Gregersen on 25/04/2024.
 //
@@ -8,9 +8,10 @@
 import Foundation
 
 @Observable
-class ScheduleController {
-    private(set) var days: [Day] = []
-    var firstEventDate: Date? { days.first?.events.first?.start }
+public class ScheduleController {
+    public private(set) var days: [Day] = []
+    public var firstEventDate: Date? { days.first?.events.first?.start }
+
     private static let cachedJsonFilename = "Schedule.json"
     private static let decoder: JSONDecoder = {
         let decoder = JSONDecoder()
@@ -18,7 +19,7 @@ class ScheduleController {
         return decoder
     }()
 
-    init() {
+    public init() {
         if let events = Self.loadCachedEvents() {
             self.days = chunkUpEvents(events)
         } else {
@@ -33,7 +34,7 @@ class ScheduleController {
         return try? decoder.decode([Event].self, from: cachedJsonData)
     }
 
-    @MainActor func fetchEvents() async {
+    @MainActor public func fetchEvents() async {
         do {
             let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/main/DeepDishLie/Schedule.json")!
             let urlRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
@@ -47,7 +48,7 @@ class ScheduleController {
         }
     }
 
-    var currentDateEvent: Event? {
+    public var currentDateEvent: Event? {
         for day in days {
             for event in day.events {
                 if event.isHappeningNow {
@@ -78,7 +79,7 @@ class ScheduleController {
     }
 }
 
-extension ScheduleController {
+public extension ScheduleController {
     static func forPreview() -> ScheduleController {
         .init()
     }
