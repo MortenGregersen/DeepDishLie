@@ -5,6 +5,7 @@
 //  Created by Morten Bjerg Gregersen on 25/04/2024.
 //
 
+import DeepDishCore
 import Foundation
 
 @Observable

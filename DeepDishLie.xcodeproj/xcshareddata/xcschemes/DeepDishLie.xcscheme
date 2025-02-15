@@ -41,6 +41,17 @@
                ReferencedContainer = "container:DeepDishLie.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5A8195442D61493D0048354A"
+               BuildableName = "DeepDishCoreTests.xctest"
+               BlueprintName = "DeepDishCoreTests"
+               ReferencedContainer = "container:DeepDishLie.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

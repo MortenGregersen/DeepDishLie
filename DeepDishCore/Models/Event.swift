@@ -1,13 +1,13 @@
 //
 //  Event.swift
-//  DeepDishLie
+//  DeepDishCore
 //
 //  Created by Morten Bjerg Gregersen on 26/04/2024.
 //
 
 import Foundation
 
-enum Event: Decodable, Identifiable {
+public enum Event: Decodable, Identifiable {
     case practical(Session)
     case session(Session)
     case special(Session)
@@ -15,7 +15,7 @@ enum Event: Decodable, Identifiable {
     case breakfast(Break)
     case lunch(Break)
 
-    var id: String {
+    public var id: String {
         switch self {
         case .practical(let session),
              .session(let session),
@@ -28,7 +28,7 @@ enum Event: Decodable, Identifiable {
         }
     }
 
-    var start: Date {
+    public var start: Date {
         switch self {
         case .practical(let session),
              .session(let session),
@@ -41,7 +41,7 @@ enum Event: Decodable, Identifiable {
         }
     }
 
-    var end: Date {
+    public var end: Date {
         switch self {
         case .practical(let session),
              .session(let session),
@@ -54,7 +54,7 @@ enum Event: Decodable, Identifiable {
         }
     }
 
-    var description: String {
+    public var description: String {
         switch self {
         case .practical(let session),
              .session(let session),
@@ -69,7 +69,7 @@ enum Event: Decodable, Identifiable {
         }
     }
 
-    var speakers: [Speaker]? {
+    public var speakers: [Speaker]? {
         switch self {
         case .practical(let session),
              .session(let session),
@@ -80,7 +80,7 @@ enum Event: Decodable, Identifiable {
         }
     }
 
-    var links: Links? {
+    public var links: Links? {
         switch self {
         case .practical(let session),
              .session(let session),
@@ -91,7 +91,7 @@ enum Event: Decodable, Identifiable {
         }
     }
 
-    var emoji: String? {
+    public var emoji: String? {
         switch self {
         case .session(let session),
              .practical(let session),
@@ -121,12 +121,12 @@ enum Event: Decodable, Identifiable {
         }
     }
 
-    var toBeDetermined: Bool {
+    public var toBeDetermined: Bool {
         guard case .session(let session) = self else { return false }
         return session.id.hasPrefix("session-tbd")
     }
 
-    init(from decoder: any Decoder) throws {
+    public init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let id = try container.decode(String.self, forKey: .id)
         if id.hasPrefix("practical") {
@@ -151,7 +151,7 @@ enum Event: Decodable, Identifiable {
         case speakers
     }
 
-    static func dateFormatter(useLocalTimezone: Bool, use24hourClock: Bool) -> DateFormatter {
+    public static func dateFormatter(useLocalTimezone: Bool, use24hourClock: Bool) -> DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
@@ -161,18 +161,18 @@ enum Event: Decodable, Identifiable {
     }
 }
 
-struct Break: Decodable, Identifiable {
-    let id: String
-    let start: Date
-    let end: Date
+public struct Break: Decodable, Identifiable {
+    public let id: String
+    public let start: Date
+    public let end: Date
 }
 
-struct Session: Decodable, Identifiable {
-    let id: String
-    let start: Date
-    let end: Date
-    let description: String
-    let speakers: [Speaker]?
-    let emoji: String?
-    let links: Links?
+public struct Session: Decodable, Identifiable {
+    public let id: String
+    public let start: Date
+    public let end: Date
+    public let description: String
+    public let speakers: [Speaker]?
+    public let emoji: String?
+    public let links: Links?
 }

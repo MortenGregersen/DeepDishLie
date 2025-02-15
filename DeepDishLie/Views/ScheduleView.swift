@@ -6,6 +6,7 @@
 //
 
 import ConfettiSwiftUI
+import DeepDishCore
 import StoreKit
 import SwiftUI
 
