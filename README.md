@@ -6,7 +6,7 @@
 
 **Deep Dish Unofficial** is an open-source iOS application designed as the perfect companion for attendees of the [Deep Dish Swift](https://deepdishswift.com/) conference in Chicago. The app provides easy access to the full conference schedule and offers amusing, real-time weather updates based on [Chris Wu](https://chriswu.com)'s preferences.
 
-## Installation
+## Installation 🛠️
 
 To run the app locally:
 
@@ -21,11 +21,11 @@ To run the app locally:
    ```
 3. Build and run the app on your simulator or device.
 
-## Contributing
+## Contributing 🥰
 
-Contributions are welcome! 🥰 Even during the conference, we managed to get four updates approved in 2024! 🚀
+Contributions are welcome! Even during the conference, we managed to **get four updates approved in 2024**! 🚀
 
-### How to contribute
+### How to contribute 🤝
 
 1. Fork the repository.
 2. Create a new branch:
@@ -42,11 +42,11 @@ Contributions are welcome! 🥰 Even during the conference, we managed to get fo
    ```
 5. Open a pull request with a detailed description of your changes.
 
-## License
+## License 🔏
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+## Acknowledgments 🙏
 
 - [Chris Wu](https://chriswu.com) for inspiring the weather feature.
 - The [Deep Dish Swift](https://deepdishswift.com/) community for their support.
