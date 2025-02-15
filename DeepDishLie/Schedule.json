@@ -15,9 +15,16 @@
         "id": "special-opening-keynote",
         "start": "2025-04-27T13:00:00-05:00",
         "end": "2025-04-27T13:45:00-05:00",
-        "description": "Opening keynote",
-        "speakers": [],
-        "emoji": "🚀"
+        "description": "Opening Keynote - \"Chasing Fun: Creating a Career You Love\"",
+        "speakers": [{
+            "name": "Michael Flarup",
+            "image": "michael_flarup",
+            "links": {
+                "bluesky": "https://bsky.app/profile/flarup.bsky.social",
+                "mastodon": "https://mastodon.social/@flarup",
+                "twitter": "https://twitter.com/flarup"
+            }
+        }]
     },
     {
         "id": "session-tbd1",
@@ -31,9 +38,9 @@
         "id": "session-tbd2",
         "start": "2025-04-27T15:00:00-05:00",
         "end": "2025-04-27T15:30:00-05:00",
-        "description": ".redacted()",
+        "description": "Thin Crust is Optional",
         "speakers": [],
-        "emoji": "🤐"
+        "emoji": "🫥"
     },
     {
         "id": "break-sunday",
@@ -49,12 +56,14 @@
         "emoji": "😶"
     },
     {
-        "id": "session-tbd4",
+        "id": "session-allison-mcentire",
         "start": "2025-04-27T17:00:00-05:00",
         "end": "2025-04-27T17:45:00-05:00",
-        "description": "This Talk is Private(set)",
-        "speakers": [],
-        "emoji": "🔒"
+        "description": "Prompt Engineering for Accessibility",
+        "speakers": [{
+            "name": "Allison McEntire",
+            "image": "allison_mcentire",
+        }]
     },
     {
         "id": "breakfast-monday",
@@ -68,20 +77,34 @@
         "description": "Morning welcome"
     },
     {
-        "id": "session-tbd5",
+        "id": "session-antoine-van-der-lee",
         "start": "2025-04-28T09:05:00-05:00",
         "end": "2025-04-28T09:45:00-05:00",
-        "description": "Thin Crust is Optional",
-        "speakers": [],
-        "emoji": "🫥"
+        "description": "From Overwhelmed to Confident: Understanding Swift Concurrency",
+        "speakers": [{
+            "name": "Antoine van der Lee",
+            "image": "antoine_van_der_lee",
+            "links": {
+                "bluesky": "https://bsky.app/profile/avanderlee.com",
+                "mastodon": "https://mastodon.social/@swiftlee",
+                "twitter": "https://twitter.com/twannl"
+            }
+        }]
     },
     {
-        "id": "session-tbd6",
+        "id": "session-adrian-eves",
         "start": "2025-04-28T10:00:00-05:00",
         "end": "2025-04-28T10:45:00-05:00",
-        "description": "Swiftly Classified",
-        "speakers": [],
-        "emoji": "🕵️‍♂️"
+        "description": "I'm the Problem, It's Me",
+        "speakers": [{
+            "name": "Adrian Eves",
+            "image": "adrian_eves",
+            "links": {
+                "bluesky": "https://bsky.app/profile/swifteves.bsky.social",
+                "mastodon": "https://mastodon.social/@swifteves",
+                "twitter": "https://twitter.com/swifteves"
+            }
+        }]
     },
     {
         "id": "session-tbd7",
@@ -97,20 +120,34 @@
         "end": "2025-04-28T13:00:00-05:00"
     },
     {
-        "id": "session-tbd8",
+        "id": "session-daniel-gauthier",
         "start": "2025-04-28T13:00:00-05:00",
         "end": "2025-04-28T13:45:00-05:00",
-        "description": "WWJD: What Would Josh Debug?",
-        "speakers": [],
-        "emoji": "🐞"
+        "description": "Make Nice Things: An Engineer's “Made-Up Guide to App Design“",
+        "speakers": [{
+            "name": "Daniel Gauthier",
+            "image": "daniel_gauthier",
+            "links": {
+                "bluesky": "https://bsky.app/profile/@danielmgauthier.bsky.social",
+                "mastodon": "https://mastodon.social/@danielmgauthier",
+                "twitter": "https://twitter.com/danielmgauthier"
+            }
+        }]
     },
     {
-        "id": "session-tbd9",
+        "id": "session-danielle-lewis",
         "start": "2025-04-28T14:00:00-05:00",
         "end": "2025-04-28T14:45:00-05:00",
-        "description": "Waiting for Josh Review",
-        "speakers": [],
-        "emoji": "👀"
+        "description": "Learning in Public: My Journey to 10",
+        "speakers": [{
+            "name": "Danielle Lewis",
+            "image": "danielle_lewis",
+            "links": {
+                "bluesky": "https://bsky.app/profile/@daniellelewis.dev",
+                "mastodon": "https://iosdev.space/@dlewisdev",
+                "twitter": "https://twitter.com/dlewisdev"
+            }
+        }]
     },
     {
         "id": "session-tbd10",
@@ -121,22 +158,29 @@
         "emoji": "💰"
     },
     {
-        "id": "session-tbd11",
+        "id": "session-hidde-van-der-ploeg",
         "start": "2025-04-28T15:45:00-05:00",
         "end": "2025-04-28T16:30:00-05:00",
-        "description": "A Swift Developer is Building This Right Now",
-        "speakers": [],
-        "emoji": "👷‍♂️"
+        "description": "The Roast of your App's Design",
+        "speakers": [{
+            "name": "Hidde van der Ploeg",
+            "image": "hidde_van_der_ploeg",
+            "links": {
+                "bluesky": "https://bsky.app/profile/did:plc:5zv4ptzbc44wjhrya2phyakd",
+                "mastodon": "https://mastodon.design/@hidde",
+                "twitter": "https://twitter.com/hiddevdploeg"
+            }
+        }]
     },
     {
         "id": "break-monday",
-        "start": "2025-04-28T15:45:00-05:00",
-        "end": "2025-04-28T16:15:00-05:00"
+        "start": "2025-04-28T16:30:00-05:00",
+        "end": "2025-04-28T17:00:00-05:00"
     },
     {
         "id": "special-launched-live",
-        "start": "2025-04-28T16:15:00-05:00",
-        "end": "2025-04-28T17:30:00-05:00",
+        "start": "2025-04-28T17:00:00-05:00",
+        "end": "2025-04-28T17:45:00-05:00",
         "description": "Launched Live with Charlie Chapman and guests",
         "speakers": [
             {
@@ -198,28 +242,42 @@
         "description": "Morning welcome"
     },
     {
-        "id": "session-tbd12",
+        "id": "session-matthew-cassinelli",
         "start": "2025-04-29T09:00:00-05:00",
         "end": "2025-04-29T09:45:00-05:00",
-        "description": "Josh’s AirDropped Surprise",
-        "speakers": [],
-        "emoji": "📲"
+        "description": "App Intents, Actions, and Personal Context - Oh My!",
+        "speakers": [{
+            "name": "Matthew Cassinelli",
+            "image": "matthew_cassinelli",
+            "links": {
+                "bluesky": "https://bsky.app/profile/matthewcassinelli.bsky.social",
+                "mastodon": "https://mastodon.social/@matthewcassinelli",
+                "twitter": "https://twitter.com/matthewcassinelli"
+            }
+        }]
     },
     {
-        "id": "session-tbd13",
+        "id": "session-matt-heaney",
         "start": "2025-04-29T10:00:00-05:00",
         "end": "2025-04-29T10:45:00-05:00",
-        "description": "Apple-ly Ever After – If Josh Approves",
-        "speakers": [],
-        "emoji": "🍏"
+        "description": "Serving Slices of Your App: The Underrated Potential of App Clips",
+        "speakers": [{
+            "name": "Matt Heaney",
+            "image": "matt_heaney",
+            "links": {
+                "bluesky": "https://bsky.app/profile/mattheaney23.bsky.social",
+                "mastodon": "https://mastodon.social/@MattHeaney23",
+                "twitter": "https://twitter.com/MattHeaney23"
+            }
+        }]
     },
     {
         "id": "session-tbd14",
         "start": "2025-04-29T11:00:00-05:00",
         "end": "2025-04-29T11:45:00-05:00",
-        "description": "Holtz Knows, but He’s Not Telling",
+        "description": "This Talk is Private(set)",
         "speakers": [],
-        "emoji": "🤔"
+        "emoji": "🔒"
     },
     {
         "id": "lunch-tuesday",
@@ -239,9 +297,9 @@
         "id": "session-tbd16",
         "start": "2025-04-29T14:00:00-05:00",
         "end": "2025-04-29T14:45:00-05:00",
-        "description": "Title TBD, but the Code is Already Running",
+        "description": "Waiting for Josh Review",
         "speakers": [],
-        "emoji": "🏃‍♂️"
+        "emoji": "👀"
     },
     {
         "id": "session-tbd17",
