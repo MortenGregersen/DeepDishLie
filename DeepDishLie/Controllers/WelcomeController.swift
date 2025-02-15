@@ -21,7 +21,7 @@ class WelcomeController {
         let hasSeenWelcome = UserDefaults.standard.bool(forKey: hasSeenWelcomeKey)
         self.hasSeenWelcome = hasSeenWelcome
         self.hasRequestedReview = UserDefaults.standard.bool(forKey: hasSeenReviewKey)
-        showsWelcome = !hasSeenWelcome || DeepDishLieApp.inDemoMode
+        showsWelcome = !hasSeenWelcome && !DeepDishLieApp.inDemoMode
     }
 }
 

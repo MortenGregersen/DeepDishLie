@@ -31,10 +31,17 @@ struct AboutView: View {
                             Text("A supreme **Swift** developer conference being served in **Chicago, Illinois**. [Read more](https://deepdishswift.com).")
                         }
                         Spacer(minLength: 8)
-                        FlickeringPizzaView(repeating: true)
-                            .frame(width: 80)
-                            .padding(8)
-                            .background(Circle().fill(Color.splashBackground))
+                        ZStack {
+                            Image("PizzaOrange")
+                                .resizable()
+                                .scaledToFit()
+                            Image("PizzaYellow")
+                                .resizable()
+                                .scaledToFit()
+                        }
+                        .frame(width: 80)
+                        .padding(8)
+                        .background(Circle().fill(Color.splashBackground))
                     }
                 }
                 Section("The developer 🧑🏽‍💻") {
@@ -74,7 +81,6 @@ struct AboutView: View {
                 }
                 Section {
                     Text("Josh and Kari for organizing [Deep Dish Swift](https://deepdishswift.com) 🍕")
-//                    Text("Kai and Malin for making the [Slices](https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071) podcast up to the conference 🎧")
                     Text("Simon Bachmann for [ConfettiSwiftUI](https://github.com/simibac/ConfettiSwiftUI) 🎉")
                 } header: {
                     Text("Thanks go out to 😍")

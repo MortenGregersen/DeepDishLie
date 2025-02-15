@@ -27,7 +27,7 @@ struct DeepDishLieApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                if let firstEventDate = scheduleController.firstEventDate, Date.now < firstEventDate {
+                if !Self.inDemoMode, let firstEventDate = scheduleController.firstEventDate, Date.now < firstEventDate {
                     CountdownView(eventDate: firstEventDate)
                         .toolbarBackground(.visible, for: .tabBar)
                         .tabItem {
