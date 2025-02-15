@@ -5,12 +5,13 @@
 //  Created by Morten Bjerg Gregersen on 25/04/2023.
 //
 
+import DeepDishCore
 import SwiftUI
 import TelemetryDeck
 
 @main
 struct DeepDishLieApp: App {
-    @State private var welcomeController = WelcomeController()
+    @State private var welcomeController = WelcomeController(inDemoMode: Self.inDemoMode)
     @State private var settingsController = SettingsController()
     @State private var scheduleController = ScheduleController()
     @State private var weatherController = WeatherController()

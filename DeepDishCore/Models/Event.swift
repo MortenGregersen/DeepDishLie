@@ -121,6 +121,10 @@ public enum Event: Decodable, Identifiable {
         }
     }
 
+    public var isHappeningNow: Bool {
+        start ... end ~= Date()
+    }
+
     public var toBeDetermined: Bool {
         guard case .session(let session) = self else { return false }
         return session.id.hasPrefix("session-tbd")

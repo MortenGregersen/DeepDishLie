@@ -5,6 +5,7 @@
 //  Created by Morten Bjerg Gregersen on 29/04/2024.
 //
 
+import DeepDishCore
 import SwiftUI
 
 struct GiveawayView: View {

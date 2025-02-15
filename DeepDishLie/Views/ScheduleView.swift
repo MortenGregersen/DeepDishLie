@@ -265,10 +265,6 @@ private struct EventRow: View {
 }
 
 extension Event {
-    var isHappeningNow: Bool {
-        start ... end ~= Date()
-    }
-
     var dateTextColor: Color {
         if isHappeningNow {
             .init(uiColor: UIColor.lightText)

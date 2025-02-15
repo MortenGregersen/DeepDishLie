@@ -1,6 +1,6 @@
 //
 //  SettingsController.swift
-//  DeepDishLie
+//  DeepDishCore
 //
 //  Created by Morten Bjerg Gregersen on 01/05/2024.
 //
@@ -8,8 +8,8 @@
 import Foundation
 
 @Observable
-class SettingsController {
-    var enableRandomConfetti: Bool { didSet {
+public class SettingsController {
+    public var enableRandomConfetti: Bool { didSet {
         UserDefaults.standard.set(enableRandomConfetti, forKey: "enable-random-confetti")
         if enableRandomConfetti {
             startConfettiTimer()
@@ -17,7 +17,7 @@ class SettingsController {
             stopConfettiTimer()
         }
     }}
-    var randomConfettiIntensity: Double { didSet {
+    public var randomConfettiIntensity: Double { didSet {
         UserDefaults.standard.set(randomConfettiIntensity, forKey: "random-confetti-intensity")
         if enableRandomConfetti {
             restartConfettiTimer()
@@ -28,15 +28,15 @@ class SettingsController {
             }
         }
     }}
-    var useLocalTimezone: Bool { didSet { UserDefaults.standard.set(useLocalTimezone, forKey: "use-local-timezone") }}
-    var use24hourClock: Bool { didSet { UserDefaults.standard.set(useLocalTimezone, forKey: "use-24-hour-clock") }}
-    var openLinksInApp: Bool { didSet { UserDefaults.standard.set(openLinksInApp, forKey: "open-links-in-app") }}
-    var temperatureScale: TemperatureScale { didSet { UserDefaults.standard.set(temperatureScale.rawValue, forKey: "temperature-scale") }}
+    public var useLocalTimezone: Bool { didSet { UserDefaults.standard.set(useLocalTimezone, forKey: "use-local-timezone") }}
+    public var use24hourClock: Bool { didSet { UserDefaults.standard.set(useLocalTimezone, forKey: "use-24-hour-clock") }}
+    public var openLinksInApp: Bool { didSet { UserDefaults.standard.set(openLinksInApp, forKey: "open-links-in-app") }}
+    public var temperatureScale: TemperatureScale { didSet { UserDefaults.standard.set(temperatureScale.rawValue, forKey: "temperature-scale") }}
 
-    var confettiTrigger = 0
+    public var confettiTrigger = 0
     private var timer: Timer?
 
-    init() {
+    public init() {
         self.enableRandomConfetti = UserDefaults.standard.bool(forKey: "enable-random-confetti")
         self.randomConfettiIntensity = UserDefaults.standard.object(forKey: "random-confetti-intensity") as? Double ?? 2
         self.useLocalTimezone = UserDefaults.standard.bool(forKey: "use-local-timezone")
@@ -56,7 +56,7 @@ class SettingsController {
         }
     }
 
-    func triggerConfetti() {
+    public func triggerConfetti() {
         confettiTrigger = Int.random(in: 0 ..< 42)
     }
 
@@ -93,29 +93,7 @@ class SettingsController {
     }
 }
 
-enum TemperatureScale: String {
-    case fahrenheit
-    case celsius
-    case kelvin
-    
-    var unit: UnitTemperature {
-        switch self {
-        case .fahrenheit: .fahrenheit
-        case .celsius: .celsius
-        case .kelvin: .kelvin
-        }
-    }
-    
-    var systemImage: String {
-        switch self {
-        case .fahrenheit: "thermometer.low"
-        case .celsius: "thermometer.high"
-        case .kelvin: "thermometer.medium"
-        }
-    }
-}
-
-extension SettingsController {
+public extension SettingsController {
     static func forPreview() -> SettingsController {
         .init()
     }

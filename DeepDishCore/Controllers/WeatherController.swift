@@ -1,6 +1,6 @@
 //
 //  WeatherController.swift
-//  DeepDishLie
+//  DeepDishCore
 //
 //  Created by Morten Bjerg Gregersen on 30/04/2024.
 //
@@ -9,13 +9,15 @@ import Foundation
 import WeatherKit
 
 @Observable
-class WeatherController {
-    private(set) var weather: Weather?
-    private(set) var fetching = false
-    private(set) var errorFetching: Error?
-    private(set) var attribution: WeatherAttribution?
+public class WeatherController {
+    public private(set) var weather: Weather?
+    public private(set) var fetching = false
+    public private(set) var errorFetching: Error?
+    public private(set) var attribution: WeatherAttribution?
+    
+    public init() {}
 
-    func fetchWeather() async {
+    public func fetchWeather() async {
         fetching = true
         defer { fetching = false }
         do {
@@ -31,7 +33,7 @@ class WeatherController {
     }
 }
 
-extension WeatherController {
+public extension WeatherController {
     static func forPreview() -> WeatherController {
         let controller = WeatherController()
         Task { await controller.fetchWeather() }
