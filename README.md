@@ -1,6 +1,8 @@
-# Deep Dish Unofficial
+<p align="center">
+<img src="https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/refs/heads/main/DeepDishLie/Assets.xcassets/AppIcon.appiconset/mac256.png" alt="Deep Dish Unofficial Logo" />
+</p>
 
-![Deep Dish Unofficial Logo](link-to-your-logo-image)
+# Deep Dish Unofficial
 
 **Deep Dish Unofficial** is an open-source iOS application designed as the perfect companion for attendees of the [Deep Dish Swift](https://deepdishswift.com/) conference in Chicago. The app provides easy access to the full conference schedule and offers amusing, real-time weather updates based on Chris Wu's preferences.
 
