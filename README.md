@@ -2,9 +2,9 @@
 <img src="https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/refs/heads/main/DeepDishLie/Assets.xcassets/AppIcon.appiconset/mac256.png" alt="Deep Dish Unofficial Logo" />
 </p>
 
-# Deep Dish Unofficial
+# Deep Dish Unofficial 🍕
 
-**Deep Dish Unofficial** is an open-source iOS application designed as the perfect companion for attendees of the [Deep Dish Swift](https://deepdishswift.com/) conference in Chicago. The app provides easy access to the full conference schedule and offers amusing, real-time weather updates based on Chris Wu's preferences.
+**Deep Dish Unofficial** is an open-source iOS application designed as the perfect companion for attendees of the [Deep Dish Swift](https://deepdishswift.com/) conference in Chicago. The app provides easy access to the full conference schedule and offers amusing, real-time weather updates based on [Chris Wu](https://chriswu.com)'s preferences.
 
 ## Installation
 
@@ -30,7 +30,7 @@ Contributions are welcome! 🥰 Even during the conference, we managed to get fo
 1. Fork the repository.
 2. Create a new branch:
    ```bash
-   git checkout -b feature/your-feature-name
+   git checkout -b your-feature-name
    ```
 3. Make your changes and commit them:
    ```bash
@@ -38,17 +38,17 @@ Contributions are welcome! 🥰 Even during the conference, we managed to get fo
    ```
 4. Push to your forked repository:
    ```bash
-   git push origin feature/your-feature-name
+   git push origin your-feature-name
    ```
 5. Open a pull request with a detailed description of your changes.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](link-to-license-file) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENCE.md) file for details.
 
 ## Acknowledgments
 
-- [Chris Wu](https://twitter.com/chriswu) for inspiring the weather feature.
+- [Chris Wu](https://chriswu.com) for inspiring the weather feature.
 - The [Deep Dish Swift](https://deepdishswift.com/) community for their support.
 
 ---
