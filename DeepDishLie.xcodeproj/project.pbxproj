@@ -18,7 +18,7 @@
 		5A8195522D61493D0048354A /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A8195CC2D614E240048354A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195212D6147910048354A /* WidgetKit.framework */; };
 		5A8195CD2D614E240048354A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195232D6147910048354A /* SwiftUI.framework */; };
-		5A8195D82D614E250048354A /* ScheduleWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A8195CB2D614E240048354A /* ScheduleWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A8195D82D614E250048354A /* DeepDishWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A8195CB2D614E240048354A /* DeepDishWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +84,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				5A8195D82D614E250048354A /* ScheduleWidgetExtension.appex in Embed Foundation Extensions */,
+				5A8195D82D614E250048354A /* DeepDishWidget.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,7 +112,7 @@
 		5A8195232D6147910048354A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		5A81953E2D61493D0048354A /* DeepDishCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDishCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8195452D61493D0048354A /* DeepDishCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepDishCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A8195CB2D614E240048354A /* ScheduleWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScheduleWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A8195CB2D614E240048354A /* DeepDishWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DeepDishWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -135,7 +135,7 @@
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 5A8195CA2D614E240048354A /* ScheduleWidgetExtension */;
+			target = 5A8195CA2D614E240048354A /* DeepDishWidget */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -143,7 +143,7 @@
 		5A81944A2D6132740048354A /* DeepDishLie */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A8194662D6132740048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishLie; sourceTree = "<group>"; };
 		5A81953F2D61493D0048354A /* DeepDishCore */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A8195562D61493D0048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishCore; sourceTree = "<group>"; };
 		5A81954B2D61493D0048354A /* DeepDishCoreTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DeepDishCoreTests; sourceTree = "<group>"; };
-		5A8195CE2D614E240048354A /* ScheduleWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A8195DC2D614E250048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ScheduleWidget; sourceTree = "<group>"; };
+		5A8195CE2D614E240048354A /* DeepDishWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A8195DC2D614E250048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishWidget; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				5A81944A2D6132740048354A /* DeepDishLie */,
-				5A8195CE2D614E240048354A /* ScheduleWidget */,
+				5A8195CE2D614E240048354A /* DeepDishWidget */,
 				5A81953F2D61493D0048354A /* DeepDishCore */,
 				5A81954B2D61493D0048354A /* DeepDishCoreTests */,
 				5A28A90129F803B100B02EE6 /* DeepDishLieSnapshots */,
@@ -231,7 +231,7 @@
 				5A28A90029F803B100B02EE6 /* DeepDishLieSnapshots.xctest */,
 				5A81953E2D61493D0048354A /* DeepDishCore.framework */,
 				5A8195452D61493D0048354A /* DeepDishCoreTests.xctest */,
-				5A8195CB2D614E240048354A /* ScheduleWidgetExtension.appex */,
+				5A8195CB2D614E240048354A /* DeepDishWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -342,9 +342,9 @@
 			productReference = 5A8195452D61493D0048354A /* DeepDishCoreTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5A8195CA2D614E240048354A /* ScheduleWidgetExtension */ = {
+		5A8195CA2D614E240048354A /* DeepDishWidget */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5A8195DB2D614E250048354A /* Build configuration list for PBXNativeTarget "ScheduleWidgetExtension" */;
+			buildConfigurationList = 5A8195DB2D614E250048354A /* Build configuration list for PBXNativeTarget "DeepDishWidget" */;
 			buildPhases = (
 				5A8195C72D614E240048354A /* Sources */,
 				5A8195C82D614E240048354A /* Frameworks */,
@@ -357,13 +357,13 @@
 				5A0902732D6339FE00A1E387 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				5A8195CE2D614E240048354A /* ScheduleWidget */,
+				5A8195CE2D614E240048354A /* DeepDishWidget */,
 			);
-			name = ScheduleWidgetExtension;
+			name = DeepDishWidget;
 			packageProductDependencies = (
 			);
 			productName = ScheduleWidgetExtension;
-			productReference = 5A8195CB2D614E240048354A /* ScheduleWidgetExtension.appex */;
+			productReference = 5A8195CB2D614E240048354A /* DeepDishWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -413,7 +413,7 @@
 			projectRoot = "";
 			targets = (
 				5A3EFB0129F7D53200D75F5E /* DeepDishLie */,
-				5A8195CA2D614E240048354A /* ScheduleWidgetExtension */,
+				5A8195CA2D614E240048354A /* DeepDishWidget */,
 				5A81953D2D61493D0048354A /* DeepDishCore */,
 				5A8195442D61493D0048354A /* DeepDishCoreTests */,
 				5A28A8FF29F803B100B02EE6 /* DeepDishLieSnapshots */,
@@ -527,7 +527,7 @@
 		};
 		5A8195D72D614E250048354A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5A8195CA2D614E240048354A /* ScheduleWidgetExtension */;
+			target = 5A8195CA2D614E240048354A /* DeepDishWidget */;
 			targetProxy = 5A8195D62D614E250048354A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -929,8 +929,8 @@
 				DEVELOPMENT_TEAM = R7YA4RGA8U;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ScheduleWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ScheduleWidget;
+				INFOPLIST_FILE = DeepDishWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DeepDishWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -940,7 +940,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLie.ScheduleWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLie.DeepDishWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -961,8 +961,8 @@
 				DEVELOPMENT_TEAM = R7YA4RGA8U;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ScheduleWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ScheduleWidget;
+				INFOPLIST_FILE = DeepDishWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DeepDishWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -972,7 +972,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLie.ScheduleWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLie.DeepDishWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1031,7 +1031,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5A8195DB2D614E250048354A /* Build configuration list for PBXNativeTarget "ScheduleWidgetExtension" */ = {
+		5A8195DB2D614E250048354A /* Build configuration list for PBXNativeTarget "DeepDishWidget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5A8195D92D614E250048354A /* Debug */,
