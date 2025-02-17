@@ -16,7 +16,7 @@ public class GiveawayController {
         if let cachedResponse = Self.loadCachedResponse() {
             giveawayInfo = cachedResponse
         } else {
-            let jsonData = try! Data(contentsOf: Bundle.main.url(forResource: "Giveaway", withExtension: "json")!)
+            let jsonData = try! Data(contentsOf: Bundle.core.url(forResource: "Giveaway", withExtension: "json")!)
             giveawayInfo = try! JSONDecoder().decode(GiveawayInfo.self, from: jsonData)
         }
     }
@@ -29,7 +29,7 @@ public class GiveawayController {
 
     @MainActor public func fetchGiveawayInfo() async {
         do {
-            let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/main/DeepDishLie/Giveaway.json")!
+            let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/main/DeepDishCore/Giveaway.json")!
             let urlRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }

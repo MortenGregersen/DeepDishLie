@@ -24,7 +24,7 @@ public class ScheduleController {
         if let events = Self.loadCachedEvents() {
             self.days = chunkUpEvents(events)
         } else {
-            let jsonData = try! Data(contentsOf: Bundle(for: ScheduleController.self).url(forResource: "Schedule", withExtension: "json")!)
+            let jsonData = try! Data(contentsOf: Bundle.core.url(forResource: "Schedule", withExtension: "json")!)
             self.days = chunkUpEvents(try! Self.decoder.decode([Event].self, from: jsonData))
         }
     }

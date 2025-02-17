@@ -116,6 +116,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5A09057C2D63DF6100A1E387 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Giveaway.json,
+			);
+			target = 5A3EFB0129F7D53200D75F5E /* DeepDishLie */;
+		};
 		5A8194662D6132740048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -125,6 +132,9 @@
 		};
 		5A8195562D61493D0048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Giveaway.json,
+			);
 			publicHeaders = (
 				DeepDishCore.h,
 			);
@@ -142,7 +152,7 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5A09047F2D63D81800A1E387 /* Configuration */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Configuration; sourceTree = "<group>"; };
 		5A81944A2D6132740048354A /* DeepDishLie */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A8194662D6132740048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishLie; sourceTree = "<group>"; };
-		5A81953F2D61493D0048354A /* DeepDishCore */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A8195562D61493D0048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishCore; sourceTree = "<group>"; };
+		5A81953F2D61493D0048354A /* DeepDishCore */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A09057C2D63DF6100A1E387 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 5A8195562D61493D0048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishCore; sourceTree = "<group>"; };
 		5A81954B2D61493D0048354A /* DeepDishCoreTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DeepDishCoreTests; sourceTree = "<group>"; };
 		5A8195CE2D614E240048354A /* DeepDishWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A8195DC2D614E250048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishWidget; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
