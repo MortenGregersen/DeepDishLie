@@ -26,6 +26,13 @@ struct CountdownView: View {
                             .contentTransition(.numericText(countsDown: true))
                             .animation(.default, value: timeRemaining)
                             .padding(.top, 16)
+                        VStack(spacing: 4) {
+                            Text("If you need a countdown in a browser, check out Alex's [DeepDishCountdown.fun](https://deepdishcountdown.fun).")
+                            Text("This countdown was inspired by his site 😅")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding(.top, 32)
                     } else {
                         Text("The conference has started!")
                             .font(.largeTitle)
