@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CountdownView: View {
     let eventDate: Date
-    @State private var count = 0
     @State private var timeRemaining: String?
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -46,14 +45,11 @@ struct CountdownView: View {
     private func updateCountdown() {
         let now = Date()
         let remaining = eventDate.timeIntervalSince(now)
-
         if remaining > 0 {
             let formatter = DateComponentsFormatter()
             formatter.allowedUnits = remaining > 86_400 ? [.day, .hour, .minute, .second] : [.hour, .minute, .second]
             formatter.unitsStyle = .brief
-
             timeRemaining = formatter.string(from: remaining) ?? "Calculating..."
-
         } else {
             timeRemaining = nil
         }

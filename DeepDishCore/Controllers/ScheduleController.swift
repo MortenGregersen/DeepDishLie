@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WidgetKit
 
 @Observable
 public class ScheduleController {
@@ -23,7 +24,7 @@ public class ScheduleController {
         if let events = Self.loadCachedEvents() {
             self.days = chunkUpEvents(events)
         } else {
-            let jsonData = try! Data(contentsOf: Bundle.main.url(forResource: "Schedule", withExtension: "json")!)
+            let jsonData = try! Data(contentsOf: Bundle(for: ScheduleController.self).url(forResource: "Schedule", withExtension: "json")!)
             self.days = chunkUpEvents(try! Self.decoder.decode([Event].self, from: jsonData))
         }
     }
@@ -36,13 +37,14 @@ public class ScheduleController {
 
     @MainActor public func fetchEvents() async {
         do {
-            let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/main/DeepDishLie/Schedule.json")!
+            let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/main/DeepDishCore/Schedule.json")!
             let urlRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
             days = try chunkUpEvents(Self.decoder.decode([Event].self, from: data))
             guard let cacheFolderURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else { return }
             try data.write(to: cacheFolderURL.appending(component: Self.cachedJsonFilename))
+            WidgetCenter.shared.reloadAllTimelines()
         } catch {
             // Fail silently
         }

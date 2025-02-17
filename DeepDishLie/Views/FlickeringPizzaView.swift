@@ -5,6 +5,7 @@
 //  Created by Morten Bjerg Gregersen on 09/02/2025.
 //
 
+import DeepDishCore
 import SwiftUI
 
 struct FlickeringPizzaView: View {
@@ -14,7 +15,7 @@ struct FlickeringPizzaView: View {
 
     var body: some View {
         ZStack {
-            Image("PizzaOrange")
+            Image("PizzaOrange", bundle: .core)
                 .resizable()
                 .scaledToFit()
                 .keyframeAnimator(initialValue: 0.0, repeating: repeating) { content, value in
@@ -33,7 +34,7 @@ struct FlickeringPizzaView: View {
                         CubicKeyframe(0.0, duration: 0.165)
                     }
                 }
-            Image("PizzaYellow")
+            Image("PizzaYellow", bundle: .core)
                 .resizable()
                 .scaledToFit()
                 .keyframeAnimator(initialValue: 0.0, repeating: repeating) { content, value in

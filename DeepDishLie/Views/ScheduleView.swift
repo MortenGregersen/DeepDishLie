@@ -209,7 +209,7 @@ private struct EventRow: View {
     }
 
     private func speakerImage(_ speaker: Speaker) -> some View {
-        Image(speaker.image)
+        Image(speaker.image, bundle: .core)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(height: 50)
@@ -294,4 +294,5 @@ extension Event {
     ScheduleView()
         .environment(SettingsController.forPreview())
         .environment(ScheduleController.forPreview())
+        .environment(WelcomeController.forPreview(hasSeenWelcome: false))
 }
