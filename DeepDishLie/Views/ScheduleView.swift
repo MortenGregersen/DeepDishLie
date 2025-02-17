@@ -294,4 +294,5 @@ extension Event {
     ScheduleView()
         .environment(SettingsController.forPreview())
         .environment(ScheduleController.forPreview())
+        .environment(WelcomeController.forPreview(hasSeenWelcome: false))
 }

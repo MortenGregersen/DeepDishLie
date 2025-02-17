@@ -16,7 +16,7 @@ extension ScheduleWidget {
 
         enum Mode {
             case countdown(until: Date)
-            case currentNext(current: Event, next: Event)
+            case currentNext(currentEvent: Event?, nextEvents: [Event])
             case ended
         }
     }

@@ -25,7 +25,7 @@ extension ScheduleWidget {
             let openingKeynoteEventIndex = allEvents.firstIndex(where: { $0.id == "special-opening-keynote" })!
             let openingKeynoteEvent = allEvents[openingKeynoteEventIndex]
             let eventBeforeOpeningKeynote = allEvents[allEvents.index(before: openingKeynoteEventIndex)]
-            let entry = ScheduleWidget.Entry(date: Date(), widgetFamily: context.family, mode: .currentNext(current: eventBeforeOpeningKeynote, next: openingKeynoteEvent))
+            let entry = ScheduleWidget.Entry(date: Date(), widgetFamily: context.family, mode: .currentNext(currentEvent: eventBeforeOpeningKeynote, nextEvents: [openingKeynoteEvent]))
             completion(entry)
         }
 
@@ -36,19 +36,35 @@ extension ScheduleWidget {
             let upcomingEvents = allEvents
                 .filter { $0.start > currentDate }
 
+            let speedRun = false
+            var dummyDate = Date.now.addingTimeInterval(2)
+            if Date.now < allEvents.first!.start {
+                entries.append(.init(date: Date.now, widgetFamily: context.family, mode: .countdown(until: allEvents.first!.start)))
+            }
             for event in upcomingEvents {
                 let currentEventIndex = allEvents.firstIndex(where: { $0 == event })!
                 let previousEventIndex = allEvents.index(before: currentEventIndex)
                 let entry: ScheduleWidget.Entry
-                if previousEventIndex > 0 {
-                    let previousEvent = allEvents[previousEventIndex]
-                    entry = ScheduleWidget.Entry(date: event.start, widgetFamily: context.family, mode: .currentNext(current: previousEvent, next: event))
-                } else {
-                    entry = ScheduleWidget.Entry(date: event.start, widgetFamily: context.family, mode: .countdown(until: event.start))
+                let date = speedRun ? dummyDate : event.start
+                var previousEvent: Event? = nil
+                if previousEventIndex >= allEvents.startIndex {
+                    previousEvent = allEvents[previousEventIndex]
                 }
+                var nextEvents = [event]
+                let nextNextEventIndex = allEvents.index(after: currentEventIndex)
+                if nextNextEventIndex < allEvents.endIndex {
+                    nextEvents.append(allEvents[nextNextEventIndex])
+                }
+                let nextNextNextEventIndex = allEvents.index(after: nextNextEventIndex)
+                if nextNextNextEventIndex < allEvents.endIndex {
+                    nextEvents.append(allEvents[nextNextNextEventIndex])
+                }
+                entry = ScheduleWidget.Entry(date: date, widgetFamily: context.family, mode: .currentNext(currentEvent: previousEvent, nextEvents: nextEvents))
                 entries.append(entry)
+                dummyDate = dummyDate.addingTimeInterval(2)
             }
-            entries.append(.init(date: allEvents.last!.end, widgetFamily: context.family, mode: .ended))
+            let endDate = speedRun ? dummyDate : allEvents.last!.end
+            entries.append(.init(date: endDate, widgetFamily: context.family, mode: .ended))
 
             let timeline: Timeline<ScheduleWidget.Entry>
             if let lastEntryDate = entries.last?.date {

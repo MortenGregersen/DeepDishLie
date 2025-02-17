@@ -17,8 +17,8 @@ struct ScheduleWidgetEntryView: View {
             switch entry.mode {
             case .countdown(let startDate):
                 CountdownView(eventDate: startDate)
-            case .currentNext(let currentEvent, let nextEvent):
-                CurrentNextView(currentEvent: currentEvent, nextEvent: nextEvent, widgetFamily: entry.widgetFamily)
+            case .currentNext(let currentEvent, let nextEvents):
+                CurrentNextView(currentEvent: currentEvent, nextEvents: nextEvents, widgetFamily: entry.widgetFamily)
             case .ended:
                 EndedView()
             }
@@ -73,68 +73,126 @@ struct ScheduleWidgetEntryView: View {
     }
 
     private struct CurrentNextView: View {
-        let currentEvent: Event
-        let nextEvent: Event
+        let currentEvent: Event?
+        let nextEvents: [Event]
         let widgetFamily: WidgetFamily
 
         var body: some View {
             VStack(alignment: .leading, spacing: 8) {
-                if widgetFamily != .systemSmall {
-                    Text("Now: \(currentEvent.description)")
-                        .font(.caption2)
+                if widgetFamily != .systemSmall, let currentEvent {
+                    Text("**Now:** \(currentEvent.description)")
+                        .font(.system(size: 14))
                 }
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Up next:")
-                        .font(.caption)
-                        .fontWeight(.bold)
-                    HStack(alignment: .top) {
-                        VStack(alignment: .leading) {
-                            Text(nextEvent.description)
-                                .font(.body)
-                                .minimumScaleFactor(0.5)
-                                .layoutPriority(1337)
-                            if let speakers = nextEvent.speakers {
-                                Text(speakers.map(\.name).formatted(.list(type: .and)))
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-                                    .minimumScaleFactor(0.5)
-                                    .layoutPriority(42)
-                            }
+                if let nextEvent = nextEvents.first {
+                    VStack(alignment: .leading, spacing: 4) {
+                        let upNext = Text("Up next (\(nextEvent.start.formatted(date: .omitted, time: .shortened))):")
+                            .font(.caption)
+                            .fontWeight(.bold)
+                        ViewThatFits(in: .horizontal) {
+                            upNext.fixedSize(horizontal: false, vertical: true)
+                            upNext.minimumScaleFactor(0.5)
                         }
-                        if widgetFamily != .systemSmall {
-                            Spacer()
-                            Group {
-                                if let speaker = nextEvent.speakers?.first {
-                                    Image(speaker.image, bundle: .core)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(height: 50)
-                                        .clipShape(Circle())
-                                        .background {
-                                            Circle()
-                                                .fill(Color.gray.opacity(0.2))
-                                                .frame(width: 54, height: 54)
-                                        }
-
-                                } else if let emoji = nextEvent.emoji {
-                                    Spacer(minLength: 12)
-                                    VStack(alignment: .trailing) {
-                                        VStack {
-                                            Text(emoji)
-                                                .font(.largeTitle)
-                                        }
-                                        .frame(width: 50, height: 50)
-                                        .background(Color.accentColor.opacity(nextEvent.toBeDetermined ? 0.5 : 1.0))
-                                        .clipShape(Circle())
-                                    }
-                                }
+                        EventRow(event: nextEvent, showTime: false, widgetFamily: widgetFamily)
+                            .layoutPriority(1337)
+                            .id(nextEvent.id)
+                        if widgetFamily == .systemLarge || widgetFamily == .systemExtraLarge {
+                            ForEach(nextEvents.dropFirst()) { event in
+                                Divider()
+                                    .background(.white.opacity(0.2))
+                                EventRow(event: event, showTime: true, widgetFamily: widgetFamily)
+                                    .layoutPriority(42)
+                                    .id(event.id)
                             }
-                            .offset(y: -8)
                         }
                     }
                 }
             }
             .frame(maxWidth: .infinity)
+        }
+
+        private struct EventRow: View {
+            let event: Event
+            let showTime: Bool
+            let widgetFamily: WidgetFamily
+
+            var subtitle: String? {
+                var subtitleComponents = [String]()
+                if showTime {
+                    subtitleComponents.append("at \(event.start.formatted(date: .omitted, time: .shortened))")
+                }
+                if let speakers = event.speakers, !speakers.isEmpty {
+                    subtitleComponents.append(speakers.map(\.name).formatted(.list(type: .and)))
+                }
+                guard !subtitleComponents.isEmpty else { return nil }
+                return subtitleComponents.joined(separator: " with ")
+            }
+
+            var body: some View {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading) {
+                        let title = Text(event.description)
+                            .font(.body)
+                            .foregroundStyle(event.toBeDetermined ? .secondary : .primary)
+                        ViewThatFits(in: .horizontal) {
+                            title.fixedSize(horizontal: false, vertical: true)
+                            title.minimumScaleFactor(0.5)
+                        }
+                        .layoutPriority(1337)
+                        if let subtitle {
+                            let subtitle = Text(subtitle)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            ViewThatFits {
+                                subtitle.fixedSize(horizontal: false, vertical: true)
+                                subtitle.minimumScaleFactor(0.8)
+                            }
+                            .layoutPriority(42)
+                        }
+                    }
+                    Spacer(minLength: 0)
+                    if widgetFamily != .systemSmall {
+                        Spacer()
+                        Group {
+                            if let speaker = event.speakers?.first {
+                                Image(speaker.image, bundle: .core)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(height: 50)
+                                    .clipShape(Circle())
+                                    .background {
+                                        Circle()
+                                            .fill(Color.gray.opacity(0.2))
+                                            .frame(width: 54, height: 54)
+                                    }
+                                    .id(speaker.id)
+
+                            } else if let emoji = event.emoji {
+                                emojiView(emoji: emoji)
+                                    .id(emoji)
+                            }
+                        }
+                    }
+                }
+                if widgetFamily == .systemSmall, !event.id.hasPrefix("special"), let emoji = event.emoji {
+                    HStack {
+                        Spacer()
+                        emojiView(emoji: emoji)
+                    }
+                    .padding(.top, 4)
+                }
+            }
+
+            private func emojiView(emoji: String) -> some View {
+                VStack(alignment: .trailing) {
+                    VStack {
+                        Text(emoji)
+                            .font(.largeTitle)
+                    }
+                    .frame(width: 50, height: 50)
+                    .background(Color.emojiBackground.opacity(event.toBeDetermined ? 0.5 : 1.0))
+                    .clipShape(Circle())
+                }
+            }
         }
     }
 
@@ -152,7 +210,6 @@ struct ScheduleWidgetEntryView: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
             .multilineTextAlignment(.center)
-            
         }
     }
 }
@@ -161,7 +218,7 @@ struct ScheduleWidgetEntryView: View {
     ScheduleWidget()
 } timeline: {
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemSmall, mode: .countdown(until: .now.addingTimeInterval(60*60*24*65.1234)))
-    ScheduleWidget.Entry(date: .now, widgetFamily: .systemSmall, mode: .currentNext(current: ScheduleController().days[2].events[2], next: ScheduleController().days[2].events[3]))
+    ScheduleWidget.Entry(date: .now, widgetFamily: .systemSmall, mode: .currentNext(currentEvent: ScheduleController().days[2].events[2], nextEvents: [ScheduleController().days[2].events[3]]))
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemSmall, mode: .ended)
 }
 
@@ -169,7 +226,7 @@ struct ScheduleWidgetEntryView: View {
     ScheduleWidget()
 } timeline: {
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemMedium, mode: .countdown(until: .now.addingTimeInterval(60*60*24*65.1234)))
-    ScheduleWidget.Entry(date: .now, widgetFamily: .systemMedium, mode: .currentNext(current: ScheduleController().days[2].events[2], next: ScheduleController().days[2].events[3]))
+    ScheduleWidget.Entry(date: .now, widgetFamily: .systemMedium, mode: .currentNext(currentEvent: ScheduleController().days[2].events[2], nextEvents: [ScheduleController().days[2].events[3]]))
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemMedium, mode: .ended)
 }
 
@@ -177,7 +234,7 @@ struct ScheduleWidgetEntryView: View {
     ScheduleWidget()
 } timeline: {
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemLarge, mode: .countdown(until: .now.addingTimeInterval(60*60*24*65.1234)))
-    ScheduleWidget.Entry(date: .now, widgetFamily: .systemLarge, mode: .currentNext(current: ScheduleController().days[2].events[2], next: ScheduleController().days[2].events[3]))
+    ScheduleWidget.Entry(date: .now, widgetFamily: .systemLarge, mode: .currentNext(currentEvent: ScheduleController().days[2].events[1], nextEvents: [ScheduleController().days[2].events[2], ScheduleController().days[2].events[3], ScheduleController().days[2].events[4]]))
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemLarge, mode: .ended)
 }
 
@@ -185,6 +242,6 @@ struct ScheduleWidgetEntryView: View {
     ScheduleWidget()
 } timeline: {
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemExtraLarge, mode: .countdown(until: .now.addingTimeInterval(60*60*24*65.1234)))
-    ScheduleWidget.Entry(date: .now, widgetFamily: .systemExtraLarge, mode: .currentNext(current: ScheduleController().days[2].events[2], next: ScheduleController().days[2].events[3]))
+    ScheduleWidget.Entry(date: .now, widgetFamily: .systemExtraLarge, mode: .currentNext(currentEvent: ScheduleController().days[2].events[2], nextEvents: [ScheduleController().days[2].events[3], ScheduleController().days[2].events[4], ScheduleController().days[2].events[5]]))
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemExtraLarge, mode: .ended)
 }
