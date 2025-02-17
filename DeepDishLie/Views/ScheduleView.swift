@@ -209,7 +209,7 @@ private struct EventRow: View {
     }
 
     private func speakerImage(_ speaker: Speaker) -> some View {
-        Image(speaker.image)
+        Image(speaker.image, bundle: .core)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(height: 50)

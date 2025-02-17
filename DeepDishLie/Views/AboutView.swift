@@ -32,10 +32,10 @@ struct AboutView: View {
                         }
                         Spacer(minLength: 8)
                         ZStack {
-                            Image("PizzaOrange")
+                            Image("PizzaOrange", bundle: .core)
                                 .resizable()
                                 .scaledToFit()
-                            Image("PizzaYellow")
+                            Image("PizzaYellow", bundle: .core)
                                 .resizable()
                                 .scaledToFit()
                         }

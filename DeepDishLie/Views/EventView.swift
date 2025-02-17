@@ -25,7 +25,7 @@ struct EventView: View {
                         let imageHeight = speakers.count == 1 ? 200 : 300 / CGFloat(speakers.count)
                         Spacer()
                         ForEach(speakers) { speaker in
-                            Image(speaker.image)
+                            Image(speaker.image, bundle: .core)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(height: imageHeight)
@@ -82,7 +82,7 @@ struct EventView: View {
                             Label {
                                 Text("Connect with \(speaker.firstName)")
                             } icon: {
-                                Image(speaker.image)
+                                Image(speaker.image, bundle: .core)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(height: headerImageHeight)
