@@ -27,23 +27,23 @@ struct ScheduleWidgetEntryView: View {
 
     private struct CountdownView: View {
         let eventDate: Date
-        @State private var timeRemaining: String?
-        private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
         var body: some View {
             VStack {
-                if let timeRemaining {
-                    VStack {
-                        Text("Starts in")
+                if eventDate > Date.now {
+                    VStack(spacing: 4) {
+                        Text("Conference starts in")
                             .font(.callout)
-                        Text(timeRemaining)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .minimumScaleFactor(0.5)
+                        Text(eventDate, style: .relative)
                             .font(.title)
                             .fixedSize(horizontal: false, vertical: true)
                             .minimumScaleFactor(0.5)
                     }
                     .monospacedDigit()
                     .contentTransition(.numericText(countsDown: true))
-                    .animation(.default, value: timeRemaining)
+                    .padding(.vertical)
                 } else {
                     VStack(spacing: 8) {
                         Text("The conference has started!")
@@ -54,21 +54,6 @@ struct ScheduleWidgetEntryView: View {
             }
             .fontWeight(.semibold)
             .multilineTextAlignment(.center)
-            .onAppear(perform: updateCountdown)
-            .onReceive(timer) { _ in updateCountdown() }
-        }
-
-        private func updateCountdown() {
-            let now = Date()
-            let remaining = eventDate.timeIntervalSince(now)
-            if remaining > 0 {
-                let formatter = DateComponentsFormatter()
-                formatter.allowedUnits = remaining > 86400 ? [.day, .hour, .minute] : [.hour, .minute]
-                formatter.unitsStyle = .brief
-                timeRemaining = formatter.string(from: remaining) ?? "Calculating..."
-            } else {
-                timeRemaining = nil
-            }
         }
     }
 
