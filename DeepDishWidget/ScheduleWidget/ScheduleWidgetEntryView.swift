@@ -114,7 +114,7 @@ struct ScheduleWidgetEntryView: View {
 
             var body: some View {
                 HStack(alignment: .top) {
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 4) {
                         let title = Text(event.description)
                             .font(.body)
                             .foregroundStyle(event.toBeDetermined ? .secondary : .primary)
