@@ -36,7 +36,7 @@ struct ScheduleWidget: Widget {
                 }
         }
         .configurationDisplayName("Schedule")
-        .description("See what session is up next")
+        .description("See what sessions are up next")
     }
 }
 
