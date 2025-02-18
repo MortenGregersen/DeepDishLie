@@ -25,6 +25,7 @@ struct CountdownView: View {
                             .monospacedDigit()
                             .contentTransition(.numericText(countsDown: true))
                             .animation(.default, value: timeRemaining)
+                            .frame(maxWidth: .infinity)
                             .padding(.top, 16)
                         VStack(spacing: 4) {
                             Text("If you need a countdown in a browser, check out Alex's [DeepDishCountdown.fun](https://deepdishcountdown.fun).")
