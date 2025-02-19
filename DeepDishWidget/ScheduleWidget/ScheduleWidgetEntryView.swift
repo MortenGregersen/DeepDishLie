@@ -40,6 +40,7 @@ struct ScheduleWidgetEntryView: View {
                             .font(.title)
                             .fixedSize(horizontal: false, vertical: true)
                             .minimumScaleFactor(0.5)
+                            .environment(\.locale, Locale(identifier: "en-US"))
                     }
                     .monospacedDigit()
                     .contentTransition(.numericText(countsDown: true))
