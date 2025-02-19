@@ -14,7 +14,6 @@ struct ScheduleView: View {
     @State private var timer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
     @State private var currentDateId: String?
     @State private var showsSettings = false
-    @State private var toolbarRerenderTrigger = false
     @Environment(\.requestReview) private var requestReview
     @Environment(WelcomeController.self) private var welcomeController
     @Environment(SettingsController.self) private var settingsController
@@ -40,8 +39,7 @@ struct ScheduleView: View {
                 }
                 .listStyle(.plain)
                 .navigationTitle("Schedule 🍕")
-                .toolbarBackground(toolbarRerenderTrigger ? Color.accentColor : Color.accentColor.opacity(0.99999999),
-                                   for: .navigationBar)
+                .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarColorScheme(.dark, for: .navigationBar)
                 .toolbar {
@@ -64,11 +62,7 @@ struct ScheduleView: View {
                         }
                     }
                 }
-                .sheet(isPresented: $showsSettings, onDismiss: {
-                    // There is a bug in SwiftUI where the navigation bar looses its color (turning gray)
-                    // when a sheet is dismissed. This will trigger a rerender after the dismiss.
-                    toolbarRerenderTrigger.toggle()
-                }) {
+                .sheet(isPresented: $showsSettings) {
                     SettingsView()
                 }
                 .onAppear {
@@ -219,7 +213,7 @@ private struct EventRow: View {
                     .fill(Color.accentColor)
                     .frame(width: 54, height: 54)
             }
-            .shadow(color: .accent, radius: 1, x: 0, y: 1)
+            .shadow(color: .accentColor, radius: 1, x: 0, y: 1)
     }
 
     private var listRowBackgroundColor: Color? {
