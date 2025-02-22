@@ -91,7 +91,7 @@ struct AboutView: View {
             }
             .navigationTitle("About Deep Dish Unofficial")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.accentColor, for: .navigationBar)
+            .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
         }

@@ -115,7 +115,7 @@ struct WeatherView: View {
             }
             .navigationTitle("Wu with the Weather")
             .navigationBarTitleDisplayMode(.automatic)
-            .toolbarBackground(Color.accentColor, for: .navigationBar)
+            .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbar {

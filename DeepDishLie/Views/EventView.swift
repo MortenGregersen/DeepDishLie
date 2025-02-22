@@ -102,7 +102,7 @@ struct EventView: View {
         }
         .listStyle(.plain)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(Color.accentColor, for: .navigationBar)
+        .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarColorScheme(.dark, for: .navigationBar)
         .sheet(item: $shownUrl) { presentedUrl in
