@@ -8,6 +8,11 @@
 		<false/>
 		<key>NSAppClipRequestLocationConfirmation</key>
 		<false/>
+        <key>UILaunchScreen</key>
+        <dict>
+            <key>ImageName</key>
+            <string>SplashBackground</string>
+        </dict>
 	</dict>
 </dict>
 </plist>
