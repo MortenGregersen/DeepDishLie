@@ -35,7 +35,7 @@ struct EventView: View {
                                         .fill(Color.accentColor)
                                         .frame(width: imageHeight * 1.05, height: imageHeight * 1.05)
                                 }
-                                .shadow(color: .accent, radius: 4)
+                                .shadow(color: .accentColor, radius: 4)
                         }
                         Spacer()
                     }
@@ -92,7 +92,7 @@ struct EventView: View {
                                             .fill(Color.accentColor)
                                             .frame(width: headerImageHeight * 1.05, height: headerImageHeight * 1.05)
                                     }
-                                    .shadow(color: .accent, radius: 2)
+                                    .shadow(color: .accentColor, radius: 2)
                             }
                             .foregroundStyle(.primary)
                         })
