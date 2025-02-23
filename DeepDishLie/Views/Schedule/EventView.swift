@@ -11,8 +11,7 @@ import SwiftUI
 struct EventView: View {
     let dayName: String
     let event: Event
-    @State private var shownUrl: PresentedURL?
-    @Environment(\.openURL) private var openURL
+    @State private var shownUrl: URL?
     @Environment(SettingsController.self) private var settingsController
     private let headerImageHeight: CGFloat = 30
 
@@ -69,16 +68,18 @@ struct EventView: View {
                 .fontWeight(.semibold)
                 .foregroundStyle(.white)
             if let links = event.links {
-                linksSection(links: links, header: {
-                    if let name = links.name {
-                        Text(name)
+                SocialLinksSection(links: links, shownUrl: $shownUrl) {
+                    Group {
+                        if let name = links.name {
+                            Text(name)
+                        }
                     }
-                })
+                }
             }
             if let speakers = event.speakers {
                 ForEach(speakers) { speaker in
                     if let links = speaker.links {
-                        linksSection(links: links, header: {
+                        SocialLinksSection(links: links, shownUrl: $shownUrl, header: {
                             Label {
                                 Text("Connect with \(speaker.firstName)")
                             } icon: {
@@ -106,69 +107,10 @@ struct EventView: View {
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarColorScheme(.dark, for: .navigationBar)
         .sheet(item: $shownUrl) { presentedUrl in
-            SafariView(url: presentedUrl.url)
+            SafariView(url: presentedUrl)
                 .edgesIgnoringSafeArea(.all)
                 .presentationCompactAdaptation(.fullScreenCover)
         }
-    }
-
-    private func linksSection(links: Links, @ViewBuilder header: @escaping () -> some View) -> some View {
-        Section {
-            if let githubURL = links.github {
-                socialButton(url: githubURL, text: "GitHub", image: Image("github"))
-            }
-            if let mastodonURL = links.mastodon {
-                socialButton(url: mastodonURL, text: "Mastodon", image: Image("mastodon"))
-            }
-            if let blueskyURL = links.bluesky {
-                socialButton(url: blueskyURL, text: "Bluesky", image: Image("bluesky"))
-            }
-            if let threadsURL = links.threads {
-                socialButton(url: threadsURL, text: "Threads", image: Image("threads"))
-            }
-            if let twitterURL = links.twitter {
-                socialButton(url: twitterURL, text: "Twitter", image: Image("twitter"))
-            }
-            if let youtubeURL = links.youtube {
-                socialButton(url: youtubeURL, text: "YouTube", image: Image("youtube"))
-            }
-            if let websiteURL = links.website {
-                socialButton(url: websiteURL, text: "Website", image: Image(systemName: "globe"))
-            }
-        } header: {
-            header()
-        }
-    }
-
-    private func socialButton(url: URL, text: String, image: Image) -> some View {
-        Button {
-            if settingsController.openLinksInApp {
-                shownUrl = .init(url: url)
-            } else {
-                openURL(url)
-            }
-        } label: {
-            HStack(alignment: .center, spacing: 12) {
-                image
-                    .renderingMode(.template)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 30)
-                VStack(alignment: .leading, spacing: 0) {
-                    Text(text)
-                        .font(.subheadline)
-                    Text(url.absoluteString)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-            }
-            .foregroundStyle(.primary)
-        }
-    }
-
-    private struct PresentedURL: Identifiable {
-        let id = UUID()
-        let url: URL
     }
 }
 

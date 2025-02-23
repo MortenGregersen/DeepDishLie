@@ -175,6 +175,7 @@
 				Views/Schedule/EventRow.swift,
 				Views/Schedule/EventView.swift,
 				Views/Schedule/ScheduleListView.swift,
+				Views/Schedule/SocialButton/SocialLinksSection.swift,
 			);
 			target = DE6F23442D6A533B003C0319 /* ScheduleAppClip */;
 		};
