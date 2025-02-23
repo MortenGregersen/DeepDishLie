@@ -1,15 +1,14 @@
 //
 //  ContentView.swift
-//  ScheduleAppClip
+//  DeepDishAppClip
 //
 //  Created by Matt Heaney on 22/02/2025.
 //
 
-import SwiftUI
 import DeepDishCore
+import SwiftUI
 
 struct ContentView: View {
-
     @State private var settingsController = SettingsController()
     @State private var scheduleController = ScheduleController()
 
