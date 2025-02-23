@@ -18,6 +18,9 @@
 		5A8195CC2D614E240048354A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195212D6147910048354A /* WidgetKit.framework */; };
 		5A8195CD2D614E240048354A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195232D6147910048354A /* SwiftUI.framework */; };
 		5A8195D82D614E250048354A /* DeepDishWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A8195CB2D614E240048354A /* DeepDishWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DE6F23542D6A533F003C0319 /* ScheduleAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = DE6F23452D6A533B003C0319 /* ScheduleAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DE9F8FB82D6A8081002517D1 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
+		DE9F8FB92D6A8081002517D1 /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,13 @@
 			remoteGlobalIDString = 5A8195CA2D614E240048354A;
 			remoteInfo = ScheduleWidgetExtension;
 		};
+		DE6F23522D6A533F003C0319 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A3EFAFA29F7D53200D75F5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE6F23442D6A533B003C0319;
+			remoteInfo = ScheduleAppClip;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,6 +98,28 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE6F23592D6A533F003C0319 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				DE6F23542D6A533F003C0319 /* ScheduleAppClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE9F8FBA2D6A8081002517D1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DE9F8FB92D6A8081002517D1 /* DeepDishCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +133,7 @@
 		5A81953E2D61493D0048354A /* DeepDishCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDishCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8195452D61493D0048354A /* DeepDishCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepDishCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8195CB2D614E240048354A /* DeepDishWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DeepDishWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE6F23452D6A533B003C0319 /* ScheduleAppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleAppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -125,14 +158,35 @@
 			);
 			target = 5A8195CA2D614E240048354A /* DeepDishWidget */;
 		};
+		DE6F23582D6A533F003C0319 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = DE6F23442D6A533B003C0319 /* ScheduleAppClip */;
+		};
+		DE6F235B2D6A5361003C0319 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Extensions/Event+Colors.swift",
+				LaunchScreen.storyboard,
+				SharedAssets.xcassets,
+				Views/SafariView.swift,
+				Views/Schedule/EventRow.swift,
+				Views/Schedule/EventView.swift,
+				Views/Schedule/ScheduleListView.swift,
+			);
+			target = DE6F23442D6A533B003C0319 /* ScheduleAppClip */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5A09047F2D63D81800A1E387 /* Configuration */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Configuration; sourceTree = "<group>"; };
-		5A81944A2D6132740048354A /* DeepDishLie */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A8194662D6132740048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishLie; sourceTree = "<group>"; };
+		5A81944A2D6132740048354A /* DeepDishLie */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A8194662D6132740048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, DE6F235B2D6A5361003C0319 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishLie; sourceTree = "<group>"; };
 		5A81953F2D61493D0048354A /* DeepDishCore */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A8195562D61493D0048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishCore; sourceTree = "<group>"; };
 		5A81954B2D61493D0048354A /* DeepDishCoreTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DeepDishCoreTests; sourceTree = "<group>"; };
 		5A8195CE2D614E240048354A /* DeepDishWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A8195DC2D614E250048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishWidget; sourceTree = "<group>"; };
+		DE6F23462D6A533B003C0319 /* ScheduleAppClip */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (DE6F23582D6A533F003C0319 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ScheduleAppClip; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +232,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE6F23422D6A533B003C0319 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE9F8FB82D6A8081002517D1 /* DeepDishCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -209,6 +271,7 @@
 				5A28A90129F803B100B02EE6 /* DeepDishLieSnapshots */,
 				5A09047F2D63D81800A1E387 /* Configuration */,
 				5A28A8FB29F8038800B02EE6 /* fastlane */,
+				DE6F23462D6A533B003C0319 /* ScheduleAppClip */,
 				5A3EFB0329F7D53200D75F5E /* Products */,
 				5A191A072BDBCF8A0092AF29 /* Frameworks */,
 			);
@@ -222,6 +285,7 @@
 				5A81953E2D61493D0048354A /* DeepDishCore.framework */,
 				5A8195452D61493D0048354A /* DeepDishCoreTests.xctest */,
 				5A8195CB2D614E240048354A /* DeepDishWidget.appex */,
+				DE6F23452D6A533B003C0319 /* ScheduleAppClip.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,12 +330,14 @@
 				5A3EFB0029F7D53200D75F5E /* Resources */,
 				5A8195342D6147920048354A /* Embed Foundation Extensions */,
 				5A8195572D61493D0048354A /* Embed Frameworks */,
+				DE6F23592D6A533F003C0319 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				5A8195502D61493D0048354A /* PBXTargetDependency */,
 				5A8195D72D614E250048354A /* PBXTargetDependency */,
+				DE6F23532D6A533F003C0319 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				5A81944A2D6132740048354A /* DeepDishLie */,
@@ -355,6 +421,29 @@
 			productReference = 5A8195CB2D614E240048354A /* DeepDishWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		DE6F23442D6A533B003C0319 /* ScheduleAppClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE6F23552D6A533F003C0319 /* Build configuration list for PBXNativeTarget "ScheduleAppClip" */;
+			buildPhases = (
+				DE6F23412D6A533B003C0319 /* Sources */,
+				DE6F23422D6A533B003C0319 /* Frameworks */,
+				DE6F23432D6A533B003C0319 /* Resources */,
+				DE9F8FBA2D6A8081002517D1 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DE6F23462D6A533B003C0319 /* ScheduleAppClip */,
+			);
+			name = ScheduleAppClip;
+			packageProductDependencies = (
+			);
+			productName = ScheduleAppClip;
+			productReference = DE6F23452D6A533B003C0319 /* ScheduleAppClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -362,7 +451,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					5A28A8FF29F803B100B02EE6 = {
@@ -381,6 +470,9 @@
 					};
 					5A8195CA2D614E240048354A = {
 						CreatedOnToolsVersion = 16.2;
+					};
+					DE6F23442D6A533B003C0319 = {
+						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
@@ -406,6 +498,7 @@
 				5A81953D2D61493D0048354A /* DeepDishCore */,
 				5A8195442D61493D0048354A /* DeepDishCoreTests */,
 				5A28A8FF29F803B100B02EE6 /* DeepDishLieSnapshots */,
+				DE6F23442D6A533B003C0319 /* ScheduleAppClip */,
 			);
 		};
 /* End PBXProject section */
@@ -440,6 +533,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5A8195C92D614E240048354A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE6F23432D6A533B003C0319 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -486,6 +586,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE6F23412D6A533B003C0319 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -519,6 +626,11 @@
 			target = 5A8195CA2D614E240048354A /* DeepDishWidget */;
 			targetProxy = 5A8195D62D614E250048354A /* PBXContainerItemProxy */;
 		};
+		DE6F23532D6A533F003C0319 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE6F23442D6A533B003C0319 /* ScheduleAppClip */;
+			targetProxy = DE6F23522D6A533F003C0319 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -527,6 +639,9 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishLieSnapshots/DeepDishLieSnapshots-Debug.xcconfig";
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -535,6 +650,9 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishLieSnapshots/DeepDishLieSnapshots-Release.xcconfig";
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -680,6 +798,11 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishLie/DeepDishLie-Debug.xcconfig";
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R7YA4RGA8U;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = DeepDishLe;
 			};
 			name = Debug;
 		};
@@ -688,6 +811,11 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishLie/DeepDishLie-Release.xcconfig";
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R7YA4RGA8U;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = DeepDishLe;
 			};
 			name = Release;
 		};
@@ -696,6 +824,8 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishCore/DeepDishCore-Debug.xcconfig";
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "";
 			};
 			name = Debug;
 		};
@@ -704,6 +834,8 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishCore/DeepDishCore-Release.xcconfig";
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "";
 			};
 			name = Release;
 		};
@@ -712,6 +844,9 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishCoreTests/DeepDishCoreTests-Debug.xcconfig";
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -720,6 +855,9 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishCoreTests/DeepDishCoreTests-Release.xcconfig";
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -728,6 +866,12 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishWidget/DeepDishWidget-Debug.xcconfig";
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R7YA4RGA8U;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = DeepDishWidget;
 			};
 			name = Debug;
 		};
@@ -736,6 +880,97 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishWidget/DeepDishWidget-Release.xcconfig";
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R7YA4RGA8U;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = DeepDishWidget;
+			};
+			name = Release;
+		};
+		DE6F23562D6A533F003C0319 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ScheduleAppClip/ScheduleAppClip.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ScheduleAppClip/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R7YA4RGA8U;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScheduleAppClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DeepDishLie;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 3.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLie.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = DeepDishAppClip;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE6F23572D6A533F003C0319 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ScheduleAppClip/ScheduleAppClip.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ScheduleAppClip/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R7YA4RGA8U;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScheduleAppClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DeepDishLie;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 3.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLie.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = DeepDishAppClip;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -792,6 +1027,15 @@
 			buildConfigurations = (
 				5A8195D92D614E250048354A /* Debug */,
 				5A8195DA2D614E250048354A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE6F23552D6A533F003C0319 /* Build configuration list for PBXNativeTarget "ScheduleAppClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE6F23562D6A533F003C0319 /* Debug */,
+				DE6F23572D6A533F003C0319 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
