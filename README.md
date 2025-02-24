@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/refs/heads/main/DeepDishLie/Assets.xcassets/AppIcon.appiconset/mac256.png" alt="Deep Dish Unofficial Logo" />
+<img src="https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/refs/heads/main/DeepDishApp/SharedAssets.xcassets/AppIcon.appiconset/mac256.png" alt="Deep Dish Unofficial Logo" />
 </p>
 
 # Deep Dish Unofficial 🍕
