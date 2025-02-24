@@ -1,6 +1,6 @@
 //
 //  ScheduleWidget+Provider.swift
-//  ScheduleWidgetExtension
+//  DeepDishWidget
 //
 //  Created by Morten Bjerg Gregersen on 17/02/2025.
 //
@@ -23,7 +23,7 @@ extension ScheduleWidget {
 
         func getSnapshot(in context: Context, completion: @escaping (ScheduleWidget.Entry) -> ()) {
             let openingKeynoteEventIndex = allEvents.firstIndex(where: { $0.id == "special-opening-keynote" })!
-            var nextEvents = [allEvents[openingKeynoteEventIndex], allEvents[openingKeynoteEventIndex + 1], allEvents[openingKeynoteEventIndex + 2]]
+            let nextEvents = [allEvents[openingKeynoteEventIndex], allEvents[openingKeynoteEventIndex + 1], allEvents[openingKeynoteEventIndex + 2]]
             let eventBeforeOpeningKeynote = allEvents[allEvents.index(before: openingKeynoteEventIndex)]
             let entry = ScheduleWidget.Entry(date: Date(), widgetFamily: context.family, mode: .currentNext(currentEvent: eventBeforeOpeningKeynote, nextEvents: nextEvents))
             completion(entry)

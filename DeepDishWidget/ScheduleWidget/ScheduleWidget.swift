@@ -1,6 +1,6 @@
 //
 //  ScheduleWidget.swift
-//  ScheduleWidget
+//  DeepDishWidget
 //
 //  Created by Morten Bjerg Gregersen on 15/02/2025.
 //
