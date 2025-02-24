@@ -1,13 +1,13 @@
 //
-//  DeepDishLieSnapshots.swift
-//  DeepDishLieSnapshots
+//  DeepDishSnapshots.swift
+//  DeepDishSnapshots
 //
 //  Created by Morten Bjerg Gregersen on 25/04/2023.
 //
 
 import XCTest
 
-final class DeepDishLieSnapshots: XCTestCase {
+final class DeepDishSnapshots: XCTestCase {
     @MainActor func testAppStoreScreenshots() async throws {
         let app = XCUIApplication()
         app.launchArguments.append("-Demo")

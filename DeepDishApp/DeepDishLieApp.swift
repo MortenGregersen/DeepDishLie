@@ -1,6 +1,6 @@
 //
-//  DeepDishLieApp.swift
-//  DeepDishLie
+//  DeepDishApp.swift
+//  DeepDishApp
 //
 //  Created by Morten Bjerg Gregersen on 25/04/2023.
 //
@@ -10,7 +10,7 @@ import SwiftUI
 import TelemetryDeck
 
 @main
-struct DeepDishLieApp: App {
+struct DeepDishApp: App {
     @State private var welcomeController = WelcomeController(inDemoMode: Self.inDemoMode)
     @State private var settingsController = SettingsController()
     @State private var scheduleController = ScheduleController()

@@ -1,6 +1,6 @@
 //
 //  SafariView.swift
-//  DeepDishLie
+//  DeepDishApp
 //
 //  Created by Morten Bjerg Gregersen on 01/05/2024.
 //

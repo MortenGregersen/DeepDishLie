@@ -1,6 +1,6 @@
 //
 //  ScheduleView.swift
-//  DeepDishLie
+//  DeepDishApp
 //
 //  Created by Morten Bjerg Gregersen on 24/04/2024.
 //

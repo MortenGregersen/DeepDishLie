@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5A3EFB0129F7D53200D75F5E"
-               BuildableName = "DeepDishLie.app"
-               BlueprintName = "DeepDishLie"
+               BuildableName = "DeepDishApp.app"
+               BlueprintName = "DeepDishApp"
                ReferencedContainer = "container:DeepDishLie.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -35,9 +35,9 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5A28A8FF29F803B100B02EE6"
-               BuildableName = "DeepDishLieSnapshots.xctest"
-               BlueprintName = "DeepDishLieSnapshots"
+               BlueprintIdentifier = "5A8195442D61493D0048354A"
+               BuildableName = "DeepDishCoreTests.xctest"
+               BlueprintName = "DeepDishCoreTests"
                ReferencedContainer = "container:DeepDishLie.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -46,9 +46,9 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5A8195442D61493D0048354A"
-               BuildableName = "DeepDishCoreTests.xctest"
-               BlueprintName = "DeepDishCoreTests"
+               BlueprintIdentifier = "5A28A8FF29F803B100B02EE6"
+               BuildableName = "DeepDishLieSnapshots.xctest"
+               BlueprintName = "DeepDishLieSnapshots"
                ReferencedContainer = "container:DeepDishLie.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,8 +58,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = "en"
-      region = "US"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -71,8 +69,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5A3EFB0129F7D53200D75F5E"
-            BuildableName = "DeepDishLie.app"
-            BlueprintName = "DeepDishLie"
+            BuildableName = "DeepDishApp.app"
+            BlueprintName = "DeepDishApp"
             ReferencedContainer = "container:DeepDishLie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -88,8 +86,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5A3EFB0129F7D53200D75F5E"
-            BuildableName = "DeepDishLie.app"
-            BlueprintName = "DeepDishLie"
+            BuildableName = "DeepDishApp.app"
+            BlueprintName = "DeepDishApp"
             ReferencedContainer = "container:DeepDishLie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

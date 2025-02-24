@@ -1,6 +1,6 @@
 //
 //  WeatherView.swift
-//  DeepDishLie
+//  DeepDishApp
 //
 //  Created by Morten Bjerg Gregersen on 27/04/2024.
 //

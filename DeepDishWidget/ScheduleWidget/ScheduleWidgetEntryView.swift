@@ -1,6 +1,6 @@
 //
 //  ScheduleWidgetEntryView.swift
-//  DeepDishLie
+//  DeepDishWidget
 //
 //  Created by Morten Bjerg Gregersen on 17/02/2025.
 //

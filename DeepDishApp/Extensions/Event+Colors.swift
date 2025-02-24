@@ -1,6 +1,6 @@
 //
 //  Event+Colors.swift
-//  DeepDishLie
+//  DeepDishApp
 //
 //  Created by Matt Heaney on 22/02/2025.
 //

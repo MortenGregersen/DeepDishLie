@@ -1,6 +1,6 @@
 //
 //  WelcomeView.swift
-//  DeepDishLie
+//  DeepDishApp
 //
 //  Created by Morten Bjerg Gregersen on 25/04/2023.
 //
@@ -87,7 +87,7 @@ struct WelcomeView: View {
     }
 
     private func dismiss(withFeeling feeling: Feeling) {
-        if !DeepDishLieApp.inDemoMode {
+        if !DeepDishApp.inDemoMode {
             TelemetryDeck.signal("initialConfettiIntensity", floatValue: feeling.confettiIntensity)
         }
         withAnimation {
