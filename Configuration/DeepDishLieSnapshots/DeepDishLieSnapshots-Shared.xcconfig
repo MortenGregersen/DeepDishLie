@@ -5,8 +5,10 @@
 // https://buildsettingextractor.com
 //
 
+CODE_SIGN_IDENTITY = Apple Development
+CODE_SIGN_STYLE = Automatic
 GENERATE_INFOPLIST_FILE = YES
-PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLieSnapshots
+PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLie.DeepDishLieSnapshots
 PRODUCT_NAME = $(TARGET_NAME)
 SDKROOT = iphoneos
 TEST_TARGET_NAME = DeepDishLie
