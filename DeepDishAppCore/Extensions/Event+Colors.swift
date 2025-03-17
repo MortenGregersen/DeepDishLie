@@ -7,11 +7,16 @@
 
 import DeepDishCore
 import SwiftUI
+import UIKit
 
 public extension Event {
     var dateTextColor: Color {
         if isHappeningNow {
+            #if os(iOS)
             .init(uiColor: UIColor.lightText)
+            #else
+            .white
+            #endif
         } else {
             .accentColor
         }
@@ -19,7 +24,11 @@ public extension Event {
 
     var titleTextColor: Color {
         if isHappeningNow {
+            #if os(iOS)
             .init(uiColor: UIColor.systemBackground)
+            #else
+            .black
+            #endif
         } else {
             toBeDetermined ? .secondary : .primary
         }
@@ -27,7 +36,11 @@ public extension Event {
 
     var subtitleTextColor: Color {
         if isHappeningNow {
+            #if os(iOS)
             .init(uiColor: UIColor.systemBackground)
+            #else
+            .white
+            #endif
         } else {
             .secondary
         }

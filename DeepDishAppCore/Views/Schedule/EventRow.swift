@@ -14,30 +14,49 @@ struct EventRow: View {
     let dateFormatter: DateFormatter
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    private let imageSize: CGFloat = OperatingSystem.current == .watchOS ? 30 : 50
+    private let emojiFont: Font = OperatingSystem.current == .watchOS ? .title3 : .largeTitle
 
     var body: some View {
         NavigationLink {
             EventView(dayName: dayName, event: event)
         } label: {
             HStack(alignment: .top, spacing: 0) {
-                VStack(alignment: .trailing) {
-                    Text(dateFormatter.string(from: event.start))
-                    Text(dateFormatter.string(from: event.end))
-                }
-                .font(.subheadline)
-                .fontWeight(.semibold)
-                .foregroundStyle(event.dateTextColor)
-                .containerRelativeFrame(.horizontal) { length, _ in
-                    length / dateFrameDivider
-                }
-                VStack(alignment: .leading) {
-                    Text(event.description)
-                        .font(.headline)
-                        .foregroundStyle(event.titleTextColor)
-                        .italic(event.toBeDetermined)
-                    if let speakers = event.speakers {
-                        Text(speakers.map(\.name).formatted(.list(type: .and)))
-                            .foregroundStyle(event.subtitleTextColor)
+                if OperatingSystem.current == .watchOS {
+                    VStack(alignment: .leading) {
+                        Text("\(dateFormatter.string(from: event.start)) - \(dateFormatter.string(from: event.end))")
+                            .font(.caption2)
+                            .foregroundStyle(event.dateTextColor)
+                        Text(event.description)
+                            .font(.headline)
+                            .foregroundStyle(event.titleTextColor)
+                            .italic(event.toBeDetermined)
+                        if let speakers = event.speakers {
+                            Text(speakers.map(\.name).formatted(.list(type: .and)))
+                                .foregroundStyle(event.subtitleTextColor)
+                        }
+                    }
+                    .padding(.leading)
+                } else {
+                    VStack(alignment: .trailing) {
+                        Text(dateFormatter.string(from: event.start))
+                        Text(dateFormatter.string(from: event.end))
+                    }
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(event.dateTextColor)
+                    .containerRelativeFrame(.horizontal) { length, _ in
+                        length / dateFrameDivider
+                    }
+                    VStack(alignment: .leading) {
+                        Text(event.description)
+                            .font(.headline)
+                            .foregroundStyle(event.titleTextColor)
+                            .italic(event.toBeDetermined)
+                        if let speakers = event.speakers {
+                            Text(speakers.map(\.name).formatted(.list(type: .and)))
+                                .foregroundStyle(event.subtitleTextColor)
+                        }
                     }
                 }
                 if let speakers = event.speakers, !speakers.isEmpty {
@@ -56,9 +75,9 @@ struct EventRow: View {
                     VStack(alignment: .trailing) {
                         VStack {
                             Text(emoji)
-                                .font(.largeTitle)
+                                .font(emojiFont)
                         }
-                        .frame(width: 50, height: 50)
+                        .frame(width: imageSize, height: imageSize)
                         .background(Color.accentColor.opacity(event.toBeDetermined ? 0.5 : 1.0))
                         .clipShape(Circle())
                     }
@@ -82,12 +101,12 @@ struct EventRow: View {
         Image(speaker.image, bundle: .core)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(height: 50)
+            .frame(height: imageSize)
             .clipShape(Circle())
             .background {
                 Circle()
                     .fill(Color.accentColor)
-                    .frame(width: 54, height: 54)
+                    .frame(width: imageSize + 4, height: imageSize + 4)
             }
             .shadow(color: .accentColor, radius: 1, x: 0, y: 1)
     }
@@ -132,4 +151,10 @@ struct EventRow: View {
             5
         }
     }
+}
+
+#Preview {
+    @Previewable @State var scheduleController = ScheduleController.forPreview()
+    @Previewable @State var settingsController = SettingsController.forPreview()
+    EventRow(dayName: scheduleController.days.first!.name, event: scheduleController.days.first!.events[4], dateFormatter: Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock))
 }

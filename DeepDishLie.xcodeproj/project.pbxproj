@@ -26,6 +26,8 @@
 		5AA0C68D2D88C4D400AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5AA0C6AF2D88C97700AF6C14 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0C6AE2D88C97700AF6C14 /* TelemetryDeck */; };
 		5AA0C6B52D88CBA100AF6C14 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0C6B42D88CBA100AF6C14 /* TelemetryDeck */; };
+		5AA0C6B62D88CCE100AF6C14 /* DeepDishAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; };
+		5AA0C6B72D88CCE100AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE6F23542D6A533F003C0319 /* DeepDishAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = DE6F23452D6A533B003C0319 /* DeepDishAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE9F8FB82D6A8081002517D1 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		DE9F8FB92D6A8081002517D1 /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -102,6 +104,13 @@
 			remoteGlobalIDString = 5AA0C6672D88C2F800AF6C14;
 			remoteInfo = DeepDishAppCore;
 		};
+		5AA0C6B82D88CCE100AF6C14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A3EFAFA29F7D53200D75F5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AA0C6672D88C2F800AF6C14;
+			remoteInfo = DeepDishAppCore;
+		};
 		DE6F23522D6A533F003C0319 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5A3EFAFA29F7D53200D75F5E /* Project object */;
@@ -153,6 +162,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5AA0C6882D88C4A400AF6C14 /* DeepDishCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AA0C6BA2D88CCE100AF6C14 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5AA0C6B72D88CCE100AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +323,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AA0C6B62D88CCE100AF6C14 /* DeepDishAppCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,10 +547,12 @@
 				5AA0C62A2D88BF1300AF6C14 /* Sources */,
 				5AA0C62B2D88BF1300AF6C14 /* Frameworks */,
 				5AA0C62C2D88BF1300AF6C14 /* Resources */,
+				5AA0C6BA2D88CCE100AF6C14 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5AA0C6B92D88CCE100AF6C14 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				5AA0C62F2D88BF1300AF6C14 /* DeepDishWatchApp */,
@@ -829,6 +852,11 @@
 			target = 5AA0C6672D88C2F800AF6C14 /* DeepDishAppCore */;
 			targetProxy = 5AA0C68E2D88C4D400AF6C14 /* PBXContainerItemProxy */;
 		};
+		5AA0C6B92D88CCE100AF6C14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AA0C6672D88C2F800AF6C14 /* DeepDishAppCore */;
+			targetProxy = 5AA0C6B82D88CCE100AF6C14 /* PBXContainerItemProxy */;
+		};
 		DE6F23532D6A533F003C0319 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DE6F23442D6A533B003C0319 /* DeepDishAppClip */;
@@ -954,6 +982,9 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishAppCore/DeepDishAppCore-Debug.xcconfig";
 			buildSettings = {
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2,4";
 			};
 			name = Debug;
 		};
@@ -962,6 +993,9 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishAppCore/DeepDishAppCore-Release.xcconfig";
 			buildSettings = {
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2,4";
 			};
 			name = Release;
 		};

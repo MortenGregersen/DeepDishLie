@@ -5,6 +5,7 @@
 //  Created by Morten Bjerg Gregersen on 01/05/2024.
 //
 
+#if canImport(SafariServices)
 import SafariServices
 import SwiftUI
 
@@ -27,3 +28,4 @@ extension URL: @retroactive Identifiable {
 #Preview {
     SafariView(url: URL(string: "https://appdab.app")!)
 }
+#endif

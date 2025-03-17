@@ -17,8 +17,7 @@ struct ContentView: View {
         NavigationView {
             ScheduleListView()
                 .navigationTitle("Deep Dish Swift 🍕")
-                .toolbarBackground(Color.navigationBarBackground,
-                                   for: .navigationBar)
+                .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarColorScheme(.dark, for: .navigationBar)
         }

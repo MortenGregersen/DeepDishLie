@@ -5,6 +5,7 @@
 //  Created by Morten Bjerg Gregersen on 01/05/2024.
 //
 
+#if os(iOS)
 import UIKit
 
 // Borrowed from Hacking with Swift:
@@ -21,3 +22,4 @@ extension UIWindow {
         }
     }
 }
+#endif

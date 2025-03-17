@@ -61,7 +61,9 @@ struct EventView: View {
                         .foregroundStyle(.secondary)
                 }
             }
+            #if os(iOS)
             .listRowSeparator(.hidden, edges: .top)
+            #endif
             Text("\(dayName) \(dateFormatter.string(from: event.start)) - \(dateFormatter.string(from: event.end))")
                 .listRowBackground(Color.accentColor)
                 .font(.headline)
@@ -106,11 +108,13 @@ struct EventView: View {
         .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarColorScheme(.dark, for: .navigationBar)
-        .sheet(item: $shownUrl) { presentedUrl in
-            SafariView(url: presentedUrl)
-                .edgesIgnoringSafeArea(.all)
-                .presentationCompactAdaptation(.fullScreenCover)
-        }
+        #if canImport(SafariServices)
+            .sheet(item: $shownUrl) { presentedUrl in
+                SafariView(url: presentedUrl)
+                    .edgesIgnoringSafeArea(.all)
+                    .presentationCompactAdaptation(.fullScreenCover)
+            }
+        #endif
     }
 }
 

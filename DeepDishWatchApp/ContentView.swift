@@ -5,17 +5,24 @@
 //  Created by Morten Bjerg Gregersen on 17/03/2025.
 //
 
+import DeepDishAppCore
+import DeepDishCore
 import SwiftUI
 
 struct ContentView: View {
+    @State private var settingsController = SettingsController()
+    @State private var scheduleController = ScheduleController()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            ScheduleListView()
+                .navigationTitle("Deep Dish")
+                .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbarColorScheme(.dark, for: .navigationBar)
         }
-        .padding()
+        .environment(settingsController)
+        .environment(scheduleController)
     }
 }
 

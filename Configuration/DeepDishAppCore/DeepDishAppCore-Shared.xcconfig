@@ -23,5 +23,7 @@ PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLie.DeepDishAppCore
 PRODUCT_NAME = $(TARGET_NAME:c99extidentifier)
 SDKROOT = auto
 SKIP_INSTALL = YES
+SUPPORTED_PLATFORMS = iphoneos iphonesimulator watchos watchsimulator
 SWIFT_EMIT_LOC_STRINGS = YES
 SWIFT_INSTALL_OBJC_HEADER = NO
+TARGETED_DEVICE_FAMILY = 1,2,4
