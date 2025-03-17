@@ -1,14 +1,14 @@
 //
 //  Event+Colors.swift
-//  DeepDishApp
+//  DeepDishAppCore
 //
 //  Created by Matt Heaney on 22/02/2025.
 //
 
-import SwiftUI
 import DeepDishCore
+import SwiftUI
 
-extension Event {
+public extension Event {
     var dateTextColor: Color {
         if isHappeningNow {
             .init(uiColor: UIColor.lightText)

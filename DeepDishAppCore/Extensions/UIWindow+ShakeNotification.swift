@@ -1,6 +1,6 @@
 //
 //  UIWindow+ShakeNotification.swift
-//  DeepDishApp
+//  DeepDishAppCore
 //
 //  Created by Morten Bjerg Gregersen on 01/05/2024.
 //
@@ -10,7 +10,7 @@ import UIKit
 // Borrowed from Hacking with Swift:
 // https://www.hackingwithswift.com/quick-start/swiftui/how-to-detect-shake-gestures
 
-extension UIDevice {
+public extension UIDevice {
     static let deviceDidShakeNotification = Notification.Name(rawValue: "deviceDidShakeNotification")
 }
 

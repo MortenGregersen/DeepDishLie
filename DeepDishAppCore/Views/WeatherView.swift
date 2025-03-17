@@ -1,6 +1,6 @@
 //
 //  WeatherView.swift
-//  DeepDishApp
+//  DeepDishAppCore
 //
 //  Created by Morten Bjerg Gregersen on 27/04/2024.
 //
@@ -9,7 +9,7 @@ import DeepDishCore
 import SwiftUI
 import WeatherKit
 
-struct WeatherView: View {
+public struct WeatherView: View {
     @Environment(SettingsController.self) private var settingsController
     @Environment(WeatherController.self) private var weatherController
     @Environment(\.colorScheme) private var colorScheme
@@ -23,8 +23,10 @@ struct WeatherView: View {
         formatter.numberFormatter = numberFormatter
         return formatter
     }
+    
+    public init() {}
 
-    var body: some View {
+    public var body: some View {
         NavigationStack {
             ScrollView {
                 VStack {

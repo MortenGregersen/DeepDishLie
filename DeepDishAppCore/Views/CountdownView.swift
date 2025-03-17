@@ -1,18 +1,22 @@
 //
 //  CountdownView.swift
-//  DeepDishApp
+//  DeepDishAppCore
 //
 //  Created by Morten Bjerg Gregersen on 09/02/2025.
 //
 
 import SwiftUI
 
-struct CountdownView: View {
+public struct CountdownView: View {
     let eventDate: Date
     @State private var timeRemaining: String?
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    public init(eventDate: Date) {
+        self.eventDate = eventDate
+    }
 
-    var body: some View {
+    public var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 0) {

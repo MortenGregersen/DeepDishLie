@@ -1,6 +1,6 @@
 //
 //  WelcomeView.swift
-//  DeepDishApp
+//  DeepDishAppCore
 //
 //  Created by Morten Bjerg Gregersen on 25/04/2023.
 //
@@ -9,14 +9,16 @@ import DeepDishCore
 import SwiftUI
 import TelemetryDeck
 
-struct WelcomeView: View {
+public struct WelcomeView: View {
     @State private var showsTitle = false
     @State private var showsButtons = false
     @Environment(WelcomeController.self) private var welcomeController
     @Environment(SettingsController.self) private var settingsController
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
-    var body: some View {
+    public init() {}
+
+    public var body: some View {
         ScrollView {
             VStack {
                 VStack(spacing: 0) {
@@ -87,7 +89,7 @@ struct WelcomeView: View {
     }
 
     private func dismiss(withFeeling feeling: Feeling) {
-        if !DeepDishApp.inDemoMode {
+        if !AppEnvironment.inDemoMode {
             TelemetryDeck.signal("initialConfettiIntensity", floatValue: feeling.confettiIntensity)
         }
         withAnimation {

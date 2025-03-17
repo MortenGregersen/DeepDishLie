@@ -1,6 +1,6 @@
 //
 //  GiveawayView.swift
-//  DeepDishApp
+//  DeepDishAppCore
 //
 //  Created by Morten Bjerg Gregersen on 29/04/2024.
 //
@@ -25,7 +25,7 @@ struct GiveawayView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 172)
-                                .foregroundStyle(.accent)
+                                .foregroundStyle(Color.accent)
                                 .fontWeight(.light)
                         }
                         .overlay(alignment: .bottomTrailing) {

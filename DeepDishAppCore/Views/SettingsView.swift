@@ -1,6 +1,6 @@
 //
 //  SettingsView.swift
-//  DeepDishApp
+//  DeepDishAppCore
 //
 //  Created by Morten Bjerg Gregersen on 01/05/2024.
 //
@@ -8,11 +8,13 @@
 import DeepDishCore
 import SwiftUI
 
-struct SettingsView: View {
+public struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(SettingsController.self) private var settingsController
+    
+    public init() {}
 
-    var body: some View {
+    public var body: some View {
         @Bindable var settingsController = settingsController
         NavigationStack {
             Form {

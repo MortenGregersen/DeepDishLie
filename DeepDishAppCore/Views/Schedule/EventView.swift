@@ -1,6 +1,6 @@
 //
 //  EventView.swift
-//  DeepDishApp
+//  DeepDishAppCore
 //
 //  Created by Morten Bjerg Gregersen on 28/04/2024.
 //

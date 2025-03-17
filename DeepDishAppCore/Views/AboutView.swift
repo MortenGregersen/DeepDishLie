@@ -1,14 +1,16 @@
 //
 //  AboutView.swift
-//  DeepDishApp
+//  DeepDishAppCore
 //
 //  Created by Morten Bjerg Gregersen on 25/04/2023.
 //
 
 import SwiftUI
 
-struct AboutView: View {
-    var body: some View {
+public struct AboutView: View {
+    public init() {}
+    
+    public var body: some View {
         NavigationStack {
             List {
                 Section("The app ❤️") {
@@ -98,8 +100,6 @@ struct AboutView: View {
     }
 }
 
-struct AboutView_Previews: PreviewProvider {
-    static var previews: some View {
-        AboutView()
-    }
+#Preview {
+    AboutView()
 }

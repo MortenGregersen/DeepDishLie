@@ -6,21 +6,21 @@
 //
 
 import DeepDishCore
+import DeepDishAppCore
 import SwiftUI
 import TelemetryDeck
 
 @main
 struct DeepDishApp: App {
-    @State private var welcomeController = WelcomeController(inDemoMode: Self.inDemoMode)
+    @State private var welcomeController = WelcomeController(inDemoMode: AppEnvironment.inDemoMode)
     @State private var settingsController = SettingsController()
     @State private var scheduleController = ScheduleController()
     @State private var weatherController = WeatherController()
     @State private var giveawayController = GiveawayController()
     @Environment(\.scenePhase) private var scenePhase
-    static let inDemoMode = UserDefaults.standard.bool(forKey: "Demo")
 
     init() {
-        if !Self.inDemoMode {
+        if !AppEnvironment.inDemoMode {
             TelemetryDeck.initialize(config: .init(appID: "5DD04C64-E9D4-4FB0-AAD6-A48330771CBF"))
         }
     }
@@ -28,7 +28,7 @@ struct DeepDishApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                if !Self.inDemoMode, let firstEventDate = scheduleController.firstEventDate, Date.now < firstEventDate {
+                if !AppEnvironment.inDemoMode, let firstEventDate = scheduleController.firstEventDate, Date.now < firstEventDate {
                     CountdownView(eventDate: firstEventDate)
                         .toolbarBackground(.visible, for: .tabBar)
                         .tabItem {
@@ -59,7 +59,7 @@ struct DeepDishApp: App {
             .environment(settingsController)
             .onChange(of: scenePhase) { _, newValue in
                 if newValue == .active {
-                    if !Self.inDemoMode {
+                    if !AppEnvironment.inDemoMode {
                         TelemetryDeck.signal("confettiStatus", floatValue: settingsController.randomConfettiIntensity)
                     }
                     Task {

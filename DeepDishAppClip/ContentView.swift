@@ -5,6 +5,7 @@
 //  Created by Matt Heaney on 22/02/2025.
 //
 
+import DeepDishAppCore
 import DeepDishCore
 import SwiftUI
 

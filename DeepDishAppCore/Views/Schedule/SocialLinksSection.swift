@@ -1,6 +1,6 @@
 //
 //  SocialLinksSection.swift
-//  DeepDishLie
+//  DeepDishAppCore
 //
 //  Created by Matt Heaney on 23/02/2025.
 //
