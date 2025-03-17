@@ -18,6 +18,7 @@
 		5A8195CC2D614E240048354A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195212D6147910048354A /* WidgetKit.framework */; };
 		5A8195CD2D614E240048354A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195232D6147910048354A /* SwiftUI.framework */; };
 		5A8195D82D614E250048354A /* DeepDishWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A8195CB2D614E240048354A /* DeepDishWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5AA0C63B2D88BF1400AF6C14 /* DeepDishWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5AA0C62E2D88BF1300AF6C14 /* DeepDishWatchApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE6F23542D6A533F003C0319 /* DeepDishAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = DE6F23452D6A533B003C0319 /* DeepDishAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE9F8FB82D6A8081002517D1 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		DE9F8FB92D6A8081002517D1 /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -66,6 +67,13 @@
 			remoteGlobalIDString = 5A8195CA2D614E240048354A;
 			remoteInfo = ScheduleWidgetExtension;
 		};
+		5AA0C6392D88BF1400AF6C14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A3EFAFA29F7D53200D75F5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AA0C62D2D88BF1300AF6C14;
+			remoteInfo = "DeepDishWatchApp Watch App";
+		};
 		DE6F23522D6A533F003C0319 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5A3EFAFA29F7D53200D75F5E /* Project object */;
@@ -96,6 +104,17 @@
 				5A8195522D61493D0048354A /* DeepDishCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AA0C63C2D88BF1400AF6C14 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				5AA0C63B2D88BF1400AF6C14 /* DeepDishWatchApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DE6F23592D6A533F003C0319 /* Embed App Clips */ = {
@@ -133,6 +152,7 @@
 		5A81953E2D61493D0048354A /* DeepDishCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDishCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8195452D61493D0048354A /* DeepDishCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepDishCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8195CB2D614E240048354A /* DeepDishWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DeepDishWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA0C62E2D88BF1300AF6C14 /* DeepDishWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepDishWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE6F23452D6A533B003C0319 /* DeepDishAppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepDishAppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -187,6 +207,7 @@
 		5A81953F2D61493D0048354A /* DeepDishCore */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A8195562D61493D0048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishCore; sourceTree = "<group>"; };
 		5A81954B2D61493D0048354A /* DeepDishCoreTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DeepDishCoreTests; sourceTree = "<group>"; };
 		5A8195CE2D614E240048354A /* DeepDishWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A8195DC2D614E250048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishWidget; sourceTree = "<group>"; };
+		5AA0C62F2D88BF1300AF6C14 /* DeepDishWatchApp */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DeepDishWatchApp; sourceTree = "<group>"; };
 		DE6F23462D6A533B003C0319 /* DeepDishAppClip */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (DE6F23582D6A533F003C0319 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishAppClip; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -233,6 +254,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5AA0C62B2D88BF1300AF6C14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE6F23422D6A533B003C0319 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,6 +295,7 @@
 			children = (
 				5A81944A2D6132740048354A /* DeepDishApp */,
 				DE6F23462D6A533B003C0319 /* DeepDishAppClip */,
+				5AA0C62F2D88BF1300AF6C14 /* DeepDishWatchApp */,
 				5A8195CE2D614E240048354A /* DeepDishWidget */,
 				5A81953F2D61493D0048354A /* DeepDishCore */,
 				5A81954B2D61493D0048354A /* DeepDishCoreTests */,
@@ -287,6 +316,7 @@
 				5A8195452D61493D0048354A /* DeepDishCoreTests.xctest */,
 				5A8195CB2D614E240048354A /* DeepDishWidget.appex */,
 				DE6F23452D6A533B003C0319 /* DeepDishAppClip.app */,
+				5AA0C62E2D88BF1300AF6C14 /* DeepDishWatchApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,6 +362,7 @@
 				5A8195342D6147920048354A /* Embed Foundation Extensions */,
 				5A8195572D61493D0048354A /* Embed Frameworks */,
 				DE6F23592D6A533F003C0319 /* Embed App Clips */,
+				5AA0C63C2D88BF1400AF6C14 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -339,6 +370,7 @@
 				5A8195502D61493D0048354A /* PBXTargetDependency */,
 				5A8195D72D614E250048354A /* PBXTargetDependency */,
 				DE6F23532D6A533F003C0319 /* PBXTargetDependency */,
+				5AA0C63A2D88BF1400AF6C14 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				5A81944A2D6132740048354A /* DeepDishApp */,
@@ -422,6 +454,28 @@
 			productReference = 5A8195CB2D614E240048354A /* DeepDishWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		5AA0C62D2D88BF1300AF6C14 /* DeepDishWatchApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AA0C63F2D88BF1400AF6C14 /* Build configuration list for PBXNativeTarget "DeepDishWatchApp" */;
+			buildPhases = (
+				5AA0C62A2D88BF1300AF6C14 /* Sources */,
+				5AA0C62B2D88BF1300AF6C14 /* Frameworks */,
+				5AA0C62C2D88BF1300AF6C14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5AA0C62F2D88BF1300AF6C14 /* DeepDishWatchApp */,
+			);
+			name = DeepDishWatchApp;
+			packageProductDependencies = (
+			);
+			productName = "DeepDishWatchApp Watch App";
+			productReference = 5AA0C62E2D88BF1300AF6C14 /* DeepDishWatchApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		DE6F23442D6A533B003C0319 /* DeepDishAppClip */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE6F23552D6A533F003C0319 /* Build configuration list for PBXNativeTarget "DeepDishAppClip" */;
@@ -452,7 +506,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					5A28A8FF29F803B100B02EE6 = {
@@ -470,6 +524,9 @@
 						TestTargetID = 5A3EFB0129F7D53200D75F5E;
 					};
 					5A8195CA2D614E240048354A = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					5AA0C62D2D88BF1300AF6C14 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 					DE6F23442D6A533B003C0319 = {
@@ -496,6 +553,7 @@
 			targets = (
 				5A3EFB0129F7D53200D75F5E /* DeepDishApp */,
 				DE6F23442D6A533B003C0319 /* DeepDishAppClip */,
+				5AA0C62D2D88BF1300AF6C14 /* DeepDishWatchApp */,
 				5A8195CA2D614E240048354A /* DeepDishWidget */,
 				5A81953D2D61493D0048354A /* DeepDishCore */,
 				5A8195442D61493D0048354A /* DeepDishCoreTests */,
@@ -534,6 +592,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5A8195C92D614E240048354A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AA0C62C2D88BF1300AF6C14 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -587,6 +652,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5AA0C62A2D88BF1300AF6C14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE6F23412D6A533B003C0319 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -626,6 +698,11 @@
 			isa = PBXTargetDependency;
 			target = 5A8195CA2D614E240048354A /* DeepDishWidget */;
 			targetProxy = 5A8195D62D614E250048354A /* PBXContainerItemProxy */;
+		};
+		5AA0C63A2D88BF1400AF6C14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AA0C62D2D88BF1300AF6C14 /* DeepDishWatchApp */;
+			targetProxy = 5AA0C6392D88BF1400AF6C14 /* PBXContainerItemProxy */;
 		};
 		DE6F23532D6A533F003C0319 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -731,6 +808,22 @@
 			};
 			name = Release;
 		};
+		5AA0C63D2D88BF1400AF6C14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
+			baseConfigurationReferenceRelativePath = "DeepDishWatchApp/DeepDishWatchApp-Debug.xcconfig";
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		5AA0C63E2D88BF1400AF6C14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
+			baseConfigurationReferenceRelativePath = "DeepDishWatchApp/DeepDishWatchApp-Release.xcconfig";
+			buildSettings = {
+			};
+			name = Release;
+		};
 		DE6F23562D6A533F003C0319 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
@@ -800,6 +893,15 @@
 			buildConfigurations = (
 				5A8195D92D614E250048354A /* Debug */,
 				5A8195DA2D614E250048354A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AA0C63F2D88BF1400AF6C14 /* Build configuration list for PBXNativeTarget "DeepDishWatchApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AA0C63D2D88BF1400AF6C14 /* Debug */,
+				5AA0C63E2D88BF1400AF6C14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
