@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "antoine_van_der_lee.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

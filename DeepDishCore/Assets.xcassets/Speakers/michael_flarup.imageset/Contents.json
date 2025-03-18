@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "michael_flarup.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

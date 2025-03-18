@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "charlie_chapman.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

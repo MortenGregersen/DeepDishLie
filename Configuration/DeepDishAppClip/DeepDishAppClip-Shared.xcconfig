@@ -11,7 +11,6 @@ CODE_SIGN_ENTITLEMENTS = DeepDishAppClip/DeepDishAppClip.entitlements
 CODE_SIGN_STYLE = Manual
 DEVELOPMENT_ASSET_PATHS = "DeepDishAppClip/Preview Content"
 ENABLE_PREVIEWS = YES
-GCC_C_LANGUAGE_STANDARD = gnu17
 GENERATE_INFOPLIST_FILE = YES
 INFOPLIST_FILE = DeepDishAppClip/Info.plist
 INFOPLIST_KEY_CFBundleDisplayName = Deep Dish Unofficial
