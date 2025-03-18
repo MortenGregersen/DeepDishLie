@@ -120,7 +120,7 @@ public struct WeatherView: View {
                     .padding(.bottom)
                 }
             }
-            .navigationTitle("Wu with the Weather")
+            .navigationTitle(OperatingSystem.current == .watchOS ? "Weather" : "Wu with the Weather")
             .navigationBarTitleDisplayMode(.automatic)
             .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)

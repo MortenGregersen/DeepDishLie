@@ -9,16 +9,16 @@ import SwiftUI
 
 public struct AboutView: View {
     public init() {}
-    
+
     public var body: some View {
         NavigationStack {
             List {
                 Section("The app ❤️") {
-                    Text("Deep Dish Unofficial was made for the attendees at the Deep Dish Swift 2025 conference.")
+                    Text("Deep Dish Unofficial is made for the attendees at the Deep Dish Swift 2025 conference.")
                     HStack {
                         Text("It is open source and available on [GitHub](https://github.com/MortenGregersen/DeepDishLie).")
                         Spacer()
-                        Image("github")
+                        Image("github", bundle: .core)
                             .renderingMode(.template)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -26,64 +26,93 @@ public struct AboutView: View {
                     }
                 }
                 Section("The conference 🍕") {
-                    HStack {
+                    let pizza = ZStack {
+                        Image("PizzaOrange", bundle: .core)
+                            .resizable()
+                            .scaledToFit()
+                        Image("PizzaYellow", bundle: .core)
+                            .resizable()
+                            .scaledToFit()
+                    }
+                    .frame(width: 80)
+                    .padding(8)
+                    .background(Circle().fill(Color.splashBackground))
+                    let texts = VStack(alignment: .leading) {
+                        Text("Deep Dish Swift")
+                            .font(OperatingSystem.current == .watchOS ? .headline : .title)
+                        Text("A supreme **Swift** developer conference being served in **Chicago, Illinois**.")
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    if OperatingSystem.current == .watchOS {
                         VStack(alignment: .leading) {
-                            Text("Deep Dish Swift")
-                                .font(.title)
-                            Text("A supreme **Swift** developer conference being served in **Chicago, Illinois**. [Read more](https://deepdishswift.com).")
+                            pizza
+                            texts
                         }
-                        Spacer(minLength: 8)
-                        ZStack {
-                            Image("PizzaOrange", bundle: .core)
-                                .resizable()
-                                .scaledToFit()
-                            Image("PizzaYellow", bundle: .core)
-                                .resizable()
-                                .scaledToFit()
+                        .padding(.vertical)
+                    } else {
+                        HStack {
+                            texts
+                            Spacer(minLength: 8)
+                            pizza
                         }
-                        .frame(width: 80)
-                        .padding(8)
-                        .background(Circle().fill(Color.splashBackground))
                     }
                 }
                 Section("The developer 🧑🏽‍💻") {
                     VStack(alignment: .leading) {
-                        HStack(alignment: .top) {
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text("This app was made by me, **Morten Bjerg Gregersen**")
-                                Text("You can find me at the **Deep Dish Swift this year**.")
-                                Text("Find my apps on **[AtterdagApps.com](https://CoolYellowOwl.com)**")
+                        let image = Image("Morten", bundle: .core)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .frame(width: 100)
+                            .padding(.top, 8)
+                        let texts = VStack(alignment: .leading, spacing: 8) {
+                            Text("This app was made by me, **Morten Bjerg Gregersen**")
+                            Text("You can find me at **Deep Dish Swift again this year**.")
+                            Text("Find my apps on **[AtterdagApps.com](https://AtterdagApps.com)**")
+                        }
+                        .frame(maxHeight: .infinity)
+                        if OperatingSystem.current == .watchOS {
+                            VStack(alignment: .leading) {
+                                image
+                                texts
                             }
-                            .frame(maxHeight: .infinity)
-                            Spacer(minLength: 8)
-                            Link(destination: URL(string: "https://AtterdagApps.com")!) {
-                                Image("Morten")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                                    .frame(width: 100)
-                                    .padding(.top, 8)
+                            .padding(.vertical)
+                        } else {
+                            HStack(alignment: .top) {
+                                texts
+                                Spacer(minLength: 8)
+                                image
                             }
                         }
                     }
                     VStack(alignment: .leading) {
-                        HStack {
-                            Text("If you attend the conference, I suspect, that you are an **app developer yourself**. If so, maybe my app, **[AppDab](https://AppDab.app)**, is something for you?")
-                            Spacer(minLength: 8)
-                            Link(destination: URL(string: "https://AppDab.app")!) {
-                                Image("AppDabIcon")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 100)
+                        let image = Image("AppDabIcon", bundle: .core)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 100)
+                        let text = Text("If you attend the conference, I suspect, that you are an **app developer yourself**. If so, maybe my app, **[AppDab](https://AppDab.app)**, is something for you?")
+                        if OperatingSystem.current == .watchOS {
+                            VStack(alignment: .leading) {
+                                image
+                                text
+                            }
+                        } else {
+                            HStack {
+                                text
+                                Spacer(minLength: 8)
+                                image
                             }
                         }
                         Text("It is a **native macOS and iOS app** for **App Store Connect**. Find me at the conference and **get a free sticker!** 🎉🕺")
+                            .padding(.top, 8)
                     }
                     .padding(.bottom, 8)
                 }
                 Section {
                     Text("Josh and Kari for organizing [Deep Dish Swift](https://deepdishswift.com) 🍕")
-                    Text("Simon Bachmann for [ConfettiSwiftUI](https://github.com/simibac/ConfettiSwiftUI) 🎉")
+                    if OperatingSystem.current != .watchOS {
+                        Text("Simon Bachmann for [ConfettiSwiftUI](https://github.com/simibac/ConfettiSwiftUI) 🎉")
+                    }
                 } header: {
                     Text("Thanks go out to 😍")
                 } footer: {
@@ -91,8 +120,8 @@ public struct AboutView: View {
                         .frame(maxWidth: .infinity)
                 }
             }
-            .navigationTitle("About Deep Dish Unofficial")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(OperatingSystem.current == .watchOS ? "About" : "About Deep Dish Unofficial")
+            .navigationBarTitleDisplayMode(OperatingSystem.current == .watchOS ? .automatic : .inline)
             .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)

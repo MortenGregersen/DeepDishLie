@@ -35,6 +35,10 @@ struct DeepDishWatchApp: App {
                     .tabItem {
                         Label("Weather", systemImage: "thermometer.sun")
                     }
+                AboutView()
+                    .tabItem {
+                        Label("About", systemImage: "text.badge.star")
+                    }
             }
             .environment(settingsController)
             .onChange(of: scenePhase) { _, newValue in

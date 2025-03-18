@@ -59,7 +59,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5AA0C62D2D88BF1300AF6C14"
-            BuildableName = ".app"
+            BuildableName = "DeepDishWatchApp.app"
             BlueprintName = "DeepDishWatchApp"
             ReferencedContainer = "container:DeepDishLie.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5AA0C62D2D88BF1300AF6C14"
-            BuildableName = ".app"
+            BuildableName = "DeepDishWatchApp.app"
             BlueprintName = "DeepDishWatchApp"
             ReferencedContainer = "container:DeepDishLie.xcodeproj">
          </BuildableReference>

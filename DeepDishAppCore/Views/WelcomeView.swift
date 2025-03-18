@@ -77,7 +77,7 @@ public struct WelcomeView: View {
             .padding(.bottom)
         }
         .foregroundStyle(.white)
-        .background(Color("SplashBackground"))
+        .background(Color.splashBackground)
         .onAppear {
             withAnimation(.easeInOut(duration: 2.0)) {
                 showsTitle = true
