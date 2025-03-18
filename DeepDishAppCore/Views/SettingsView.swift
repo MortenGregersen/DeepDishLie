@@ -11,7 +11,7 @@ import SwiftUI
 public struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(SettingsController.self) private var settingsController
-    
+
     public init() {}
 
     public var body: some View {
@@ -66,19 +66,21 @@ public struct SettingsView: View {
             }
             .animation(.default, value: settingsController.enableRandomConfetti)
             .navigationTitle("Settings")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarColorScheme(.dark, for: .navigationBar)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Label("Close", systemImage: "xmark")
+            #if !os(macOS)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbarColorScheme(.dark, for: .navigationBar)
+            #endif
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Label("Close", systemImage: "xmark")
+                        }
                     }
                 }
-            }
         }
     }
 }

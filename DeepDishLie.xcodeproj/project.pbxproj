@@ -16,8 +16,8 @@
 		5A8195522D61493D0048354A /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A8195CC2D614E240048354A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195212D6147910048354A /* WidgetKit.framework */; };
 		5A8195CD2D614E240048354A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195232D6147910048354A /* SwiftUI.framework */; };
-		5A8195D82D614E250048354A /* DeepDishWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A8195CB2D614E240048354A /* DeepDishWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5AA0C63B2D88BF1400AF6C14 /* DeepDishWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5AA0C62E2D88BF1300AF6C14 /* DeepDishWatchApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A8195D82D614E250048354A /* DeepDishWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A8195CB2D614E240048354A /* DeepDishWidget.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5AA0C63B2D88BF1400AF6C14 /* DeepDishWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5AA0C62E2D88BF1300AF6C14 /* DeepDishWatchApp.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5AA0C66E2D88C2F800AF6C14 /* DeepDishAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; };
 		5AA0C66F2D88C2F800AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5AA0C6872D88C4A400AF6C14 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
@@ -30,7 +30,7 @@
 		5AA0C9142D89784300AF6C14 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		5AA0C9152D89784300AF6C14 /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5AA0C9192D89789100AF6C14 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0C9182D89789100AF6C14 /* TelemetryDeck */; };
-		DE6F23542D6A533F003C0319 /* DeepDishAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = DE6F23452D6A533B003C0319 /* DeepDishAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DE6F23542D6A533F003C0319 /* DeepDishAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = DE6F23452D6A533B003C0319 /* DeepDishAppClip.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE9F8FB82D6A8081002517D1 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		DE9F8FB92D6A8081002517D1 /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -223,6 +223,11 @@
 			membershipExceptions = (
 				Info.plist,
 			);
+			platformFiltersByRelativePath = {
+				LaunchScreen.storyboard = (
+					ios,
+				);
+			};
 			target = 5A3EFB0129F7D53200D75F5E /* DeepDishApp */;
 		};
 		5A8195562D61493D0048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
@@ -830,11 +835,13 @@
 		};
 		5A8195D72D614E250048354A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 5A8195CA2D614E240048354A /* DeepDishWidget */;
 			targetProxy = 5A8195D62D614E250048354A /* PBXContainerItemProxy */;
 		};
 		5AA0C63A2D88BF1400AF6C14 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 5AA0C62D2D88BF1300AF6C14 /* DeepDishWatchApp */;
 			targetProxy = 5AA0C6392D88BF1400AF6C14 /* PBXContainerItemProxy */;
 		};
@@ -865,6 +872,7 @@
 		};
 		DE6F23532D6A533F003C0319 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = DE6F23442D6A533B003C0319 /* DeepDishAppClip */;
 			targetProxy = DE6F23522D6A533F003C0319 /* PBXContainerItemProxy */;
 		};
@@ -972,17 +980,6 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishWatchApp/DeepDishWatchApp-Debug.xcconfig";
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = DeepDishWatchApp/DeepDishWatchApp.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=watchos*]" = R7YA4RGA8U;
-				INFOPLIST_KEY_CFBundleDisplayName = "Deep Dish Unofficial";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.CoolYellowOwl.DeepDishLie;
-				PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLie.WatchApp;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=watchos*]" = DeepDishWatchApp;
 			};
 			name = Debug;
 		};
@@ -991,17 +988,6 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishWatchApp/DeepDishWatchApp-Release.xcconfig";
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = DeepDishWatchApp/DeepDishWatchApp.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=watchos*]" = R7YA4RGA8U;
-				INFOPLIST_KEY_CFBundleDisplayName = "Deep Dish Unofficial";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.CoolYellowOwl.DeepDishLie;
-				PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLie.WatchApp;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=watchos*]" = DeepDishWatchApp;
 			};
 			name = Release;
 		};
@@ -1010,9 +996,6 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishAppCore/DeepDishAppCore-Debug.xcconfig";
 			buildSettings = {
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
-				SUPPORTS_MACCATALYST = NO;
-				TARGETED_DEVICE_FAMILY = "1,2,4";
 			};
 			name = Debug;
 		};
@@ -1021,9 +1004,6 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishAppCore/DeepDishAppCore-Release.xcconfig";
 			buildSettings = {
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
-				SUPPORTS_MACCATALYST = NO;
-				TARGETED_DEVICE_FAMILY = "1,2,4";
 			};
 			name = Release;
 		};

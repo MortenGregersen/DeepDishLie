@@ -19,6 +19,21 @@ struct ScheduleView: View {
     @Environment(WelcomeController.self) private var welcomeController
     @Environment(SettingsController.self) private var settingsController
     @Environment(ScheduleController.self) private var scheduleController
+    private var nowToolbarItemPlacement: ToolbarItemPlacement {
+        #if os(macOS)
+            return .automatic
+        #else
+            return .topBarLeading
+        #endif
+    }
+
+    private var settingsToolbarItemPlacement: ToolbarItemPlacement {
+        #if os(macOS)
+            return .automatic
+        #else
+            return .topBarTrailing
+        #endif
+    }
 
     var body: some View {
         @Bindable var settingsController = settingsController
@@ -26,12 +41,14 @@ struct ScheduleView: View {
             ScrollViewReader { proxy in
                 ScheduleListView()
                     .navigationTitle("Schedule 🍕")
+                #if !os(macOS)
                     .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
                     .toolbarBackground(.visible, for: .navigationBar)
                     .toolbarColorScheme(.dark, for: .navigationBar)
+                #endif
                     .toolbar {
                         if let currentDateId {
-                            ToolbarItem(placement: .topBarLeading) {
+                            ToolbarItem(placement: nowToolbarItemPlacement) {
                                 Button {
                                     withAnimation {
                                         proxy.scrollTo(currentDateId, anchor: .center)
@@ -41,7 +58,7 @@ struct ScheduleView: View {
                                 }
                             }
                         }
-                        ToolbarItem(placement: .topBarTrailing) {
+                        ToolbarItem(placement: settingsToolbarItemPlacement) {
                             Button {
                                 showsSettings = true
                             } label: {
@@ -62,9 +79,11 @@ struct ScheduleView: View {
                             requestReview()
                         }
                     }
+                #if os(iOS)
                     .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
                         settingsController.triggerConfetti()
                     }
+                #endif
                     .overlay(alignment: .bottom) {
                         if welcomeController.hasJustSeenWelcome, settingsController.randomConfettiIntensity > 4 {
                             VStack {
