@@ -13,6 +13,8 @@ import SwiftUI
 struct DeepDishWatchApp: App {
     @State private var settingsController = SettingsController()
     @State private var scheduleController = ScheduleController()
+    @State private var weatherController = WeatherController()
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some Scene {
         WindowGroup {
@@ -28,8 +30,21 @@ struct DeepDishWatchApp: App {
                     .tabItem {
                         Label("Schedule", systemImage: "person.2.wave.2")
                     }
+                WeatherView()
+                    .environment(weatherController)
+                    .tabItem {
+                        Label("Weather", systemImage: "thermometer.sun")
+                    }
             }
             .environment(settingsController)
+            .onChange(of: scenePhase) { _, newValue in
+                if newValue == .active {
+                    Task {
+                        await scheduleController.fetchEvents()
+                        await weatherController.fetchWeather()
+                    }
+                }
+            }
         }
     }
 }

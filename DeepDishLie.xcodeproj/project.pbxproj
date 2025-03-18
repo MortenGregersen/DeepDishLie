@@ -28,6 +28,9 @@
 		5AA0C6B52D88CBA100AF6C14 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0C6B42D88CBA100AF6C14 /* TelemetryDeck */; };
 		5AA0C6B62D88CCE100AF6C14 /* DeepDishAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; };
 		5AA0C6B72D88CCE100AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AA0C9142D89784300AF6C14 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
+		5AA0C9152D89784300AF6C14 /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AA0C9192D89789100AF6C14 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0C9182D89789100AF6C14 /* TelemetryDeck */; };
 		DE6F23542D6A533F003C0319 /* DeepDishAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = DE6F23452D6A533B003C0319 /* DeepDishAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE9F8FB82D6A8081002517D1 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		DE9F8FB92D6A8081002517D1 /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -111,6 +114,13 @@
 			remoteGlobalIDString = 5AA0C6672D88C2F800AF6C14;
 			remoteInfo = DeepDishAppCore;
 		};
+		5AA0C9162D89784300AF6C14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A3EFAFA29F7D53200D75F5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A81953D2D61493D0048354A;
+			remoteInfo = DeepDishCore;
+		};
 		DE6F23522D6A533F003C0319 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5A3EFAFA29F7D53200D75F5E /* Project object */;
@@ -173,6 +183,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5AA0C6B72D88CCE100AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */,
+				5AA0C9152D89784300AF6C14 /* DeepDishCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +335,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA0C6B62D88CCE100AF6C14 /* DeepDishAppCore.framework in Frameworks */,
+				5AA0C9142D89784300AF6C14 /* DeepDishCore.framework in Frameworks */,
+				5AA0C9192D89789100AF6C14 /* TelemetryDeck in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,12 +566,14 @@
 			);
 			dependencies = (
 				5AA0C6B92D88CCE100AF6C14 /* PBXTargetDependency */,
+				5AA0C9172D89784300AF6C14 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				5AA0C62F2D88BF1300AF6C14 /* DeepDishWatchApp */,
 			);
 			name = DeepDishWatchApp;
 			packageProductDependencies = (
+				5AA0C9182D89789100AF6C14 /* TelemetryDeck */,
 			);
 			productName = "DeepDishWatchApp Watch App";
 			productReference = 5AA0C62E2D88BF1300AF6C14 /* DeepDishWatchApp.app */;
@@ -857,6 +872,11 @@
 			target = 5AA0C6672D88C2F800AF6C14 /* DeepDishAppCore */;
 			targetProxy = 5AA0C6B82D88CCE100AF6C14 /* PBXContainerItemProxy */;
 		};
+		5AA0C9172D89784300AF6C14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A81953D2D61493D0048354A /* DeepDishCore */;
+			targetProxy = 5AA0C9162D89784300AF6C14 /* PBXContainerItemProxy */;
+		};
 		DE6F23532D6A533F003C0319 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DE6F23442D6A533B003C0319 /* DeepDishAppClip */;
@@ -966,6 +986,17 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishWatchApp/DeepDishWatchApp-Debug.xcconfig";
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DeepDishWatchApp/DeepDishWatchApp.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=watchos*]" = R7YA4RGA8U;
+				INFOPLIST_KEY_CFBundleDisplayName = "Deep Dish Unofficial";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.CoolYellowOwl.DeepDishLie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLie.WatchApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=watchos*]" = DeepDishWatchApp;
 			};
 			name = Debug;
 		};
@@ -974,6 +1005,17 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishWatchApp/DeepDishWatchApp-Release.xcconfig";
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DeepDishWatchApp/DeepDishWatchApp.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=watchos*]" = R7YA4RGA8U;
+				INFOPLIST_KEY_CFBundleDisplayName = "Deep Dish Unofficial";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.CoolYellowOwl.DeepDishLie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLie.WatchApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=watchos*]" = DeepDishWatchApp;
 			};
 			name = Release;
 		};
@@ -1132,6 +1174,11 @@
 			productName = TelemetryDeck;
 		};
 		5AA0C6B42D88CBA100AF6C14 /* TelemetryDeck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */;
+			productName = TelemetryDeck;
+		};
+		5AA0C9182D89789100AF6C14 /* TelemetryDeck */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */;
 			productName = TelemetryDeck;

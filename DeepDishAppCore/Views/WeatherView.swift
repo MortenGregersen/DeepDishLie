@@ -14,6 +14,8 @@ public struct WeatherView: View {
     @Environment(WeatherController.self) private var weatherController
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.openURL) private var openURL
+    private let temperatureFont: Font = OperatingSystem.current == .watchOS ? .largeTitle : .system(size: 80)
+    private let feelsLikeFont: Font = OperatingSystem.current == .watchOS ? .caption : .title2
     private var measurementFormatter: MeasurementFormatter {
         let numberFormatter = NumberFormatter()
         numberFormatter.minimumFractionDigits = 1
@@ -23,7 +25,7 @@ public struct WeatherView: View {
         formatter.numberFormatter = numberFormatter
         return formatter
     }
-    
+
     public init() {}
 
     public var body: some View {
@@ -33,33 +35,36 @@ public struct WeatherView: View {
                     if let weather = weatherController.weather {
                         VStack(spacing: 0) {
                             Text("The temperature in Rosemont is")
+                                .multilineTextAlignment(.center)
                             Text(measurementFormatter.string(from: temperature(from: weather)))
-                                .font(.system(size: 80))
+                                .font(temperatureFont)
                                 .fontWeight(.semibold)
                             Text("Feels like \(measurementFormatter.string(from: apparentTemperature(from: weather)))")
-                                .font(.title2)
+                                .font(feelsLikeFont)
                         }
-                        .padding(.top, 24)
+                        .padding(.top, OperatingSystem.current == .watchOS ? 0 : 24)
                         verdict(weather: weather)
                             .padding(.top, 8)
-                        Button {
-                            openURL(URL(string: "https://apps.apple.com/us/app/please-dont-rain/id6444577668")!)
-                        } label: {
-                            HStack {
-                                Image("please-dont-rain")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 70)
-                                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                                VStack(alignment: .leading) {
-                                    Text("Get more weather info in")
-                                    Text("Please don't rain")
-                                        .font(.title)
-                                        .fontWeight(.bold)
+                        if OperatingSystem.current != .watchOS {
+                            Button {
+                                openURL(URL(string: "https://apps.apple.com/us/app/please-dont-rain/id6444577668")!)
+                            } label: {
+                                HStack {
+                                    Image("please-dont-rain", bundle: .core)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 70)
+                                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                                    VStack(alignment: .leading) {
+                                        Text("Get more weather info in")
+                                        Text("Please don't rain")
+                                            .font(.title)
+                                            .fontWeight(.bold)
+                                    }
                                 }
                             }
+                            .padding(.top, 16)
                         }
-                        .padding(.top, 16)
                         if let attribution = weatherController.attribution {
                             VStack(spacing: 8) {
                                 Text("Forecast data provided by")
@@ -100,7 +105,7 @@ public struct WeatherView: View {
                 }
             }
             .overlay(alignment: .bottom) {
-                if weatherController.weather != nil, weatherController.fetching {
+                if OperatingSystem.current != .watchOS, weatherController.weather != nil, weatherController.fetching {
                     HStack(spacing: 8) {
                         ProgressView()
                         Text("Refreshing weather...")
@@ -121,13 +126,19 @@ public struct WeatherView: View {
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbar {
-                Button {
-                    Task { await weatherController.fetchWeather() }
-                } label: {
-                    Label("Refresh weather", systemImage: "arrow.clockwise")
-                        .font(.callout)
+                ToolbarItem(placement: .topBarTrailing) {
+                    if OperatingSystem.current == .watchOS, weatherController.weather != nil, weatherController.fetching {
+                        ProgressView()
+                    } else {
+                        Button {
+                            Task { await weatherController.fetchWeather() }
+                        } label: {
+                            Label("Refresh weather", systemImage: "arrow.clockwise")
+                                .font(.callout)
+                        }
+                        .disabled(weatherController.weather == nil || weatherController.fetching)
+                    }
                 }
-                .disabled(weatherController.weather == nil || weatherController.fetching)
             }
         }
     }
@@ -141,6 +152,9 @@ public struct WeatherView: View {
     }
 
     @ViewBuilder private func verdict(weather: Weather) -> some View {
+        let emojiFont: Font = OperatingSystem.current == .watchOS ? .title : .system(size: 80)
+        let textFont: Font = OperatingSystem.current == .watchOS ? .body : .title
+        let horizontalPadding: CGFloat = OperatingSystem.current == .watchOS ? 0 : 50
         VStack(spacing: 0) {
             let info = if weather.currentWeather.temperature.converted(to: .fahrenheit).value < 70 {
                 (emoji: "🥶", text: "Chris Wu doesn't like this weather... 👎")
@@ -148,11 +162,11 @@ public struct WeatherView: View {
                 (emoji: "💚", text: "Chris Wu loves this weather! 👍")
             }
             Text(info.emoji)
-                .font(.system(size: 80))
+                .font(emojiFont)
             Text(info.text)
-                .font(.title)
+                .font(textFont)
                 .fontWeight(.black)
-                .padding(.horizontal, 50)
+                .padding(.horizontal, horizontalPadding)
                 .multilineTextAlignment(.center)
         }
     }

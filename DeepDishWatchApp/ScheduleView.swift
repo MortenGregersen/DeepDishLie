@@ -12,7 +12,7 @@ struct ScheduleView: View {
     var body: some View {
         NavigationView {
             ScheduleListView()
-                .navigationTitle("Deep Dish")
+                .navigationTitle("Schedule")
                 .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarColorScheme(.dark, for: .navigationBar)
