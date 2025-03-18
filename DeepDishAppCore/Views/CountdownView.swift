@@ -11,47 +11,66 @@ public struct CountdownView: View {
     let eventDate: Date
     @State private var timeRemaining: String?
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
+    private let titleFont: Font = OperatingSystem.current == .watchOS ? .headline : .title
+    private let timeFont: Font = OperatingSystem.current == .watchOS ? .title2 : .largeTitle
+
     public init(eventDate: Date) {
         self.eventDate = eventDate
     }
 
     public var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(spacing: 0) {
-                    FlickeringPizzaView(repeating: true)
-                    if let timeRemaining {
-                        Text("The conference will start in:")
-                            .font(.title)
-                        Text(timeRemaining)
-                            .font(.largeTitle)
-                            .monospacedDigit()
-                            .contentTransition(.numericText(countsDown: true))
-                            .animation(.default, value: timeRemaining)
-                            .frame(maxWidth: .infinity)
-                            .padding(.top, 16)
-                        VStack(spacing: 4) {
-                            Text("If you need a countdown in a browser, check out Alex's [DeepDishCountdown.fun](https://deepdishcountdown.fun).")
-                            Text("This countdown was inspired by his site 😅")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                        }
-                        .padding(.top, 32)
-                    } else {
-                        Text("The conference has started!")
-                            .font(.largeTitle)
-                    }
-                }
-                .padding(.horizontal)
+        if OperatingSystem.current == .watchOS {
+            realBody
+                .padding(.top, 16)
+                .ignoresSafeArea(.container, edges: .top)
+        } else {
+            NavigationStack {
+                realBody
             }
-            .onAppear(perform: updateCountdown)
-            .onReceive(timer) { _ in updateCountdown() }
-            .fontWeight(.bold)
-            .multilineTextAlignment(.center)
-            .foregroundStyle(.white)
-            .background(Color.splashBackground)
         }
+    }
+
+    private var realBody: some View {
+        ScrollView {
+            VStack(spacing: 0) {
+                FlickeringPizzaView(repeating: true)
+                    .ifOS(.watchOS) {
+                        $0.frame(width: 100)
+                    }
+                if let timeRemaining {
+                    Text("The conference will start in:")
+                        .font(titleFont)
+                    Text(timeRemaining)
+                        .font(timeFont)
+                        .monospacedDigit()
+                        .contentTransition(.numericText(countsDown: true))
+                        .animation(.default, value: timeRemaining)
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, OperatingSystem.current == .watchOS ? 8 : 16)
+                    VStack(spacing: 4) {
+                        if OperatingSystem.current == .watchOS {
+                            Text("If you need a countdown in a browser, check out Alex's *DeepDishCountdown.fun*.")
+                        } else {
+                            Text("If you need a countdown in a browser, check out Alex's [DeepDishCountdown.fun](https://deepdishcountdown.fun).")
+                        }
+                        Text("This countdown was inspired by his site 😅")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding(.top, OperatingSystem.current == .watchOS ? 16 : 32)
+                } else {
+                    Text("The conference has started!")
+                        .font(timeFont)
+                }
+            }
+            .padding(.horizontal)
+        }
+        .onAppear(perform: updateCountdown)
+        .onReceive(timer) { _ in updateCountdown() }
+        .fontWeight(.bold)
+        .multilineTextAlignment(.center)
+        .foregroundStyle(.white)
+        .background(Color.splashBackground)
     }
 
     private func updateCountdown() {
