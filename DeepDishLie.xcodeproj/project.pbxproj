@@ -21,7 +21,6 @@
 		5AA0C66E2D88C2F800AF6C14 /* DeepDishAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; };
 		5AA0C66F2D88C2F800AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5AA0C6872D88C4A400AF6C14 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
-		5AA0C6882D88C4A400AF6C14 /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5AA0C68C2D88C4D400AF6C14 /* DeepDishAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; };
 		5AA0C68D2D88C4D400AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5AA0C6AF2D88C97700AF6C14 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0C6AE2D88C97700AF6C14 /* TelemetryDeck */; };
@@ -163,17 +162,6 @@
 				5AA0C63B2D88BF1400AF6C14 /* DeepDishWatchApp.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AA0C68B2D88C4A400AF6C14 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5AA0C6882D88C4A400AF6C14 /* DeepDishCore.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5AA0C6BA2D88CCE100AF6C14 /* Embed Frameworks */ = {
@@ -586,7 +574,6 @@
 				5AA0C6642D88C2F800AF6C14 /* Sources */,
 				5AA0C6652D88C2F800AF6C14 /* Frameworks */,
 				5AA0C6662D88C2F800AF6C14 /* Resources */,
-				5AA0C68B2D88C4A400AF6C14 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
