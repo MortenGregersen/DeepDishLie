@@ -1,18 +1,14 @@
 //
-//  ContentView.swift
+//  ScheduleView.swift
 //  DeepDishWatchApp
 //
 //  Created by Morten Bjerg Gregersen on 17/03/2025.
 //
 
 import DeepDishAppCore
-import DeepDishCore
 import SwiftUI
 
-struct ContentView: View {
-    @State private var settingsController = SettingsController()
-    @State private var scheduleController = ScheduleController()
-
+struct ScheduleView: View {
     var body: some View {
         NavigationView {
             ScheduleListView()
@@ -21,11 +17,9 @@ struct ContentView: View {
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarColorScheme(.dark, for: .navigationBar)
         }
-        .environment(settingsController)
-        .environment(scheduleController)
     }
 }
 
 #Preview {
-    ContentView()
+    ScheduleView()
 }
