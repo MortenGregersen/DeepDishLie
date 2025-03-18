@@ -6,13 +6,9 @@
 //
 
 import DeepDishAppCore
-import DeepDishCore
 import SwiftUI
 
 struct ContentView: View {
-    @State private var settingsController = SettingsController()
-    @State private var scheduleController = ScheduleController()
-
     var body: some View {
         NavigationView {
             ScheduleListView()
@@ -21,8 +17,6 @@ struct ContentView: View {
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarColorScheme(.dark, for: .navigationBar)
         }
-        .environment(settingsController)
-        .environment(scheduleController)
     }
 }
 
