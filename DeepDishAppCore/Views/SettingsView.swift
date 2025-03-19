@@ -18,20 +18,22 @@ public struct SettingsView: View {
         @Bindable var settingsController = settingsController
         NavigationStack {
             Form {
-                Section("General") {
-                    Toggle(isOn: $settingsController.enableRandomConfetti) {
-                        Label {
-                            Text("Random pizza confetti")
-                        } icon: {
-                            Text("🍕")
+                if OperatingSystem.current != .watchOS {
+                    Section("General") {
+                        Toggle(isOn: $settingsController.enableRandomConfetti) {
+                            Label {
+                                Text("Random pizza confetti")
+                            } icon: {
+                                Text("🍕")
+                            }
                         }
-                    }
-                    if settingsController.enableRandomConfetti {
-                        LabeledContent {
-                            Slider(value: $settingsController.randomConfettiIntensity, in: 1 ... 5, step: 1)
-                        } label: {
-                            Label("Intensity", systemImage: "bubbles.and.sparkles")
-                                .padding(.trailing)
+                        if settingsController.enableRandomConfetti {
+                            LabeledContent {
+                                Slider(value: $settingsController.randomConfettiIntensity, in: 1 ... 5, step: 1)
+                            } label: {
+                                Label("Intensity", systemImage: "bubbles.and.sparkles")
+                                    .padding(.trailing)
+                            }
                         }
                     }
                 }
@@ -47,8 +49,10 @@ public struct SettingsView: View {
                     } label: {
                         Label("Time format", systemImage: "clock.badge.checkmark")
                     }
-                    Toggle(isOn: $settingsController.openLinksInApp) {
-                        Label("Open social links in-app", systemImage: "link.circle")
+                    if OperatingSystem.current != .watchOS {
+                        Toggle(isOn: $settingsController.openLinksInApp) {
+                            Label("Open social links in-app", systemImage: "link.circle")
+                        }
                     }
                 }
                 Section("Weather") {
