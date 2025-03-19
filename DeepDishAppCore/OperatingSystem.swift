@@ -11,7 +11,7 @@ import SwiftUI
 // Borrowed from Sindre Sorhus' reply on StackOverflow:
 // https://stackoverflow.com/questions/61386877/in-swiftui-is-it-possible-to-use-a-modifier-only-for-a-certain-os-target
 
-enum OperatingSystem {
+public enum OperatingSystem {
     case macOS
     case iOS
     case tvOS
@@ -33,7 +33,7 @@ enum OperatingSystem {
     #endif
 }
 
-extension View {
+public extension View {
     /**
      Conditionally apply modifiers depending on the target operating system.
 

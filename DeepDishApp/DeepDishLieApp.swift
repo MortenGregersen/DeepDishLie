@@ -86,6 +86,7 @@ struct DeepDishApp: App {
             }
             .environment(welcomeController)
             .environment(settingsController)
+            .ifOS(.macOS) { $0.frame(minWidth: 600, idealWidth: 700, maxWidth: .infinity, minHeight: 720, idealHeight: 900, maxHeight: .infinity) }
         }
     }
 }
