@@ -5,8 +5,8 @@
 //  Created by Morten Bjerg Gregersen on 25/04/2023.
 //
 
-import DeepDishCore
 import DeepDishAppCore
+import DeepDishCore
 import SwiftUI
 import TelemetryDeck
 
@@ -27,53 +27,55 @@ struct DeepDishApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TabView {
-                if !AppEnvironment.inDemoMode, let firstEventDate = scheduleController.firstEventDate, Date.now < firstEventDate {
-                    CountdownView(eventDate: firstEventDate)
-                        .toolbarBackground(.visible, for: .tabBar)
+            ConfettiEnabledView {
+                TabView {
+                    if !AppEnvironment.inDemoMode, let firstEventDate = scheduleController.firstEventDate, Date.now < firstEventDate {
+                        CountdownView(eventDate: firstEventDate)
+                            .toolbarBackground(.visible, for: .tabBar)
+                            .tabItem {
+                                Label("Countdown", systemImage: "timer")
+                            }
+                    }
+                    ScheduleView()
+                        .environment(scheduleController)
                         .tabItem {
-                            Label("Countdown", systemImage: "timer")
+                            Label("Schedule", systemImage: "person.2.wave.2")
+                        }
+                    WeatherView()
+                        .environment(weatherController)
+                        .tabItem {
+                            Label("Weather", systemImage: "thermometer.sun")
+                        }
+//                    GiveawayView()
+//                        .environment(giveawayController)
+//                        .tabItem {
+//                            Label("Giveaway", systemImage: "app.gift")
+//                        }
+                    AboutView()
+                        .tabItem {
+                            Label("About", systemImage: "text.badge.star")
                         }
                 }
-                ScheduleView()
-                    .environment(scheduleController)
-                    .tabItem {
-                        Label("Schedule", systemImage: "person.2.wave.2")
+                .onChange(of: scenePhase) { _, newValue in
+                    if newValue == .active {
+                        if !AppEnvironment.inDemoMode {
+                            TelemetryDeck.signal("confettiStatus", floatValue: settingsController.randomConfettiIntensity)
+                        }
+                        Task {
+                            await scheduleController.fetchEvents()
+                            await weatherController.fetchWeather()
+                            await giveawayController.fetchGiveawayInfo()
+                        }
                     }
-                WeatherView()
-                    .environment(weatherController)
-                    .tabItem {
-                        Label("Weather", systemImage: "thermometer.sun")
-                    }
-//                GiveawayView()
-//                    .environment(giveawayController)
-//                    .tabItem {
-//                        Label("Giveaway", systemImage: "app.gift")
-//                    }
-                AboutView()
-                    .tabItem {
-                        Label("About", systemImage: "text.badge.star")
-                    }
+                }
+                .fullScreenCover(isPresented: $welcomeController.showsWelcome) {
+                    WelcomeView()
+                        .environment(welcomeController)
+                        .environment(settingsController)
+                }
             }
             .environment(welcomeController)
             .environment(settingsController)
-            .onChange(of: scenePhase) { _, newValue in
-                if newValue == .active {
-                    if !AppEnvironment.inDemoMode {
-                        TelemetryDeck.signal("confettiStatus", floatValue: settingsController.randomConfettiIntensity)
-                    }
-                    Task {
-                        await scheduleController.fetchEvents()
-                        await weatherController.fetchWeather()
-                        await giveawayController.fetchGiveawayInfo()
-                    }
-                }
-            }
-            .fullScreenCover(isPresented: $welcomeController.showsWelcome) {
-                WelcomeView()
-                    .environment(welcomeController)
-                    .environment(settingsController)
-            }
         }
     }
 }

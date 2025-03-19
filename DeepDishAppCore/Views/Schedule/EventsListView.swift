@@ -1,5 +1,5 @@
 //
-//  ScheduleListView.swift
+//  EventsListView.swift
 //  DeepDishAppCore
 //
 //  Created by Matt Heaney on 22/02/2025.
@@ -8,7 +8,7 @@
 import DeepDishCore
 import SwiftUI
 
-public struct ScheduleListView: View {
+public struct EventsListView: View {
     @Environment(ScheduleController.self) private var scheduleController
     @Environment(SettingsController.self) private var settingsController
 
@@ -39,7 +39,7 @@ public struct ScheduleListView: View {
 }
 
 #Preview {
-    ScheduleListView()
+    EventsListView()
         .environment(ScheduleController.forPreview())
         .environment(SettingsController.forPreview())
 }

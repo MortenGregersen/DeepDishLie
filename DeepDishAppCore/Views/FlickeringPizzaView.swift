@@ -8,12 +8,16 @@
 import DeepDishCore
 import SwiftUI
 
-struct FlickeringPizzaView: View {
+public struct FlickeringPizzaView: View {
     let repeating: Bool
     @State private var pizzaOrangeOpacity: Double = 0
     @State private var pizzaYellowOpacity: Double = 0
+    
+    public init(repeating: Bool) {
+        self.repeating = repeating
+    }
 
-    var body: some View {
+    public var body: some View {
         ZStack {
             Image("PizzaOrange", bundle: .core)
                 .resizable()

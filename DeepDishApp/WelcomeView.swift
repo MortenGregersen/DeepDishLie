@@ -1,24 +1,23 @@
 //
 //  WelcomeView.swift
-//  DeepDishAppCore
+//  DeepDishApp
 //
 //  Created by Morten Bjerg Gregersen on 25/04/2023.
 //
 
 import DeepDishCore
+import DeepDishAppCore
 import SwiftUI
 import TelemetryDeck
 
-public struct WelcomeView: View {
+struct WelcomeView: View {
     @State private var showsTitle = false
     @State private var showsButtons = false
     @Environment(WelcomeController.self) private var welcomeController
     @Environment(SettingsController.self) private var settingsController
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
-    public init() {}
-
-    public var body: some View {
+    var body: some View {
         ScrollView {
             VStack {
                 VStack(spacing: 0) {
