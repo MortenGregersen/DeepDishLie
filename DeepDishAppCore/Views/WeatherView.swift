@@ -16,6 +16,14 @@ public struct WeatherView: View {
     @Environment(\.openURL) private var openURL
     private let temperatureFont: Font = OperatingSystem.current == .watchOS ? .largeTitle : .system(size: 80)
     private let feelsLikeFont: Font = OperatingSystem.current == .watchOS ? .caption : .title2
+    private var refreshToolbarItemPlacement: ToolbarItemPlacement {
+        #if os(macOS)
+            return .primaryAction
+        #else
+            return .topBarTrailing
+        #endif
+    }
+
     private var measurementFormatter: MeasurementFormatter {
         let numberFormatter = NumberFormatter()
         numberFormatter.minimumFractionDigits = 1
@@ -121,25 +129,27 @@ public struct WeatherView: View {
                 }
             }
             .navigationTitle(OperatingSystem.current == .watchOS ? "Weather" : "Wu with the Weather")
-            .navigationBarTitleDisplayMode(.automatic)
-            .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarColorScheme(.dark, for: .navigationBar)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    if OperatingSystem.current == .watchOS, weatherController.weather != nil, weatherController.fetching {
-                        ProgressView()
-                    } else {
-                        Button {
-                            Task { await weatherController.fetchWeather() }
-                        } label: {
-                            Label("Refresh weather", systemImage: "arrow.clockwise")
-                                .font(.callout)
+            #if !os(macOS)
+                .navigationBarTitleDisplayMode(.automatic)
+                .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbarColorScheme(.dark, for: .navigationBar)
+            #endif
+                .toolbar {
+                    ToolbarItem(placement: refreshToolbarItemPlacement) {
+                        if OperatingSystem.current == .watchOS, weatherController.weather != nil, weatherController.fetching {
+                            ProgressView()
+                        } else {
+                            Button {
+                                Task { await weatherController.fetchWeather() }
+                            } label: {
+                                Label("Refresh weather", systemImage: "arrow.clockwise")
+                                    .font(.callout)
+                            }
+                            .disabled(weatherController.weather == nil || weatherController.fetching)
                         }
-                        .disabled(weatherController.weather == nil || weatherController.fetching)
                     }
                 }
-            }
         }
     }
 

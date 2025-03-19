@@ -121,10 +121,12 @@ public struct AboutView: View {
                 }
             }
             .navigationTitle(OperatingSystem.current == .watchOS ? "About" : "About Deep Dish Unofficial")
-            .navigationBarTitleDisplayMode(OperatingSystem.current == .watchOS ? .automatic : .inline)
-            .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarColorScheme(.dark, for: .navigationBar)
+            #if !os(macOS)
+                .navigationBarTitleDisplayMode(OperatingSystem.current == .watchOS ? .automatic : .inline)
+                .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbarColorScheme(.dark, for: .navigationBar)
+            #endif
         }
     }
 }

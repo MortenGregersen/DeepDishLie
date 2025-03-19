@@ -5,7 +5,7 @@
 //  Created by Morten Bjerg Gregersen on 01/05/2024.
 //
 
-#if canImport(SafariServices)
+#if os(iOS)
 import SafariServices
 import SwiftUI
 

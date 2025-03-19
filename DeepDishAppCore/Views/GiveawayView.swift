@@ -73,10 +73,12 @@ struct GiveawayView: View {
                 .padding(.horizontal)
             }
             .navigationTitle("AppDab Pro Raffle")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.accent, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarColorScheme(.dark, for: .navigationBar)
+            #if !os(macOS)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbarBackground(Color.accent, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbarColorScheme(.dark, for: .navigationBar)
+            #endif
         }
     }
 }

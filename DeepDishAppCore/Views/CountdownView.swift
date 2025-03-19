@@ -34,9 +34,8 @@ public struct CountdownView: View {
         ScrollView {
             VStack(spacing: 0) {
                 FlickeringPizzaView(repeating: true)
-                    .ifOS(.watchOS) {
-                        $0.frame(width: 100)
-                    }
+                    .ifOS(.watchOS) { $0.frame(width: 100) }
+                    .ifOS(.macOS) { $0.frame(maxHeight: 600) }
                 if let timeRemaining {
                     Text("The conference will start in:")
                         .font(titleFont)

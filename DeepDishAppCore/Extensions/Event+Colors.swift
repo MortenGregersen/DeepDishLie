@@ -7,7 +7,6 @@
 
 import DeepDishCore
 import SwiftUI
-import UIKit
 
 public extension Event {
     var dateTextColor: Color {

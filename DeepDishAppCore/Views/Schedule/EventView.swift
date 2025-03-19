@@ -118,16 +118,18 @@ struct EventView: View {
             }
         }
         .listStyle(.plain)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
-        .toolbarBackground(.visible, for: .navigationBar)
-        .toolbarColorScheme(.dark, for: .navigationBar)
-        #if canImport(SafariServices)
-            .sheet(item: $shownUrl) { presentedUrl in
-                SafariView(url: presentedUrl)
-                    .edgesIgnoringSafeArea(.all)
-                    .presentationCompactAdaptation(.fullScreenCover)
-            }
+        #if !os(macOS)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarColorScheme(.dark, for: .navigationBar)
+        #endif
+        #if os(iOS)
+        .sheet(item: $shownUrl) { presentedUrl in
+            SafariView(url: presentedUrl)
+                .edgesIgnoringSafeArea(.all)
+                .presentationCompactAdaptation(.fullScreenCover)
+        }
         #endif
     }
 
