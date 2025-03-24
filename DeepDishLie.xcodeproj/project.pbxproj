@@ -11,6 +11,7 @@
 		5A28A90329F803B100B02EE6 /* DeepDishSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90229F803B100B02EE6 /* DeepDishSnapshots.swift */; };
 		5A28A90C29F803DF00B02EE6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */; };
 		5A28DB452BE294910047A8CF /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A28DB442BE294910047A8CF /* ConfettiSwiftUI */; };
+		5A667A432D9161300083A15E /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5A667A422D9161300083A15E /* TelemetryDeck */; };
 		5A8195462D61493D0048354A /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		5A8195512D61493D0048354A /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		5A8195522D61493D0048354A /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -342,6 +343,7 @@
 			files = (
 				DE9F8FB82D6A8081002517D1 /* DeepDishCore.framework in Frameworks */,
 				5AA0C68C2D88C4D400AF6C14 /* DeepDishAppCore.framework in Frameworks */,
+				5A667A432D9161300083A15E /* TelemetryDeck in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +612,7 @@
 			);
 			name = DeepDishAppClip;
 			packageProductDependencies = (
+				5A667A422D9161300083A15E /* TelemetryDeck */,
 			);
 			productName = ScheduleAppClip;
 			productReference = DE6F23452D6A533B003C0319 /* DeepDishAppClip.app */;
@@ -1153,6 +1156,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
+		};
+		5A667A422D9161300083A15E /* TelemetryDeck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */;
+			productName = TelemetryDeck;
 		};
 		5AA0C6AE2D88C97700AF6C14 /* TelemetryDeck */ = {
 			isa = XCSwiftPackageProductDependency;
