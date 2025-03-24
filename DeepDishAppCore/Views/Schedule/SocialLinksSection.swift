@@ -59,20 +59,20 @@ struct SocialLinksSection<HeaderView: View>: View {
                     .foregroundStyle(.secondary)
             }
         }
-        #if canImport(SafariServices)
-        Button {
-            if settingsController.openLinksInApp {
-                shownUrl = url
-            } else {
-                openURL(url)
-            }
-        } label: {
+        if OperatingSystem.current == .watchOS {
             label
-                .foregroundStyle(.primary)
+        } else {
+            Button {
+                if settingsController.openLinksInApp && OperatingSystem.current == .iOS {
+                    shownUrl = url
+                } else {
+                    openURL(url)
+                }
+            } label: {
+                label
+                    .foregroundStyle(.primary)
+            }
         }
-        #else
-        label
-        #endif
     }
 }
 

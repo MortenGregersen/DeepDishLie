@@ -31,7 +31,9 @@ struct DeepDishApp: App {
                 TabView {
                     if !AppEnvironment.inDemoMode, let firstEventDate = scheduleController.firstEventDate, Date.now < firstEventDate {
                         CountdownView(eventDate: firstEventDate)
+                        #if !os(macOS)
                             .toolbarBackground(.visible, for: .tabBar)
+                        #endif
                             .tabItem {
                                 Label("Countdown", systemImage: "timer")
                             }
@@ -68,14 +70,28 @@ struct DeepDishApp: App {
                         }
                     }
                 }
-                .fullScreenCover(isPresented: $welcomeController.showsWelcome) {
+                #if os(macOS)
+                .sheet(isPresented: $welcomeController.showsWelcome) {
                     WelcomeView()
                         .environment(welcomeController)
                         .environment(settingsController)
                 }
+                #else
+                .fullScreenCover(isPresented: $welcomeController.showsWelcome) {
+                            WelcomeView()
+                                .environment(welcomeController)
+                                .environment(settingsController)
+                        }
+                #endif
             }
             .environment(welcomeController)
             .environment(settingsController)
+            .ifOS(.macOS) { $0.frame(minWidth: 600, idealWidth: 700, maxWidth: .infinity, minHeight: 720, idealHeight: 900, maxHeight: .infinity) }
         }
+        Settings {
+            SettingsView()
+                .environment(settingsController)
+        }
+        .defaultSize(width: 400, height: 350)
     }
 }

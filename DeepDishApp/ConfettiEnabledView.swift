@@ -26,9 +26,11 @@ struct ConfettiEnabledView<Content>: View where Content: View {
                     requestReview()
                 }
             }
+            #if canImport(UIKit)
             .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
                 settingsController.triggerConfetti()
             }
+            #endif
             .overlay(alignment: .bottom) {
                 if welcomeController.hasJustSeenWelcome, settingsController.randomConfettiIntensity > 4 {
                     VStack {

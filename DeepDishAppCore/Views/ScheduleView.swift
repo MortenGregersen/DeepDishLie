@@ -14,6 +14,21 @@ public struct ScheduleView: View {
     @State private var currentDateId: String?
     @State private var showsSettings = false
     @Environment(ScheduleController.self) private var scheduleController
+    private var nowToolbarItemPlacement: ToolbarItemPlacement {
+        #if os(macOS)
+            return .automatic
+        #else
+            return .topBarLeading
+        #endif
+    }
+
+    private var settingsToolbarItemPlacement: ToolbarItemPlacement {
+        #if os(macOS)
+            return .automatic
+        #else
+            return .topBarTrailing
+        #endif
+    }
 
     public init() {}
 
@@ -22,12 +37,14 @@ public struct ScheduleView: View {
             ScrollViewReader { proxy in
                 EventsListView()
                     .navigationTitle("Schedule 🍕")
+                #if !os(macOS)
                     .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
                     .toolbarBackground(.visible, for: .navigationBar)
                     .toolbarColorScheme(.dark, for: .navigationBar)
+                #endif
                     .toolbar {
                         if let currentDateId {
-                            ToolbarItem(placement: .topBarLeading) {
+                            ToolbarItem(placement: nowToolbarItemPlacement) {
                                 Button {
                                     withAnimation {
                                         proxy.scrollTo(currentDateId, anchor: .center)
@@ -37,11 +54,13 @@ public struct ScheduleView: View {
                                 }
                             }
                         }
-                        ToolbarItem(placement: .topBarTrailing) {
-                            Button {
-                                showsSettings = true
-                            } label: {
-                                Label("Settings", systemImage: "gear")
+                        if OperatingSystem.current != .macOS {
+                            ToolbarItem(placement: settingsToolbarItemPlacement) {
+                                Button {
+                                    showsSettings = true
+                                } label: {
+                                    Label("Settings", systemImage: "gear")
+                                }
                             }
                         }
                     }

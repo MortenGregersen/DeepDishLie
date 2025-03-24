@@ -8,12 +8,15 @@
 ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
 ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor
 CODE_SIGN_ENTITLEMENTS = DeepDishApp/DeepDishApp.entitlements
+CODE_SIGN_IDENTITY[sdk=macosx*] = Mac Developer
 CODE_SIGN_STYLE = Manual
 ENABLE_HARDENED_RUNTIME = YES
 ENABLE_PREVIEWS = YES
 GENERATE_INFOPLIST_FILE = YES
 INFOPLIST_FILE = DeepDishApp/Info.plist
 INFOPLIST_KEY_CFBundleDisplayName = Deep Dish
+INFOPLIST_KEY_CFBundleDisplayName[sdk=macosx*] = Deep Dish Unofficial
+INFOPLIST_KEY_LSApplicationCategoryType = public.app-category.reference
 INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*] = YES
 INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*] = YES
 INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*] = YES
@@ -29,7 +32,9 @@ LD_RUNPATH_SEARCH_PATHS = @executable_path/Frameworks
 LD_RUNPATH_SEARCH_PATHS[sdk=macosx*] = @executable_path/../Frameworks
 PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLie
 PRODUCT_NAME = $(TARGET_NAME)
+PRODUCT_NAME[sdk=macosx*] = Deep Dish Unofficial
 PROVISIONING_PROFILE_SPECIFIER = DeepDishApp
+PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*] = DeepDishApp Mac
 SDKROOT = auto
 SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO
 SWIFT_EMIT_LOC_STRINGS = YES
