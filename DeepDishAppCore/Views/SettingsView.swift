@@ -17,7 +17,7 @@ public struct SettingsView: View {
     public var body: some View {
         @Bindable var settingsController = settingsController
         NavigationStack {
-            Form {
+            List {
                 if OperatingSystem.current != .watchOS {
                     Section("General") {
                         Toggle(isOn: $settingsController.enableRandomConfetti) {
@@ -68,6 +68,7 @@ public struct SettingsView: View {
                     }
                 }
             }
+            .toggleStyle(.switch)
             .animation(.default, value: settingsController.enableRandomConfetti)
             .navigationTitle("Settings")
             #if !os(macOS)
@@ -75,7 +76,6 @@ public struct SettingsView: View {
                 .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarColorScheme(.dark, for: .navigationBar)
-            #endif
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button {
@@ -85,6 +85,7 @@ public struct SettingsView: View {
                         }
                     }
                 }
+            #endif
         }
     }
 }

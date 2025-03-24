@@ -88,5 +88,10 @@ struct DeepDishApp: App {
             .environment(settingsController)
             .ifOS(.macOS) { $0.frame(minWidth: 600, idealWidth: 700, maxWidth: .infinity, minHeight: 720, idealHeight: 900, maxHeight: .infinity) }
         }
+        Settings {
+            SettingsView()
+                .environment(settingsController)
+        }
+        .defaultSize(width: 400, height: 350)
     }
 }

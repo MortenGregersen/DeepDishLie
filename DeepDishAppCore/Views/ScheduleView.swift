@@ -54,11 +54,13 @@ public struct ScheduleView: View {
                                 }
                             }
                         }
-                        ToolbarItem(placement: settingsToolbarItemPlacement) {
-                            Button {
-                                showsSettings = true
-                            } label: {
-                                Label("Settings", systemImage: "gear")
+                        if OperatingSystem.current != .macOS {
+                            ToolbarItem(placement: settingsToolbarItemPlacement) {
+                                Button {
+                                    showsSettings = true
+                                } label: {
+                                    Label("Settings", systemImage: "gear")
+                                }
                             }
                         }
                     }
