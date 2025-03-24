@@ -72,6 +72,7 @@ public struct WeatherView: View {
                                 }
                             }
                             .padding(.top, 16)
+                            .buttonStyle(.borderless)
                         }
                         if let attribution = weatherController.attribution {
                             VStack(spacing: 8) {
@@ -184,5 +185,7 @@ public struct WeatherView: View {
 
 #Preview {
     WeatherView()
+        .environment(SettingsController.forPreview())
         .environment(WeatherController.forPreview())
+        .frame(minWidth: 400, minHeight: 500)
 }
