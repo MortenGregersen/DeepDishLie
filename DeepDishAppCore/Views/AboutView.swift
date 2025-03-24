@@ -14,9 +14,18 @@ public struct AboutView: View {
         NavigationStack {
             List {
                 Section("The app ❤️") {
-                    Text("Deep Dish Unofficial is made for the attendees at the Deep Dish Swift 2025 conference.")
-                    HStack {
-                        Text("It is open source and available on [GitHub](https://github.com/MortenGregersen/DeepDishLie).")
+                    let topText = Text("Deep Dish Unofficial is made for the attendees at the Deep Dish Swift 2025 conference.")
+                    let bottomText = Text("It is open source and available on [GitHub](https://github.com/MortenGregersen/DeepDishLie).")
+                    if OperatingSystem.current != .macOS {
+                        topText
+                    }
+                    HStack(alignment: .top) {
+                        VStack(alignment: .leading, spacing: 8) {
+                            if OperatingSystem.current == .macOS {
+                                topText
+                            }
+                            bottomText
+                        }
                         Spacer()
                         Image("github", bundle: .core)
                             .renderingMode(.template)
@@ -34,6 +43,7 @@ public struct AboutView: View {
                             .resizable()
                             .scaledToFit()
                     }
+                    .ifOS(.macOS) { $0.frame(maxHeight: 40) }
                     .frame(width: 80)
                     .padding(8)
                     .background(Circle().fill(Color.splashBackground))
@@ -50,7 +60,7 @@ public struct AboutView: View {
                         }
                         .padding(.vertical)
                     } else {
-                        HStack {
+                        HStack(alignment: .top) {
                             texts
                             Spacer(minLength: 8)
                             pizza
@@ -58,55 +68,61 @@ public struct AboutView: View {
                     }
                 }
                 Section("The developer 🧑🏽‍💻") {
-                    VStack(alignment: .leading) {
-                        let image = Image("Morten", bundle: .core)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(RoundedRectangle(cornerRadius: 8))
-                            .frame(width: 100)
-                            .padding(.top, 8)
-                        let texts = VStack(alignment: .leading, spacing: 8) {
-                            Text("This app was made by me, **Morten Bjerg Gregersen**")
-                            Text("You can find me at **Deep Dish Swift again this year**.")
-                            Text("Find my apps on **[AtterdagApps.com](https://AtterdagApps.com)**")
+                    let image = Image("Morten", bundle: .core)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .ifOS(.macOS) { $0.frame(maxHeight: 80) }
+                        .frame(width: 100)
+                        .padding(.top, 8)
+                    let developerTexts = VStack(alignment: .leading, spacing: 8) {
+                        Text("This app was made by me, **Morten Bjerg Gregersen**")
+                        Text("You can find me at **Deep Dish Swift again this year**.")
+                        Text("Find my apps on **[AtterdagApps.com](https://AtterdagApps.com)**")
+                    }
+                    .frame(maxHeight: .infinity)
+                    if OperatingSystem.current == .watchOS {
+                        VStack(alignment: .leading) {
+                            image
+                            developerTexts
                         }
-                        .frame(maxHeight: .infinity)
-                        if OperatingSystem.current == .watchOS {
-                            VStack(alignment: .leading) {
-                                image
-                                texts
-                            }
-                            .padding(.vertical)
-                        } else {
-                            HStack(alignment: .top) {
-                                texts
-                                Spacer(minLength: 8)
-                                image
-                            }
+                        .padding(.vertical)
+                    } else {
+                        HStack(alignment: .top) {
+                            developerTexts
+                            Spacer(minLength: 8)
+                            image
                         }
                     }
                     VStack(alignment: .leading) {
-                        let image = Image("AppDabIcon", bundle: .core)
+                        let appDabIcon = Image("AppDabIcon", bundle: .core)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
+                            .ifOS(.macOS) { $0.frame(maxHeight: 80) }
                             .frame(width: 100)
-                        let text = Text("If you attend the conference, I suspect, that you are an **app developer yourself**. If so, maybe my app, **[AppDab](https://AppDab.app)**, is something for you?")
+                        let appDabTopText = Text("If you attend the conference, I suspect, that you are an **app developer yourself**. If so, maybe my app, **[AppDab](https://AppDab.app)**, is something for you?")
+                        let appDabBottomText = Text("It is a **native macOS and iOS app** for **App Store Connect**. Find me at the conference and **get a free sticker!** 🎉🕺")
                         if OperatingSystem.current == .watchOS {
                             VStack(alignment: .leading) {
-                                image
-                                text
+                                appDabIcon
+                                appDabTopText
                             }
                         } else {
                             HStack {
-                                text
+                                VStack(alignment: .leading, spacing: 8) {
+                                    appDabTopText
+                                    if OperatingSystem.current == .macOS {
+                                        appDabBottomText
+                                    }
+                                }
                                 Spacer(minLength: 8)
-                                image
+                                appDabIcon
+                            }
+                            if OperatingSystem.current != .macOS {
+                                appDabBottomText
                             }
                         }
-                        Text("It is a **native macOS and iOS app** for **App Store Connect**. Find me at the conference and **get a free sticker!** 🎉🕺")
-                            .padding(.top, 8)
                     }
-                    .padding(.bottom, 8)
                 }
                 Section {
                     Text("Josh and Kari for organizing [Deep Dish Swift](https://deepdishswift.com) 🍕")
@@ -133,4 +149,5 @@ public struct AboutView: View {
 
 #Preview {
     AboutView()
+        .frame(minHeight: 500)
 }
