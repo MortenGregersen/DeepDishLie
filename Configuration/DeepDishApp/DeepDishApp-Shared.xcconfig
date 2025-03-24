@@ -32,6 +32,7 @@ LD_RUNPATH_SEARCH_PATHS = @executable_path/Frameworks
 LD_RUNPATH_SEARCH_PATHS[sdk=macosx*] = @executable_path/../Frameworks
 PRODUCT_BUNDLE_IDENTIFIER = com.CoolYellowOwl.DeepDishLie
 PRODUCT_NAME = $(TARGET_NAME)
+PRODUCT_NAME[sdk=macosx*] = Deep Dish Unofficial
 PROVISIONING_PROFILE_SPECIFIER = DeepDishApp
 PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*] = DeepDishApp Mac
 SDKROOT = auto
