@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import DeepDishCore
 
 public struct AboutView: View {
+    @Environment(ScheduleController.self) private var scheduleController
+    
     public init() {}
 
     public var body: some View {
@@ -126,6 +129,9 @@ public struct AboutView: View {
                 }
                 Section {
                     Text("Josh and Kari for organizing [Deep Dish Swift](https://deepdishswift.com) 🍕")
+                    if let firstEventDate = scheduleController.firstEventDate, Date.now < firstEventDate {
+                        Text("Alex Sikora for the inspiration to the countdown from his [DeepDishCountdown.fun](https://deepdishcountdown.fun) ⏲️")
+                    }
                     if OperatingSystem.current != .watchOS {
                         Text("Simon Bachmann for [ConfettiSwiftUI](https://github.com/simibac/ConfettiSwiftUI) 🎉")
                     }

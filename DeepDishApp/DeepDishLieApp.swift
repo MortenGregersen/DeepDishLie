@@ -54,6 +54,7 @@ struct DeepDishApp: App {
 //                            Label("Giveaway", systemImage: "app.gift")
 //                        }
                     AboutView()
+                        .environment(scheduleController)
                         .tabItem {
                             Label("About", systemImage: "text.badge.star")
                         }
