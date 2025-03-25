@@ -132,6 +132,7 @@ public struct AboutView: View {
                     if let firstEventDate = scheduleController.firstEventDate, Date.now < firstEventDate {
                         Text("Alex Sikora for the inspiration to the countdown from his [DeepDishCountdown.fun](https://deepdishcountdown.fun) ⏲️")
                     }
+                    Text("Kai and Malin for making the [Slices](https://podcasts.apple.com/ca/podcast/slices-the-deep-dish-swift-podcast/id1670026071) podcast up to the conference 🎙️")
                     if OperatingSystem.current != .watchOS {
                         Text("Simon Bachmann for [ConfettiSwiftUI](https://github.com/simibac/ConfettiSwiftUI) 🎉")
                     }
