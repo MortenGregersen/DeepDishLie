@@ -15,7 +15,9 @@ struct ConfettiEnabledView<Content>: View where Content: View {
     @State private var showsSettings = false
     @Environment(SettingsController.self) private var settingsController
     @Environment(WelcomeController.self) private var welcomeController
+    #if !os(tvOS)
     @Environment(\.requestReview) private var requestReview
+    #endif
 
     var body: some View {
         @Bindable var settingsController = settingsController
@@ -23,10 +25,12 @@ struct ConfettiEnabledView<Content>: View where Content: View {
             .onAppear {
                 if welcomeController.hasSeenWelcome, !welcomeController.hasRequestedReview {
                     welcomeController.hasRequestedReview = true
+                    #if !os(tvOS)
                     requestReview()
+                    #endif
                 }
             }
-            #if canImport(UIKit)
+            #if canImport(UIKit) && !os(tvOS)
             .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
                 settingsController.triggerConfetti()
             }

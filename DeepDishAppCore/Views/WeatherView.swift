@@ -130,7 +130,7 @@ public struct WeatherView: View {
                 }
             }
             .navigationTitle(OperatingSystem.current == .watchOS ? "Weather" : "Wu with the Weather")
-            #if !os(macOS)
+            #if !os(macOS) && !os(tvOS)
                 .navigationBarTitleDisplayMode(.automatic)
                 .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
@@ -144,8 +144,12 @@ public struct WeatherView: View {
                             Button {
                                 Task { await weatherController.fetchWeather() }
                             } label: {
-                                Label("Refresh weather", systemImage: "arrow.clockwise")
-                                    .font(.callout)
+                                if OperatingSystem.current == .tvOS {
+                                    Text("Refresh")
+                                } else {
+                                    Label("Refresh weather", systemImage: "arrow.clockwise")
+                                        .font(.callout)
+                                }
                             }
                             .disabled(weatherController.weather == nil || weatherController.fetching)
                         }

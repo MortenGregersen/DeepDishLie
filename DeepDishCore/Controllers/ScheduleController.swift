@@ -6,7 +6,9 @@
 //
 
 import Foundation
+#if canImport(WidgetKit)
 import WidgetKit
+#endif
 
 @Observable
 public class ScheduleController {
@@ -44,7 +46,9 @@ public class ScheduleController {
             days = try chunkUpEvents(Self.decoder.decode([Event].self, from: data))
             guard let cacheFolderURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else { return }
             try data.write(to: cacheFolderURL.appending(component: Self.cachedJsonFilename))
+            #if canImport(WidgetKit)
             WidgetCenter.shared.reloadAllTimelines()
+            #endif
         } catch {
             // Fail silently
         }

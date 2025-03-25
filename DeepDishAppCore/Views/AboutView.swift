@@ -5,12 +5,12 @@
 //  Created by Morten Bjerg Gregersen on 25/04/2023.
 //
 
-import SwiftUI
 import DeepDishCore
+import SwiftUI
 
 public struct AboutView: View {
     @Environment(ScheduleController.self) private var scheduleController
-    
+
     public init() {}
 
     public var body: some View {
@@ -52,7 +52,7 @@ public struct AboutView: View {
                     .background(Circle().fill(Color.splashBackground))
                     let texts = VStack(alignment: .leading) {
                         Text("Deep Dish Swift")
-                            .font(OperatingSystem.current == .watchOS ? .headline : .title)
+                            .font(OperatingSystem.current == .iOS ? .title : .headline)
                         Text("A supreme **Swift** developer conference being served in **Chicago, Illinois**.")
                             .fixedSize(horizontal: false, vertical: true)
                     }
@@ -144,7 +144,7 @@ public struct AboutView: View {
                 }
             }
             .navigationTitle(OperatingSystem.current == .watchOS ? "About" : "About Deep Dish Unofficial")
-            #if !os(macOS)
+            #if !os(macOS) && !os(tvOS)
                 .navigationBarTitleDisplayMode(OperatingSystem.current == .watchOS ? .automatic : .inline)
                 .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)

@@ -118,7 +118,7 @@ struct EventView: View {
             }
         }
         .listStyle(.plain)
-        #if !os(macOS)
+        #if !os(macOS) && !os(tvOS)
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
