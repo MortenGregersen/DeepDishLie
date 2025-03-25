@@ -73,6 +73,7 @@ struct DeepDishApp: App {
                 #if os(macOS)
                 .sheet(isPresented: $welcomeController.showsWelcome) {
                     WelcomeView()
+                        .frame(minHeight: 570)
                         .environment(welcomeController)
                         .environment(settingsController)
                 }
