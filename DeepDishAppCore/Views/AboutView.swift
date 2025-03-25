@@ -142,6 +142,7 @@ public struct AboutView: View {
                     Text("Version \(Bundle.main.infoDictionary!["CFBundleShortVersionString"]!) (\(Bundle.main.infoDictionary!["CFBundleVersion"]!))")
                         .frame(maxWidth: .infinity)
                 }
+                .ifOS(.tvOS) { $0.focusable() }
             }
             .navigationTitle(OperatingSystem.current == .watchOS ? "About" : "About Deep Dish Unofficial")
             #if !os(macOS) && !os(tvOS)
