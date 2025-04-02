@@ -16,6 +16,9 @@ struct ConfettiEnabledView<Content>: View where Content: View {
     @Environment(SettingsController.self) private var settingsController
     @Environment(WelcomeController.self) private var welcomeController
     @Environment(\.requestReview) private var requestReview
+    #if os(macOS)
+        @State private var confettiManager = MacConfettiManager()
+    #endif
 
     var body: some View {
         @Bindable var settingsController = settingsController
@@ -26,11 +29,6 @@ struct ConfettiEnabledView<Content>: View where Content: View {
                     requestReview()
                 }
             }
-            #if canImport(UIKit)
-            .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
-                settingsController.triggerConfetti()
-            }
-            #endif
             .overlay(alignment: .bottom) {
                 if welcomeController.hasJustSeenWelcome, settingsController.randomConfettiIntensity > 4 {
                     VStack {
@@ -65,21 +63,31 @@ struct ConfettiEnabledView<Content>: View where Content: View {
                     .padding(.horizontal)
                 }
             }
-            .overlay(alignment: .top) {
-                ConfettiCannon(trigger: $settingsController.confettiTrigger,
-                               num: 10,
-                               confettis: [.text("🍕")],
-                               confettiSize: 50,
-                               rainHeight: 1200,
-                               fadesOut: true,
-                               openingAngle: .degrees(180),
-                               closingAngle: .degrees(0),
-                               radius: 160,
-                               repetitionInterval: 1)
-            }
             .sheet(isPresented: $showsSettings) {
                 SettingsView()
             }
+        #if canImport(UIKit)
+            .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
+                settingsController.triggerConfetti()
+            }
+            .overlay(alignment: .top) {
+                ConfettiCannon(
+                    trigger: $settingsController.confettiTrigger,
+                    num: 10,
+                    confettis: [.text("🍕")],
+                    confettiSize: 50,
+                    rainHeight: 1200,
+                    fadesOut: true,
+                    openingAngle: .degrees(180),
+                    closingAngle: .degrees(0),
+                    radius: 160,
+                    repetitionInterval: 1)
+            }
+        #elseif os(macOS)
+            .onAppear {
+                confettiManager.showConfettiOnAllScreens(trigger: $settingsController.confettiTrigger)
+            }
+        #endif
     }
 }
 

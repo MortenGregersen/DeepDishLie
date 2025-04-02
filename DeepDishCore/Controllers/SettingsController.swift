@@ -33,7 +33,7 @@ public class SettingsController {
     public var openLinksInApp: Bool { didSet { UserDefaults.standard.set(openLinksInApp, forKey: "open-links-in-app") }}
     public var temperatureScale: TemperatureScale { didSet { UserDefaults.standard.set(temperatureScale.rawValue, forKey: "temperature-scale") }}
 
-    public var confettiTrigger = 0
+    public var confettiTrigger = false
     private var timer: Timer?
 
     public init() {
@@ -57,7 +57,7 @@ public class SettingsController {
     }
 
     public func triggerConfetti() {
-        confettiTrigger = Int.random(in: 0 ..< 42)
+        confettiTrigger.toggle()
     }
 
     private func startConfettiTimer() {
