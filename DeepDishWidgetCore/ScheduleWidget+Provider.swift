@@ -44,9 +44,9 @@ public extension ScheduleWidget {
             
             let speedRun = false
             var dummyDate = Date.now.addingTimeInterval(2)
-//            if Date.now < allEvents.first!.start {
-//                entries.append(.init(date: Date.now, widgetFamily: widgetFamily, mode: .countdown(until: allEvents.first!.start)))
-//            }
+            if Date.now < allEvents.first!.start {
+                entries.append(.init(date: Date.now, widgetFamily: widgetFamily, mode: .countdown(until: allEvents.first!.start)))
+            }
             for event in upcomingEvents {
                 let currentEventIndex = allEvents.firstIndex(where: { $0 == event })!
                 let previousEventIndex = allEvents.index(before: currentEventIndex)
