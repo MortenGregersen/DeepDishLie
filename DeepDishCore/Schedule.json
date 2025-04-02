@@ -27,33 +27,53 @@
         }]
     },
     {
-        "id": "session-tbd1",
+        "id": "session-adam-shaw",
         "start": "2025-04-27T14:00:00-05:00",
         "end": "2025-04-27T14:45:00-05:00",
-        "description": "Josh Won’t Tell... Yet",
-        "speakers": [],
-        "emoji": "🤫"
+        "description": "The History of iOS App Development",
+        "speakers": [{
+           "name": "Adam Shaw",
+           "image": "adam_shaw",
+           "links": {
+                "bluesky": "https://bsky.app/profile/@kabukivision.bsky.social",
+                "mastodon": "https://mastodon.social/@kabukivision",
+                "twitter": "https://x.com/kabukivision"
+        }}]
     },
     {
-        "id": "session-tbd2",
+        "id": "session-stewart-lynch",
         "start": "2025-04-27T15:00:00-05:00",
         "end": "2025-04-27T15:30:00-05:00",
-        "description": "Thin Crust is Optional",
-        "speakers": [],
-        "emoji": "🫥"
+        "description": "Why Didn't I Know That? Hidden Gems for Swift and SwiftUI Developers",
+        "speakers": [{
+            "name": "Stewart Lynch",
+            "image": "stewart_lynch",
+            "links": {
+                "bluesky": "https://bsky.app/profile/stewartlynch.bsky.social",
+                "mastodon": "https://iosdev.space/@StewartLynch",
+                "twitter": "https://x.com/StewartLynch"
+            }
+        }]
     },
     {
         "id": "break-sunday",
         "start": "2025-04-27T15:30:00-05:00",
-        "end": "2025-04-27T16:00:00-05:00",
+        "end": "2025-04-27T16:00:00-05:00"
     },
     {
-        "id": "session-tbd3",
+        "id": "session-jacob-rakidzich",
         "start": "2025-04-27T16:00:00-05:00",
         "end": "2025-04-27T16:45:00-05:00",
-        "description": "Awaiting Toppings...",
-        "speakers": [],
-        "emoji": "😶"
+        "description": "Code That Survives 'The Handoff'",
+        "speakers": [{
+            "name": "Jacob Rakidzich",
+            "image": "jacob_rakidzich",
+            "links": {
+                "bluesky": "https://bsky.app/profile/jacobzivandesign.bsky.social",
+                "mastodon": "https://mastodon.social/@jacobzivandesign@mastodon.social",
+                "twitter": "https://x.com/JZivanDesign"
+            }
+        }]
     },
     {
         "id": "session-allison-mcentire",
@@ -62,7 +82,7 @@
         "description": "Prompt Engineering for Accessibility",
         "speakers": [{
             "name": "Allison McEntire",
-            "image": "allison_mcentire",
+            "image": "allison_mcentire"
         }]
     },
     {
@@ -110,9 +130,9 @@
         "id": "session-tbd7",
         "start": "2025-04-28T11:00:00-05:00",
         "end": "2025-04-28T11:45:00-05:00",
-        "description": "func reveal() -> Never",
+        "description": "TBD: Thin Crust is Optional",
         "speakers": [],
-        "emoji": "🤯"
+        "emoji": "🫥"
     },
     {
         "id": "lunch-monday",
@@ -122,8 +142,8 @@
     {
         "id": "session-daniel-gauthier",
         "start": "2025-04-28T13:00:00-05:00",
-        "end": "2025-04-28T13:45:00-05:00",
-        "description": "Make Nice Things: An Engineer's “Made-Up Guide to App Design“",
+        "end": "2025-04-28T13:30:00-05:00",
+        "description": "Make Nice Things: An Engineer's \"Made-Up Guide to App Design\"",
         "speakers": [{
             "name": "Daniel Gauthier",
             "image": "daniel_gauthier",
@@ -136,8 +156,8 @@
     },
     {
         "id": "session-danielle-lewis",
-        "start": "2025-04-28T14:00:00-05:00",
-        "end": "2025-04-28T14:45:00-05:00",
+        "start": "2025-04-28T13:45:00-05:00",
+        "end": "2025-04-28T14:15:00-05:00",
         "description": "Learning in Public: My Journey to 10",
         "speakers": [{
             "name": "Danielle Lewis",
@@ -150,25 +170,45 @@
         }]
     },
     {
-        "id": "session-tbd10",
-        "start": "2025-04-28T15:00:00-05:00",
-        "end": "2025-04-28T15:45:00-05:00",
-        "description": "Session Hidden Behind a Paywall (Just Kidding)",
-        "speakers": [],
-        "emoji": "💰"
+        "id": "session-vidit-bhargava",
+        "start": "2025-04-28T14:30:00-05:00",
+        "end": "2025-04-28T15:00:00-05:00",
+        "description": "Pizza will save your startup",
+        "speakers": [{
+            "name": "Vidit Bhargava",
+            "image": "vidit_bhargava",
+            "links": {
+                "bluesky": "https://bsky.app/profile/viditb.bsky.social",
+                "mastodon": "https://mastodon.social/@viditb",
+                "twitter": "https://twitter.com/viditb"
+            }
+        }]
     },
     {
         "id": "session-hidde-van-der-ploeg",
-        "start": "2025-04-28T15:45:00-05:00",
-        "end": "2025-04-28T16:30:00-05:00",
+        "start": "2025-04-28T15:15:00-05:00",
+        "end": "2025-04-28T15:45:00-05:00",
         "description": "The Roast of your App's Design",
         "speakers": [{
             "name": "Hidde van der Ploeg",
             "image": "hidde_van_der_ploeg",
             "links": {
-                "bluesky": "https://bsky.app/profile/did:plc:5zv4ptzbc44wjhrya2phyakd",
+                "bluesky": "https://bsky.app/profile/hiddevdploeg.bsky.social",
                 "mastodon": "https://mastodon.design/@hidde",
                 "twitter": "https://twitter.com/hiddevdploeg"
+            }
+        }]
+    },
+    {
+        "id": "session-ariel-michaeli",
+        "start": "2025-04-28T16:00:00-05:00",
+        "end": "2025-04-28T16:30:00-05:00",
+        "description": "Live ASO Roast: You Bring the App, I'll \"Tell You What's Wrong\"",
+        "speakers": [{
+            "name": "Ariel Michaeli",
+            "image": "ariel_michaeli",
+            "links": {
+                "twitter": "https://twitter.com/arielmichaeli"
             }
         }]
     },
@@ -233,7 +273,7 @@
     {
         "id": "breakfast-tuesday",
         "start": "2025-04-29T07:30:00-05:00",
-        "end": "2025-04-29T08:55:00-05:00",
+        "end": "2025-04-29T08:55:00-05:00"
     },
     {
         "id": "practical-morning-welcome-tuesday",
@@ -272,12 +312,19 @@
         }]
     },
     {
-        "id": "session-tbd14",
+        "id": "session-laksh-chakraborty",
         "start": "2025-04-29T11:00:00-05:00",
         "end": "2025-04-29T11:45:00-05:00",
-        "description": "This Talk is Private(set)",
-        "speakers": [],
-        "emoji": "🔒"
+        "description": "Shaders: The Secret Sauce of Modern Visual Interactions",
+        "speakers": [{
+            "name": "Laksh Chakraborty",
+            "image": "laksh_chakraborty",
+            "links": {
+                "bluesky": "https://bsky.app/profile/laksh-chak.bsky.social",
+                "mastodon": "https://iosdev.space/@reftonull@hachyderm.io",
+                "twitter": "https://twitter.com/_nullref_"
+            }
+        }]
     },
     {
         "id": "lunch-tuesday",
@@ -289,25 +336,37 @@
         "id": "session-tbd15",
         "start": "2025-04-29T13:00:00-05:00",
         "end": "2025-04-29T13:45:00-05:00",
-        "description": "Even Spotlight Can’t Find This One Yet",
-        "speakers": [],
-        "emoji": "🔦"
-    },
-    {
-        "id": "session-tbd16",
-        "start": "2025-04-29T14:00:00-05:00",
-        "end": "2025-04-29T14:45:00-05:00",
-        "description": "Waiting for Josh Review",
-        "speakers": [],
-        "emoji": "👀"
-    },
-    {
-        "id": "session-tbd17",
-        "start": "2025-04-29T15:00:00-05:00",
-        "end": "2025-04-29T15:45:00-05:00",
-        "description": "One More Topping… I Mean, Thing",
+        "description": "TBD: One More Topping… I Mean, Thing",
         "speakers": [],
         "emoji": "🙈"
+    },
+    {
+        "id": "session-tyler-thompson",
+        "start": "2025-04-29T14:00:00-05:00",
+        "end": "2025-04-29T14:45:00-05:00",
+        "description": "How I built a Vapor website without HTML, CSS, or JavaScript",
+        "speakers": [{
+            "name": "Tyler Thompson",
+            "image": "tyler_thompson",
+            "links": {
+                
+            }
+        }]
+    },
+    {
+        "id": "session-harlan-haskins",
+        "start": "2025-04-29T15:00:00-05:00",
+        "end": "2025-04-29T15:45:00-05:00",
+        "description": "Coordinate Spaces and You",
+        "speakers": [{
+            "name": "Harlan Haskins",
+            "image": "harlan_haskins",
+            "links": {
+                "bluesky": "https://bsky.app/profile/harlanhaskins.com",
+                "mastodon": "https://mastodon.social/@harlan",
+                "twitter": "https://twitter.com/harlanhaskins"
+            }
+        }]
     },
     {
         "id": "special-concert",
