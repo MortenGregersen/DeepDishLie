@@ -80,10 +80,10 @@ struct DeepDishApp: App {
                 }
                 #else
                 .fullScreenCover(isPresented: $welcomeController.showsWelcome) {
-                            WelcomeView()
-                                .environment(welcomeController)
-                                .environment(settingsController)
-                        }
+                        WelcomeView()
+                            .environment(welcomeController)
+                            .environment(settingsController)
+                    }
                 #endif
             }
             .environment(welcomeController)
@@ -91,6 +91,16 @@ struct DeepDishApp: App {
             .ifOS(.macOS) { $0.frame(minWidth: 600, idealWidth: 700, maxWidth: .infinity, minHeight: 720, idealHeight: 900, maxHeight: .infinity) }
         }
         #if os(macOS)
+        MenuBarExtra("Deep Dish Unofficial", image: "MenuBarExtra") {
+            Button("Show schedule") {
+                NSApp.activate(ignoringOtherApps: true)
+            }
+            Divider()
+            Button("Quit") {
+                NSApp.terminate(nil)
+            }
+        }
+        
         Settings {
             SettingsView()
                 .environment(settingsController)
