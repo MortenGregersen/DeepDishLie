@@ -72,6 +72,7 @@ struct SocialLinksSection<HeaderView: View>: View {
                 label
                     .foregroundStyle(.primary)
             }
+            .buttonStyle(.plain)
         }
     }
 }

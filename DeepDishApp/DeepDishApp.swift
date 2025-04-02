@@ -165,6 +165,20 @@ struct DeepDishApp: App {
                     }
                 }
             }
+            .onOpenURL { url in
+                guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true),
+                      components.scheme == "deepdishunofficial",
+                      components.host == "event",
+                      let queryItems = components.queryItems,
+                      let idItem = queryItems.first(where: { $0.name == "id" }),
+                      let eventId = idItem.value,
+                      let event = scheduleController.days.flatMap(\.events).first(where: { $0.id == eventId })
+                else {
+                    return
+                }
+                selectedTab = .schedule
+                scheduleController.selectedEvent = event
+            }
         }
         .environment(welcomeController)
         .environment(settingsController)

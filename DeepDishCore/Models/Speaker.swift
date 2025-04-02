@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Speaker: Decodable, Equatable, Identifiable {
+public struct Speaker: Decodable, Equatable, Hashable, Identifiable {
     public var id: String { name }
     public let name: String
     public let image: String

@@ -12,29 +12,12 @@ import WidgetKit
 public extension ScheduleWidget {
     struct EntryView: View {
         private let entry: ScheduleWidget.Entry
-        private let standalone: Bool
         
-        public init(entry: ScheduleWidget.Entry, standalone: Bool = false) {
+        public init(entry: ScheduleWidget.Entry) {
             self.entry = entry
-            self.standalone = standalone
         }
         
         public var body: some View {
-//            if standalone {
-//                VStack {
-//                    realBody
-//                        .foregroundStyle(.white)
-//                }
-//                .padding()
-//                .frame(maxWidth: .infinity)
-//                .background(Color.widgetBackground)
-//                .cornerRadius(16)
-//            } else {
-                realBody
-//            }
-        }
-        
-        public var realBody: some View {
             VStack {
                 switch entry.mode {
                 case .countdown(let startDate):
@@ -122,6 +105,7 @@ public extension ScheduleWidget {
                 let event: Event
                 let showTime: Bool
                 let widgetFamily: WidgetFamily
+
                 
                 var subtitle: String? {
                     var subtitleComponents = [String]()
@@ -136,58 +120,61 @@ public extension ScheduleWidget {
                 }
                 
                 var body: some View {
-                    HStack(alignment: .top) {
-                        VStack(alignment: .leading, spacing: 4) {
-                            let title = Text(event.description)
-                                .font(.body)
-                                .foregroundStyle(event.toBeDetermined ? .secondary : .primary)
-                            ViewThatFits(in: .horizontal) {
-                                title.fixedSize(horizontal: false, vertical: true)
-                                title.minimumScaleFactor(0.5)
-                            }
-                            .layoutPriority(1337)
-                            if let subtitle {
-                                let subtitle = Text(subtitle)
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-                                ViewThatFits {
-                                    subtitle.fixedSize(horizontal: false, vertical: true)
-                                    subtitle.minimumScaleFactor(0.8)
+                    Link(destination: URL(string: "deepdishunofficial://event?id=\(event.id)")!) {
+                        HStack(alignment: .top) {
+                            VStack(alignment: .leading, spacing: 4) {
+                                let title = Text(event.description)
+                                    .font(.body)
+                                    .foregroundStyle(event.toBeDetermined ? .secondary : .primary)
+                                ViewThatFits(in: .horizontal) {
+                                    title.fixedSize(horizontal: false, vertical: true)
+                                    title.minimumScaleFactor(0.5)
                                 }
-                                .layoutPriority(42)
-                            }
-                        }
-                        Spacer(minLength: 0)
-                        if widgetFamily != .systemSmall {
-                            Spacer()
-                            Group {
-                                if let speaker = event.speakers?.first {
-                                    Image(speaker.image, bundle: .core)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(height: 50)
-                                        .clipShape(Circle())
-                                        .background {
-                                            Circle()
-                                                .fill(Color.gray.opacity(0.2))
-                                                .frame(width: 54, height: 54)
-                                        }
-                                        .id(speaker.id)
-                                    
-                                } else if let emoji = event.emoji {
-                                    emojiView(emoji: emoji)
-                                        .id(emoji)
+                                .layoutPriority(1337)
+                                if let subtitle {
+                                    let subtitle = Text(subtitle)
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                    ViewThatFits {
+                                        subtitle.fixedSize(horizontal: false, vertical: true)
+                                        subtitle.minimumScaleFactor(0.8)
+                                    }
+                                    .layoutPriority(42)
                                 }
                             }
+                            Spacer(minLength: 0)
+                            if widgetFamily != .systemSmall {
+                                Spacer()
+                                Group {
+                                    if let speaker = event.speakers?.first {
+                                        Image(speaker.image, bundle: .core)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(height: 50)
+                                            .clipShape(Circle())
+                                            .background {
+                                                Circle()
+                                                    .fill(Color.gray.opacity(0.2))
+                                                    .frame(width: 54, height: 54)
+                                            }
+                                            .id(speaker.id)
+                                        
+                                    } else if let emoji = event.emoji {
+                                        emojiView(emoji: emoji)
+                                            .id(emoji)
+                                    }
+                                }
+                            }
+                        }
+                        if widgetFamily == .systemSmall, !event.id.hasPrefix("special"), let emoji = event.emoji {
+                            HStack {
+                                Spacer()
+                                emojiView(emoji: emoji)
+                            }
+                            .padding(.top, 4)
                         }
                     }
-                    if widgetFamily == .systemSmall, !event.id.hasPrefix("special"), let emoji = event.emoji {
-                        HStack {
-                            Spacer()
-                            emojiView(emoji: emoji)
-                        }
-                        .padding(.top, 4)
-                    }
+                    .buttonStyle(.plain)
                 }
                 
                 private func emojiView(emoji: String) -> some View {
@@ -254,4 +241,3 @@ public extension ScheduleWidget {
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemExtraLarge, mode: .currentNext(currentEvent: ScheduleController().days[2].events[2], nextEvents: [ScheduleController().days[2].events[3], ScheduleController().days[2].events[4], ScheduleController().days[2].events[5]]))
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemExtraLarge, mode: .ended)
 }
-

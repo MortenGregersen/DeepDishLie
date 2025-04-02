@@ -12,6 +12,7 @@ import WidgetKit
 public class ScheduleController {
     public private(set) var days: [Day] = []
     public var firstEventDate: Date? { days.first?.events.first?.start }
+    public var selectedEvent: Event?
 
     private static let cacheFolderUrl = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.CoolYellowOwl.DeepDishLie")
     private static let cachedJsonUrl = cacheFolderUrl?.appending(component: "Schedule.json")
@@ -59,6 +60,10 @@ public class ScheduleController {
             }
         }
         return nil
+    }
+
+    public func dayName(for event: Event) -> String? {
+        days.first { $0.events.contains(where: { $0.id == event.id }) }?.name
     }
 
     private func chunkUpEvents(_ events: [Event]) -> [Day] {

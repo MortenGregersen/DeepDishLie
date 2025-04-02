@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Links: Decodable, Equatable {
+public struct Links: Decodable, Equatable, Hashable {
     public let name: String?
     public let bluesky: URL?
     public let github: URL?

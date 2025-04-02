@@ -18,69 +18,65 @@ struct EventRow: View {
     private let emojiFont: Font = OperatingSystem.current == .watchOS ? .title3 : .largeTitle
 
     var body: some View {
-        NavigationLink {
-            EventView(dayName: dayName, event: event)
-        } label: {
-            HStack(alignment: .top, spacing: 0) {
-                if OperatingSystem.current == .watchOS {
-                    VStack(alignment: .leading) {
-                        Text("\(dateFormatter.string(from: event.start)) - \(dateFormatter.string(from: event.end))")
-                            .font(.caption2)
-                            .foregroundStyle(event.dateTextColor)
-                        Text(event.description)
-                            .font(.headline)
-                            .foregroundStyle(event.titleTextColor)
-                            .italic(event.toBeDetermined)
-                        if let speakers = event.speakers {
-                            Text(speakers.map(\.name).formatted(.list(type: .and)))
-                                .foregroundStyle(event.subtitleTextColor)
-                        }
-                    }
-                    .padding(.leading)
-                } else {
-                    VStack(alignment: .trailing) {
-                        Text(dateFormatter.string(from: event.start))
-                        Text(dateFormatter.string(from: event.end))
-                    }
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(event.dateTextColor)
-                    .containerRelativeFrame(.horizontal) { length, _ in
-                        length / dateFrameDivider
-                    }
-                    VStack(alignment: .leading) {
-                        Text(event.description)
-                            .font(.headline)
-                            .foregroundStyle(event.titleTextColor)
-                            .italic(event.toBeDetermined)
-                        if let speakers = event.speakers {
-                            Text(speakers.map(\.name).formatted(.list(type: .and)))
-                                .foregroundStyle(event.subtitleTextColor)
-                        }
+        HStack(alignment: .top, spacing: 0) {
+            if OperatingSystem.current == .watchOS {
+                VStack(alignment: .leading) {
+                    Text("\(dateFormatter.string(from: event.start)) - \(dateFormatter.string(from: event.end))")
+                        .font(.caption2)
+                        .foregroundStyle(event.dateTextColor)
+                    Text(event.description)
+                        .font(.headline)
+                        .foregroundStyle(event.titleTextColor)
+                        .italic(event.toBeDetermined)
+                    if let speakers = event.speakers {
+                        Text(speakers.map(\.name).formatted(.list(type: .and)))
+                            .foregroundStyle(event.subtitleTextColor)
                     }
                 }
-                if let speakers = event.speakers, !speakers.isEmpty {
-                    Spacer(minLength: 12)
-                    if horizontalSizeClass == .compact {
-                        VStack(alignment: .trailing) {
-                            speakerImages(speakers: speakers)
-                        }
-                    } else {
-                        HStack {
-                            speakerImages(speakers: speakers)
-                        }
+                .padding(.leading)
+            } else {
+                VStack(alignment: .trailing) {
+                    Text(dateFormatter.string(from: event.start))
+                    Text(dateFormatter.string(from: event.end))
+                }
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .foregroundStyle(event.dateTextColor)
+                .containerRelativeFrame(.horizontal) { length, _ in
+                    length / dateFrameDivider
+                }
+                VStack(alignment: .leading) {
+                    Text(event.description)
+                        .font(.headline)
+                        .foregroundStyle(event.titleTextColor)
+                        .italic(event.toBeDetermined)
+                    if let speakers = event.speakers {
+                        Text(speakers.map(\.name).formatted(.list(type: .and)))
+                            .foregroundStyle(event.subtitleTextColor)
                     }
-                } else if let emoji = event.emoji {
-                    Spacer(minLength: 12)
+                }
+            }
+            if let speakers = event.speakers, !speakers.isEmpty {
+                Spacer(minLength: 12)
+                if horizontalSizeClass == .compact {
                     VStack(alignment: .trailing) {
-                        VStack {
-                            Text(emoji)
-                                .font(emojiFont)
-                        }
-                        .frame(width: imageSize, height: imageSize)
-                        .background(Color.accentColor.opacity(event.toBeDetermined ? 0.5 : 1.0))
-                        .clipShape(Circle())
+                        speakerImages(speakers: speakers)
                     }
+                } else {
+                    HStack {
+                        speakerImages(speakers: speakers)
+                    }
+                }
+            } else if let emoji = event.emoji {
+                Spacer(minLength: 12)
+                VStack(alignment: .trailing) {
+                    VStack {
+                        Text(emoji)
+                            .font(emojiFont)
+                    }
+                    .frame(width: imageSize, height: imageSize)
+                    .background(Color.accentColor.opacity(event.toBeDetermined ? 0.5 : 1.0))
+                    .clipShape(Circle())
                 }
             }
         }

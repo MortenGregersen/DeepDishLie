@@ -5,6 +5,7 @@
 //  Created by Morten Bjerg Gregersen on 02/04/2025.
 //
 
+import DeepDishCore
 import DeepDishWidgetCore
 import SwiftUI
 
@@ -14,7 +15,7 @@ struct MenuBarExtraWidget: View {
     var body: some View {
         VStack {
             if let entry {
-                ScheduleWidget.EntryView(entry: entry, standalone: true)
+                ScheduleWidget.EntryView(entry: entry)
             } else {
                 ProgressView()
             }
