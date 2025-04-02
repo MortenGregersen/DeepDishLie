@@ -19,6 +19,7 @@
         "speakers": [{
             "name": "Michael Flarup",
             "image": "michael_flarup",
+            "about": "Danish designer & entrepreneur. He runs game studio Northplay, design studio Pixelresort and resource platform Apply Pixels.",
             "links": {
                 "bluesky": "https://bsky.app/profile/flarup.bsky.social",
                 "mastodon": "https://mastodon.social/@flarup",
@@ -34,6 +35,7 @@
         "speakers": [{
            "name": "Adam Shaw",
            "image": "adam_shaw",
+           "about": "iOS app developer since the dawn of time (aka 2008). An Apple nerd through and through, he loves sharing his knowledge and enthusiasm for app development with others.",
            "links": {
                 "bluesky": "https://bsky.app/profile/@kabukivision.bsky.social",
                 "mastodon": "https://mastodon.social/@kabukivision",
@@ -48,6 +50,7 @@
         "speakers": [{
             "name": "Stewart Lynch",
             "image": "stewart_lynch",
+            "about": "An independent iOS developer with a focus on helping other improve their coding skills through his YouTube channel.",
             "links": {
                 "bluesky": "https://bsky.app/profile/stewartlynch.bsky.social",
                 "mastodon": "https://iosdev.space/@StewartLynch",
@@ -68,6 +71,7 @@
         "speakers": [{
             "name": "Jacob Rakidzich",
             "image": "jacob_rakidzich",
+            "about": "A software engineer with a deep passion for Swift and Kotlin, focusing primarily on iOS application development. Aside from mobile applications, and experience as an AWS Solutions Architect. His goal is to craft code that's not just functional but is a place you WANT to spend time in.",
             "links": {
                 "bluesky": "https://bsky.app/profile/jacobzivandesign.bsky.social",
                 "mastodon": "https://mastodon.social/@jacobzivandesign@mastodon.social",
@@ -82,7 +86,8 @@
         "description": "Prompt Engineering for Accessibility",
         "speakers": [{
             "name": "Allison McEntire",
-            "image": "allison_mcentire"
+            "image": "allison_mcentire",
+            "about": "Staff Engineer for Nuuly, a clothing rental subscription service from Urban Outfitters."
         }]
     },
     {
@@ -104,6 +109,7 @@
         "speakers": [{
             "name": "Antoine van der Lee",
             "image": "antoine_van_der_lee",
+            "about": "Creator of RocketSim (an Xcode Simulator Enhancing App) and author of weekly blog posts on SwiftLee and newsletter SwiftLee Weekly.",
             "links": {
                 "bluesky": "https://bsky.app/profile/avanderlee.com",
                 "mastodon": "https://mastodon.social/@swiftlee",
@@ -119,6 +125,7 @@
         "speakers": [{
             "name": "Adrian Eves",
             "image": "adrian_eves",
+            "about": "iOS developer who's worked for companies such as Apple, Inc and the Walt Disney Company. He is the developer of the app, Pediapal, a tool for parents to manage the health, vitals, and care of their children.",
             "links": {
                 "bluesky": "https://bsky.app/profile/swifteves.bsky.social",
                 "mastodon": "https://mastodon.social/@swifteves",
@@ -147,6 +154,7 @@
         "speakers": [{
             "name": "Daniel Gauthier",
             "image": "daniel_gauthier",
+            "about": "Occasional creator of fun apps such as Up Ahead.",
             "links": {
                 "bluesky": "https://bsky.app/profile/@danielmgauthier.bsky.social",
                 "mastodon": "https://mastodon.social/@danielmgauthier",
@@ -162,6 +170,7 @@
         "speakers": [{
             "name": "Danielle Lewis",
             "image": "danielle_lewis",
+            "about": "Published 10 apps to the App Store in 2024 and documented her journey on social media, a BSCS student, a dog mom, and a wife.",
             "links": {
                 "bluesky": "https://bsky.app/profile/@daniellelewis.dev",
                 "mastodon": "https://iosdev.space/@dlewisdev",
@@ -177,6 +186,7 @@
         "speakers": [{
             "name": "Vidit Bhargava",
             "image": "vidit_bhargava",
+            "about": "A successful Apple platform developer and designer with over 13 years of experience in making apps for Apple platforms. Vidit's app LookUp: English Dictionary is a modern day dictionary app that enables English learners to learn new words in innovative ways through illustrations and interactive quizzes.",
             "links": {
                 "bluesky": "https://bsky.app/profile/viditb.bsky.social",
                 "mastodon": "https://mastodon.social/@viditb",
@@ -192,6 +202,7 @@
         "speakers": [{
             "name": "Hidde van der Ploeg",
             "image": "hidde_van_der_ploeg",
+            "about": "A designer who taught himself how to code and make apps. His own apps include popular apps like Helm, NowPlaying, Gola, and Volo.",
             "links": {
                 "bluesky": "https://bsky.app/profile/hiddevdploeg.bsky.social",
                 "mastodon": "https://mastodon.design/@hidde",
@@ -226,6 +237,7 @@
             {
                 "name": "Charlie Chapman",
                 "image": "charlie_chapman",
+                "about": "Host of Launched, creator of Dark Noise, and developer advocate at RevenueCat.",
                 "links": {
                     "github": "https://github.com/charliemchapman",
                     "mastodon": "https://mastodon.social/@charliemchapman",
@@ -237,6 +249,7 @@
             {
                 "name": "Ryan Ashcraft",
                 "image": "ryan_ashcraft",
+                "about": "Independent developer of Foodnoms, a thoughtfully designed nutrition tracker for iPhone, iPad, and Mac that helps people improve their health through better nutrition. Previously worked at Confluent, Amplitude, and Yahoo.",
                 "links": {
                     "github": "https://github.com/ryanashcraft",
                     "mastodon": "https://mastodon.social/@ryanashcraft",
@@ -248,6 +261,7 @@
             {
                 "name": "Neem Serra",
                 "image": "neem_serra",
+                "about": "Principal iOS developer at Stitch Fix and lives in the St. Louis area. Neem loves to write Swift code with as many references as possible to Taylor Swift.",
                 "links": {
                     "github": "https://github.com/teamneem",
                     "twitter": "https://twitter.com/TeamNeem",
@@ -257,6 +271,7 @@
             {
                 "name": "Edward Sánchez",
                 "image": "edward_sanchez",
+                "about": "Designer with over a decade of experience crafting thoughtful, user-focused designs. Spent 9 years at Apple, including 5 on the Xcode team, focusing on visual design, iconography and animation. Also codes in Swift to build interactive prototypes.",
                 "links": {
                     "twitter": "https://twitter.com/edwardsanchez",
                     "website": "https://edwardsanchez.design"
@@ -289,6 +304,7 @@
         "speakers": [{
             "name": "Matthew Cassinelli",
             "image": "matthew_cassinelli",
+            "about": "App Intents developer consultant and Shortcuts expert after being part of the Workflow team before it was acquired by Apple.",
             "links": {
                 "bluesky": "https://bsky.app/profile/matthewcassinelli.bsky.social",
                 "mastodon": "https://mastodon.social/@matthewcassinelli",
@@ -304,6 +320,7 @@
         "speakers": [{
             "name": "Matt Heaney",
             "image": "matt_heaney",
+            "about": "Mobile enginering manager passionate about giving back to the community. Whether it's teaching code online or sharing knowledge, Matt love helping others grow their skills and succeed in tech.",
             "links": {
                 "bluesky": "https://bsky.app/profile/mattheaney23.bsky.social",
                 "mastodon": "https://mastodon.social/@MattHeaney23",
@@ -319,6 +336,7 @@
         "speakers": [{
             "name": "Laksh Chakraborty",
             "image": "laksh_chakraborty",
+            "about": "Been in the world of iOS development for over 5 years now, and in 2024 finally got the chance to begin doing it professionally. Recently graduated from NYU with a degree in Computer Science, and currently work at Typo* building a collaborative messenger designed for media-centric professionals.",
             "links": {
                 "bluesky": "https://bsky.app/profile/laksh-chak.bsky.social",
                 "mastodon": "https://iosdev.space/@reftonull@hachyderm.io",
@@ -348,9 +366,8 @@
         "speakers": [{
             "name": "Tyler Thompson",
             "image": "tyler_thompson",
-            "links": {
-                
-            }
+            "about": "Lover of Swift, developer, and manager with about 18 years industry experience. Worked at companies both big and small. Regular contributor to the open source community and creator of Afluent, an open source Combine replacement built for Swift concurrency.",
+            "links": {}
         }]
     },
     {
@@ -361,6 +378,7 @@
         "speakers": [{
             "name": "Harlan Haskins",
             "image": "harlan_haskins",
+            "about": "Harlan currently leads engineering at typo.inc. Previously, he worked on UIKit and SwiftUI for visionOS for Apple and the Swift compiler.",
             "links": {
                 "bluesky": "https://bsky.app/profile/harlanhaskins.com",
                 "mastodon": "https://mastodon.social/@harlan",

@@ -93,25 +93,16 @@ struct EventView: View {
             }
             if let speakers = event.speakers {
                 ForEach(speakers) { speaker in
+                    if let about = speaker.about {
+                        Section {
+                            Text(about)
+                        } header: {
+                            speakerHeader(prefix: "About ", speaker: speaker, showImage: speakers.count > 1)
+                        }
+                    }
                     if let links = speaker.links {
                         SocialLinksSection(links: links, shownUrl: $shownUrl, header: {
-                            HStack {
-                                if event.links != nil || speakers.count > 1 {
-                                    Image(speaker.image, bundle: .core)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(height: headerImageHeight)
-                                        .clipShape(Circle())
-                                        .background {
-                                            Circle()
-                                                .fill(Color.accentColor)
-                                                .frame(width: headerImageHeight * 1.05, height: headerImageHeight * 1.05)
-                                        }
-                                        .shadow(color: .accentColor, radius: 2)
-                                }
-                                Text("Connect with \(speaker.firstName)")
-                                    .foregroundStyle(.primary)
-                            }
+                            speakerHeader(prefix: "Connect with ", speaker: speaker, showImage: event.links != nil || speakers.count > 1)
                         })
                     }
                 }
@@ -119,10 +110,10 @@ struct EventView: View {
         }
         .listStyle(.plain)
         #if !os(macOS)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarColorScheme(.dark, for: .navigationBar)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
         #endif
         #if os(iOS)
         .sheet(item: $shownUrl) { presentedUrl in
@@ -136,6 +127,26 @@ struct EventView: View {
     private func imageWidth(width: CGFloat, items: Int) -> CGFloat {
         let spacing = CGFloat(items - 1) * speakerImageSpacing
         return (width - spacing) / CGFloat(items)
+    }
+    
+    private func speakerHeader(prefix: String, speaker: Speaker, showImage: Bool) -> some View {
+        HStack {
+            if showImage {
+                Image(speaker.image, bundle: .core)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: headerImageHeight)
+                    .clipShape(Circle())
+                    .background {
+                        Circle()
+                            .fill(Color.accentColor)
+                            .frame(width: headerImageHeight * 1.05, height: headerImageHeight * 1.05)
+                    }
+                    .shadow(color: .accentColor, radius: 2)
+            }
+            Text("\(prefix) \(speaker.firstName)")
+                .foregroundStyle(.primary)
+        }
     }
 }
 
