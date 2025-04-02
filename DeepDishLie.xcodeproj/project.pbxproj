@@ -15,14 +15,16 @@
 		5A0A6EDE2D9D38A100C4CAC3 /* DeepDishWidgetCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0A6ED22D9D382400C4CAC3 /* DeepDishWidgetCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A28A90329F803B100B02EE6 /* DeepDishSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90229F803B100B02EE6 /* DeepDishSnapshots.swift */; };
 		5A28A90C29F803DF00B02EE6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */; };
-		5A28DB452BE294910047A8CF /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A28DB442BE294910047A8CF /* ConfettiSwiftUI */; };
-		5A667A432D9161300083A15E /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5A667A422D9161300083A15E /* TelemetryDeck */; };
 		5A8195462D61493D0048354A /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		5A8195512D61493D0048354A /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		5A8195522D61493D0048354A /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A8195CC2D614E240048354A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195212D6147910048354A /* WidgetKit.framework */; };
 		5A8195CD2D614E240048354A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195232D6147910048354A /* SwiftUI.framework */; };
 		5A8195D82D614E250048354A /* DeepDishWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A8195CB2D614E240048354A /* DeepDishWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5AA0A5F82D9D70EC00A115C2 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; platformFilters = (ios, macos, ); productRef = 5AA0A5F72D9D70EC00A115C2 /* ConfettiSwiftUI */; };
+		5AA0A5FA2D9D71CF00A115C2 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A5F92D9D71CF00A115C2 /* TelemetryDeck */; };
+		5AA0A5FC2D9D725100A115C2 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A5FB2D9D725100A115C2 /* TelemetryDeck */; };
+		5AA0A5FE2D9D725600A115C2 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A5FD2D9D725600A115C2 /* TelemetryDeck */; };
 		5AA0C63B2D88BF1400AF6C14 /* DeepDishWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5AA0C62E2D88BF1300AF6C14 /* DeepDishWatchApp.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5AA0C66E2D88C2F800AF6C14 /* DeepDishAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; };
 		5AA0C66F2D88C2F800AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -30,12 +32,10 @@
 		5AA0C68C2D88C4D400AF6C14 /* DeepDishAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; };
 		5AA0C68D2D88C4D400AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5AA0C6AF2D88C97700AF6C14 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0C6AE2D88C97700AF6C14 /* TelemetryDeck */; };
-		5AA0C6B52D88CBA100AF6C14 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0C6B42D88CBA100AF6C14 /* TelemetryDeck */; };
 		5AA0C6B62D88CCE100AF6C14 /* DeepDishAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; };
 		5AA0C6B72D88CCE100AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5AA0C9142D89784300AF6C14 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		5AA0C9152D89784300AF6C14 /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5AA0C9192D89789100AF6C14 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0C9182D89789100AF6C14 /* TelemetryDeck */; };
 		DE6F23542D6A533F003C0319 /* DeepDishAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = DE6F23452D6A533B003C0319 /* DeepDishAppClip.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE9F8FB82D6A8081002517D1 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		DE9F8FB92D6A8081002517D1 /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -374,8 +374,7 @@
 				5A0A6EDD2D9D38A100C4CAC3 /* DeepDishWidgetCore.framework in Frameworks */,
 				5A8195512D61493D0048354A /* DeepDishCore.framework in Frameworks */,
 				5AA0C66E2D88C2F800AF6C14 /* DeepDishAppCore.framework in Frameworks */,
-				5A28DB452BE294910047A8CF /* ConfettiSwiftUI in Frameworks */,
-				5AA0C6B52D88CBA100AF6C14 /* TelemetryDeck in Frameworks */,
+				5AA0A5FA2D9D71CF00A115C2 /* TelemetryDeck in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +410,7 @@
 			files = (
 				5AA0C6B62D88CCE100AF6C14 /* DeepDishAppCore.framework in Frameworks */,
 				5AA0C9142D89784300AF6C14 /* DeepDishCore.framework in Frameworks */,
-				5AA0C9192D89789100AF6C14 /* TelemetryDeck in Frameworks */,
+				5AA0A5FE2D9D725600A115C2 /* TelemetryDeck in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +418,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AA0A5F82D9D70EC00A115C2 /* ConfettiSwiftUI in Frameworks */,
 				5AA0C6872D88C4A400AF6C14 /* DeepDishCore.framework in Frameworks */,
 				5AA0C6AF2D88C97700AF6C14 /* TelemetryDeck in Frameworks */,
 			);
@@ -430,7 +430,7 @@
 			files = (
 				DE9F8FB82D6A8081002517D1 /* DeepDishCore.framework in Frameworks */,
 				5AA0C68C2D88C4D400AF6C14 /* DeepDishAppCore.framework in Frameworks */,
-				5A667A432D9161300083A15E /* TelemetryDeck in Frameworks */,
+				5AA0A5FC2D9D725100A115C2 /* TelemetryDeck in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,8 +588,7 @@
 			);
 			name = DeepDishApp;
 			packageProductDependencies = (
-				5A28DB442BE294910047A8CF /* ConfettiSwiftUI */,
-				5AA0C6B42D88CBA100AF6C14 /* TelemetryDeck */,
+				5AA0A5F92D9D71CF00A115C2 /* TelemetryDeck */,
 			);
 			productName = DeepDishLie;
 			productReference = 5A3EFB0229F7D53200D75F5E /* Deep Dish Unofficial.app */;
@@ -686,7 +685,7 @@
 			);
 			name = DeepDishWatchApp;
 			packageProductDependencies = (
-				5AA0C9182D89789100AF6C14 /* TelemetryDeck */,
+				5AA0A5FD2D9D725600A115C2 /* TelemetryDeck */,
 			);
 			productName = "DeepDishWatchApp Watch App";
 			productReference = 5AA0C62E2D88BF1300AF6C14 /* DeepDishWatchApp.app */;
@@ -713,6 +712,7 @@
 			name = DeepDishAppCore;
 			packageProductDependencies = (
 				5AA0C6AE2D88C97700AF6C14 /* TelemetryDeck */,
+				5AA0A5F72D9D70EC00A115C2 /* ConfettiSwiftUI */,
 			);
 			productName = DeepDishAppCore;
 			productReference = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */;
@@ -737,7 +737,7 @@
 			);
 			name = DeepDishAppClip;
 			packageProductDependencies = (
-				5A667A422D9161300083A15E /* TelemetryDeck */,
+				5AA0A5FB2D9D725100A115C2 /* TelemetryDeck */,
 			);
 			productName = ScheduleAppClip;
 			productReference = DE6F23452D6A533B003C0319 /* DeepDishAppClip.app */;
@@ -1319,27 +1319,27 @@
 			package = 5A0A6EC82D9D382400C4CAC3 /* XCRemoteSwiftPackageReference "SwiftSDK" */;
 			productName = TelemetryDeck;
 		};
-		5A28DB442BE294910047A8CF /* ConfettiSwiftUI */ = {
+		5AA0A5F72D9D70EC00A115C2 /* ConfettiSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
 		};
-		5A667A422D9161300083A15E /* TelemetryDeck */ = {
+		5AA0A5F92D9D71CF00A115C2 /* TelemetryDeck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */;
+			productName = TelemetryDeck;
+		};
+		5AA0A5FB2D9D725100A115C2 /* TelemetryDeck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */;
+			productName = TelemetryDeck;
+		};
+		5AA0A5FD2D9D725600A115C2 /* TelemetryDeck */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */;
 			productName = TelemetryDeck;
 		};
 		5AA0C6AE2D88C97700AF6C14 /* TelemetryDeck */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */;
-			productName = TelemetryDeck;
-		};
-		5AA0C6B42D88CBA100AF6C14 /* TelemetryDeck */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */;
-			productName = TelemetryDeck;
-		};
-		5AA0C9182D89789100AF6C14 /* TelemetryDeck */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */;
 			productName = TelemetryDeck;

@@ -19,6 +19,7 @@
         "speakers": [{
             "name": "Michael Flarup",
             "image": "michael_flarup",
+            "isDanish": true,
             "about": "Danish designer & entrepreneur. He runs game studio Northplay, design studio Pixelresort and resource platform Apply Pixels.",
             "links": {
                 "bluesky": "https://bsky.app/profile/flarup.bsky.social",

@@ -5,6 +5,9 @@
 //  Created by Morten Bjerg Gregersen on 28/04/2024.
 //
 
+#if canImport(ConfettiSwiftUI)
+import ConfettiSwiftUI
+#endif
 import DeepDishCore
 import SwiftUI
 
@@ -12,6 +15,7 @@ struct EventView: View {
     let dayName: String
     let event: Event
     @State private var shownUrl: URL?
+    @State private var confettiTrigger = false
     @Environment(SettingsController.self) private var settingsController
     private let speakerMaxImageHeight: CGFloat = OperatingSystem.current == .watchOS ? 60 : 200
     private let speakerImageSpacing: CGFloat = OperatingSystem.current == .watchOS ? 8 : 24
@@ -109,6 +113,11 @@ struct EventView: View {
             }
         }
         .listStyle(.plain)
+        .onAppear {
+            if event.speakers?.contains(where: { $0.isDanish ?? false }) ?? false {
+                confettiTrigger.toggle()
+            }
+        }
         #if !os(macOS)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
@@ -122,13 +131,28 @@ struct EventView: View {
                 .presentationCompactAdaptation(.fullScreenCover)
         }
         #endif
+        #if canImport(ConfettiSwiftUI)
+        .overlay(alignment: .top) {
+            ConfettiCannon(
+                trigger: $confettiTrigger,
+                num: 20,
+                confettis: [.text("🇩🇰")],
+                confettiSize: 50,
+                rainHeight: 1200,
+                fadesOut: true,
+                openingAngle: .degrees(180),
+                closingAngle: .degrees(0),
+                radius: 160,
+                repetitionInterval: 1)
+        }
+        #endif
     }
 
     private func imageWidth(width: CGFloat, items: Int) -> CGFloat {
         let spacing = CGFloat(items - 1) * speakerImageSpacing
         return (width - spacing) / CGFloat(items)
     }
-    
+
     private func speakerHeader(prefix: String, speaker: Speaker, showImage: Bool) -> some View {
         HStack {
             if showImage {
