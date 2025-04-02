@@ -9,12 +9,14 @@ import DeepDishCore
 import SwiftUI
 import WidgetKit
 
-struct ScheduleWidget: Widget {
+public struct ScheduleWidget: Widget {
     let kind: String = "ScheduleWidget"
 
-    var body: some WidgetConfiguration {
+    public init() {}
+
+    public var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            ScheduleWidgetEntryView(entry: entry)
+            ScheduleWidget.EntryView(entry: entry)
                 .foregroundStyle(.white)
                 .containerBackground(for: .widget) {
                     Color.widgetBackground
@@ -39,4 +41,3 @@ struct ScheduleWidget: Widget {
         .description("See what sessions are up next")
     }
 }
-

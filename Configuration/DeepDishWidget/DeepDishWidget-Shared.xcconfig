@@ -5,7 +5,6 @@
 // https://buildsettingextractor.com
 //
 
-ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES
 ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground
 CODE_SIGN_ENTITLEMENTS = DeepDishWidget/DeepDishWidget.entitlements
 CODE_SIGN_IDENTITY[sdk=macosx*] = Mac Developer
