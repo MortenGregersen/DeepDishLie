@@ -11,12 +11,10 @@
 		5A0A6ECC2D9D382400C4CAC3 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		5A0A6ECD2D9D382400C4CAC3 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0A6EC72D9D382400C4CAC3 /* TelemetryDeck */; };
 		5A0A6ED82D9D389700C4CAC3 /* DeepDishWidgetCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0A6ED22D9D382400C4CAC3 /* DeepDishWidgetCore.framework */; };
-		5A0A6EDD2D9D38A100C4CAC3 /* DeepDishWidgetCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0A6ED22D9D382400C4CAC3 /* DeepDishWidgetCore.framework */; };
-		5A0A6EDE2D9D38A100C4CAC3 /* DeepDishWidgetCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0A6ED22D9D382400C4CAC3 /* DeepDishWidgetCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A0A6EDD2D9D38A100C4CAC3 /* DeepDishWidgetCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0A6ED22D9D382400C4CAC3 /* DeepDishWidgetCore.framework */; platformFilters = (ios, macos, ); };
+		5A0A6EDE2D9D38A100C4CAC3 /* DeepDishWidgetCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0A6ED22D9D382400C4CAC3 /* DeepDishWidgetCore.framework */; platformFilters = (ios, macos, ); settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A28A90329F803B100B02EE6 /* DeepDishSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90229F803B100B02EE6 /* DeepDishSnapshots.swift */; };
 		5A28A90C29F803DF00B02EE6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */; };
-		5A4C30A62D92B8D7005E2FA4 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A4C30A52D92B8D7005E2FA4 /* ConfettiSwiftUI */; };
-		5A667A432D9161300083A15E /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5A667A422D9161300083A15E /* TelemetryDeck */; };
 		5A8195462D61493D0048354A /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		5A8195512D61493D0048354A /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		5A8195522D61493D0048354A /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -377,7 +375,6 @@
 				5A0A6EDD2D9D38A100C4CAC3 /* DeepDishWidgetCore.framework in Frameworks */,
 				5A8195512D61493D0048354A /* DeepDishCore.framework in Frameworks */,
 				5AA0C66E2D88C2F800AF6C14 /* DeepDishAppCore.framework in Frameworks */,
-				5A4C30A62D92B8D7005E2FA4 /* ConfettiSwiftUI in Frameworks */,
 				5AA0A5FA2D9D71CF00A115C2 /* TelemetryDeck in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,7 +590,6 @@
 			);
 			name = DeepDishApp;
 			packageProductDependencies = (
-				5A4C30A52D92B8D7005E2FA4 /* ConfettiSwiftUI */,
 				5AA0A5F92D9D71CF00A115C2 /* TelemetryDeck */,
 			);
 			productName = DeepDishLie;
@@ -798,8 +794,8 @@
 			);
 			mainGroup = 5A3EFAF929F7D53200D75F5E;
 			packageReferences = (
+				5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 				5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */,
-				5A4C30A42D92B8D7005E2FA4 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 				5AA0A8F82D9E822700A115C2 /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = 5A3EFB0329F7D53200D75F5E /* Products */;
@@ -971,6 +967,10 @@
 		};
 		5A0A6EE02D9D38A100C4CAC3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				macos,
+			);
 			target = 5A0A6EC42D9D382400C4CAC3 /* DeepDishWidgetCore */;
 			targetProxy = 5A0A6EDF2D9D38A100C4CAC3 /* PBXContainerItemProxy */;
 		};
@@ -1096,9 +1096,6 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishApp/DeepDishApp-Debug.xcconfig";
 			buildSettings = {
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
-				SUPPORTS_MACCATALYST = NO;
-				TARGETED_DEVICE_FAMILY = "1,2,3";
 			};
 			name = Debug;
 		};
@@ -1107,9 +1104,6 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishApp/DeepDishApp-Release.xcconfig";
 			buildSettings = {
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
-				SUPPORTS_MACCATALYST = NO;
-				TARGETED_DEVICE_FAMILY = "1,2,3";
 			};
 			name = Release;
 		};
@@ -1182,9 +1176,6 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishAppCore/DeepDishAppCore-Debug.xcconfig";
 			buildSettings = {
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
-				SUPPORTS_MACCATALYST = NO;
-				TARGETED_DEVICE_FAMILY = "1,2,3";
 			};
 			name = Debug;
 		};
@@ -1193,9 +1184,6 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishAppCore/DeepDishAppCore-Release.xcconfig";
 			buildSettings = {
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
-				SUPPORTS_MACCATALYST = NO;
-				TARGETED_DEVICE_FAMILY = "1,2,3";
 			};
 			name = Release;
 		};
@@ -1335,12 +1323,6 @@
 				minimumVersion = 2.7.2;
 			};
 		};
-		5A4C30A42D92B8D7005E2FA4 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MortenGregersen/ConfettiSwiftUI";
-			requirement = {
-				branch = "tvos-support";
-				kind = branch;
 		5AA0A8F82D9E822700A115C2 /* XCRemoteSwiftPackageReference "Defaults" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Defaults";
@@ -1352,14 +1334,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5A4C30A52D92B8D7005E2FA4 /* ConfettiSwiftUI */ = {
 		5A0A6EC72D9D382400C4CAC3 /* TelemetryDeck */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A0A6EC82D9D382400C4CAC3 /* XCRemoteSwiftPackageReference "SwiftSDK" */;
 			productName = TelemetryDeck;
 		};
+		5AA0A5F72D9D70EC00A115C2 /* ConfettiSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5A4C30A42D92B8D7005E2FA4 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			package = 5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
 		};
 		5AA0A5F92D9D71CF00A115C2 /* TelemetryDeck */ = {
