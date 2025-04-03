@@ -8,15 +8,17 @@
 import DeepDishCore
 import SwiftUI
 
-struct GiveawayView: View {
+public struct GiveawayView: View {
     @Environment(GiveawayController.self) private var giveawayController
     private var giveawayInfo: GiveawayInfo { giveawayController.giveawayInfo }
 
-    var body: some View {
+    public init() {}
+
+    public var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 0) {
-                    Image("AppDabIcon")
+                    Image("AppDabIcon", bundle: .core)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 200)
@@ -33,12 +35,18 @@ struct GiveawayView: View {
                                 .font(.system(size: 80))
                                 .offset(x: 20)
                         }
-                    Text("1 year of AppDab Pro")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                    Text("As part of **Deep Dish Swift 2025**,\n**five lucky attendees** will win\n**a year of AppDab Pro!**")
+                    VStack(spacing: 0) {
+                        Text("1 Year of AppDab Pro")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                        Text("Including AppDab Intelligence ✨")
+                            .font(.title3)
+                            .fontWeight(.medium)
+                    }
+                    Text("Enter for a chance to win a one-year subscription to AppDab Pro, including access to the features powered by AppDab Intelligence ✨")
                         .multilineTextAlignment(.center)
                         .padding(.top, 8)
+                        .ifOS(.macOS) { $0.frame(maxWidth: 450) }
                     VStack {
                         if !giveawayInfo.winners.isEmpty {
                             VStack(alignment: .leading) {
@@ -49,12 +57,16 @@ struct GiveawayView: View {
                                 ForEach(giveawayInfo.winners, id: \.self) { winner in
                                     Text("• \(winner)")
                                 }
+                                Text("Congratulations to the winners! 🎉")
+                                    .font(.headline)
+                                    .multilineTextAlignment(.leading)
+                                    .padding(.top, 4)
                             }
                         } else if !giveawayInfo.channel.isEmpty {
-                            Text("Join the raffle by going to the **\(giveawayInfo.channel)** channel in the Deep Dish Swift 2025 Discord")
+                            Text("Join the raffle by visiting the **\(giveawayInfo.channel)** channel in the Deep Dish Swift 2025 Discord server.")
                                 .font(.title3)
                         } else {
-                            Text("Information on how to attend will be announced at the conference.")
+                            Text("Details on how to enter the AppDab Pro Raffle will be provided during the Deep Dish Swift 2025 conference.")
                                 .font(.title3)
                         }
                     }
@@ -65,9 +77,10 @@ struct GiveawayView: View {
                     .cornerRadius(10)
                     .overlay {
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.accentColor, lineWidth: 3)
+                            .stroke(Color.accentColor, lineWidth: 2)
                     }
                     .padding(.vertical)
+                    Text("Read more about AppDab at [AppDab.app](https://appdab.app) 🕺")
                 }
                 .padding(.top)
                 .padding(.horizontal)

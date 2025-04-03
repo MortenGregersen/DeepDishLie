@@ -140,12 +140,12 @@ struct DeepDishApp: App {
                         Label("Weather", systemImage: "thermometer.sun")
                     }
                     .tag(Tab.weather)
-//                    GiveawayView()
-//                        .environment(giveawayController)
-//                        .tabItem {
-//                            Label("Giveaway", systemImage: "app.gift")
-//                        }
-//                        .tag(Tab.giveaway)
+                GiveawayView()
+                    .environment(giveawayController)
+                    .tabItem {
+                        Label("Giveaway", systemImage: "app.gift")
+                    }
+                    .tag(Tab.giveaway)
                 AboutView()
                     .environment(scheduleController)
                     .tabItem {
