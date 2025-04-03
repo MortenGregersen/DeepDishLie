@@ -19,15 +19,15 @@ public enum OperatingSystem {
     case visionOS
 
     #if os(macOS)
-    static let current = macOS
+    public static let current = macOS
     #elseif os(iOS)
-    static let current = iOS
+    public static let current = iOS
     #elseif os(tvOS)
-    static let current = tvOS
+    public static let current = tvOS
     #elseif os(watchOS)
-    static let current = watchOS
+    public static let current = watchOS
     #elseif os(visionOS)
-    static let current = visionOS
+    public static let current = visionOS
     #else
     #error("Unsupported platform")
     #endif
@@ -55,6 +55,15 @@ public extension View {
             modifier(self)
         } else {
             self
+        }
+    }
+    
+    @ViewBuilder
+    func ifNotOS(_ operatingSystems: OperatingSystem..., modifier: (Self) -> some View) -> some View {
+        if operatingSystems.contains(OperatingSystem.current) {
+            self
+        } else {
+            modifier(self)
         }
     }
 }

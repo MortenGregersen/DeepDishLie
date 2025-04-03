@@ -15,12 +15,16 @@ public struct EventsListView: View {
     public init() {}
 
     public var body: some View {
-        let dateFormatter = Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock)
-        List(scheduleController.days) { day in
+        @Bindable var scheduleController = scheduleController
+        let dateFormatter = Event.dateFormatter(
+            useLocalTimezone: settingsController.useLocalTimezone,
+            use24hourClock: settingsController.use24hourClock)
+        List(scheduleController.days, selection: $scheduleController.selectedEvent) { day in
             Section {
                 ForEach(day.events) { event in
                     EventRow(dayName: day.name, event: event, dateFormatter: dateFormatter)
                         .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
+                        .tag(event)
                 }
             } header: {
                 let text = Text(day.name)
@@ -35,6 +39,9 @@ public struct EventsListView: View {
             }
         }
         .listStyle(.plain)
+        .navigationDestination(item: $scheduleController.selectedEvent) { event in
+            EventView(dayName: scheduleController.dayName(for: event)!, event: event)
+        }
     }
 }
 

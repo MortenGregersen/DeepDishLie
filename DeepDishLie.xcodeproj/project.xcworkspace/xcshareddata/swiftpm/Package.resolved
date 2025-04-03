@@ -1,13 +1,31 @@
 {
-  "originHash" : "9599e5f042c9e2fa47dad379c6fc3e7f5d7fafbcf56c9e8481dccd3fc7e664c5",
+  "originHash" : "2097abd99f35cd05bafc234c4cb01be2320ef7b3de748b8cd1cdcaec007bdb28",
   "pins" : [
     {
       "identity" : "confettiswiftui",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/MortenGregersen/ConfettiSwiftUI",
+      "location" : "https://github.com/simibac/ConfettiSwiftUI.git",
       "state" : {
-        "branch" : "tvos-support",
-        "revision" : "4fa5cab49c0aaa3b4989ba9221e9e12ea97a2339"
+        "revision" : "77ce21c82cc5fa608ac921a0dea09dd85b5432c7",
+        "version" : "2.0.2"
+      }
+    },
+    {
+      "identity" : "defaults",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/Defaults",
+      "state" : {
+        "revision" : "00c82eff4550c87cf9c547d7e5493a6a97837061",
+        "version" : "9.0.3"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-syntax",
+      "state" : {
+        "revision" : "f99ae8aa18f0cf0d53481901f88a0991dc3bd4a2",
+        "version" : "601.0.1"
       }
     },
     {

@@ -19,6 +19,8 @@
         "speakers": [{
             "name": "Michael Flarup",
             "image": "michael_flarup",
+            "isDanish": true,
+            "about": "Danish designer & entrepreneur. He runs game studio Northplay, design studio Pixelresort and resource platform Apply Pixels.",
             "links": {
                 "bluesky": "https://bsky.app/profile/flarup.bsky.social",
                 "mastodon": "https://mastodon.social/@flarup",
@@ -27,33 +29,56 @@
         }]
     },
     {
-        "id": "session-tbd1",
+        "id": "session-adam-shaw",
         "start": "2025-04-27T14:00:00-05:00",
         "end": "2025-04-27T14:45:00-05:00",
-        "description": "Josh Won’t Tell... Yet",
-        "speakers": [],
-        "emoji": "🤫"
+        "description": "The History of iOS App Development",
+        "speakers": [{
+           "name": "Adam Shaw",
+           "image": "adam_shaw",
+           "about": "iOS app developer since the dawn of time (aka 2008). An Apple nerd through and through, he loves sharing his knowledge and enthusiasm for app development with others.",
+           "links": {
+                "bluesky": "https://bsky.app/profile/@kabukivision.bsky.social",
+                "mastodon": "https://mastodon.social/@kabukivision",
+                "twitter": "https://x.com/kabukivision"
+        }}]
     },
     {
-        "id": "session-tbd2",
+        "id": "session-stewart-lynch",
         "start": "2025-04-27T15:00:00-05:00",
         "end": "2025-04-27T15:30:00-05:00",
-        "description": "Thin Crust is Optional",
-        "speakers": [],
-        "emoji": "🫥"
+        "description": "Why Didn't I Know That? Hidden Gems for Swift and SwiftUI Developers",
+        "speakers": [{
+            "name": "Stewart Lynch",
+            "image": "stewart_lynch",
+            "about": "An independent iOS developer with a focus on helping other improve their coding skills through his YouTube channel.",
+            "links": {
+                "bluesky": "https://bsky.app/profile/stewartlynch.bsky.social",
+                "mastodon": "https://iosdev.space/@StewartLynch",
+                "twitter": "https://x.com/StewartLynch"
+            }
+        }]
     },
     {
         "id": "break-sunday",
         "start": "2025-04-27T15:30:00-05:00",
-        "end": "2025-04-27T16:00:00-05:00",
+        "end": "2025-04-27T16:00:00-05:00"
     },
     {
-        "id": "session-tbd3",
+        "id": "session-jacob-rakidzich",
         "start": "2025-04-27T16:00:00-05:00",
         "end": "2025-04-27T16:45:00-05:00",
-        "description": "Awaiting Toppings...",
-        "speakers": [],
-        "emoji": "😶"
+        "description": "Code That Survives 'The Handoff'",
+        "speakers": [{
+            "name": "Jacob Rakidzich",
+            "image": "jacob_rakidzich",
+            "about": "A software engineer with a deep passion for Swift and Kotlin, focusing primarily on iOS application development. Aside from mobile applications, and experience as an AWS Solutions Architect. His goal is to craft code that's not just functional but is a place you WANT to spend time in.",
+            "links": {
+                "bluesky": "https://bsky.app/profile/jacobzivandesign.bsky.social",
+                "mastodon": "https://mastodon.social/@jacobzivandesign@mastodon.social",
+                "twitter": "https://x.com/JZivanDesign"
+            }
+        }]
     },
     {
         "id": "session-allison-mcentire",
@@ -63,6 +88,7 @@
         "speakers": [{
             "name": "Allison McEntire",
             "image": "allison_mcentire",
+            "about": "Staff Engineer for Nuuly, a clothing rental subscription service from Urban Outfitters."
         }]
     },
     {
@@ -84,6 +110,7 @@
         "speakers": [{
             "name": "Antoine van der Lee",
             "image": "antoine_van_der_lee",
+            "about": "Creator of RocketSim (an Xcode Simulator Enhancing App) and author of weekly blog posts on SwiftLee and newsletter SwiftLee Weekly.",
             "links": {
                 "bluesky": "https://bsky.app/profile/avanderlee.com",
                 "mastodon": "https://mastodon.social/@swiftlee",
@@ -99,6 +126,7 @@
         "speakers": [{
             "name": "Adrian Eves",
             "image": "adrian_eves",
+            "about": "iOS developer who's worked for companies such as Apple, Inc and the Walt Disney Company. He is the developer of the app, Pediapal, a tool for parents to manage the health, vitals, and care of their children.",
             "links": {
                 "bluesky": "https://bsky.app/profile/swifteves.bsky.social",
                 "mastodon": "https://mastodon.social/@swifteves",
@@ -110,9 +138,9 @@
         "id": "session-tbd7",
         "start": "2025-04-28T11:00:00-05:00",
         "end": "2025-04-28T11:45:00-05:00",
-        "description": "func reveal() -> Never",
+        "description": "TBD: Thin Crust is Optional",
         "speakers": [],
-        "emoji": "🤯"
+        "emoji": "🫥"
     },
     {
         "id": "lunch-monday",
@@ -122,11 +150,12 @@
     {
         "id": "session-daniel-gauthier",
         "start": "2025-04-28T13:00:00-05:00",
-        "end": "2025-04-28T13:45:00-05:00",
-        "description": "Make Nice Things: An Engineer's “Made-Up Guide to App Design“",
+        "end": "2025-04-28T13:30:00-05:00",
+        "description": "Make Nice Things: An Engineer's \"Made-Up Guide to App Design\"",
         "speakers": [{
             "name": "Daniel Gauthier",
             "image": "daniel_gauthier",
+            "about": "Occasional creator of fun apps such as Up Ahead.",
             "links": {
                 "bluesky": "https://bsky.app/profile/@danielmgauthier.bsky.social",
                 "mastodon": "https://mastodon.social/@danielmgauthier",
@@ -136,12 +165,13 @@
     },
     {
         "id": "session-danielle-lewis",
-        "start": "2025-04-28T14:00:00-05:00",
-        "end": "2025-04-28T14:45:00-05:00",
+        "start": "2025-04-28T13:45:00-05:00",
+        "end": "2025-04-28T14:15:00-05:00",
         "description": "Learning in Public: My Journey to 10",
         "speakers": [{
             "name": "Danielle Lewis",
             "image": "danielle_lewis",
+            "about": "Published 10 apps to the App Store in 2024 and documented her journey on social media, a BSCS student, a dog mom, and a wife.",
             "links": {
                 "bluesky": "https://bsky.app/profile/@daniellelewis.dev",
                 "mastodon": "https://iosdev.space/@dlewisdev",
@@ -150,25 +180,47 @@
         }]
     },
     {
-        "id": "session-tbd10",
-        "start": "2025-04-28T15:00:00-05:00",
-        "end": "2025-04-28T15:45:00-05:00",
-        "description": "Session Hidden Behind a Paywall (Just Kidding)",
-        "speakers": [],
-        "emoji": "💰"
+        "id": "session-vidit-bhargava",
+        "start": "2025-04-28T14:30:00-05:00",
+        "end": "2025-04-28T15:00:00-05:00",
+        "description": "Pizza will save your startup",
+        "speakers": [{
+            "name": "Vidit Bhargava",
+            "image": "vidit_bhargava",
+            "about": "A successful Apple platform developer and designer with over 13 years of experience in making apps for Apple platforms. Vidit's app LookUp: English Dictionary is a modern day dictionary app that enables English learners to learn new words in innovative ways through illustrations and interactive quizzes.",
+            "links": {
+                "bluesky": "https://bsky.app/profile/viditb.bsky.social",
+                "mastodon": "https://mastodon.social/@viditb",
+                "twitter": "https://twitter.com/viditb"
+            }
+        }]
     },
     {
         "id": "session-hidde-van-der-ploeg",
-        "start": "2025-04-28T15:45:00-05:00",
-        "end": "2025-04-28T16:30:00-05:00",
+        "start": "2025-04-28T15:15:00-05:00",
+        "end": "2025-04-28T15:45:00-05:00",
         "description": "The Roast of your App's Design",
         "speakers": [{
             "name": "Hidde van der Ploeg",
             "image": "hidde_van_der_ploeg",
+            "about": "A designer who taught himself how to code and make apps. His own apps include popular apps like Helm, NowPlaying, Gola, and Volo.",
             "links": {
-                "bluesky": "https://bsky.app/profile/did:plc:5zv4ptzbc44wjhrya2phyakd",
+                "bluesky": "https://bsky.app/profile/hiddevdploeg.bsky.social",
                 "mastodon": "https://mastodon.design/@hidde",
                 "twitter": "https://twitter.com/hiddevdploeg"
+            }
+        }]
+    },
+    {
+        "id": "session-ariel-michaeli",
+        "start": "2025-04-28T16:00:00-05:00",
+        "end": "2025-04-28T16:30:00-05:00",
+        "description": "Live ASO Roast: You Bring the App, I'll \"Tell You What's Wrong\"",
+        "speakers": [{
+            "name": "Ariel Michaeli",
+            "image": "ariel_michaeli",
+            "links": {
+                "twitter": "https://twitter.com/arielmichaeli"
             }
         }]
     },
@@ -186,6 +238,7 @@
             {
                 "name": "Charlie Chapman",
                 "image": "charlie_chapman",
+                "about": "Host of Launched, creator of Dark Noise, and developer advocate at RevenueCat.",
                 "links": {
                     "github": "https://github.com/charliemchapman",
                     "mastodon": "https://mastodon.social/@charliemchapman",
@@ -197,6 +250,7 @@
             {
                 "name": "Ryan Ashcraft",
                 "image": "ryan_ashcraft",
+                "about": "Independent developer of Foodnoms, a thoughtfully designed nutrition tracker for iPhone, iPad, and Mac that helps people improve their health through better nutrition. Previously worked at Confluent, Amplitude, and Yahoo.",
                 "links": {
                     "github": "https://github.com/ryanashcraft",
                     "mastodon": "https://mastodon.social/@ryanashcraft",
@@ -208,6 +262,7 @@
             {
                 "name": "Neem Serra",
                 "image": "neem_serra",
+                "about": "Principal iOS developer at Stitch Fix and lives in the St. Louis area. Neem loves to write Swift code with as many references as possible to Taylor Swift.",
                 "links": {
                     "github": "https://github.com/teamneem",
                     "twitter": "https://twitter.com/TeamNeem",
@@ -217,6 +272,7 @@
             {
                 "name": "Edward Sánchez",
                 "image": "edward_sanchez",
+                "about": "Designer with over a decade of experience crafting thoughtful, user-focused designs. Spent 9 years at Apple, including 5 on the Xcode team, focusing on visual design, iconography and animation. Also codes in Swift to build interactive prototypes.",
                 "links": {
                     "twitter": "https://twitter.com/edwardsanchez",
                     "website": "https://edwardsanchez.design"
@@ -233,7 +289,7 @@
     {
         "id": "breakfast-tuesday",
         "start": "2025-04-29T07:30:00-05:00",
-        "end": "2025-04-29T08:55:00-05:00",
+        "end": "2025-04-29T08:55:00-05:00"
     },
     {
         "id": "practical-morning-welcome-tuesday",
@@ -249,6 +305,7 @@
         "speakers": [{
             "name": "Matthew Cassinelli",
             "image": "matthew_cassinelli",
+            "about": "App Intents developer consultant and Shortcuts expert after being part of the Workflow team before it was acquired by Apple.",
             "links": {
                 "bluesky": "https://bsky.app/profile/matthewcassinelli.bsky.social",
                 "mastodon": "https://mastodon.social/@matthewcassinelli",
@@ -264,6 +321,7 @@
         "speakers": [{
             "name": "Matt Heaney",
             "image": "matt_heaney",
+            "about": "Mobile enginering manager passionate about giving back to the community. Whether it's teaching code online or sharing knowledge, Matt love helping others grow their skills and succeed in tech.",
             "links": {
                 "bluesky": "https://bsky.app/profile/mattheaney23.bsky.social",
                 "mastodon": "https://mastodon.social/@MattHeaney23",
@@ -272,12 +330,20 @@
         }]
     },
     {
-        "id": "session-tbd14",
+        "id": "session-laksh-chakraborty",
         "start": "2025-04-29T11:00:00-05:00",
         "end": "2025-04-29T11:45:00-05:00",
-        "description": "This Talk is Private(set)",
-        "speakers": [],
-        "emoji": "🔒"
+        "description": "Shaders: The Secret Sauce of Modern Visual Interactions",
+        "speakers": [{
+            "name": "Laksh Chakraborty",
+            "image": "laksh_chakraborty",
+            "about": "Been in the world of iOS development for over 5 years now, and in 2024 finally got the chance to begin doing it professionally. Recently graduated from NYU with a degree in Computer Science, and currently work at Typo* building a collaborative messenger designed for media-centric professionals.",
+            "links": {
+                "bluesky": "https://bsky.app/profile/laksh-chak.bsky.social",
+                "mastodon": "https://iosdev.space/@reftonull@hachyderm.io",
+                "twitter": "https://twitter.com/_nullref_"
+            }
+        }]
     },
     {
         "id": "lunch-tuesday",
@@ -289,25 +355,37 @@
         "id": "session-tbd15",
         "start": "2025-04-29T13:00:00-05:00",
         "end": "2025-04-29T13:45:00-05:00",
-        "description": "Even Spotlight Can’t Find This One Yet",
-        "speakers": [],
-        "emoji": "🔦"
-    },
-    {
-        "id": "session-tbd16",
-        "start": "2025-04-29T14:00:00-05:00",
-        "end": "2025-04-29T14:45:00-05:00",
-        "description": "Waiting for Josh Review",
-        "speakers": [],
-        "emoji": "👀"
-    },
-    {
-        "id": "session-tbd17",
-        "start": "2025-04-29T15:00:00-05:00",
-        "end": "2025-04-29T15:45:00-05:00",
-        "description": "One More Topping… I Mean, Thing",
+        "description": "TBD: One More Topping… I Mean, Thing",
         "speakers": [],
         "emoji": "🙈"
+    },
+    {
+        "id": "session-tyler-thompson",
+        "start": "2025-04-29T14:00:00-05:00",
+        "end": "2025-04-29T14:45:00-05:00",
+        "description": "How I built a Vapor website without HTML, CSS, or JavaScript",
+        "speakers": [{
+            "name": "Tyler Thompson",
+            "image": "tyler_thompson",
+            "about": "Lover of Swift, developer, and manager with about 18 years industry experience. Worked at companies both big and small. Regular contributor to the open source community and creator of Afluent, an open source Combine replacement built for Swift concurrency.",
+            "links": {}
+        }]
+    },
+    {
+        "id": "session-harlan-haskins",
+        "start": "2025-04-29T15:00:00-05:00",
+        "end": "2025-04-29T15:45:00-05:00",
+        "description": "Coordinate Spaces and You",
+        "speakers": [{
+            "name": "Harlan Haskins",
+            "image": "harlan_haskins",
+            "about": "Harlan currently leads engineering at typo.inc. Previously, he worked on UIKit and SwiftUI for visionOS for Apple and the Swift compiler.",
+            "links": {
+                "bluesky": "https://bsky.app/profile/harlanhaskins.com",
+                "mastodon": "https://mastodon.social/@harlan",
+                "twitter": "https://twitter.com/harlanhaskins"
+            }
+        }]
     },
     {
         "id": "special-concert",

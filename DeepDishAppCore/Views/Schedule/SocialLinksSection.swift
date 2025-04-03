@@ -63,7 +63,7 @@ struct SocialLinksSection<HeaderView: View>: View {
             label
         } else {
             Button {
-                if settingsController.openLinksInApp && OperatingSystem.current == .iOS {
+                if settingsController.openLinksInApp, OperatingSystem.current == .iOS {
                     shownUrl = url
                 } else {
                     openURL(url)
@@ -72,6 +72,7 @@ struct SocialLinksSection<HeaderView: View>: View {
                 label
                     .foregroundStyle(.primary)
             }
+            .buttonStyle(.plain)
         }
     }
 }

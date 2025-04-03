@@ -8,13 +8,13 @@
 import DeepDishCore
 import WidgetKit
 
-extension ScheduleWidget {
+public extension ScheduleWidget {
     struct Entry: TimelineEntry {
-        let date: Date
-        let widgetFamily: WidgetFamily
-        let mode: Mode
+        public let date: Date
+        public let widgetFamily: WidgetFamily
+        public let mode: Mode
 
-        enum Mode {
+        public enum Mode {
             case countdown(until: Date)
             case currentNext(currentEvent: Event?, nextEvents: [Event])
             case ended

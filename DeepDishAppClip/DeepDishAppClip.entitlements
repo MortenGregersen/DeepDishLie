@@ -10,5 +10,9 @@
 	<array>
 		<string>$(AppIdentifierPrefix)com.CoolYellowOwl.DeepDishLie</string>
 	</array>
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.com.CoolYellowOwl.DeepDishLie</string>
+	</array>
 </dict>
 </plist>

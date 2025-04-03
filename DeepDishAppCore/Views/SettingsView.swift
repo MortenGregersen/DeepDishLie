@@ -37,6 +37,11 @@ public struct SettingsView: View {
                             }
                         }
                         #endif
+                        if OperatingSystem.current == .macOS {
+                            Toggle(isOn: $settingsController.menuBarExtraShown) {
+                                Label("Show menu bar extra", systemImage: "menubar.arrow.up.rectangle")
+                            }
+                        }
                     }
                 }
                 Section("Schedule") {

@@ -25,3 +25,4 @@ SKIP_INSTALL = YES
 SUPPORTED_PLATFORMS = appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator
 SWIFT_EMIT_LOC_STRINGS = YES
 SWIFT_INSTALL_OBJC_HEADER = NO
+TARGETED_DEVICE_FAMILY = 1,2,4

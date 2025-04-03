@@ -14,8 +14,10 @@ import WidgetKit
 public class ScheduleController {
     public private(set) var days: [Day] = []
     public var firstEventDate: Date? { days.first?.events.first?.start }
+    public var selectedEvent: Event?
 
-    private static let cachedJsonFilename = "Schedule.json"
+    private static let cacheFolderUrl = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.CoolYellowOwl.DeepDishLie")
+    private static let cachedJsonUrl = cacheFolderUrl?.appending(component: "Schedule.json")
     private static let decoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
@@ -32,8 +34,7 @@ public class ScheduleController {
     }
 
     private static func loadCachedEvents() -> [Event]? {
-        guard let cacheFolderURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first,
-              let cachedJsonData = try? Data(contentsOf: cacheFolderURL.appending(component: cachedJsonFilename)) else { return nil }
+        guard let cachedJsonUrl, let cachedJsonData = try? Data(contentsOf: cachedJsonUrl) else { return nil }
         return try? decoder.decode([Event].self, from: cachedJsonData)
     }
 
@@ -44,8 +45,8 @@ public class ScheduleController {
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
             days = try chunkUpEvents(Self.decoder.decode([Event].self, from: data))
-            guard let cacheFolderURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else { return }
-            try data.write(to: cacheFolderURL.appending(component: Self.cachedJsonFilename))
+            guard let cachedJsonUrl = Self.cachedJsonUrl else { return }
+            try data.write(to: cachedJsonUrl)
             #if canImport(WidgetKit)
             WidgetCenter.shared.reloadAllTimelines()
             #endif
@@ -63,6 +64,10 @@ public class ScheduleController {
             }
         }
         return nil
+    }
+
+    public func dayName(for event: Event) -> String? {
+        days.first { $0.events.contains(where: { $0.id == event.id }) }?.name
     }
 
     private func chunkUpEvents(_ events: [Event]) -> [Day] {

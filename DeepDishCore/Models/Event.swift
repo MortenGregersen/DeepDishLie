@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum Event: Decodable, Equatable, Identifiable {
+public enum Event: Decodable, Equatable, Hashable, Identifiable {
     case practical(Session)
     case session(Session)
     case special(Session)
@@ -165,13 +165,13 @@ public enum Event: Decodable, Equatable, Identifiable {
     }
 }
 
-public struct Break: Decodable, Equatable, Identifiable {
+public struct Break: Decodable, Equatable, Hashable, Identifiable {
     public let id: String
     public let start: Date
     public let end: Date
 }
 
-public struct Session: Decodable, Equatable, Identifiable {
+public struct Session: Decodable, Equatable, Hashable, Identifiable {
     public let id: String
     public let start: Date
     public let end: Date
