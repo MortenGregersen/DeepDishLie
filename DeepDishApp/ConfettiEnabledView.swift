@@ -81,7 +81,8 @@ struct ConfettiEnabledView<Content>: View where Content: View {
                     openingAngle: .degrees(180),
                     closingAngle: .degrees(0),
                     radius: 160,
-                    repetitionInterval: 1)
+                    repetitionInterval: 1,
+                    hapticFeedback: false)
             }
         #elseif os(macOS)
             .onAppear {

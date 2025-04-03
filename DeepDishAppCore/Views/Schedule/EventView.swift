@@ -116,6 +116,20 @@ struct EventView: View {
                 confettiTrigger.toggle()
             }
         }
+        .overlay(alignment: .top) {
+            ConfettiCannon(
+                trigger: $confettiTrigger,
+                num: 20,
+                confettis: [.text("🇩🇰")],
+                confettiSize: 50,
+                rainHeight: 1200,
+                fadesOut: true,
+                openingAngle: .degrees(180),
+                closingAngle: .degrees(0),
+                radius: 160,
+                repetitionInterval: 1,
+                hapticFeedback: false)
+        }
         #if !os(macOS)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
@@ -129,19 +143,6 @@ struct EventView: View {
                 .presentationCompactAdaptation(.fullScreenCover)
         }
         #endif
-        .overlay(alignment: .top) {
-            ConfettiCannon(
-                trigger: $confettiTrigger,
-                num: 20,
-                confettis: [.text("🇩🇰")],
-                confettiSize: 50,
-                rainHeight: 1200,
-                fadesOut: true,
-                openingAngle: .degrees(180),
-                closingAngle: .degrees(0),
-                radius: 160,
-                repetitionInterval: 1)
-        }
     }
 
     private func imageWidth(width: CGFloat, items: Int) -> CGFloat {
