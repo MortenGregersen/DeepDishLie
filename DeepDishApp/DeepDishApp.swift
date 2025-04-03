@@ -19,7 +19,6 @@ struct DeepDishApp: App {
     @State private var weatherController = WeatherController()
     @State private var giveawayController = GiveawayController()
     @State private var selectedTab: Tab
-    @Environment(\.dismissWindow) private var dismissWindow
     @Environment(\.openWindow) private var openWindow
     @Environment(\.scenePhase) private var scenePhase
     private let mainWindowId = "MainWindow"
@@ -60,10 +59,12 @@ struct DeepDishApp: App {
             CommandGroup(replacing: .undoRedo) {}
             CommandGroup(replacing: .help) {}
             CommandMenu("Tabs") {
-                Button("Countdown") {
-                    selectedTab = .countdown
+                if let countdownDate {
+                    Button("Countdown") {
+                        selectedTab = .countdown
+                    }
+                    .keyboardShortcut("0", modifiers: .command)
                 }
-                .keyboardShortcut("0", modifiers: .command)
                 Button("Schedule") {
                     selectedTab = .schedule
                 }
