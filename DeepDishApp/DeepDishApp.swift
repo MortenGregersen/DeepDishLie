@@ -62,8 +62,6 @@ struct DeepDishApp: App {
                     .padding(.vertical, 8)
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                        Text("Deep Dish Unofficial")
-                            .font(.headline)
                         Button {
                             selectedTab = .schedule
                             showMainWindow()
@@ -84,15 +82,30 @@ struct DeepDishApp: App {
                         } label: {
                             Label("About", systemImage: "text.badge.star")
                         }
+                        Spacer()
+                        Divider()
+                        Spacer()
+                        HStack {
+                            Text("🍕 Confetti")
+                            Spacer()
+                            Toggle("Confetti", isOn: $settingsController.enableRandomConfetti)
+                                .toggleStyle(.switch)
+                                .labelsHidden()
+                        }
+                        if settingsController.enableRandomConfetti {
+                            Slider(value: $settingsController.randomConfettiIntensity, in: 1 ... 5, step: 1)
+                        }
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .buttonStyle(.borderless)
+                    .animation(.easeInOut, value: settingsController.enableRandomConfetti)
                     Spacer()
                     FlickeringPizzaView(repeating: true)
                 }
             }
             .padding()
             .frame(minWidth: 340)
+            .colorScheme(.dark)
             .foregroundStyle(Color.white)
             .background(Color.splashBackground)
         }
