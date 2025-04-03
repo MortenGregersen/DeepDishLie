@@ -5,7 +5,9 @@
 //  Created by Morten Bjerg Gregersen on 28/04/2024.
 //
 
+#if canImport(ConfettiSwiftUI)
 import ConfettiSwiftUI
+#endif
 import DeepDishCore
 import SwiftUI
 
@@ -116,6 +118,7 @@ struct EventView: View {
                 confettiTrigger.toggle()
             }
         }
+        #if canImport(ConfettiSwiftUI)
         .overlay(alignment: .top) {
             ConfettiCannon(
                 trigger: $confettiTrigger,
@@ -130,6 +133,7 @@ struct EventView: View {
                 repetitionInterval: 1,
                 hapticFeedback: false)
         }
+        #endif
         #if !os(macOS)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
