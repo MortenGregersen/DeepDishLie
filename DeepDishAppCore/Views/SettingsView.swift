@@ -35,6 +35,9 @@ public struct SettingsView: View {
                                     .padding(.trailing)
                             }
                         }
+                        Toggle(isOn: $settingsController.menuBarExtraShown) {
+                            Label("Show menu bar extra", systemImage: "menubar.arrow.up.rectangle")
+                        }
                     }
                 }
                 Section("Schedule") {

@@ -25,6 +25,7 @@
 		5AA0A5FA2D9D71CF00A115C2 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A5F92D9D71CF00A115C2 /* TelemetryDeck */; };
 		5AA0A5FC2D9D725100A115C2 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A5FB2D9D725100A115C2 /* TelemetryDeck */; };
 		5AA0A5FE2D9D725600A115C2 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A5FD2D9D725600A115C2 /* TelemetryDeck */; };
+		5AA0A8FA2D9E822700A115C2 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A8F92D9E822700A115C2 /* Defaults */; };
 		5AA0C63B2D88BF1400AF6C14 /* DeepDishWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5AA0C62E2D88BF1300AF6C14 /* DeepDishWatchApp.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5AA0C66E2D88C2F800AF6C14 /* DeepDishAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; };
 		5AA0C66F2D88C2F800AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -382,6 +383,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AA0A8FA2D9E822700A115C2 /* Defaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +614,7 @@
 			);
 			name = DeepDishCore;
 			packageProductDependencies = (
+				5AA0A8F92D9E822700A115C2 /* Defaults */,
 			);
 			productName = DeepDishCore;
 			productReference = 5A81953E2D61493D0048354A /* DeepDishCore.framework */;
@@ -793,6 +796,7 @@
 			packageReferences = (
 				5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 				5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */,
+				5AA0A8F82D9E822700A115C2 /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = 5A3EFB0329F7D53200D75F5E /* Products */;
 			projectDirPath = "";
@@ -1311,6 +1315,14 @@
 				minimumVersion = 2.7.2;
 			};
 		};
+		5AA0A8F82D9E822700A115C2 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1338,6 +1350,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */;
 			productName = TelemetryDeck;
+		};
+		5AA0A8F92D9E822700A115C2 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AA0A8F82D9E822700A115C2 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
 		};
 		5AA0C6AE2D88C97700AF6C14 /* TelemetryDeck */ = {
 			isa = XCSwiftPackageProductDependency;

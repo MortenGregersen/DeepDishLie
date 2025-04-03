@@ -5,9 +5,10 @@
 //  Created by Morten Bjerg Gregersen on 27/04/2024.
 //
 
+import Defaults
 import Foundation
 
-public enum TemperatureScale: String {
+public enum TemperatureScale: String, Defaults.Serializable {
     case fahrenheit
     case celsius
     case kelvin

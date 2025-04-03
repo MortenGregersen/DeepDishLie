@@ -55,7 +55,14 @@ struct DeepDishApp: App {
                         .environment(settingsController)
                 }
         }
-        MenuBarExtra("Deep Dish Unofficial", image: "MenuBarExtra") {
+        MenuBarExtra("Deep Dish Unofficial", image: "MenuBarExtra", isInserted: .init(get: {
+            settingsController.menuBarExtraShown
+        }, set: {
+            // For some reason this is called multiple time with the same value
+            if settingsController.menuBarExtraShown != $0 {
+                settingsController.menuBarExtraShown = $0
+            }
+        })) {
             VStack {
                 MenuBarExtraWidget()
                 Divider()
@@ -98,9 +105,12 @@ struct DeepDishApp: App {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .buttonStyle(.borderless)
-                    .animation(.easeInOut, value: settingsController.enableRandomConfetti)
+                    .animation(.default, value: settingsController.enableRandomConfetti)
                     Spacer()
                     FlickeringPizzaView(repeating: true)
+                        .onTapGesture {
+                            settingsController.triggerConfetti()
+                        }
                 }
             }
             .padding()
@@ -115,7 +125,7 @@ struct DeepDishApp: App {
             SettingsView()
                 .environment(settingsController)
         }
-        .defaultSize(width: 400, height: 350)
+        .defaultSize(width: 400, height: 400)
         #else
         WindowGroup {
             mainWindowBody
