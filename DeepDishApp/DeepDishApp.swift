@@ -55,6 +55,33 @@ struct DeepDishApp: App {
                         .environment(settingsController)
                 }
         }
+        .commands {
+            CommandGroup(replacing: .pasteboard) {}
+            CommandGroup(replacing: .undoRedo) {}
+            CommandGroup(replacing: .help) {}
+            CommandMenu("Tabs") {
+                Button("Countdown") {
+                    selectedTab = .countdown
+                }
+                .keyboardShortcut("0", modifiers: .command)
+                Button("Schedule") {
+                    selectedTab = .schedule
+                }
+                .keyboardShortcut("1", modifiers: .command)
+                Button("Weather") {
+                    selectedTab = .weather
+                }
+                .keyboardShortcut("2", modifiers: .command)
+                Button("Giveaway") {
+                    selectedTab = .giveaway
+                }
+                .keyboardShortcut("3", modifiers: .command)
+                Button("About") {
+                    selectedTab = .about
+                }
+                .keyboardShortcut("4", modifiers: .command)
+            }
+        }
         MenuBarExtra("Deep Dish Unofficial", image: "MenuBarExtra", isInserted: .init(get: {
             settingsController.menuBarExtraShown
         }, set: {
