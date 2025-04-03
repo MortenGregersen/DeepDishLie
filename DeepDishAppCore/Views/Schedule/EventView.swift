@@ -5,9 +5,7 @@
 //  Created by Morten Bjerg Gregersen on 28/04/2024.
 //
 
-#if canImport(ConfettiSwiftUI)
 import ConfettiSwiftUI
-#endif
 import DeepDishCore
 import SwiftUI
 
@@ -131,7 +129,6 @@ struct EventView: View {
                 .presentationCompactAdaptation(.fullScreenCover)
         }
         #endif
-        #if canImport(ConfettiSwiftUI)
         .overlay(alignment: .top) {
             ConfettiCannon(
                 trigger: $confettiTrigger,
@@ -145,7 +142,6 @@ struct EventView: View {
                 radius: 160,
                 repetitionInterval: 1)
         }
-        #endif
     }
 
     private func imageWidth(width: CGFloat, items: Int) -> CGFloat {
