@@ -45,7 +45,7 @@ public struct GiveawayView: View {
                     }
                     Text("Enter for a chance to win a one-year subscription to AppDab Pro, including access to the features powered by AppDab Intelligence ✨")
                         .multilineTextAlignment(.center)
-                        .padding(.top, 8)
+                        .padding(.vertical, 8)
                         .ifOS(.macOS) { $0.frame(maxWidth: 450) }
                     VStack {
                         if !giveawayInfo.winners.isEmpty {
@@ -64,10 +64,10 @@ public struct GiveawayView: View {
                             }
                         } else if !giveawayInfo.channel.isEmpty {
                             Text("Join the raffle by visiting the **\(giveawayInfo.channel)** channel in the Deep Dish Swift 2025 Discord server.")
-                                .font(.title3)
+                                .font(.headline)
                         } else {
                             Text("Details on how to enter the AppDab Pro Raffle will be provided during the Deep Dish Swift 2025 conference.")
-                                .font(.title3)
+                                .font(.headline)
                         }
                     }
                     .multilineTextAlignment(.center)
@@ -80,7 +80,7 @@ public struct GiveawayView: View {
                             .stroke(Color.accentColor, lineWidth: 2)
                     }
                     .padding(.vertical)
-                    Text("Read more about AppDab at [AppDab.app](https://appdab.app) 🕺")
+                    Text("Read more about AppDab on [AppDab.app](https://appdab.app) 🕺")
                 }
                 .padding(.top)
                 .padding(.horizontal)
