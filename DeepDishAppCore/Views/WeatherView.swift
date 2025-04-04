@@ -54,42 +54,55 @@ public struct WeatherView: View {
                         verdict(weather: weather)
                             .padding(.top, 8)
                         if OperatingSystem.current != .watchOS {
-                            Button {
-                                openURL(URL(string: "https://apps.apple.com/us/app/please-dont-rain/id6444577668")!)
-                            } label: {
-                                HStack {
-                                    Image("please-dont-rain", bundle: .core)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 70)
-                                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                                    VStack(alignment: .leading) {
-                                        Text("Get more weather info in")
-                                        Text("Please don't rain")
-                                            .font(.title)
-                                            .fontWeight(.bold)
+                            let pleaseDontRainView = HStack {
+                                Image("please-dont-rain", bundle: .core)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: OperatingSystem.current == .tvOS ? 150 : 70)
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                                VStack(alignment: .leading) {
+                                    Text("Get more weather info in")
+                                    Text("Please don't rain")
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                }
+                            }
+                            VStack {
+                                if OperatingSystem.current == .tvOS {
+                                    pleaseDontRainView
+                                } else {
+                                    Button {
+                                        openURL(URL(string: "https://apps.apple.com/us/app/please-dont-rain/id6444577668")!)
+                                    } label: {
+                                        pleaseDontRainView
                                     }
+                                    .buttonStyle(.borderless)
                                 }
                             }
                             .padding(.top, 16)
-                            .buttonStyle(.borderless)
                         }
                         if let attribution = weatherController.attribution {
                             VStack(spacing: 8) {
                                 Text("Forecast data provided by")
                                     .font(.caption)
-                                Link(destination: attribution.legalPageURL) {
-                                    VStack(spacing: 4) {
-                                        let imageUrl = colorScheme == .light ? attribution.combinedMarkLightURL : attribution.combinedMarkDarkURL
-                                        AsyncImage(url: imageUrl) { image in
-                                            image
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(height: 15)
-                                        } placeholder: {}
-                                        Text("and other sources")
-                                            .font(.caption)
+                                let attributionView = VStack(spacing: 4) {
+                                    let imageUrl = colorScheme == .light ? attribution.combinedMarkLightURL : attribution.combinedMarkDarkURL
+                                    AsyncImage(url: imageUrl) { image in
+                                        image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(height: 15)
+                                    } placeholder: {}
+                                    Text("and other sources")
+                                        .font(.caption)
+                                }
+                                .focusable()
+                                if OperatingSystem.current != .watchOS, OperatingSystem.current != .tvOS {
+                                    Link(destination: attribution.legalPageURL) {
+                                        attributionView
                                     }
+                                } else {
+                                    attributionView
                                 }
                             }
                             .padding(.top, 16)
