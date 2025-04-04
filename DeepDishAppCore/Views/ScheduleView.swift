@@ -60,6 +60,7 @@ public struct ScheduleView: View {
                                     showsSettings = true
                                 } label: {
                                     Label("Settings", systemImage: "gear")
+                                        .ifOS(.tvOS) { $0.labelStyle(.titleOnly) }
                                 }
                             }
                         }

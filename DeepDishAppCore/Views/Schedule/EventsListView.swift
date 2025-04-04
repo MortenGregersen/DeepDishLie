@@ -22,9 +22,10 @@ public struct EventsListView: View {
         List(scheduleController.days, selection: $scheduleController.selectedEvent) { day in
             Section {
                 ForEach(day.events) { event in
-                    EventRow(dayName: day.name, event: event, dateFormatter: dateFormatter)
-                        .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
-                        .tag(event)
+                    NavigationLink(value: event) {
+                        EventRow(dayName: day.name, event: event, dateFormatter: dateFormatter)
+                            .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
+                    }
                 }
             } header: {
                 let text = Text(day.name)

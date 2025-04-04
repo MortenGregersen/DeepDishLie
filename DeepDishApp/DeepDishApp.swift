@@ -7,7 +7,9 @@
 
 import DeepDishAppCore
 import DeepDishCore
+#if canImport(DeepDishWidgetCore)
 import DeepDishWidgetCore
+#endif
 import SwiftUI
 import TelemetryDeck
 
@@ -19,7 +21,9 @@ struct DeepDishApp: App {
     @State private var weatherController = WeatherController()
     @State private var giveawayController = GiveawayController()
     @State private var selectedTab: Tab
+    #if !os(tvOS)
     @Environment(\.openWindow) private var openWindow
+    #endif
     @Environment(\.scenePhase) private var scenePhase
     private let mainWindowId = "MainWindow"
     private let countdownDate: Date?
@@ -59,7 +63,7 @@ struct DeepDishApp: App {
             CommandGroup(replacing: .undoRedo) {}
             CommandGroup(replacing: .help) {}
             CommandMenu("Tabs") {
-                if let countdownDate {
+                if countdownDate != nil {
                     Button("Countdown") {
                         selectedTab = .countdown
                     }
@@ -108,7 +112,7 @@ struct DeepDishApp: App {
                             openWindow(id: mainWindowId)
                             showMainWindow()
                         } label: {
-                            Label("Wu with the Weather", systemImage: "thermometer.sun")
+                            Label("Weather", systemImage: "thermometer.sun")
                         }
                         Button {
                             selectedTab = .about

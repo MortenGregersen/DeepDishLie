@@ -27,6 +27,7 @@ public struct SettingsView: View {
                                 Text("🍕")
                             }
                         }
+                        #if !os(tvOS)
                         if settingsController.enableRandomConfetti {
                             LabeledContent {
                                 Slider(value: $settingsController.randomConfettiIntensity, in: 1 ... 5, step: 1)
@@ -35,6 +36,7 @@ public struct SettingsView: View {
                                     .padding(.trailing)
                             }
                         }
+                        #endif
                         if OperatingSystem.current == .macOS {
                             Toggle(isOn: $settingsController.menuBarExtraShown) {
                                 Label("Show menu bar extra", systemImage: "menubar.arrow.up.rectangle")
@@ -73,10 +75,12 @@ public struct SettingsView: View {
                     }
                 }
             }
+            #if !os(tvOS)
             .toggleStyle(.switch)
+            #endif
             .animation(.default, value: settingsController.enableRandomConfetti)
             .navigationTitle("Settings")
-            #if !os(macOS)
+            #if !os(macOS) && !os(tvOS)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)

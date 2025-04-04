@@ -15,7 +15,11 @@ struct EventRow: View {
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     private let imageSize: CGFloat = OperatingSystem.current == .watchOS ? 30 : 50
-    private let emojiFont: Font = OperatingSystem.current == .watchOS ? .title3 : .largeTitle
+    private let emojiFont: Font = switch OperatingSystem.current {
+    case .watchOS: .title3
+    case .tvOS: .headline
+    default: .largeTitle
+    }
 
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
