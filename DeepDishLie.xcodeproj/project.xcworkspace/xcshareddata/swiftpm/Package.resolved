@@ -1,13 +1,13 @@
 {
-  "originHash" : "f3b8bf4be5d8d9c651f49a223253b0f80fe4133a042b2aff2e7edabf106eec5b",
+  "originHash" : "2f84339fb5bd842a1ee0910cd52ff5d2ce73e57608231c7f980bafa0fc2887dc",
   "pins" : [
     {
       "identity" : "confettiswiftui",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/simibac/ConfettiSwiftUI",
+      "location" : "https://github.com/MortenGregersen/ConfettiSwiftUI",
       "state" : {
-        "revision" : "77ce21c82cc5fa608ac921a0dea09dd85b5432c7",
-        "version" : "2.0.2"
+        "branch" : "tvos-support",
+        "revision" : "4fa5cab49c0aaa3b4989ba9221e9e12ea97a2339"
       }
     },
     {

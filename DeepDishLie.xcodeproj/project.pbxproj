@@ -21,7 +21,7 @@
 		5A8195CC2D614E240048354A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195212D6147910048354A /* WidgetKit.framework */; };
 		5A8195CD2D614E240048354A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195232D6147910048354A /* SwiftUI.framework */; };
 		5A8195D82D614E250048354A /* DeepDishWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A8195CB2D614E240048354A /* DeepDishWidget.appex */; platformFilters = (ios, macos, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5AA0A5F82D9D70EC00A115C2 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; platformFilters = (ios, macos, ); productRef = 5AA0A5F72D9D70EC00A115C2 /* ConfettiSwiftUI */; };
+		5AA0A5F82D9D70EC00A115C2 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; platformFilters = (ios, macos, tvos, ); productRef = 5AA0A5F72D9D70EC00A115C2 /* ConfettiSwiftUI */; };
 		5AA0A5FA2D9D71CF00A115C2 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A5F92D9D71CF00A115C2 /* TelemetryDeck */; };
 		5AA0A5FC2D9D725100A115C2 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A5FB2D9D725100A115C2 /* TelemetryDeck */; };
 		5AA0A5FE2D9D725600A115C2 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A5FD2D9D725600A115C2 /* TelemetryDeck */; };
@@ -1309,10 +1309,10 @@
 		};
 		5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
+			repositoryURL = "https://github.com/MortenGregersen/ConfettiSwiftUI";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				branch = "tvos-support";
+				kind = branch;
 			};
 		};
 		5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */ = {
