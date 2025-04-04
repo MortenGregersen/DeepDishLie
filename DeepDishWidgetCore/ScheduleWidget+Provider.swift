@@ -39,8 +39,7 @@ public extension ScheduleWidget {
             var entries: [Entry] = []
             let currentDate = Date()
             
-            let upcomingEvents = allEvents.suffix(from: 2)
-                .filter { $0.start > currentDate }
+            let upcomingEvents = allEvents.filter { $0.start > currentDate }
             
             let speedRun = false
             var dummyDate = Date.now.addingTimeInterval(2)
