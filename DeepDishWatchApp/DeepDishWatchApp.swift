@@ -14,6 +14,7 @@ struct DeepDishWatchApp: App {
     @State private var settingsController = SettingsController()
     @State private var scheduleController = ScheduleController()
     @State private var weatherController = WeatherController()
+    @State private var giveawayController = GiveawayController()
     @Environment(\.scenePhase) private var scenePhase
 
     var body: some Scene {
@@ -35,7 +36,13 @@ struct DeepDishWatchApp: App {
                     .tabItem {
                         Label("Weather", systemImage: "thermometer.sun")
                     }
+                GiveawayView()
+                    .environment(giveawayController)
+                    .tabItem {
+                        Label("Giveaway", systemImage: "app.gift")
+                    }
                 AboutView()
+                    .environment(scheduleController)
                     .tabItem {
                         Label("About", systemImage: "text.badge.star")
                     }
