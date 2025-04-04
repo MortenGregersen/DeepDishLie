@@ -6,7 +6,9 @@
 //
 
 import Foundation
+#if canImport(WidgetKit)
 import WidgetKit
+#endif
 
 @Observable
 public class ScheduleController {
@@ -45,7 +47,9 @@ public class ScheduleController {
             days = try chunkUpEvents(Self.decoder.decode([Event].self, from: data))
             guard let cachedJsonUrl = Self.cachedJsonUrl else { return }
             try data.write(to: cachedJsonUrl)
+            #if canImport(WidgetKit)
             WidgetCenter.shared.reloadAllTimelines()
+            #endif
         } catch {
             // Fail silently
         }

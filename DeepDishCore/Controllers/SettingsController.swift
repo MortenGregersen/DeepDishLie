@@ -13,6 +13,7 @@ public class SettingsController {
     public var enableRandomConfetti: Bool { didSet {
         Defaults[.enableRandomConfetti] = enableRandomConfetti
         if enableRandomConfetti {
+            triggerConfetti()
             startConfettiTimer()
         } else {
             stopConfettiTimer()

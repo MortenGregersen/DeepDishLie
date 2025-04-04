@@ -81,6 +81,7 @@ struct EventView: View {
                     Text("\(dayName) \(dateFormatter.string(from: event.start)) - \(dateFormatter.string(from: event.end))")
                 }
             }
+            .ifOS(.tvOS) { $0.focusable() }
             .listRowBackground(Color.accentColor)
             .font(.headline)
             .fontWeight(.semibold)
@@ -134,7 +135,7 @@ struct EventView: View {
                 hapticFeedback: false)
         }
         #endif
-        #if !os(macOS)
+        #if !os(macOS) && !os(tvOS)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)

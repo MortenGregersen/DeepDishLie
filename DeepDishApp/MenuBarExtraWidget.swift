@@ -5,6 +5,7 @@
 //  Created by Morten Bjerg Gregersen on 02/04/2025.
 //
 
+#if os(macOS)
 import DeepDishCore
 import DeepDishWidgetCore
 import SwiftUI
@@ -27,3 +28,4 @@ struct MenuBarExtraWidget: View {
         }
     }
 }
+#endif

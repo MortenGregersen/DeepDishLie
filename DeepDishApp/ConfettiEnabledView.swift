@@ -15,9 +15,11 @@ struct ConfettiEnabledView<Content>: View where Content: View {
     @State private var showsSettings = false
     @Environment(SettingsController.self) private var settingsController
     @Environment(WelcomeController.self) private var welcomeController
+    #if !os(tvOS)
     @Environment(\.requestReview) private var requestReview
+    #endif
     #if os(macOS)
-        @State private var confettiManager = MacConfettiManager()
+    @State private var confettiManager = MacConfettiManager()
     #endif
 
     var body: some View {
@@ -26,7 +28,9 @@ struct ConfettiEnabledView<Content>: View where Content: View {
             .onAppear {
                 if welcomeController.hasSeenWelcome, !welcomeController.hasRequestedReview {
                     welcomeController.hasRequestedReview = true
+                    #if !os(tvOS)
                     requestReview()
+                    #endif
                 }
             }
             .overlay(alignment: .bottom) {
@@ -66,7 +70,7 @@ struct ConfettiEnabledView<Content>: View where Content: View {
             .sheet(isPresented: $showsSettings) {
                 SettingsView()
             }
-        #if canImport(UIKit)
+        #if canImport(UIKit) && !os(tvOS)
             .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
                 settingsController.triggerConfetti()
             }
