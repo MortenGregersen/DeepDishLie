@@ -59,7 +59,7 @@ struct DeepDishApp: App {
             CommandGroup(replacing: .undoRedo) {}
             CommandGroup(replacing: .help) {}
             CommandMenu("Tabs") {
-                if let countdownDate {
+                if countdownDate != nil {
                     Button("Countdown") {
                         selectedTab = .countdown
                     }
@@ -108,7 +108,7 @@ struct DeepDishApp: App {
                             openWindow(id: mainWindowId)
                             showMainWindow()
                         } label: {
-                            Label("Wu with the Weather", systemImage: "thermometer.sun")
+                            Label("Weather", systemImage: "thermometer.sun")
                         }
                         Button {
                             selectedTab = .about
