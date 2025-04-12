@@ -1329,10 +1329,10 @@
 		};
 		5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MortenGregersen/ConfettiSwiftUI";
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
 			requirement = {
-				branch = "tvos-support";
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 		5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */ = {
