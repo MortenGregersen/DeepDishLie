@@ -5,7 +5,9 @@
 //  Created by Morten Bjerg Gregersen on 19/03/2025.
 //
 
+#if canImport(ConfettiSwiftUI)
 import ConfettiSwiftUI
+#endif
 import DeepDishAppCore
 import DeepDishCore
 import SwiftUI
@@ -70,7 +72,7 @@ struct ConfettiEnabledView<Content>: View where Content: View {
             .sheet(isPresented: $showsSettings) {
                 SettingsView()
             }
-        #if canImport(UIKit) && !os(tvOS)
+        #if canImport(ConfettiSwiftUI) && canImport(UIKit) && !os(tvOS)
             .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
                 settingsController.triggerConfetti()
             }

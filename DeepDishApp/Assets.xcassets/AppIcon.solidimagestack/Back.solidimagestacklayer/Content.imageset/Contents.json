@@ -1,6 +1,9 @@
 {
   "images" : [
-
+    {
+      "idiom" : "vision",
+      "scale" : "2x"
+    }
   ],
   "info" : {
     "author" : "xcode",
