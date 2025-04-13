@@ -75,10 +75,11 @@ public extension ScheduleWidget {
                             .font(.system(size: 14))
                     }
                     if let nextEvent = nextEvents.first {
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .leading, spacing: 2) {
                             let upNext = Text("Up next (\(nextEvent.start.formatted(date: .omitted, time: .shortened))):")
                                 .font(.caption)
                                 .fontWeight(.bold)
+                                .foregroundStyle(.secondary)
                             ViewThatFits(in: .horizontal) {
                                 upNext.fixedSize(horizontal: false, vertical: true)
                                 upNext.minimumScaleFactor(0.5)
