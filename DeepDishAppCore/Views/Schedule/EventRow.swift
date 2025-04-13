@@ -98,10 +98,8 @@ struct EventRow: View {
     }
 
     private func speakerImage(_ speaker: Speaker) -> some View {
-        Image(speaker.image, bundle: .core)
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(height: imageSize)
+        SpeakerImage(speaker: speaker)
+            .frame(width: imageSize, height: imageSize)
             .clipShape(Circle())
             .background {
                 Circle()
@@ -156,5 +154,5 @@ struct EventRow: View {
 #Preview {
     @Previewable @State var scheduleController = ScheduleController.forPreview()
     @Previewable @State var settingsController = SettingsController.forPreview()
-    EventRow(dayName: scheduleController.days.first!.name, event: scheduleController.days.first!.events[4], dateFormatter: Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock))
+    EventRow(dayName: scheduleController.days.first!.name, event: scheduleController.days.first!.events[3], dateFormatter: Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock))
 }

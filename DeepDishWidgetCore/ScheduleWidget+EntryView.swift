@@ -106,7 +106,6 @@ public extension ScheduleWidget {
                 let showTime: Bool
                 let widgetFamily: WidgetFamily
 
-                
                 var subtitle: String? {
                     var subtitleComponents = [String]()
                     if showTime {
@@ -147,9 +146,7 @@ public extension ScheduleWidget {
                                 Spacer()
                                 Group {
                                     if let speaker = event.speakers?.first {
-                                        Image(speaker.image, bundle: .core)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
+                                        SpeakerImage(speaker: speaker)
                                             .frame(height: 50)
                                             .clipShape(Circle())
                                             .background {
