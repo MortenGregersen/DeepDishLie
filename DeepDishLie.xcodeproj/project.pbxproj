@@ -282,6 +282,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
+				"Bundle+WidgetCore.swift",
 				DeepDishWidgetCore.h,
 				ScheduleWidget.swift,
 				"ScheduleWidget+Entry.swift",

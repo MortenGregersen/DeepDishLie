@@ -75,10 +75,11 @@ public extension ScheduleWidget {
                             .font(.system(size: 14))
                     }
                     if let nextEvent = nextEvents.first {
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .leading, spacing: 2) {
                             let upNext = Text("Up next (\(nextEvent.start.formatted(date: .omitted, time: .shortened))):")
                                 .font(.caption)
                                 .fontWeight(.bold)
+                                .foregroundStyle(.secondary)
                             ViewThatFits(in: .horizontal) {
                                 upNext.fixedSize(horizontal: false, vertical: true)
                                 upNext.minimumScaleFactor(0.5)
@@ -106,7 +107,6 @@ public extension ScheduleWidget {
                 let showTime: Bool
                 let widgetFamily: WidgetFamily
 
-                
                 var subtitle: String? {
                     var subtitleComponents = [String]()
                     if showTime {
@@ -147,9 +147,7 @@ public extension ScheduleWidget {
                                 Spacer()
                                 Group {
                                     if let speaker = event.speakers?.first {
-                                        Image(speaker.image, bundle: .core)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
+                                        SpeakerImage(speaker: speaker)
                                             .frame(height: 50)
                                             .clipShape(Circle())
                                             .background {
