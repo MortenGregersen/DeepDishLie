@@ -15,8 +15,8 @@ public struct SpeakerImage: View {
     }
 
     public var body: some View {
-        if let uiImage = UIImage(named: speaker.image, in: .core, with: nil) {
-            Image(uiImage: uiImage)
+        if let image = PlatformImage.createFrom(name: speaker.image, bundle: .core) {
+            Image(platformImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         } else if let fallbackImageUrl = speaker.fallbackImageUrl {
