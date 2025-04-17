@@ -6,7 +6,7 @@
 //
 
 #if canImport(ConfettiSwiftUI)
-    import ConfettiSwiftUI
+import ConfettiSwiftUI
 #endif
 import DeepDishAppCore
 import DeepDishCore
@@ -18,24 +18,40 @@ struct ConfettiEnabledView<Content>: View where Content: View {
     @Environment(SettingsController.self) private var settingsController
     @Environment(WelcomeController.self) private var welcomeController
     #if !os(tvOS)
-        @Environment(\.requestReview) private var requestReview
+    @Environment(\.requestReview) private var requestReview
     #endif
     #if os(macOS)
-        @State private var confettiManager = MacConfettiManager()
+    @State private var confettiManager = MacConfettiManager()
     #endif
 
     var body: some View {
         @Bindable var settingsController = settingsController
-        GeometryReader { _ in
+        GeometryReader { geometry in
             content()
                 .onAppear {
                     if welcomeController.hasSeenWelcome, !welcomeController.hasRequestedReview {
                         welcomeController.hasRequestedReview = true
                         #if !os(tvOS)
-                            requestReview()
+                        requestReview()
                         #endif
                     }
                 }
+            #if canImport(ConfettiSwiftUI) && canImport(UIKit) && !os(tvOS)
+                .overlay(alignment: .top) {
+                    ConfettiCannon(
+                        trigger: $settingsController.confettiTrigger,
+                        num: 10,
+                        confettis: [.text("🍕")],
+                        confettiSize: geometry.size.height/15,
+                        rainHeight: 1200,
+                        fadesOut: true,
+                        openingAngle: .degrees(180),
+                        closingAngle: .degrees(0),
+                        radius: geometry.size.width/2,
+                        repetitionInterval: 1,
+                        hapticFeedback: false)
+                }
+            #endif
         }
         .sheet(isPresented: $showsSettings) {
             SettingsView()
@@ -43,22 +59,6 @@ struct ConfettiEnabledView<Content>: View where Content: View {
         #if os(iOS)
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
             settingsController.triggerConfetti()
-        }
-        #endif
-        #if canImport(ConfettiSwiftUI) && canImport(UIKit) && !os(tvOS)
-        .overlay(alignment: .top) {
-            ConfettiCannon(
-                trigger: $settingsController.confettiTrigger,
-                num: 10,
-                confettis: [.text("🍕")],
-                confettiSize: geometry.size.height/15,
-                rainHeight: 1200,
-                fadesOut: true,
-                openingAngle: .degrees(180),
-                closingAngle: .degrees(0),
-                radius: geometry.size.width/2,
-                repetitionInterval: 1,
-                hapticFeedback: false)
         }
         #elseif os(macOS)
         .onAppear {

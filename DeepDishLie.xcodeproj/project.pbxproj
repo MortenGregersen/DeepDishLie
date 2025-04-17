@@ -11,8 +11,8 @@
 		5A0A6ECC2D9D382400C4CAC3 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		5A0A6ECD2D9D382400C4CAC3 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0A6EC72D9D382400C4CAC3 /* TelemetryDeck */; };
 		5A0A6ED82D9D389700C4CAC3 /* DeepDishWidgetCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0A6ED22D9D382400C4CAC3 /* DeepDishWidgetCore.framework */; };
-		5A0A6EDD2D9D38A100C4CAC3 /* DeepDishWidgetCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0A6ED22D9D382400C4CAC3 /* DeepDishWidgetCore.framework */; platformFilters = (ios, macos, tvos, ); };
-		5A0A6EDE2D9D38A100C4CAC3 /* DeepDishWidgetCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0A6ED22D9D382400C4CAC3 /* DeepDishWidgetCore.framework */; platformFilters = (ios, macos, tvos, ); settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A0A6EDD2D9D38A100C4CAC3 /* DeepDishWidgetCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0A6ED22D9D382400C4CAC3 /* DeepDishWidgetCore.framework */; platformFilters = (ios, macos, xros, ); };
+		5A0A6EDE2D9D38A100C4CAC3 /* DeepDishWidgetCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0A6ED22D9D382400C4CAC3 /* DeepDishWidgetCore.framework */; platformFilters = (ios, macos, xros, ); settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A28A90329F803B100B02EE6 /* DeepDishSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90229F803B100B02EE6 /* DeepDishSnapshots.swift */; };
 		5A28A90C29F803DF00B02EE6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */; };
 		5A8195462D61493D0048354A /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
@@ -20,7 +20,7 @@
 		5A8195522D61493D0048354A /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; platformFilters = (ios, macos, tvos, xros, ); settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A8195CC2D614E240048354A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195212D6147910048354A /* WidgetKit.framework */; };
 		5A8195CD2D614E240048354A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195232D6147910048354A /* SwiftUI.framework */; };
-		5A8195D82D614E250048354A /* DeepDishWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A8195CB2D614E240048354A /* DeepDishWidget.appex */; platformFilters = (ios, macos, tvos, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A8195D82D614E250048354A /* DeepDishWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A8195CB2D614E240048354A /* DeepDishWidget.appex */; platformFilters = (ios, macos, xros, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5AA0A5F82D9D70EC00A115C2 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; platformFilters = (ios, macos, tvos, ); productRef = 5AA0A5F72D9D70EC00A115C2 /* ConfettiSwiftUI */; };
 		5AA0A5FA2D9D71CF00A115C2 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A5F92D9D71CF00A115C2 /* TelemetryDeck */; };
 		5AA0A5FC2D9D725100A115C2 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A5FB2D9D725100A115C2 /* TelemetryDeck */; };
@@ -973,7 +973,7 @@
 			platformFilters = (
 				ios,
 				macos,
-				tvos,
+				xros,
 			);
 			target = 5A0A6EC42D9D382400C4CAC3 /* DeepDishWidgetCore */;
 			targetProxy = 5A0A6EDF2D9D38A100C4CAC3 /* PBXContainerItemProxy */;
@@ -1009,7 +1009,7 @@
 			platformFilters = (
 				ios,
 				macos,
-				tvos,
+				xros,
 			);
 			target = 5A8195CA2D614E240048354A /* DeepDishWidget */;
 			targetProxy = 5A8195D62D614E250048354A /* PBXContainerItemProxy */;
@@ -1113,9 +1113,6 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishApp/DeepDishApp-Debug.xcconfig";
 			buildSettings = {
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
-				SUPPORTS_MACCATALYST = NO;
-				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 			};
 			name = Debug;
 		};
@@ -1124,9 +1121,6 @@
 			baseConfigurationReferenceAnchor = 5A09047F2D63D81800A1E387 /* Configuration */;
 			baseConfigurationReferenceRelativePath = "DeepDishApp/DeepDishApp-Release.xcconfig";
 			buildSettings = {
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
-				SUPPORTS_MACCATALYST = NO;
-				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 			};
 			name = Release;
 		};
