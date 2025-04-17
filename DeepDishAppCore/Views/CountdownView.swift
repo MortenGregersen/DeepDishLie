@@ -38,6 +38,9 @@ public struct CountdownView: View {
                     .ifOS(.watchOS) { $0.frame(width: 100) }
                     .ifOS(.macOS) { $0.frame(maxHeight: 600) }
                     .ifOS(.tvOS) { $0.frame(maxHeight: 700) }
+                    .ifOS(.visionOS) { $0.containerRelativeFrame(.vertical) { length, _ in
+                        length * 0.85
+                    } }
                 if let timeRemaining {
                     Text("The conference will start in:")
                         .font(titleFont)
