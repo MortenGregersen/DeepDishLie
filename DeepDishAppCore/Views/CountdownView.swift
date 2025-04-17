@@ -5,6 +5,7 @@
 //  Created by Morten Bjerg Gregersen on 09/02/2025.
 //
 
+import DeepDishCore
 import SwiftUI
 
 public struct CountdownView: View {

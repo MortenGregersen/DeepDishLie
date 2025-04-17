@@ -255,7 +255,6 @@
 				DeepDishAppCore.h,
 				"Extensions/Event+Colors.swift",
 				"Extensions/UIWindow+ShakeNotification.swift",
-				OperatingSystem.swift,
 				Views/AboutView.swift,
 				Views/CountdownView.swift,
 				Views/FlickeringPizzaView.swift,

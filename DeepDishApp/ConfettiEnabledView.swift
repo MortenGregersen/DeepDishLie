@@ -15,12 +15,12 @@ struct ConfettiEnabledView<Content>: View where Content: View {
     @State private var showsSettings = false
     @Environment(SettingsController.self) private var settingsController
     @Environment(WelcomeController.self) private var welcomeController
-#if !os(tvOS)
-    @Environment(\.requestReview) private var requestReview
-#endif
-#if os(macOS)
-    @State private var confettiManager = MacConfettiManager()
-#endif
+    #if !os(tvOS)
+        @Environment(\.requestReview) private var requestReview
+    #endif
+    #if os(macOS)
+        @State private var confettiManager = MacConfettiManager()
+    #endif
 
     var body: some View {
         @Bindable var settingsController = settingsController
@@ -30,7 +30,7 @@ struct ConfettiEnabledView<Content>: View where Content: View {
                     if welcomeController.hasSeenWelcome, !welcomeController.hasRequestedReview {
                         welcomeController.hasRequestedReview = true
                         #if !os(tvOS)
-                        requestReview()
+                            requestReview()
                         #endif
                     }
                 }
@@ -71,12 +71,12 @@ struct ConfettiEnabledView<Content>: View where Content: View {
                 .sheet(isPresented: $showsSettings) {
                     SettingsView()
                 }
-                #if os(iOS)
+            #if os(iOS)
                 .onReceive(NotificationCenter.default.publisher(for: UIDevice.deviceDidShakeNotification)) { _ in
                     settingsController.triggerConfetti()
                 }
-                #endif
-                #if canImport(UIKit)
+            #endif
+            #if canImport(ConfettiSwiftUI) && canImport(UIKit)
                 .overlay(alignment: .top) {
                     ConfettiCannon(
                         trigger: $settingsController.confettiTrigger,
@@ -90,12 +90,12 @@ struct ConfettiEnabledView<Content>: View where Content: View {
                         radius: geometry.size.width/2,
                         repetitionInterval: 1,
                         hapticFeedback: false)
-                }
-                #elseif os(macOS)
-                .onAppear {
-                    confettiManager.showConfettiOnAllScreens(trigger: $settingsController.confettiTrigger)
-                }
-                #endif
+            }
+            #elseif os(macOS)
+            .onAppear {
+                confettiManager.showConfettiOnAllScreens(trigger: $settingsController.confettiTrigger)
+            }
+            #endif
         }
     }
 }
