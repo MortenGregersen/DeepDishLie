@@ -349,6 +349,7 @@
 		5A8195CE2D614E240048354A /* DeepDishWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A8195DC2D614E250048354A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishWidget; sourceTree = "<group>"; };
 		5AA0C62F2D88BF1300AF6C14 /* DeepDishWatchApp */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DeepDishWatchApp; sourceTree = "<group>"; };
 		5AA0C6692D88C2F800AF6C14 /* DeepDishAppCore */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5A0A6ED32D9D382400C4CAC3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 5AA0C6732D88C2F800AF6C14 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishAppCore; sourceTree = "<group>"; };
+		5ACAF0A02DB1010D004B4868 /* screenshots */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = screenshots; sourceTree = "<group>"; };
 		DE6F23462D6A533B003C0319 /* DeepDishAppClip */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (DE6F23582D6A533F003C0319 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeepDishAppClip; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -472,6 +473,7 @@
 				5A28A90129F803B100B02EE6 /* DeepDishSnapshots */,
 				5A09047F2D63D81800A1E387 /* Configuration */,
 				5A28A8FB29F8038800B02EE6 /* fastlane */,
+				5ACAF0A02DB1010D004B4868 /* screenshots */,
 				5A3EFB0329F7D53200D75F5E /* Products */,
 				5A191A072BDBCF8A0092AF29 /* Frameworks */,
 			);
