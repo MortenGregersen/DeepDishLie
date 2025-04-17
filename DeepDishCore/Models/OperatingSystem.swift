@@ -1,6 +1,6 @@
 //
 //  OperatingSystem.swift
-//  DeepDishAppCore
+//  DeepDishCore
 //
 //  Created by Morten Bjerg Gregersen on 17/03/2025.
 //

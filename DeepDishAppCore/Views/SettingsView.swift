@@ -27,16 +27,23 @@ public struct SettingsView: View {
                                 Text("🍕")
                             }
                         }
-                        #if !os(tvOS)
                         if settingsController.enableRandomConfetti {
                             LabeledContent {
+                                #if os(tvOS)
+                                Picker("Intensity", selection: $settingsController.randomConfettiIntensity) {
+                                    ForEach(1 ... 5, id: \.self) { i in
+                                        Text("Level \(i)")
+                                            .tag(Double(i))
+                                    }
+                                }
+                                #else
                                 Slider(value: $settingsController.randomConfettiIntensity, in: 1 ... 5, step: 1)
+                                #endif
                             } label: {
                                 Label("Intensity", systemImage: "bubbles.and.sparkles")
                                     .padding(.trailing)
                             }
                         }
-                        #endif
                         if OperatingSystem.current == .macOS {
                             Toggle(isOn: $settingsController.menuBarExtraShown) {
                                 Label("Show menu bar extra", systemImage: "menubar.arrow.up.rectangle")

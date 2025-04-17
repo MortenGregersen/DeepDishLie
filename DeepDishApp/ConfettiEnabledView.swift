@@ -36,7 +36,7 @@ struct ConfettiEnabledView<Content>: View where Content: View {
                         #endif
                     }
                 }
-            #if canImport(ConfettiSwiftUI) && canImport(UIKit) && !os(tvOS)
+            #if canImport(ConfettiSwiftUI) && canImport(UIKit)
                 .overlay(alignment: .top) {
                     ConfettiCannon(
                         trigger: $settingsController.confettiTrigger,
