@@ -14,15 +14,9 @@ struct EventRow: View {
     let dateFormatter: DateFormatter
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    private let imageSize: CGFloat = OperatingSystem.current == .watchOS ? 30 : 50
-    private let emojiFont: Font = switch OperatingSystem.current {
-    case .watchOS: .title3
-    case .tvOS: .headline
-    default: .largeTitle
-    }
 
     var body: some View {
-        HStack(alignment: .top, spacing: 0) {
+        HStack(alignment: .top, spacing: horizontalSpacing) {
             if OperatingSystem.current == .watchOS {
                 VStack(alignment: .leading) {
                     Text("\(dateFormatter.string(from: event.start)) - \(dateFormatter.string(from: event.end))")
@@ -46,8 +40,10 @@ struct EventRow: View {
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .foregroundStyle(event.dateTextColor)
-                .containerRelativeFrame(.horizontal) { length, _ in
-                    length / dateFrameDivider
+                .ifNotOS(.tvOS, .visionOS) {
+                    $0.containerRelativeFrame(.horizontal) { length, _ in
+                        length / dateFrameDivider
+                    }
                 }
                 VStack(alignment: .leading) {
                     Text(event.description)
@@ -117,6 +113,22 @@ struct EventRow: View {
             }
         }
         return Color.accentColor
+    }
+
+    private let imageSize: CGFloat = switch OperatingSystem.current {
+    case .watchOS: 30
+    case .tvOS: 80
+    default: 50
+    }
+
+    private var horizontalSpacing: CGFloat {
+        OperatingSystem.current == .visionOS || OperatingSystem.current == .tvOS ? 16 : 0
+    }
+
+    private let emojiFont: Font = switch OperatingSystem.current {
+    case .watchOS: .title3
+    case .tvOS: .title2
+    default: .largeTitle
     }
 
     private var dateFrameDivider: CGFloat {
