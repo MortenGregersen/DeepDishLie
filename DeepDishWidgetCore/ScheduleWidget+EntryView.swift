@@ -120,7 +120,7 @@ public extension ScheduleWidget {
                 }
                 
                 var body: some View {
-                    Link(destination: URL(string: "deepdishunofficial://event?id=\(event.id)")!) {
+                    Link(destination: URL(string: "deepdishunofficial://schedule/event?id=\(event.id)")!) {
                         HStack(alignment: .top) {
                             VStack(alignment: .leading, spacing: 4) {
                                 let title = Text(event.description)
