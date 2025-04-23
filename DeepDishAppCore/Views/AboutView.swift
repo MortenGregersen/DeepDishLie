@@ -17,14 +17,15 @@ public struct AboutView: View {
         NavigationStack {
             List {
                 Section("The app ❤️") {
+                    let singleCellOSes: [OperatingSystem] = [.macOS, .tvOS, .visionOS]
                     let topText = Text("Deep Dish Unofficial is made for the attendees at the Deep Dish Swift 2025 conference.")
                     let bottomText = Text("It is open source and available on [GitHub](https://github.com/MortenGregersen/DeepDishLie).")
-                    if OperatingSystem.current != .macOS {
+                    if !singleCellOSes.contains(OperatingSystem.current) {
                         topText
                     }
                     HStack(alignment: .top) {
                         VStack(alignment: .leading, spacing: 8) {
-                            if OperatingSystem.current == .macOS {
+                            if singleCellOSes.contains(OperatingSystem.current) {
                                 topText
                             }
                             bottomText
@@ -34,7 +35,10 @@ public struct AboutView: View {
                             .renderingMode(.template)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 40)
+                            .ifOS(.macOS) { $0.frame(width: 50) }
+                            .ifOS(.tvOS) { $0.frame(width: 80) }
+                            .ifOS(.visionOS) { $0.frame(width: 66) }
+                            .ifNotOS(.macOS, .tvOS, .visionOS) { $0.frame(width: 40) }
                     }
                 }
                 Section("The conference 🍕") {
@@ -46,8 +50,8 @@ public struct AboutView: View {
                             .resizable()
                             .scaledToFit()
                     }
-                    .ifOS(.macOS) { $0.frame(maxHeight: 40) }
-                    .frame(width: 80)
+                    .ifOS(.macOS, .visionOS) { $0.frame(maxHeight: 60) }
+                    .ifNotOS(.macOS, .visionOS) { $0.frame(width: 80) }
                     .padding(8)
                     .background(Circle().fill(Color.splashBackground))
                     let texts = VStack(alignment: .leading) {
@@ -76,12 +80,15 @@ public struct AboutView: View {
                         .aspectRatio(contentMode: .fit)
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                         .ifOS(.macOS) { $0.frame(maxHeight: 80) }
+                        .ifOS(.visionOS) { $0.frame(maxHeight: 100) }
                         .frame(width: 100)
-                        .padding(.top, 8)
-                    let developerTexts = VStack(alignment: .leading, spacing: 8) {
+                    let developerTexts = VStack(alignment: .leading, spacing: 4) {
                         Text("This app was made by me, **Morten Bjerg Gregersen**")
                         Text("You can find me at **Deep Dish Swift again this year**.")
                         Text("Find my apps on **[AtterdagApps.com](https://AtterdagApps.com)**")
+                        if OperatingSystem.current == .macOS || OperatingSystem.current == .visionOS {
+                            Spacer(minLength: 0)
+                        }
                     }
                     .frame(maxHeight: .infinity)
                     if OperatingSystem.current == .watchOS {
@@ -96,6 +103,7 @@ public struct AboutView: View {
                             Spacer(minLength: 8)
                             image
                         }
+                        .padding(.top, 8)
                     }
                     VStack(alignment: .leading) {
                         let appDabIcon = Image("AppDabIcon", bundle: .core)
@@ -111,17 +119,21 @@ public struct AboutView: View {
                                 appDabTopText
                             }
                         } else {
-                            HStack {
+                            HStack(alignment: .top) {
                                 VStack(alignment: .leading, spacing: 8) {
                                     appDabTopText
-                                    if OperatingSystem.current == .macOS {
+                                    if OperatingSystem.current == .macOS || OperatingSystem.current == .visionOS {
                                         appDabBottomText
                                     }
+                                    if OperatingSystem.current == .visionOS {
+                                        Spacer(minLength: 0)
+                                    }
                                 }
+                                .ifOS(.visionOS) { $0.padding(.top, 8) }
                                 Spacer(minLength: 8)
                                 appDabIcon
                             }
-                            if OperatingSystem.current != .macOS {
+                            if OperatingSystem.current != .macOS, OperatingSystem.current != .visionOS {
                                 appDabBottomText
                             }
                         }
@@ -158,4 +170,5 @@ public struct AboutView: View {
 #Preview {
     AboutView()
         .frame(minHeight: 500)
+        .environment(ScheduleController.forPreview())
 }

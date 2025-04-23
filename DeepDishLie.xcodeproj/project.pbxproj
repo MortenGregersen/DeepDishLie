@@ -16,19 +16,19 @@
 		5A28A90329F803B100B02EE6 /* DeepDishSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90229F803B100B02EE6 /* DeepDishSnapshots.swift */; };
 		5A28A90C29F803DF00B02EE6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28A90B29F803DF00B02EE6 /* SnapshotHelper.swift */; };
 		5A8195462D61493D0048354A /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
-		5A8195512D61493D0048354A /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
-		5A8195522D61493D0048354A /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A8195512D61493D0048354A /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; platformFilters = (ios, macos, tvos, xros, ); };
+		5A8195522D61493D0048354A /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; platformFilters = (ios, macos, tvos, xros, ); settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A8195CC2D614E240048354A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195212D6147910048354A /* WidgetKit.framework */; };
 		5A8195CD2D614E240048354A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8195232D6147910048354A /* SwiftUI.framework */; };
 		5A8195D82D614E250048354A /* DeepDishWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A8195CB2D614E240048354A /* DeepDishWidget.appex */; platformFilters = (ios, macos, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5AA0A5F82D9D70EC00A115C2 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; platformFilters = (ios, macos, tvos, ); productRef = 5AA0A5F72D9D70EC00A115C2 /* ConfettiSwiftUI */; };
+		5AA0A5F82D9D70EC00A115C2 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; platformFilters = (ios, macos, tvos, xros, ); productRef = 5AA0A5F72D9D70EC00A115C2 /* ConfettiSwiftUI */; };
 		5AA0A5FA2D9D71CF00A115C2 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A5F92D9D71CF00A115C2 /* TelemetryDeck */; };
 		5AA0A5FC2D9D725100A115C2 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A5FB2D9D725100A115C2 /* TelemetryDeck */; };
 		5AA0A5FE2D9D725600A115C2 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A5FD2D9D725600A115C2 /* TelemetryDeck */; };
 		5AA0A8FA2D9E822700A115C2 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA0A8F92D9E822700A115C2 /* Defaults */; };
 		5AA0C63B2D88BF1400AF6C14 /* DeepDishWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5AA0C62E2D88BF1300AF6C14 /* DeepDishWatchApp.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5AA0C66E2D88C2F800AF6C14 /* DeepDishAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; };
-		5AA0C66F2D88C2F800AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AA0C66E2D88C2F800AF6C14 /* DeepDishAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; platformFilters = (ios, macos, tvos, xros, ); };
+		5AA0C66F2D88C2F800AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; platformFilters = (ios, macos, tvos, xros, ); settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5AA0C6872D88C4A400AF6C14 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		5AA0C68C2D88C4D400AF6C14 /* DeepDishAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; };
 		5AA0C68D2D88C4D400AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -993,6 +993,12 @@
 		};
 		5A8195502D61493D0048354A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				macos,
+				tvos,
+				xros,
+			);
 			target = 5A81953D2D61493D0048354A /* DeepDishCore */;
 			targetProxy = 5A81954F2D61493D0048354A /* PBXContainerItemProxy */;
 		};
@@ -1013,6 +1019,12 @@
 		};
 		5AA0C66D2D88C2F800AF6C14 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				macos,
+				tvos,
+				xros,
+			);
 			target = 5AA0C6672D88C2F800AF6C14 /* DeepDishAppCore */;
 			targetProxy = 5AA0C66C2D88C2F800AF6C14 /* PBXContainerItemProxy */;
 		};

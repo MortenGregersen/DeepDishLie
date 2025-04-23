@@ -63,7 +63,7 @@ public struct SettingsView: View {
                     } label: {
                         Label("Time format", systemImage: "clock.badge.checkmark")
                     }
-                    if OperatingSystem.current != .watchOS {
+                    if OperatingSystem.current != .watchOS && OperatingSystem.current != .visionOS {
                         Toggle(isOn: $settingsController.openLinksInApp) {
                             Label("Open social links in-app", systemImage: "link.circle")
                         }

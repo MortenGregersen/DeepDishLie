@@ -17,7 +17,7 @@ public class WeatherController {
     
     public init() {}
 
-    public func fetchWeather() async {
+    @MainActor public func fetchWeather() async {
         fetching = true
         defer { fetching = false }
         do {

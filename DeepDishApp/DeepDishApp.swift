@@ -21,6 +21,7 @@ struct DeepDishApp: App {
     @State private var weatherController = WeatherController()
     @State private var giveawayController = GiveawayController()
     @State private var selectedTab: Tab
+    @State private var fetchingTaskId: UUID?
     #if !os(tvOS)
     @Environment(\.openWindow) private var openWindow
     #endif
@@ -213,11 +214,7 @@ struct DeepDishApp: App {
                     if !AppEnvironment.inDemoMode {
                         TelemetryDeck.signal("confettiStatus", floatValue: settingsController.randomConfettiIntensity)
                     }
-                    Task {
-                        await scheduleController.fetchEvents()
-                        await weatherController.fetchWeather()
-                        await giveawayController.fetchGiveawayInfo()
-                    }
+                    fetchingTaskId = .init()
                 }
             }
             .onOpenURL { url in
@@ -233,6 +230,11 @@ struct DeepDishApp: App {
                       let event = scheduleController.days.flatMap(\.events).first(where: { $0.id == eventId })
                 else { return }
                 scheduleController.selectedEvent = event
+            }
+            .task(id: fetchingTaskId) {
+                await scheduleController.fetchEvents()
+                await weatherController.fetchWeather()
+                await giveawayController.fetchGiveawayInfo()
             }
         }
         .environment(welcomeController)
