@@ -220,15 +220,15 @@ struct DeepDishApp: App {
             .onOpenURL { url in
                 guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true),
                       components.scheme == "deepdishunofficial",
-                      components.host == "event",
+                      components.host == "schedule"
+                else { return }
+                selectedTab = .schedule
+                guard components.path == "/event",
                       let queryItems = components.queryItems,
                       let idItem = queryItems.first(where: { $0.name == "id" }),
                       let eventId = idItem.value,
                       let event = scheduleController.days.flatMap(\.events).first(where: { $0.id == eventId })
-                else {
-                    return
-                }
-                selectedTab = .schedule
+                else { return }
                 scheduleController.selectedEvent = event
             }
             .task(id: fetchingTaskId) {
