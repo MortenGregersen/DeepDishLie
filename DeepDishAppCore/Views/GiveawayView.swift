@@ -84,6 +84,14 @@ public struct GiveawayView: View {
                     .padding(.vertical)
                     Text("Read more about AppDab on [AppDab.app](https://AppDab.app) 🕺")
                         .multilineTextAlignment(.center)
+                        .fontWeight(giveawayInfo.offerForAll.isEmpty ? .regular : .semibold)
+                    if !giveawayInfo.offerForAll.isEmpty {
+                        Text("Don't worry, if you don't win ❤️")
+                            .font(.headline)
+                            .padding(.top)
+                        Text(giveawayInfo.offerForAll)
+                            .multilineTextAlignment(.center)
+                    }
                 }
                 .padding(.top)
                 .padding(.horizontal)
