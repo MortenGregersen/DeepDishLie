@@ -82,8 +82,8 @@
     },
     {
         "id": "session-allison-mcentire",
-        "start": "2025-04-27T17:00:00-05:00",
-        "end": "2025-04-27T17:45:00-05:00",
+        "start": "2025-04-27T16:45:00-05:00",
+        "end": "2025-04-27T17:30:00-05:00",
         "description": "Prompt Engineering for Accessibility",
         "speakers": [{
             "name": "Allison McEntire",
