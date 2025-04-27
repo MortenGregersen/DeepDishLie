@@ -10,5 +10,5 @@ import Foundation
 public struct GiveawayInfo: Decodable {
     public let channel: String
     public let winners: [String]
-    public let offerForAll: String
+    public let offerForAllUrl: String
 }

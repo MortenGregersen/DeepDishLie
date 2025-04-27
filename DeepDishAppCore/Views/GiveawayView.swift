@@ -9,7 +9,9 @@ import DeepDishCore
 import SwiftUI
 
 public struct GiveawayView: View {
+    @State private var showsOfferForAllAlert = false
     @Environment(GiveawayController.self) private var giveawayController
+    @Environment(\.openURL) private var openUrl
     private var giveawayInfo: GiveawayInfo { giveawayController.giveawayInfo }
 
     public init() {}
@@ -84,24 +86,32 @@ public struct GiveawayView: View {
                     .padding(.vertical)
                     Text("Read more about AppDab on [AppDab.app](https://AppDab.app) 🕺")
                         .multilineTextAlignment(.center)
-                        .fontWeight(giveawayInfo.offerForAll.isEmpty ? .regular : .semibold)
-                    if !giveawayInfo.offerForAll.isEmpty {
-                        Text("Don't worry, if you don't win ❤️")
-                            .font(.headline)
-                            .padding(.top)
-                        Text(giveawayInfo.offerForAll)
-                            .multilineTextAlignment(.center)
+                        .fontWeight(giveawayInfo.offerForAllUrl.isEmpty ? .regular : .semibold)
+                    if !giveawayInfo.offerForAllUrl.isEmpty {
+                        Button("But what, if I don't win?") {
+                            showsOfferForAllAlert = true
+                        }
+                        .buttonStyle(.bordered)
+                        .padding(.top)
                     }
                 }
                 .padding(.top)
                 .padding(.horizontal)
             }
             .navigationTitle("AppDab Pro Raffle")
+            .alert("Don't worry ❤️", isPresented: $showsOfferForAllAlert) {
+                Button("Redeem Offer") {
+                    openUrl(URL(string: giveawayInfo.offerForAllUrl)!)
+                }
+                Button("Not now", role: .cancel) {}
+            } message: {
+                Text("There is a special offer on AppDab Pro with AppDab Intelligence ✨ for everybody.")
+            }
             #if !os(macOS) && !os(tvOS)
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbarBackground(Color.accent, for: .navigationBar)
-                .toolbarBackground(.visible, for: .navigationBar)
-                .toolbarColorScheme(.dark, for: .navigationBar)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.accent, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarColorScheme(.dark, for: .navigationBar)
             #endif
         }
     }
