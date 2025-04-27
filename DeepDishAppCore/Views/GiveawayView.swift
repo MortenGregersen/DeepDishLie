@@ -9,7 +9,9 @@ import DeepDishCore
 import SwiftUI
 
 public struct GiveawayView: View {
+    @State private var showsOfferForAllAlert = false
     @Environment(GiveawayController.self) private var giveawayController
+    @Environment(\.openURL) private var openUrl
     private var giveawayInfo: GiveawayInfo { giveawayController.giveawayInfo }
 
     public init() {}
@@ -84,16 +86,36 @@ public struct GiveawayView: View {
                     .padding(.vertical)
                     Text("Read more about AppDab on [AppDab.app](https://AppDab.app) 🕺")
                         .multilineTextAlignment(.center)
+                        .fontWeight(giveawayInfo.offerForAllUrl.isEmpty ? .regular : .semibold)
+                    if giveawayInfo.offerForAllUrl != nil,
+                       OperatingSystem.current == .iOS || OperatingSystem.current == .macOS {
+                        Button("But what, if I don't win?") {
+                            showsOfferForAllAlert = true
+                        }
+                        .buttonStyle(.bordered)
+                        .padding(.top)
+                    }
                 }
                 .padding(.top)
                 .padding(.horizontal)
             }
             .navigationTitle("AppDab Pro Raffle")
+            .alert("Don't worry ❤️",
+                   isPresented: $showsOfferForAllAlert,
+                   presenting: giveawayInfo.offerForAllUrl) {
+                offerForAllUrl in
+                Button("Redeem Offer") {
+                    openUrl(offerForAllUrl)
+                }
+                Button("Not now", role: .cancel) {}
+            } message: { _ in
+                Text("There is a special offer on AppDab Pro with AppDab Intelligence ✨ for everybody.")
+            }
             #if !os(macOS) && !os(tvOS)
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbarBackground(Color.accent, for: .navigationBar)
-                .toolbarBackground(.visible, for: .navigationBar)
-                .toolbarColorScheme(.dark, for: .navigationBar)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.accent, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarColorScheme(.dark, for: .navigationBar)
             #endif
         }
     }
