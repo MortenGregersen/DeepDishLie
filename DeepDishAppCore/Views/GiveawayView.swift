@@ -87,7 +87,8 @@ public struct GiveawayView: View {
                     Text("Read more about AppDab on [AppDab.app](https://AppDab.app) 🕺")
                         .multilineTextAlignment(.center)
                         .fontWeight(giveawayInfo.offerForAllUrl.isEmpty ? .regular : .semibold)
-                    if !giveawayInfo.offerForAllUrl.isEmpty {
+                    if giveawayInfo.offerForAllUrl != nil,
+                       OperatingSystem.current == .iOS || OperatingSystem.current == .macOS {
                         Button("But what, if I don't win?") {
                             showsOfferForAllAlert = true
                         }
@@ -99,12 +100,15 @@ public struct GiveawayView: View {
                 .padding(.horizontal)
             }
             .navigationTitle("AppDab Pro Raffle")
-            .alert("Don't worry ❤️", isPresented: $showsOfferForAllAlert) {
+            .alert("Don't worry ❤️",
+                   isPresented: $showsOfferForAllAlert,
+                   presenting: giveawayInfo.offerForAllUrl) {
+                offerForAllUrl in
                 Button("Redeem Offer") {
-                    openUrl(URL(string: giveawayInfo.offerForAllUrl)!)
+                    openUrl(offerForAllUrl)
                 }
                 Button("Not now", role: .cancel) {}
-            } message: {
+            } message: { _ in
                 Text("There is a special offer on AppDab Pro with AppDab Intelligence ✨ for everybody.")
             }
             #if !os(macOS) && !os(tvOS)
