@@ -86,7 +86,7 @@ public struct GiveawayView: View {
                     .padding(.vertical)
                     Text("Read more about AppDab on [AppDab.app](https://AppDab.app) 🕺")
                         .multilineTextAlignment(.center)
-                        .fontWeight(giveawayInfo.offerForAllUrl.isEmpty ? .regular : .semibold)
+                        .fontWeight(giveawayInfo.offerForAllUrl == nil ? .regular : .semibold)
                     if giveawayInfo.offerForAllUrl != nil,
                        OperatingSystem.current == .iOS || OperatingSystem.current == .macOS {
                         Button("But what, if I don't win?") {
