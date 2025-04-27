@@ -91,7 +91,7 @@ public struct GiveawayView: View {
                     if giveawayInfo.offerForAllUrl != nil,
                        OperatingSystem.current == .iOS || OperatingSystem.current == .macOS {
                         Button("But what, if I don't win?") {
-                            TelemetryDeck.signal("showOff
+                            TelemetryDeck.signal("showOfferForAllAlert")
                             showsOfferForAllAlert = true
                         }
                         .buttonStyle(.bordered)
