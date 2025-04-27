@@ -7,6 +7,7 @@
 
 import DeepDishCore
 import SwiftUI
+import TelemetryDeck
 
 public struct GiveawayView: View {
     @State private var showsOfferForAllAlert = false
@@ -86,10 +87,11 @@ public struct GiveawayView: View {
                     .padding(.vertical)
                     Text("Read more about AppDab on [AppDab.app](https://AppDab.app) 🕺")
                         .multilineTextAlignment(.center)
-                        .fontWeight(giveawayInfo.offerForAllUrl.isEmpty ? .regular : .semibold)
+                        .fontWeight(giveawayInfo.offerForAllUrl == nil ? .regular : .semibold)
                     if giveawayInfo.offerForAllUrl != nil,
                        OperatingSystem.current == .iOS || OperatingSystem.current == .macOS {
                         Button("But what, if I don't win?") {
+                            TelemetryDeck.signal("showOfferForAllAlert")
                             showsOfferForAllAlert = true
                         }
                         .buttonStyle(.bordered)
@@ -105,6 +107,7 @@ public struct GiveawayView: View {
                    presenting: giveawayInfo.offerForAllUrl) {
                 offerForAllUrl in
                 Button("Redeem Offer") {
+                    TelemetryDeck.signal("openOfferForAllUrl")
                     openUrl(offerForAllUrl)
                 }
                 Button("Not now", role: .cancel) {}
