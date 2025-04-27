@@ -24,12 +24,13 @@ public struct EventsListView: View {
                 ForEach(day.events) { event in
                     NavigationLink(value: event) {
                         EventRow(dayName: day.name, event: event, dateFormatter: dateFormatter)
-                            .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
+                            .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))       
                     }
+                    .listRowBackground(listRowBackgroundColor(event: event))
                 }
             } header: {
                 let text = Text(day.name)
-                    .foregroundStyle(Color.accentColor)
+                    .foregroundStyle(Color.accent)
                 if OperatingSystem.current == .watchOS {
                     text
                 } else {
@@ -43,6 +44,16 @@ public struct EventsListView: View {
         .navigationDestination(item: $scheduleController.selectedEvent) { event in
             EventView(dayName: scheduleController.dayName(for: event)!, event: event)
         }
+    }
+    
+    private func listRowBackgroundColor(event: Event) -> Color? {
+        guard event.isHappeningNow else {
+            return switch event {
+            case .session: nil
+            default: Color.accent.opacity(0.1)
+            }
+        }
+        return Color.accent
     }
 }
 

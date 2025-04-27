@@ -34,14 +34,14 @@ struct EventView: View {
                         ForEach(speakers) { speaker in
                             ZStack {
                                 Circle()
-                                    .fill(Color.accentColor)
+                                    .fill(Color.accent)
                                 Image(speaker.image, bundle: .core)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .clipShape(Circle())
                                     .padding(speakerImageBorderWidth / CGFloat(OperatingSystem.current == .watchOS ? 1 : speakers.count))
                             }
-                            .shadow(color: .accentColor, radius: 4)
+                            .shadow(color: .accent, radius: 4)
                             .frame(maxHeight: speakerMaxImageHeight)
                         }
                     }
@@ -54,7 +54,7 @@ struct EventView: View {
                                 .font(.system(size: emojiFontSize))
                         }
                         .frame(width: emojiFrameSize, height: emojiFrameSize)
-                        .background(Color.accentColor)
+                        .background(Color.accent)
                         .clipShape(Circle())
                         Spacer()
                     }
@@ -82,7 +82,7 @@ struct EventView: View {
                 }
             }
             .ifOS(.tvOS) { $0.focusable() }
-            .listRowBackground(Color.accentColor)
+            .listRowBackground(Color.accent)
             .font(.headline)
             .fontWeight(.semibold)
             .foregroundStyle(.white)
@@ -165,10 +165,10 @@ struct EventView: View {
                     .clipShape(Circle())
                     .background {
                         Circle()
-                            .fill(Color.accentColor)
+                            .fill(Color.accent)
                             .frame(width: headerImageHeight * 1.05, height: headerImageHeight * 1.05)
                     }
-                    .shadow(color: .accentColor, radius: 2)
+                    .shadow(color: .accent, radius: 2)
             }
             Text("\(prefix) \(speaker.firstName)")
                 .foregroundStyle(.primary)

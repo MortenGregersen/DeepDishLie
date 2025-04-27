@@ -78,11 +78,11 @@ public struct GiveawayView: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
                     .padding(.vertical, 12)
-                    .background(Color.accentColor.opacity(0.4))
+                    .background(Color.accent.opacity(0.4))
                     .cornerRadius(10)
                     .overlay {
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.accentColor, lineWidth: 2)
+                            .stroke(Color.accent, lineWidth: 2)
                     }
                     .padding(.vertical)
                     Text("Read more about AppDab on [AppDab.app](https://AppDab.app) 🕺")

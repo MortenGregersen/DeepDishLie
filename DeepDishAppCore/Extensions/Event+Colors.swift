@@ -17,7 +17,7 @@ public extension Event {
             .white
             #endif
         } else {
-            .accentColor
+            .accent
         }
     }
 

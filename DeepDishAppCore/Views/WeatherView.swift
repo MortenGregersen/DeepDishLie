@@ -137,7 +137,7 @@ public struct WeatherView: View {
                     .padding(.horizontal, 4)
                     .background(
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.accentColor.opacity(0.3))
+                            .fill(Color.accent.opacity(0.3))
                     )
                     .padding(.bottom)
                 }

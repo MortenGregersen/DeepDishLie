@@ -75,12 +75,11 @@ struct EventRow: View {
                             .font(emojiFont)
                     }
                     .frame(width: imageSize, height: imageSize)
-                    .background(Color.accentColor.opacity(event.toBeDetermined ? 0.5 : 1.0))
+                    .background(Color.accent.opacity(event.toBeDetermined ? 0.5 : 1.0))
                     .clipShape(Circle())
                 }
             }
         }
-        .listRowBackground(listRowBackgroundColor)
     }
 
     @ViewBuilder private func speakerImages(speakers: [Speaker]) -> some View {
@@ -99,20 +98,10 @@ struct EventRow: View {
             .clipShape(Circle())
             .background {
                 Circle()
-                    .fill(Color.accentColor)
+                    .fill(Color.accent)
                     .frame(width: imageSize + 4, height: imageSize + 4)
             }
-            .shadow(color: .accentColor, radius: 1, x: 0, y: 1)
-    }
-
-    private var listRowBackgroundColor: Color? {
-        guard event.isHappeningNow else {
-            return switch event {
-            case .session: nil
-            default: Color.accentColor.opacity(0.1)
-            }
-        }
-        return Color.accentColor
+            .shadow(color: .accent, radius: 1, x: 0, y: 1)
     }
 
     private let imageSize: CGFloat = switch OperatingSystem.current {
