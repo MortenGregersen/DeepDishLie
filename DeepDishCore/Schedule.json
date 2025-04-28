@@ -156,25 +156,9 @@
         "end": "2025-04-28T13:00:00-05:00"
     },
     {
-        "id": "session-jordan-morgan",
+        "id": "session-danielle-lewis",
         "start": "2025-04-28T13:00:00-05:00",
         "end": "2025-04-28T13:30:00-05:00",
-        "description": "Just Grow With It: Lessons in indie app marketing",
-        "speakers": [{
-            "name": "Jordan Morgan",
-            "image": "jordan_morgan",
-            "about": "Indie developer and author of the best-in-class iOS app book series. Serially tired dad.",
-            "links": {
-                "bluesky": "https://bsky.app/profile/jordanmorgan10.bsky.social",
-                "mastodon": "https://iosdev.space/@jordanmorgan@mastodon.social",
-                "twitter": "https://twitter.com/JordanMorgan10"
-            }
-        }]
-    },
-    {
-        "id": "session-danielle-lewis",
-        "start": "2025-04-28T13:45:00-05:00",
-        "end": "2025-04-28T14:15:00-05:00",
         "description": "Learning in Public: My Journey to 10",
         "speakers": [{
             "name": "Danielle Lewis",
@@ -184,6 +168,22 @@
                 "bluesky": "https://bsky.app/profile/@daniellelewis.dev",
                 "mastodon": "https://iosdev.space/@dlewisdev",
                 "twitter": "https://twitter.com/dlewisdev"
+            }
+        }]
+    },
+    {
+        "id": "session-jordan-morgan",
+        "start": "2025-04-28T13:45:00-05:00",
+        "end": "2025-04-28T14:15:00-05:00",
+        "description": "Just Grow With It: Lessons in indie app marketing",
+        "speakers": [{
+            "name": "Jordan Morgan",
+            "image": "jordan_morgan",
+            "about": "Indie developer and author of the best-in-class iOS app book series. Serially tired dad.",
+            "links": {
+                "bluesky": "https://bsky.app/profile/jordanmorgan10.bsky.social",
+                "mastodon": "https://iosdev.space/@jordanmorgan@mastodon.social",
+                "twitter": "https://twitter.com/JordanMorgan10"
             }
         }]
     },
