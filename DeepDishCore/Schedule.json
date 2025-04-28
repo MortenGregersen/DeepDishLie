@@ -397,9 +397,14 @@
         }]
     },
     {
+        "id": "break-tuesday",
+        "start": "2025-04-29T15:45:00-05:00",
+        "end": "2025-04-29T16:15:00-05:00"
+    },
+    {
         "id": "special-concert",
-        "start": "2025-04-29T16:00:00-05:00",
-        "end": "2025-04-29T16:45:00-05:00",
+        "start": "2025-04-29T16:15:00-05:00",
+        "end": "2025-04-29T17:00:00-05:00",
         "description": "Musical performance by James Dempsey and the Breakpoints",
         "links": {
             "name": "James Dempsey and the Breakpoints",
@@ -415,9 +420,17 @@
         "emoji": "🏁"
     },
     {
-        "id": "practical-closing-words",
+        "id": "session-daniel-steinberg",
         "start": "2025-04-29T17:45:00-05:00",
         "end": "2025-04-29T18:00:00-05:00",
-        "description": "Closing Words"
+        "description": "Closing Keynote - \"That One\"",
+        "speakers": [{
+            "name": "Daniel Steinberg",
+            "image": "daniel_steinberg",
+            "about": "Daniel is the author of more than a dozen books including \"The Curious Case of the Async Cafe\", \"A Bread Baking Kickstart\", and \"Dear Elena.\" He's also been writing apps and teaching programming since before there were iPhones - before there were even Macs.",
+            "links": {
+                "mastodon": "https://mastodon.social/@dimsumthinking"
+            }
+        }]
     }
 ]
