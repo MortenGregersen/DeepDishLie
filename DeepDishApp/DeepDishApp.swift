@@ -10,6 +10,7 @@ import DeepDishCore
 #if canImport(DeepDishWidgetCore)
 import DeepDishWidgetCore
 #endif
+import RevenueCat
 import SwiftUI
 import TelemetryDeck
 
@@ -20,6 +21,7 @@ struct DeepDishApp: App {
     @State private var scheduleController: ScheduleController
     @State private var weatherController = WeatherController()
     @State private var giveawayController = GiveawayController()
+    @State private var tipJarController = TipJarController()
     @State private var selectedTab: Tab
     @State private var fetchingTaskId: UUID?
     #if !os(tvOS)
@@ -44,7 +46,7 @@ struct DeepDishApp: App {
     }
 
     enum Tab {
-        case countdown, schedule, weather, giveaway, about
+        case countdown, schedule, weather, giveaway, tipJar, about
     }
 
     var body: some Scene {
@@ -82,10 +84,14 @@ struct DeepDishApp: App {
                     selectedTab = .giveaway
                 }
                 .keyboardShortcut("3", modifiers: .command)
+                Button("Tip jar") {
+                    selectedTab = .tipJar
+                }
+                .keyboardShortcut("4", modifiers: .command)
                 Button("About") {
                     selectedTab = .about
                 }
-                .keyboardShortcut("4", modifiers: .command)
+                .keyboardShortcut("5", modifiers: .command)
             }
         }
         MenuBarExtra("Deep Dish Unofficial", image: "MenuBarExtra", isInserted: .init(get: {
@@ -202,6 +208,12 @@ struct DeepDishApp: App {
                         Label("Giveaway", systemImage: "app.gift")
                     }
                     .tag(Tab.giveaway)
+                TipJarView()
+                    .environment(tipJarController)
+                    .tabItem {
+                        Label("Tip Jar", systemImage: "heart")
+                    }
+                    .tag(Tab.tipJar)
                 AboutView()
                     .environment(scheduleController)
                     .tabItem {
