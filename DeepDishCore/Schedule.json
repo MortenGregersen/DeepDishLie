@@ -412,17 +412,9 @@
         }
     },
     {
-        "id": "special-closing-keynote",
+        "id": "session-daniel-steinberg",
         "start": "2025-04-29T17:00:00-05:00",
         "end": "2025-04-29T17:45:00-05:00",
-        "description": "Closing Keynote",
-        "speakers": [],
-        "emoji": "🏁"
-    },
-    {
-        "id": "session-daniel-steinberg",
-        "start": "2025-04-29T17:45:00-05:00",
-        "end": "2025-04-29T18:00:00-05:00",
         "description": "Closing Keynote - \"That One\"",
         "speakers": [{
             "name": "Daniel Steinberg",
@@ -432,5 +424,13 @@
                 "mastodon": "https://mastodon.social/@dimsumthinking"
             }
         }]
+    },
+    {
+        "id": "special-closing-words",
+        "start": "2025-04-29T17:45:00-05:00",
+        "end": "2025-04-29T18:00:00-05:00",
+        "description": "Closing Words",
+        "speakers": [],
+        "emoji": "🏁"
     }
 ]
