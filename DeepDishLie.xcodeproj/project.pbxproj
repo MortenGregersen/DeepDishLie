@@ -37,6 +37,7 @@
 		5AA0C6B72D88CCE100AF6C14 /* DeepDishAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0C6682D88C2F800AF6C14 /* DeepDishAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5AA0C9142D89784300AF6C14 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		5AA0C9152D89784300AF6C14 /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AEC9DC12DC08B8200436687 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 5AEC9DC02DC08B8200436687 /* RevenueCat */; };
 		DE6F23542D6A533F003C0319 /* DeepDishAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = DE6F23452D6A533B003C0319 /* DeepDishAppClip.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE9F8FB82D6A8081002517D1 /* DeepDishCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; };
 		DE9F8FB92D6A8081002517D1 /* DeepDishCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A81953E2D61493D0048354A /* DeepDishCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -375,6 +376,7 @@
 			files = (
 				5A0A6EDD2D9D38A100C4CAC3 /* DeepDishWidgetCore.framework in Frameworks */,
 				5A8195512D61493D0048354A /* DeepDishCore.framework in Frameworks */,
+				5AEC9DC12DC08B8200436687 /* RevenueCat in Frameworks */,
 				5AA0C66E2D88C2F800AF6C14 /* DeepDishAppCore.framework in Frameworks */,
 				5AA0A5FA2D9D71CF00A115C2 /* TelemetryDeck in Frameworks */,
 			);
@@ -593,6 +595,7 @@
 			name = DeepDishApp;
 			packageProductDependencies = (
 				5AA0A5F92D9D71CF00A115C2 /* TelemetryDeck */,
+				5AEC9DC02DC08B8200436687 /* RevenueCat */,
 			);
 			productName = DeepDishLie;
 			productReference = 5A3EFB0229F7D53200D75F5E /* Deep Dish Unofficial.app */;
@@ -799,6 +802,7 @@
 				5A28DB432BE294910047A8CF /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 				5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */,
 				5AA0A8F82D9E822700A115C2 /* XCRemoteSwiftPackageReference "Defaults" */,
+				5AEC9DBF2DC08B8200436687 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
 			);
 			productRefGroup = 5A3EFB0329F7D53200D75F5E /* Products */;
 			projectDirPath = "";
@@ -1345,6 +1349,14 @@
 				minimumVersion = 9.0.3;
 			};
 		};
+		5AEC9DBF2DC08B8200436687 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.22.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1382,6 +1394,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A28DB722BE5FB5F0047A8CF /* XCRemoteSwiftPackageReference "SwiftSDK" */;
 			productName = TelemetryDeck;
+		};
+		5AEC9DC02DC08B8200436687 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AEC9DBF2DC08B8200436687 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCat;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
