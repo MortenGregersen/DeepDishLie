@@ -99,7 +99,6 @@ struct TipJarView: View {
             .toolbarBackground(Color.accent, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
-            .toolbarTitleDisplayMode(.inlineLarge)
             #endif
             .refreshable {
                 tipJarController.fetchPackages()
