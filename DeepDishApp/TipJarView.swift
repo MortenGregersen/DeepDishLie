@@ -53,9 +53,21 @@ struct TipJarView: View {
                 } else if tipJarController.fetching {
                     ProgressView("Fetching tips...")
                 } else if let error = tipJarController.error {
-                    Text(error.localizedDescription)
-                    Button("Retry") {
-                        tipJarController.fetchPackages()
+                    ContentUnavailableView {
+                        Label("No tips", systemImage: "heart.slash")
+                    } description: {
+                        Text(error.localizedDescription)
+                            .multilineTextAlignment(.center)
+                    } actions: {
+                        Button {
+                            tipJarController.fetchPackages()
+                        } label: {
+                            Text("Retry")
+                                .fontWeight(.semibold)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 2)
+                        }
+                        .buttonStyle(.borderedProminent)
                     }
                 }
             }
