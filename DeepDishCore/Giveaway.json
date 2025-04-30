@@ -1,5 +1,9 @@
 {
     "channel": "#appdab-pro-raffle",
-    "winners": [],
+    "winners": [
+        "Allison McEntire",
+        "Michael Redig",
+        "Isaac Halvorson"
+    ],
     "offerForAllUrl": "https://apps.apple.com/redeem/?ctx=offercodes&id=1612325183&code=DDS25"
 }
