@@ -112,6 +112,9 @@ public extension ScheduleWidget {
                     if showTime {
                         subtitleComponents.append("at \(event.start.formatted(date: .omitted, time: .shortened))")
                     }
+                    if let subtitle = event.subtitle {
+                        subtitleComponents.append(subtitle)
+                    }
                     if let speakers = event.speakers, !speakers.isEmpty {
                         subtitleComponents.append(speakers.map(\.name).formatted(.list(type: .and)))
                     }
@@ -208,34 +211,47 @@ public extension ScheduleWidget {
     }
 }
 
+private extension ScheduleController {
+    static var previewEvents: [Event] {
+        ScheduleController.forPreview()
+            .days
+            .flatMap(\.events)
+            .sorted { $0.start < $1.start }
+    }
+}
+
 #Preview("Small", as: .systemSmall) {
     ScheduleWidget()
 } timeline: {
+    let previewEvents = ScheduleController.previewEvents
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemSmall, mode: .countdown(until: .now.addingTimeInterval(60*60*24*65.1234)))
-    ScheduleWidget.Entry(date: .now, widgetFamily: .systemSmall, mode: .currentNext(currentEvent: ScheduleController().days[2].events[2], nextEvents: [ScheduleController().days[2].events[3]]))
+    ScheduleWidget.Entry(date: .now, widgetFamily: .systemSmall, mode: .currentNext(currentEvent: previewEvents.first, nextEvents: Array(previewEvents.dropFirst().prefix(1))))
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemSmall, mode: .ended)
 }
 
 #Preview("Medium", as: .systemMedium) {
     ScheduleWidget()
 } timeline: {
+    let previewEvents = ScheduleController.previewEvents
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemMedium, mode: .countdown(until: .now.addingTimeInterval(60*60*24*65.1234)))
-    ScheduleWidget.Entry(date: .now, widgetFamily: .systemMedium, mode: .currentNext(currentEvent: ScheduleController().days[2].events[2], nextEvents: [ScheduleController().days[2].events[3]]))
+    ScheduleWidget.Entry(date: .now, widgetFamily: .systemMedium, mode: .currentNext(currentEvent: previewEvents.first, nextEvents: Array(previewEvents.dropFirst().prefix(1))))
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemMedium, mode: .ended)
 }
 
 #Preview("Large", as: .systemLarge) {
     ScheduleWidget()
 } timeline: {
+    let previewEvents = ScheduleController.previewEvents
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemLarge, mode: .countdown(until: .now.addingTimeInterval(60*60*24*65.1234)))
-    ScheduleWidget.Entry(date: .now, widgetFamily: .systemLarge, mode: .currentNext(currentEvent: ScheduleController().days[2].events[1], nextEvents: [ScheduleController().days[2].events[2], ScheduleController().days[2].events[3], ScheduleController().days[2].events[4]]))
+    ScheduleWidget.Entry(date: .now, widgetFamily: .systemLarge, mode: .currentNext(currentEvent: previewEvents.first, nextEvents: Array(previewEvents.dropFirst().prefix(3))))
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemLarge, mode: .ended)
 }
 
 #Preview("Extra large", as: .systemExtraLarge) {
     ScheduleWidget()
 } timeline: {
+    let previewEvents = ScheduleController.previewEvents
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemExtraLarge, mode: .countdown(until: .now.addingTimeInterval(60*60*24*65.1234)))
-    ScheduleWidget.Entry(date: .now, widgetFamily: .systemExtraLarge, mode: .currentNext(currentEvent: ScheduleController().days[2].events[2], nextEvents: [ScheduleController().days[2].events[3], ScheduleController().days[2].events[4], ScheduleController().days[2].events[5]]))
+    ScheduleWidget.Entry(date: .now, widgetFamily: .systemExtraLarge, mode: .currentNext(currentEvent: previewEvents.first, nextEvents: Array(previewEvents.dropFirst().prefix(3))))
     ScheduleWidget.Entry(date: .now, widgetFamily: .systemExtraLarge, mode: .ended)
 }

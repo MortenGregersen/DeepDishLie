@@ -22,6 +22,16 @@ public struct SpeakerImage: View {
         } else if let fallbackImageUrl = speaker.fallbackImageUrl {
             CachingAsyncImage(url: fallbackImageUrl)
                 .aspectRatio(contentMode: .fit)
+        } else {
+            GeometryReader { geometry in
+                let size = min(geometry.size.width, geometry.size.height)
+                Text(speaker.initials)
+                    .font(.system(size: size * 0.36, weight: .semibold, design: .rounded))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+            .aspectRatio(1, contentMode: .fit)
         }
     }
 }
