@@ -77,7 +77,12 @@ struct WelcomeView: View {
             .padding(.bottom)
         }
         .foregroundStyle(.white)
-        .background(Color.splashBackground)
+        .background {
+            Image("FabricBackground", bundle: .core)
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+        }
         .onAppear {
             withAnimation(.easeInOut(duration: 2.0)) {
                 showsTitle = true
