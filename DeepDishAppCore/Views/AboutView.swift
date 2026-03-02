@@ -144,7 +144,7 @@ public struct AboutView: View {
                 } header: {
                     Text("Thanks go out to 😍")
                 } footer: {
-                    Text("Version \(Bundle.main.infoDictionary!["CFBundleShortVersionString"]!) (\(Bundle.main.infoDictionary!["CFBundleVersion"]!))")
+                    Text(verbatim: "Version \(Bundle.main.infoDictionary!["CFBundleShortVersionString"]!) (\(Bundle.main.infoDictionary!["CFBundleVersion"]!))")
                         .frame(maxWidth: .infinity)
                 }
                 .ifOS(.tvOS) { $0.focusable() }
