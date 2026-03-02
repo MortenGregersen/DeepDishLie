@@ -80,18 +80,18 @@ struct DeepDishApp: App {
                     selectedTab = .weather
                 }
                 .keyboardShortcut("2", modifiers: .command)
-                Button("Giveaway") {
-                    selectedTab = .giveaway
-                }
-                .keyboardShortcut("3", modifiers: .command)
+//                Button("Giveaway") {
+//                    selectedTab = .giveaway
+//                }
+//                .keyboardShortcut("3", modifiers: .command)
                 Button("Tip jar") {
                     selectedTab = .tipJar
                 }
-                .keyboardShortcut("4", modifiers: .command)
+                .keyboardShortcut("3", modifiers: .command)
                 Button("About") {
                     selectedTab = .about
                 }
-                .keyboardShortcut("5", modifiers: .command)
+                .keyboardShortcut("4", modifiers: .command)
             }
         }
         MenuBarExtra("Deep Dish Unofficial", image: "MenuBarExtra", isInserted: .init(get: {
@@ -202,12 +202,12 @@ struct DeepDishApp: App {
                         Label("Weather", systemImage: "thermometer.sun")
                     }
                     .tag(Tab.weather)
-                GiveawayView()
-                    .environment(giveawayController)
-                    .tabItem {
-                        Label("Giveaway", systemImage: "app.gift")
-                    }
-                    .tag(Tab.giveaway)
+//                GiveawayView()
+//                    .environment(giveawayController)
+//                    .tabItem {
+//                        Label("Giveaway", systemImage: "app.gift")
+//                    }
+//                    .tag(Tab.giveaway)
                 TipJarView()
                     .environment(tipJarController)
                     .tabItem {
