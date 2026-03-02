@@ -69,7 +69,12 @@ public struct CountdownView: View {
         .fontWeight(.bold)
         .multilineTextAlignment(.center)
         .foregroundStyle(.white)
-        .background(Color.splashBackground)
+        .background {
+            Image("FabricBackground", bundle: .core)
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+        }
     }
 
     private func updateCountdown() {
