@@ -18,7 +18,7 @@ public struct AboutView: View {
             List {
                 Section("The app ❤️") {
                     let singleCellOSes: [OperatingSystem] = [.macOS, .tvOS, .visionOS]
-                    let topText = Text("Deep Dish Unofficial is made for the attendees at the Deep Dish Swift 2025 conference.")
+                    let topText = Text("Deep Dish Unofficial is made for the attendees at the Deep Dish Swift 2026 conference.")
                     let bottomText = Text("It is open source and available on [GitHub](https://github.com/MortenGregersen/DeepDishLie).")
                     if !singleCellOSes.contains(OperatingSystem.current) {
                         topText
@@ -42,18 +42,11 @@ public struct AboutView: View {
                     }
                 }
                 Section("The conference 🍕") {
-                    let pizza = ZStack {
-                        Image("PizzaOrange", bundle: .core)
-                            .resizable()
-                            .scaledToFit()
-                        Image("PizzaYellow", bundle: .core)
-                            .resizable()
-                            .scaledToFit()
-                    }
-                    .ifOS(.macOS, .visionOS) { $0.frame(maxHeight: 60) }
-                    .ifNotOS(.macOS, .visionOS) { $0.frame(width: 80) }
-                    .padding(8)
-                    .background(Circle().fill(Color.splashBackground))
+                    let iconImage = Image("DeepDishLogo", bundle: .core)
+                        .resizable()
+                        .scaledToFit()
+                        .ifOS(.macOS, .visionOS) { $0.frame(maxHeight: 60) }
+                        .ifNotOS(.macOS, .visionOS) { $0.frame(width: 80) }
                     let texts = VStack(alignment: .leading) {
                         Text("Deep Dish Swift")
                             .font(OperatingSystem.current == .iOS ? .title : .headline)
@@ -62,7 +55,7 @@ public struct AboutView: View {
                     }
                     if OperatingSystem.current == .watchOS {
                         VStack(alignment: .leading) {
-                            pizza
+                            iconImage
                             texts
                         }
                         .padding(.vertical)
@@ -70,7 +63,7 @@ public struct AboutView: View {
                         HStack(alignment: .top) {
                             texts
                             Spacer(minLength: 8)
-                            pizza
+                            iconImage
                         }
                     }
                 }
@@ -83,9 +76,9 @@ public struct AboutView: View {
                         .ifOS(.visionOS) { $0.frame(maxHeight: 100) }
                         .frame(width: 100)
                     let developerTexts = VStack(alignment: .leading, spacing: 4) {
-                        Text("This app was made by me, **Morten Bjerg Gregersen**")
-                        Text("You can find me at **Deep Dish Swift again this year**.")
-                        Text("Find my apps on **[AtterdagApps.com](https://AtterdagApps.com)**")
+                        Text("This app was made by me, **Morten Bjerg Gregersen** 🤓")
+                        Text("Unfortunately **I won't be at Deep Dish Swift this year**. See you another time! 👋")
+                        Text("Find my apps on **[AtterdagApps.com](https://AtterdagApps.com)** 👑")
                         if OperatingSystem.current == .macOS || OperatingSystem.current == .visionOS {
                             Spacer(minLength: 0)
                         }
@@ -112,7 +105,7 @@ public struct AboutView: View {
                             .ifOS(.macOS) { $0.frame(maxHeight: 80) }
                             .frame(width: 100)
                         let appDabTopText = Text("If you attend the conference, I suspect, that you are an **app developer yourself**. If so, maybe my app, **[AppDab](https://AppDab.app)**, is something for you?")
-                        let appDabBottomText = Text("It is a **native macOS and iOS app** for **App Store Connect**. Find me at the conference and **get a free sticker!** 🎉🕺")
+                        let appDabBottomText = Text("It is a **native macOS, iOS, and watchOS app** for managing your apps in **App Store Connect** 🚀🕺")
                         if OperatingSystem.current == .watchOS {
                             VStack(alignment: .leading) {
                                 appDabIcon
