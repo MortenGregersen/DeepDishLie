@@ -13,9 +13,9 @@ struct ContentView: View {
         NavigationStack {
             EventsListView()
                 .navigationTitle("Deep Dish Swift 🍕")
+                .navigationBarTitleDisplayMode(.inline)
                 .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
-                .toolbarColorScheme(.dark, for: .navigationBar)
         }
     }
 }

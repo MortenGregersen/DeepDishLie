@@ -92,13 +92,14 @@ struct TipJarView: View {
                     closingAngle: .degrees(0),
                     radius: 160,
                     repetitionInterval: 1,
-                    hapticFeedback: false)
+                    hapticFeedback: false
+                )
             }
             #endif
             #if !os(macOS) && !os(tvOS)
-            .toolbarBackground(Color.accent, for: .navigationBar)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarColorScheme(.dark, for: .navigationBar)
             #endif
             .refreshable {
                 tipJarController.fetchPackages()

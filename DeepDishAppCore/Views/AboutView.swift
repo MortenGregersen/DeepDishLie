@@ -154,7 +154,6 @@ public struct AboutView: View {
                 .navigationBarTitleDisplayMode(OperatingSystem.current == .watchOS ? .automatic : .inline)
                 .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
-                .toolbarColorScheme(.dark, for: .navigationBar)
             #endif
         }
     }

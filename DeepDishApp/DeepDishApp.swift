@@ -182,9 +182,6 @@ struct DeepDishApp: App {
             TabView(selection: $selectedTab) {
                 if let countdownDate {
                     CountdownView(eventDate: countdownDate)
-                    #if !os(macOS)
-                        .toolbarBackground(.visible, for: .tabBar)
-                    #endif
                         .tabItem {
                             Label("Countdown", systemImage: "timer")
                         }

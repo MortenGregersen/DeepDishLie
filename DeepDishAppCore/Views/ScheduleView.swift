@@ -38,9 +38,9 @@ public struct ScheduleView: View {
                 EventsListView()
                     .navigationTitle("Schedule 🍕")
                 #if !os(macOS)
+                    .navigationBarTitleDisplayMode(.inline)
                     .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
                     .toolbarBackground(.visible, for: .navigationBar)
-                    .toolbarColorScheme(.dark, for: .navigationBar)
                 #endif
                     .toolbar {
                         if let currentDateId {

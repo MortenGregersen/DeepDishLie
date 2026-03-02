@@ -116,9 +116,8 @@ public struct GiveawayView: View {
             }
             #if !os(macOS) && !os(tvOS)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.accent, for: .navigationBar)
+            .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarColorScheme(.dark, for: .navigationBar)
             #endif
         }
     }
