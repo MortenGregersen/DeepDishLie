@@ -14,8 +14,8 @@ public class WelcomeController {
     public var showsWelcome: Bool
     public var hasJustSeenWelcome = false
 
-    private let hasSeenWelcomeKey = "has-seen-welcome-2025"
-    private let hasSeenReviewKey = "has-seen-review-2025"
+    private let hasSeenWelcomeKey = "has-seen-welcome-2026"
+    private let hasSeenReviewKey = "has-seen-review-2026"
 
     public init(inDemoMode: Bool) {
         let hasSeenWelcome = UserDefaults.standard.bool(forKey: hasSeenWelcomeKey)
