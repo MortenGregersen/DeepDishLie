@@ -26,6 +26,10 @@ struct EventRow: View {
                         .font(.headline)
                         .foregroundStyle(event.titleTextColor)
                         .italic(event.toBeDetermined)
+                    if let subtitle = event.subtitle {
+                        Text(subtitle)
+                            .foregroundStyle(event.subtitleTextColor)
+                    }
                     if let speakers = event.speakers {
                         Text(speakers.map(\.name).formatted(.list(type: .and)))
                             .foregroundStyle(event.subtitleTextColor)
@@ -50,6 +54,10 @@ struct EventRow: View {
                         .font(.headline)
                         .foregroundStyle(event.titleTextColor)
                         .italic(event.toBeDetermined)
+                    if let subtitle = event.subtitle {
+                        Text(subtitle)
+                            .foregroundStyle(event.subtitleTextColor)
+                    }
                     if let speakers = event.speakers {
                         Text(speakers.map(\.name).formatted(.list(type: .and)))
                             .foregroundStyle(event.subtitleTextColor)
@@ -155,5 +163,8 @@ struct EventRow: View {
 #Preview {
     @Previewable @State var scheduleController = ScheduleController.forPreview()
     @Previewable @State var settingsController = SettingsController.forPreview()
-    EventRow(dayName: scheduleController.days.first!.name, event: scheduleController.days.first!.events[3], dateFormatter: Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock))
+    let previewEvent = scheduleController.days
+        .flatMap(\.events)
+        .first(where: { $0.speakers?.isEmpty == false }) ?? scheduleController.days.first!.events.first!
+    EventRow(dayName: scheduleController.dayName(for: previewEvent)!, event: previewEvent, dateFormatter: Event.dateFormatter(useLocalTimezone: settingsController.useLocalTimezone, use24hourClock: settingsController.use24hourClock))
 }

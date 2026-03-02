@@ -35,9 +35,7 @@ struct EventView: View {
                             ZStack {
                                 Circle()
                                     .fill(Color.accent)
-                                Image(speaker.image, bundle: .core)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
+                                SpeakerImage(speaker: speaker)
                                     .clipShape(Circle())
                                     .padding(speakerImageBorderWidth / CGFloat(OperatingSystem.current == .watchOS ? 1 : speakers.count))
                             }
@@ -62,6 +60,10 @@ struct EventView: View {
                 }
                 Text(event.description)
                     .font(descriptionFont)
+                if let subtitle = event.subtitle {
+                    Text(subtitle)
+                        .foregroundStyle(.secondary)
+                }
                 if let speakers = event.speakers {
                     Text(speakers.map(\.name).formatted(.list(type: .and)))
                         .foregroundStyle(.secondary)
@@ -158,9 +160,7 @@ struct EventView: View {
     private func speakerHeader(prefix: String, speaker: Speaker, showImage: Bool) -> some View {
         HStack {
             if showImage {
-                Image(speaker.image, bundle: .core)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                SpeakerImage(speaker: speaker)
                     .frame(height: headerImageHeight)
                     .clipShape(Circle())
                     .background {
@@ -177,8 +177,12 @@ struct EventView: View {
 }
 
 #Preview {
+    let scheduleController = ScheduleController.forPreview()
+    let event = scheduleController.days
+        .flatMap(\.events)
+        .first(where: { $0.speakers?.isEmpty == false }) ?? scheduleController.days.first!.events.first!
     NavigationStack {
-        EventView(dayName: "Sunday", event: ScheduleController.forPreview().days[1].events[9])
+        EventView(dayName: scheduleController.dayName(for: event)!, event: event)
             .environment(SettingsController.forPreview())
     }
 }

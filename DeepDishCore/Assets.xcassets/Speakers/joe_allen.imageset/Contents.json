@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "joe_allen.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

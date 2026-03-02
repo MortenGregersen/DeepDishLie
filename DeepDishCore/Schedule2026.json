@@ -1,0 +1,340 @@
+[
+    {
+        "id": "practical-registration-opens",
+        "start": "2026-04-12T11:00:00-05:00",
+        "end": "2026-04-12T12:45:00-05:00",
+        "description": "Registration opens"
+    },
+    {
+        "id": "practical-intro",
+        "start": "2026-04-12T12:45:00-05:00",
+        "end": "2026-04-12T13:00:00-05:00",
+        "description": "Event intro"
+    },
+    {
+        "id": "special-opening-keynote",
+        "start": "2026-04-12T13:00:00-05:00",
+        "end": "2026-04-12T13:45:00-05:00",
+        "description": "Opening Keynote",
+        "speakers": [
+            {
+                "name": "Cassidy Williams",
+                "image": "cassidy_williams",
+                "about": "Software developer, educator, and meme-maker. Startup advisor, open source contributor, and mechanical keyboard enthusiast.",
+                "links": {
+                    "bluesky": "https://bsky.app/profile/cassidoo.bsky.social",
+                    "mastodon": "https://notacult.social/@cassidoo",
+                    "twitter": "https://twitter.com/cassidoo"
+                }
+            }
+        ]
+    },
+    {
+        "id": "session-tbd-career-longevity",
+        "start": "2026-04-12T13:45:00-05:00",
+        "end": "2026-04-12T14:45:00-05:00",
+        "description": "Josh Won’t Tell... Yet",
+        "subtitle": "Something with \"Career & Longevity\"",
+        "speakers": [],
+        "emoji": "🤫"
+    },
+    {
+        "id": "session-devin-davies",
+        "start": "2026-04-12T14:45:00-05:00",
+        "end": "2026-04-12T15:30:00-05:00",
+        "description": "Good Interface Design",
+        "speakers": [
+            {
+                "name": "Devin Davies",
+                "image": "devin_davies",
+                "about": "Apple Design Award winner 2024 for Crouton, a simple recipe manager for Apple platforms."
+            }
+        ]
+    },
+    {
+        "id": "break-sunday",
+        "start": "2026-04-12T15:30:00-05:00",
+        "end": "2026-04-12T16:00:00-05:00"
+    },
+    {
+        "id": "session-erica-engle",
+        "start": "2026-04-12T16:00:00-05:00",
+        "end": "2026-04-12T17:00:00-05:00",
+        "description": "Debugging Tools: how to level up your app behind the scenes",
+        "speakers": [
+            {
+                "name": "Erica Engle",
+                "image": "erica_engle",
+                "about": "Staff Software Engineer at Slack, focusing on iOS development on core features like messaging and sign in. When not building mobile apps, she can be found running, cycling, and spending time with her dog Eddie."
+            }
+        ]
+    },
+    {
+        "id": "session-tbd-audio",
+        "start": "2026-04-12T17:00:00-05:00",
+        "end": "2026-04-12T17:45:00-05:00",
+        "description": "Thin Crust is Optional",
+        "subtitle": "Something with \"Audio\"",
+        "speakers": [],
+        "emoji": "🫥"
+    },
+    {
+        "id": "breakfast-monday",
+        "start": "2026-04-13T07:30:00-05:00",
+        "end": "2026-04-13T08:55:00-05:00"
+    },
+    {
+        "id": "practical-morning-welcome-monday",
+        "start": "2026-04-13T08:55:00-05:00",
+        "end": "2026-04-13T09:00:00-05:00",
+        "description": "Morning welcome"
+    },
+    {
+        "id": "session-mustafa-yusuf",
+        "start": "2026-04-13T09:00:00-05:00",
+        "end": "2026-04-13T09:45:00-05:00",
+        "description": "CloudKit: Zero to Sync",
+        "speakers": [
+            {
+                "name": "Mustafa Yusuf",
+                "image": "mustafa_yusuf",
+                "about": "Indie Developer building Tasks & Karo!",
+                "links": {
+                    "bluesky": "https://bsky.app/profile/mustafayusuf.dev",
+                    "mastodon": "https://mastodon.world/@mustafayusuf",
+                    "twitter": "https://twitter.com/mustafayusuf_"
+                }
+            }
+        ]
+    },
+    {
+        "id": "session-tbd-testing-ai",
+        "start": "2026-04-13T09:45:00-05:00",
+        "end": "2026-04-13T10:30:00-05:00",
+        "description": "func reveal() -> Never",
+        "subtitle": "Something with \"Testing & AI\"",
+        "speakers": [],
+        "emoji": "🤯"
+    },
+    {
+        "id": "session-tbd-swiftui",
+        "start": "2026-04-13T10:30:00-05:00",
+        "end": "2026-04-13T11:15:00-05:00",
+        "description": "Session Hidden Behind a Paywall (Just Kidding)",
+        "subtitle": "Something with \"SwiftUI\"",
+        "speakers": [],
+        "emoji": "💰"
+    },
+    {
+        "id": "session-tbd-networking",
+        "start": "2026-04-13T11:15:00-05:00",
+        "end": "2026-04-13T12:00:00-05:00",
+        "description": "Awaiting Toppings...",
+        "subtitle": "Something with \"Networking\"",
+        "speakers": [],
+        "emoji": "😶"
+    },
+    {
+        "id": "lunch-monday",
+        "start": "2026-04-13T12:00:00-05:00",
+        "end": "2026-04-13T13:00:00-05:00"
+    },
+    {
+        "id": "session-tbd-indie-business",
+        "start": "2026-04-13T13:00:00-05:00",
+        "end": "2026-04-13T13:45:00-05:00",
+        "description": "Waiting for Josh Review",
+        "subtitle": "Something with \"Indie Business\"",
+        "speakers": [],
+        "emoji": "👀"
+    },
+    {
+        "id": "session-joe-allen",
+        "start": "2026-04-13T13:45:00-05:00",
+        "end": "2026-04-13T14:30:00-05:00",
+        "description": "Building an Audience for Your Apps",
+        "speakers": [
+            {
+                "name": "Joe Allen",
+                "image": "joe_allen",
+                "about": "Indie iOS app developer for 15+ years and creator of Teleprompter Pro.",
+                "links": {
+                    "bluesky": "https://bsky.app/profile/joeallenpro.bsky.social",
+                    "mastodon": "https://iosdev.space/@joeallenpro",
+                    "twitter": "https://twitter.com/joeallenpro"
+                }
+            }
+        ]
+    },
+    {
+        "id": "session-tbd-soft-skills",
+        "start": "2026-04-13T14:30:00-05:00",
+        "end": "2026-04-13T15:15:00-05:00",
+        "description": "Even Spotlight Can’t Find This One Yet",
+        "subtitle": "Something with \"Soft Skills\"",
+        "speakers": [],
+        "emoji": "🔦"
+    },
+    {
+        "id": "session-riley-testut",
+        "start": "2026-04-13T15:15:00-05:00",
+        "end": "2026-04-13T16:00:00-05:00",
+        "description": "10 Years In: Delta Story",
+        "speakers": [
+            {
+                "name": "Riley Testut",
+                "image": "riley_testut",
+                "about": "Creator of Delta, the popular retro game emulator, and AltStore, the EU-approved alternative app marketplace for iPhone."
+            }
+        ]
+    },
+    {
+        "id": "break-monday",
+        "start": "2026-04-13T16:00:00-05:00",
+        "end": "2026-04-13T16:30:00-05:00"
+    },
+    {
+        "id": "special-launched-live",
+        "start": "2026-04-13T16:30:00-05:00",
+        "end": "2026-04-13T17:30:00-05:00",
+        "description": "Launched Live",
+        "speakers": [
+            {
+                "name": "Charlie Chapman",
+                "image": "charlie_chapman",
+                "about": "Host of Launched, creator of Dark Noise, and developer advocate at RevenueCat.",
+                "links": {
+                    "github": "https://github.com/charliemchapman",
+                    "mastodon": "https://mastodon.social/@charliemchapman",
+                    "threads": "https://www.threads.net/@charliemchapman",
+                    "twitter": "https://twitter.com/_chuckyc",
+                    "website": "https://charliemchapman.com"
+                }
+            }
+        ]
+    },
+    {
+        "id": "breakfast-tuesday",
+        "start": "2026-04-14T07:30:00-05:00",
+        "end": "2026-04-14T08:55:00-05:00"
+    },
+    {
+        "id": "practical-morning-welcome-tuesday",
+        "start": "2026-04-14T08:55:00-05:00",
+        "end": "2026-04-14T09:00:00-05:00",
+        "description": "Morning welcome"
+    },
+    {
+        "id": "session-joe-fabisevich",
+        "start": "2026-04-14T09:00:00-05:00",
+        "end": "2026-04-14T10:00:00-05:00",
+        "description": "AI (Without the Hype)",
+        "speakers": [
+            {
+                "name": "Joe Fabisevich",
+                "image": "joe_fabisevich",
+                "about": "Creator of Plinky and former Twitter engineer. Native New Yorker passionate about indie apps, pizza, cats, and baseball.",
+                "links": {
+                    "bluesky": "https://bsky.app/profile/joefabisevich.com",
+                    "mastodon": "https://macaw.social/@joefabisevich",
+                    "threads": "https://www.threads.net/@joefabisevich"
+                }
+            }
+        ]
+    },
+    {
+        "id": "session-david-beck",
+        "start": "2026-04-14T10:00:00-05:00",
+        "end": "2026-04-14T11:00:00-05:00",
+        "description": "Surviving in low connectivity",
+        "speakers": [
+            {
+                "name": "David Beck",
+                "image": "david_beck",
+                "about": "iOS Software Engineer at DoorDash who has been building apps since the earliest days of the iPhone SDK."
+            }
+        ]
+    },
+    {
+        "id": "session-daniel-kennett",
+        "start": "2026-04-14T11:00:00-05:00",
+        "end": "2026-04-14T11:45:00-05:00",
+        "description": "Betting the Farm on Swift: Adventures in Extreme Crossplatforming",
+        "speakers": [
+            {
+                "name": "Daniel Kennett",
+                "image": "daniel_kennett",
+                "about": "Career indie developer and founder of Cascable. Started developing for Apple platforms in the Mac OS 8 era, shipping shareware when customers mailed in checks. AppKit, UIKit, SwiftUI ... he's seen it all!"
+            }
+        ]
+    },
+    {
+        "id": "lunch-tuesday",
+        "start": "2026-04-14T11:45:00-05:00",
+        "end": "2026-04-14T13:00:00-05:00"
+    },
+    {
+        "id": "session-tbd-server-side-swift",
+        "start": "2026-04-14T13:00:00-05:00",
+        "end": "2026-04-14T14:00:00-05:00",
+        "description": "This Talk is Private(set)",
+        "subtitle": "Something with \"Server-side Swift\"",
+        "speakers": [],
+        "emoji": "🔒"
+    },
+    {
+        "id": "session-pedro-pinera-buendia",
+        "start": "2026-04-14T14:00:00-05:00",
+        "end": "2026-04-14T15:00:00-05:00",
+        "description": "From generating projects to generating revenue",
+        "speakers": [
+            {
+                "name": "Pedro Piñera Buendía",
+                "image": "pedro_pinera_buendia",
+                "about": "I'm a builder and the co-founder and CEO of Tuist. I love designing and building tools for developers and making them open source."
+            }
+        ]
+    },
+    {
+        "id": "session-chad-etzel",
+        "start": "2026-04-14T15:00:00-05:00",
+        "end": "2026-04-14T15:45:00-05:00",
+        "description": "Reverse Engineering the macOS Genie Animation",
+        "speakers": [
+            {
+                "name": "Chad Etzel",
+                "image": "chad_etzel",
+                "about": "Indie app developer and former Apple engineer on the Proactive Intelligence team. Building iOS apps since 2009, passionate about Swift, SwiftUI, and jazz."
+            }
+        ]
+    },
+    {
+        "id": "break-tuesday",
+        "start": "2026-04-14T15:45:00-05:00",
+        "end": "2026-04-14T16:15:00-05:00"
+    },
+    {
+        "id": "session-mb-bischoff",
+        "start": "2026-04-14T16:15:00-05:00",
+        "end": "2026-04-14T17:00:00-05:00",
+        "description": "Transitions",
+        "speakers": [
+            {
+                "name": "mb bischoff",
+                "image": "mb_bischoff",
+                "about": "Poet & programmer in Brooklyn. Co-founder & CEO of Lickability, making apps for The Atlantic, Mastodon, The New Yorker, and more.",
+                "links": {
+                    "bluesky": "https://bsky.app/profile/mb.bischoff",
+                    "mastodon": "https://xoxo.zone/@mb",
+                    "twitter": "https://twitter.com/mb"
+                }
+            }
+        ]
+    },
+    {
+        "id": "practical-closing-tuesday",
+        "start": "2026-04-14T17:00:00-05:00",
+        "end": "2026-04-14T17:15:00-05:00",
+        "description": "Closing Words"
+    }
+]
