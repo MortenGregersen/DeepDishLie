@@ -36,11 +36,11 @@ struct DeepDishWatchApp: App {
                     .tabItem {
                         Label("Weather", systemImage: "thermometer.sun")
                     }
-                GiveawayView()
-                    .environment(giveawayController)
-                    .tabItem {
-                        Label("Giveaway", systemImage: "app.gift")
-                    }
+//                GiveawayView()
+//                    .environment(giveawayController)
+//                    .tabItem {
+//                        Label("Giveaway", systemImage: "app.gift")
+//                    }
                 AboutView()
                     .environment(scheduleController)
                     .tabItem {

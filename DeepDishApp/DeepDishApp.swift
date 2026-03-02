@@ -116,14 +116,18 @@ struct DeepDishApp: App {
                         }
                         Button {
                             selectedTab = .weather
-                            openWindow(id: mainWindowId)
                             showMainWindow()
                         } label: {
                             Label("Weather", systemImage: "thermometer.sun")
                         }
                         Button {
+                            selectedTab = .tipJar
+                            showMainWindow()
+                        } label: {
+                            Label("Tip Jar", systemImage: "heart")
+                        }
+                        Button {
                             selectedTab = .about
-                            openWindow(id: mainWindowId)
                             showMainWindow()
                         } label: {
                             Label("About", systemImage: "text.badge.star")
@@ -146,7 +150,9 @@ struct DeepDishApp: App {
                     .buttonStyle(.borderless)
                     .animation(.default, value: settingsController.enableRandomConfetti)
                     Spacer()
-                    FlickeringPizzaView(repeating: true)
+                    Image("AppIcon", bundle: .core)
+                        .resizable()
+                        .scaledToFit()
                         .onTapGesture {
                             settingsController.triggerConfetti()
                         }
