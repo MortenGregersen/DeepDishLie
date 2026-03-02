@@ -156,7 +156,12 @@ struct DeepDishApp: App {
             .frame(minWidth: 340)
             .colorScheme(.dark)
             .foregroundStyle(Color.white)
-            .background(Color.splashBackground)
+            .background {
+                Image("FabricBackground", bundle: .core)
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea()
+            }
         }
         .menuBarExtraStyle(.window)
         .windowResizability(.contentMinSize)
