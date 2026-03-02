@@ -16,6 +16,8 @@ public class ScheduleController {
     public var firstEventDate: Date? { days.first?.events.first?.start }
     public var selectedEvent: Event?
 
+    static let bundledScheduleResourceName = "Schedule2026"
+    static let remoteScheduleUrl = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/main/DeepDishCore/Schedule2026.json")!
     private static let cacheFolderUrl = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.CoolYellowOwl.DeepDishLie")
     private static let cachedJsonUrl = cacheFolderUrl?.appending(component: "Schedule.json")
     private static let decoder: JSONDecoder = {
@@ -28,7 +30,7 @@ public class ScheduleController {
         if let events = Self.loadCachedEvents() {
             self.days = chunkUpEvents(events)
         } else {
-            let jsonData = try! Data(contentsOf: Bundle.core.url(forResource: "Schedule", withExtension: "json")!)
+            let jsonData = try! Data(contentsOf: Bundle.core.url(forResource: Self.bundledScheduleResourceName, withExtension: "json")!)
             self.days = chunkUpEvents(try! Self.decoder.decode([Event].self, from: jsonData))
         }
     }
@@ -40,8 +42,7 @@ public class ScheduleController {
 
     @MainActor public func fetchEvents() async {
         do {
-            let url = URL(string: "https://raw.githubusercontent.com/MortenGregersen/DeepDishLie/main/DeepDishCore/Schedule.json")!
-            let urlRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
+            let urlRequest = URLRequest(url: Self.remoteScheduleUrl, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
             days = try chunkUpEvents(Self.decoder.decode([Event].self, from: data))

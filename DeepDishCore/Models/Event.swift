@@ -80,6 +80,17 @@ public enum Event: Decodable, Equatable, Hashable, Identifiable {
         }
     }
 
+    public var subtitle: String? {
+        switch self {
+        case .practical(let session),
+             .session(let session),
+             .special(let session):
+            session.subtitle
+        default:
+            nil
+        }
+    }
+
     public var links: Links? {
         switch self {
         case .practical(let session),
@@ -176,6 +187,7 @@ public struct Session: Decodable, Equatable, Hashable, Identifiable {
     public let start: Date
     public let end: Date
     public let description: String
+    public let subtitle: String?
     public let speakers: [Speaker]?
     public let emoji: String?
     public let links: Links?

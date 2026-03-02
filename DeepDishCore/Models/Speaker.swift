@@ -19,4 +19,11 @@ public struct Speaker: Decodable, Equatable, Hashable, Identifiable {
         guard let firstName = name.split(separator: " ").first else { return name }
         return String(firstName)
     }
+
+    public var initials: String {
+        let parts = name.split(separator: " ").prefix(2)
+        let letters = parts.compactMap(\.first).map(String.init)
+        let initials = letters.joined()
+        return initials.isEmpty ? "?" : initials
+    }
 }
