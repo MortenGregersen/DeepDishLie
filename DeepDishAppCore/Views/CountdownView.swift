@@ -34,7 +34,13 @@ public struct CountdownView: View {
     private var realBody: some View {
         ScrollView {
             VStack(spacing: 0) {
-                FlickeringPizzaView(repeating: true)
+                Image("AppIcon", bundle: .core)
+                    .resizable()
+                    .scaledToFit()
+                    .ifOS(.iOS) {
+                        $0.frame(width: 300)
+                            .padding(.vertical, 32)
+                    }
                     .ifOS(.watchOS) { $0.frame(width: 100) }
                     .ifOS(.macOS) { $0.frame(maxHeight: 600) }
                     .ifOS(.tvOS) { $0.frame(maxHeight: 700) }

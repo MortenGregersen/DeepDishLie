@@ -21,13 +21,14 @@ struct WelcomeView: View {
         ScrollView {
             VStack {
                 VStack(spacing: 0) {
-                    FlickeringPizzaView(repeating: true)
+                    Image("AppIcon", bundle: .core)
+                        .resizable()
+                        .scaledToFit()
                         .frame(width: 250)
+                        .padding(.vertical)
                     VStack(alignment: .trailing) {
                         Text("Deep Dish Swift")
                             .font(.system(size: 40, weight: .bold))
-                        Text("Unofficial")
-                            .font(.custom("Chalkduster", fixedSize: 26))
                     }
                     .opacity(showsTitle ? 1.0 : 0.0)
                 }

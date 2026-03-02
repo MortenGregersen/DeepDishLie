@@ -258,7 +258,6 @@
 				"Extensions/UIWindow+ShakeNotification.swift",
 				Views/AboutView.swift,
 				Views/CountdownView.swift,
-				Views/FlickeringPizzaView.swift,
 				Views/GiveawayView.swift,
 				Views/SafariView.swift,
 				Views/Schedule/EventRow.swift,
