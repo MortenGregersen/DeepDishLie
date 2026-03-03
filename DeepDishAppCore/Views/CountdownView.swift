@@ -41,7 +41,10 @@ public struct CountdownView: View {
                         $0.frame(width: 300)
                             .padding(.vertical, 32)
                     }
-                    .ifOS(.watchOS) { $0.frame(width: 100) }
+                    .ifOS(.watchOS) {
+                        $0.frame(width: 60)
+                            .padding(.vertical, 20)
+                    }
                     .ifOS(.macOS) {
                         $0.frame(maxHeight: 500)
                             .padding(.vertical, 32)
