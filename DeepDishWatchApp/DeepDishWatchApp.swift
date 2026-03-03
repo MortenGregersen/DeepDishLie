@@ -48,6 +48,10 @@ struct DeepDishWatchApp: App {
                     }
             }
             .environment(settingsController)
+            .task {
+                await scheduleController.fetchEvents()
+                await weatherController.fetchWeather()
+            }
             .onChange(of: scenePhase) { _, newValue in
                 if newValue == .active {
                     Task {
