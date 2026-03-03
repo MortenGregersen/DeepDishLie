@@ -37,7 +37,7 @@ public struct ScheduleView: View {
             ScrollViewReader { proxy in
                 EventsListView()
                     .navigationTitle("Schedule 🍕")
-                #if !os(macOS)
+                #if !os(macOS) && !os(tvOS)
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
                     .toolbarBackground(.visible, for: .navigationBar)
