@@ -34,9 +34,21 @@ public struct CountdownView: View {
     private var realBody: some View {
         ScrollView {
             VStack(spacing: 0) {
-                FlickeringPizzaView(repeating: true)
-                    .ifOS(.watchOS) { $0.frame(width: 100) }
-                    .ifOS(.macOS) { $0.frame(maxHeight: 600) }
+                Image("AppIcon", bundle: .core)
+                    .resizable()
+                    .scaledToFit()
+                    .ifOS(.iOS) {
+                        $0.frame(width: 300)
+                            .padding(.vertical, 32)
+                    }
+                    .ifOS(.watchOS) {
+                        $0.frame(width: 60)
+                            .padding(.vertical, 20)
+                    }
+                    .ifOS(.macOS) {
+                        $0.frame(maxHeight: 500)
+                            .padding(.vertical, 32)
+                    }
                     .ifOS(.tvOS) { $0.frame(maxHeight: 700) }
                     .ifOS(.visionOS) { $0.containerRelativeFrame(.vertical) { length, _ in
                         length * 0.85
@@ -63,7 +75,12 @@ public struct CountdownView: View {
         .fontWeight(.bold)
         .multilineTextAlignment(.center)
         .foregroundStyle(.white)
-        .background(Color.splashBackground)
+        .background {
+            Image("FabricBackground", bundle: .core)
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+        }
     }
 
     private func updateCountdown() {

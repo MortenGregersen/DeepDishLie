@@ -18,12 +18,15 @@ public struct ScheduleWidget: Widget {
             ScheduleWidget.EntryView(entry: entry)
                 .foregroundStyle(.white)
                 .containerBackground(for: .widget) {
-                    Color.widgetBackground
+                    Image("FabricBackground", bundle: .core)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .overlay(alignment: .bottomTrailing) {
                             Image("WidgetPizza", bundle: .widgetCore)
                                 .opacity(0.2)
                                 .rotationEffect(.degrees(-25))
-                                .offset(x: 40, y: 50)
+                                .offset(x: 0, y: -50)
                         }
                 }
         }

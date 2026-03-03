@@ -80,18 +80,18 @@ struct DeepDishApp: App {
                     selectedTab = .weather
                 }
                 .keyboardShortcut("2", modifiers: .command)
-                Button("Giveaway") {
-                    selectedTab = .giveaway
-                }
-                .keyboardShortcut("3", modifiers: .command)
+//                Button("Giveaway") {
+//                    selectedTab = .giveaway
+//                }
+//                .keyboardShortcut("3", modifiers: .command)
                 Button("Tip jar") {
                     selectedTab = .tipJar
                 }
-                .keyboardShortcut("4", modifiers: .command)
+                .keyboardShortcut("3", modifiers: .command)
                 Button("About") {
                     selectedTab = .about
                 }
-                .keyboardShortcut("5", modifiers: .command)
+                .keyboardShortcut("4", modifiers: .command)
             }
         }
         MenuBarExtra("Deep Dish Unofficial", image: "MenuBarExtra", isInserted: .init(get: {
@@ -116,14 +116,18 @@ struct DeepDishApp: App {
                         }
                         Button {
                             selectedTab = .weather
-                            openWindow(id: mainWindowId)
                             showMainWindow()
                         } label: {
                             Label("Weather", systemImage: "thermometer.sun")
                         }
                         Button {
+                            selectedTab = .tipJar
+                            showMainWindow()
+                        } label: {
+                            Label("Tip Jar", systemImage: "heart")
+                        }
+                        Button {
                             selectedTab = .about
-                            openWindow(id: mainWindowId)
                             showMainWindow()
                         } label: {
                             Label("About", systemImage: "text.badge.star")
@@ -146,7 +150,9 @@ struct DeepDishApp: App {
                     .buttonStyle(.borderless)
                     .animation(.default, value: settingsController.enableRandomConfetti)
                     Spacer()
-                    FlickeringPizzaView(repeating: true)
+                    Image("AppIcon", bundle: .core)
+                        .resizable()
+                        .scaledToFit()
                         .onTapGesture {
                             settingsController.triggerConfetti()
                         }
@@ -156,7 +162,12 @@ struct DeepDishApp: App {
             .frame(minWidth: 340)
             .colorScheme(.dark)
             .foregroundStyle(Color.white)
-            .background(Color.splashBackground)
+            .background {
+                Image("FabricBackground", bundle: .core)
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea()
+            }
         }
         .menuBarExtraStyle(.window)
         .windowResizability(.contentMinSize)
@@ -182,9 +193,6 @@ struct DeepDishApp: App {
             TabView(selection: $selectedTab) {
                 if let countdownDate {
                     CountdownView(eventDate: countdownDate)
-                    #if !os(macOS)
-                        .toolbarBackground(.visible, for: .tabBar)
-                    #endif
                         .tabItem {
                             Label("Countdown", systemImage: "timer")
                         }
@@ -202,12 +210,12 @@ struct DeepDishApp: App {
                         Label("Weather", systemImage: "thermometer.sun")
                     }
                     .tag(Tab.weather)
-                GiveawayView()
-                    .environment(giveawayController)
-                    .tabItem {
-                        Label("Giveaway", systemImage: "app.gift")
-                    }
-                    .tag(Tab.giveaway)
+//                GiveawayView()
+//                    .environment(giveawayController)
+//                    .tabItem {
+//                        Label("Giveaway", systemImage: "app.gift")
+//                    }
+//                    .tag(Tab.giveaway)
                 TipJarView()
                     .environment(tipJarController)
                     .tabItem {

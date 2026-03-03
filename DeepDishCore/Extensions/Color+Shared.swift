@@ -13,10 +13,6 @@ public extension Color {
     }
     
     static var navigationBarBackground: Color {
-        Color("NavigationBarBackground", bundle: .core)
-    }
-    
-    static var splashBackground: Color {
-        Color("SplashBackground", bundle: .core)
+        Color.accent
     }
 }

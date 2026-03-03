@@ -144,10 +144,9 @@ public struct WeatherView: View {
             }
             .navigationTitle(OperatingSystem.current == .watchOS ? "Weather" : "Wu with the Weather")
             #if !os(macOS) && !os(tvOS)
-                .navigationBarTitleDisplayMode(.automatic)
+                .navigationBarTitleDisplayMode(.inline)
                 .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
-                .toolbarColorScheme(.dark, for: .navigationBar)
             #endif
                 .toolbar {
                     ToolbarItem(placement: refreshToolbarItemPlacement) {

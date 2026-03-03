@@ -141,7 +141,6 @@ struct EventView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
-        .toolbarColorScheme(.dark, for: .navigationBar)
         #endif
         #if os(iOS)
         .sheet(item: $shownUrl) { presentedUrl in
