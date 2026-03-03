@@ -36,7 +36,7 @@ struct ConfettiEnabledView<Content>: View where Content: View {
                         #endif
                     }
                 }
-            #if canImport(ConfettiSwiftUI) && canImport(UIKit)
+            #if !os(tvOS) && canImport(ConfettiSwiftUI) && canImport(UIKit)
                 .overlay(alignment: .top) {
                     ConfettiCannon(
                         trigger: $settingsController.confettiTrigger,
@@ -66,6 +66,7 @@ struct ConfettiEnabledView<Content>: View where Content: View {
         }
         #endif
         .overlay(alignment: .bottom) {
+            #if !os(tvOS)
             if welcomeController.hasJustSeenWelcome, settingsController.randomConfettiIntensity > 4 {
                 VStack {
                     Button {
@@ -98,6 +99,7 @@ struct ConfettiEnabledView<Content>: View where Content: View {
                 .padding(.bottom)
                 .padding(.horizontal)
             }
+            #endif
         }
     }
 }

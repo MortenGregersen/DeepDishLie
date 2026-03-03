@@ -121,7 +121,7 @@ struct EventView: View {
                 confettiTrigger.toggle()
             }
         }
-        #if canImport(ConfettiSwiftUI)
+        #if !os(tvOS) && canImport(ConfettiSwiftUI)
         .overlay(alignment: .top) {
             ConfettiCannon(
                 trigger: $confettiTrigger,

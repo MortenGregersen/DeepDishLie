@@ -18,7 +18,7 @@ public struct SettingsView: View {
         @Bindable var settingsController = settingsController
         NavigationStack {
             List {
-                if OperatingSystem.current != .watchOS {
+                if OperatingSystem.current != .watchOS && OperatingSystem.current != .tvOS {
                     Section("General") {
                         Toggle(isOn: $settingsController.enableRandomConfetti) {
                             Label {
@@ -29,16 +29,7 @@ public struct SettingsView: View {
                         }
                         if settingsController.enableRandomConfetti {
                             LabeledContent {
-                                #if os(tvOS)
-                                Picker("Intensity", selection: $settingsController.randomConfettiIntensity) {
-                                    ForEach(1 ... 5, id: \.self) { i in
-                                        Text("Level \(i)")
-                                            .tag(Double(i))
-                                    }
-                                }
-                                #else
                                 Slider(value: $settingsController.randomConfettiIntensity, in: 1 ... 5, step: 1)
-                                #endif
                             } label: {
                                 Label("Intensity", systemImage: "bubbles.and.sparkles")
                                     .padding(.trailing)

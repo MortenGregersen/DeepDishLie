@@ -178,12 +178,16 @@ struct DeepDishApp: App {
         .defaultSize(width: 400, height: 400)
         #else
         WindowGroup {
+            #if os(tvOS)
+            mainWindowBody
+            #else
             mainWindowBody
                 .fullScreenCover(isPresented: $welcomeController.showsWelcome) {
                     WelcomeView()
                         .environment(welcomeController)
                         .environment(settingsController)
                 }
+            #endif
         }
         #endif
     }
