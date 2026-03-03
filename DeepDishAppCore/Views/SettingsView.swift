@@ -18,7 +18,8 @@ public struct SettingsView: View {
         @Bindable var settingsController = settingsController
         NavigationStack {
             List {
-                if OperatingSystem.current != .watchOS && OperatingSystem.current != .tvOS {
+                #if !os(tvOS)
+                if OperatingSystem.current != .watchOS {
                     Section("General") {
                         Toggle(isOn: $settingsController.enableRandomConfetti) {
                             Label {
@@ -42,6 +43,7 @@ public struct SettingsView: View {
                         }
                     }
                 }
+                #endif
                 Section("Schedule") {
                     Toggle(isOn: $settingsController.useLocalTimezone) {
                         Label("Use local time zone", systemImage: "globe.europe.africa")
