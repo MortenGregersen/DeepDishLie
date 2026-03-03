@@ -49,7 +49,13 @@ public class ScheduleController {
             guard let cachedJsonUrl = Self.cachedJsonUrl else { return }
             try data.write(to: cachedJsonUrl)
             #if canImport(WidgetKit)
-            WidgetCenter.shared.reloadAllTimelines()
+                #if os(visionOS)
+                if #available(visionOS 26.0, *) {
+                    WidgetCenter.shared.reloadAllTimelines()
+                }
+                #else
+                WidgetCenter.shared.reloadAllTimelines()
+                #endif
             #endif
         } catch {
             // Fail silently
