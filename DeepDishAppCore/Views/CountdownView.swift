@@ -50,9 +50,10 @@ public struct CountdownView: View {
                             .padding(.vertical, 32)
                     }
                     .ifOS(.tvOS) { $0.frame(maxHeight: 700) }
-                    .ifOS(.visionOS) { $0.containerRelativeFrame(.vertical) { length, _ in
-                        length * 0.85
-                    } }
+                    .ifOS(.visionOS) {
+                        $0.containerRelativeFrame(.vertical) { length, _ in length * 0.65 }
+                            .padding(.vertical, 32)
+                    }
                 if let timeRemaining {
                     Text("The conference will start in:")
                         .font(titleFont)
