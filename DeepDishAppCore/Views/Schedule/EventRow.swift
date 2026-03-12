@@ -20,7 +20,7 @@ struct EventRow: View {
             if OperatingSystem.current == .watchOS {
                 VStack(alignment: .leading) {
                     Text("\(dateFormatter.string(from: event.start)) - \(dateFormatter.string(from: event.end))")
-                        .font(.caption2)
+                        .font(.system(size: 14))
                         .foregroundStyle(event.dateTextColor)
                     Text(event.description)
                         .font(.headline)
@@ -35,7 +35,6 @@ struct EventRow: View {
                             .foregroundStyle(event.subtitleTextColor)
                     }
                 }
-                .padding(.leading)
             } else {
                 VStack(alignment: .trailing) {
                     Text(dateFormatter.string(from: event.start))
