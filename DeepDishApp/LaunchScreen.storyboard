@@ -12,21 +12,45 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="LaunchBackgroundFabric.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1Yt-H7-wEB">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchIconImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="6en-hp-kKq">
+                                <rect key="frame" x="256" y="427" width="512" height="512"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="512" id="YF2-iE-7xR"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="512" id="rkf-P9-37H"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstItem="6en-hp-kKq" firstAttribute="height" secondItem="1Yt-H7-wEB" secondAttribute="height" multiplier="0.374817" id="8NO-ut-7x5"/>
+                            <constraint firstItem="6en-hp-kKq" firstAttribute="centerX" secondItem="1Yt-H7-wEB" secondAttribute="centerX" id="B4y-tR-mvK"/>
+                            <constraint firstItem="6en-hp-kKq" firstAttribute="width" secondItem="1Yt-H7-wEB" secondAttribute="width" multiplier="0.5" id="C4s-Dp-2db"/>
+                            <constraint firstAttribute="trailing" secondItem="1Yt-H7-wEB" secondAttribute="trailing" id="C52-62-2s4"/>
+                            <constraint firstAttribute="top" secondItem="1Yt-H7-wEB" secondAttribute="top" id="Dq4-gY-3nT"/>
+                            <constraint firstItem="1Yt-H7-wEB" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="ddM-qx-BQv"/>
+                            <constraint firstItem="6en-hp-kKq" firstAttribute="centerY" secondItem="1Yt-H7-wEB" secondAttribute="centerY" id="m6J-2p-sap"/>
+                            <constraint firstItem="1Yt-H7-wEB" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="yfr-Wf-zJN"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
+            <point key="canvasLocation" x="52.1484375" y="374.23133235724742"/>
         </scene>
     </scenes>
     <resources>
+        <image name="LaunchBackgroundFabric.jpg" width="500" height="500"/>
+        <image name="LaunchIconImage.png" width="1024" height="1024"/>
         <namedColor name="AccentColor">
-            <color red="0.87058823529411766" green="0.65490196078431373" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9490196704864502" green="0.32941177487373352" blue="0.35686278343200684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
