@@ -18,19 +18,20 @@ public struct EventsListView: View {
         @Bindable var scheduleController = scheduleController
         let dateFormatter = Event.dateFormatter(
             useLocalTimezone: settingsController.useLocalTimezone,
-            use24hourClock: settingsController.use24hourClock)
+            use24hourClock: settingsController.use24hourClock
+        )
         List(scheduleController.days, selection: $scheduleController.selectedEvent) { day in
             Section {
                 ForEach(day.events) { event in
                     NavigationLink(value: event) {
                         EventRow(dayName: day.name, event: event, dateFormatter: dateFormatter)
-                            .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))       
+                            .listRowInsets(.init(top: 8, leading: 0, bottom: 8, trailing: 12))
                     }
                     .listRowBackground(listRowBackgroundColor(event: event))
                 }
             } header: {
                 let text = Text(day.name)
-                    .foregroundStyle(Color.accent)
+                    .foregroundStyle(sectionHeaderForegroundColor)
                 if OperatingSystem.current == .watchOS {
                     text
                 } else {
@@ -45,7 +46,15 @@ public struct EventsListView: View {
             EventView(dayName: scheduleController.dayName(for: event)!, event: event)
         }
     }
-    
+
+    private var sectionHeaderForegroundColor: Color {
+        #if os(visionOS)
+        OperatingSystem.current == .visionOS ? Color.accent.mix(with: .black, by: 0.35) : Color.accent
+        #else
+        Color.accent
+        #endif
+    }
+
     private func listRowBackgroundColor(event: Event) -> Color? {
         guard event.isHappeningNow else {
             return switch event {

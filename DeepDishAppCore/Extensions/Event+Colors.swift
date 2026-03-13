@@ -17,7 +17,11 @@ public extension Event {
             .white
             #endif
         } else {
+            #if os(visionOS)
+            OperatingSystem.current == .visionOS ? Color.accent.mix(with: .black, by: 0.35) : Color.accent
+            #else
             .accent
+            #endif
         }
     }
 
