@@ -39,9 +39,8 @@ public struct ScheduleView: View {
                     .navigationTitle("Schedule 🍕")
                 #if !os(macOS) && !os(tvOS)
                     .navigationBarTitleDisplayMode(.inline)
-                    .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
-                    .toolbarBackground(.visible, for: .navigationBar)
                 #endif
+                    .deepDishNavigationBarStyle()
                     .toolbar {
                         if let currentDateId {
                             ToolbarItem(placement: nowToolbarItemPlacement) {

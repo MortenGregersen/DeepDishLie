@@ -6,6 +6,7 @@
 //
 
 import DeepDishAppCore
+import DeepDishCore
 import SwiftUI
 
 struct ContentView: View {
@@ -14,8 +15,7 @@ struct ContentView: View {
             EventsListView()
                 .navigationTitle("Deep Dish Swift 🍕")
                 .navigationBarTitleDisplayMode(.inline)
-                .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
-                .toolbarBackground(.visible, for: .navigationBar)
+                .deepDishNavigationBarStyle()
         }
     }
 }

@@ -82,8 +82,6 @@ public struct SettingsView: View {
             .navigationTitle("Settings")
             #if !os(macOS) && !os(tvOS)
                 .navigationBarTitleDisplayMode(.inline)
-                .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
-                .toolbarBackground(.visible, for: .navigationBar)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button {
@@ -94,6 +92,7 @@ public struct SettingsView: View {
                     }
                 }
             #endif
+            .deepDishNavigationBarStyle()
         }
     }
 }

@@ -152,9 +152,8 @@ public struct AboutView: View {
             .navigationTitle(OperatingSystem.current == .watchOS ? "About" : "About Deep Dish Unofficial")
             #if !os(macOS) && !os(tvOS)
                 .navigationBarTitleDisplayMode(OperatingSystem.current == .watchOS ? .automatic : .inline)
-                .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
-                .toolbarBackground(.visible, for: .navigationBar)
             #endif
+            .deepDishNavigationBarStyle()
         }
     }
 }

@@ -8,6 +8,7 @@
 #if canImport(ConfettiSwiftUI)
 import ConfettiSwiftUI
 #endif
+import DeepDishCore
 import RevenueCat
 import SwiftUI
 
@@ -98,9 +99,8 @@ struct TipJarView: View {
             #endif
             #if !os(macOS) && !os(tvOS)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
             #endif
+            .deepDishNavigationBarStyle()
             .refreshable {
                 tipJarController.fetchPackages()
             }

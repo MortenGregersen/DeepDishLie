@@ -139,9 +139,8 @@ struct EventView: View {
         #endif
         #if !os(macOS) && !os(tvOS)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(Color.navigationBarBackground, for: .navigationBar)
-        .toolbarBackground(.visible, for: .navigationBar)
         #endif
+        .deepDishNavigationBarStyle()
         #if os(iOS)
         .sheet(item: $shownUrl) { presentedUrl in
             SafariView(url: presentedUrl)
