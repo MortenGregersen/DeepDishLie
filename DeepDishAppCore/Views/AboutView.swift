@@ -125,6 +125,8 @@ public struct AboutView: View {
                                 .ifOS(.visionOS) { $0.padding(.top, 8) }
                                 Spacer(minLength: 8)
                                 appDabIcon
+                                    .padding(.leading)
+                                    .padding(.bottom)
                             }
                             if OperatingSystem.current != .macOS, OperatingSystem.current != .visionOS {
                                 appDabBottomText
