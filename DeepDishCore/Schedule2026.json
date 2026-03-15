@@ -22,7 +22,7 @@
                 "image": "cassidy_williams",
                 "about": "Software developer, educator, and meme-maker. Startup advisor, open source contributor, and mechanical keyboard enthusiast.",
                 "links": {
-                    "bluesky": "https://bsky.app/profile/cassidoo.bsky.social",
+                    "bluesky": "https://bsky.app/profile/cassidoo.co",
                     "mastodon": "https://notacult.social/@cassidoo",
                     "twitter": "https://twitter.com/cassidoo"
                 }
@@ -47,7 +47,12 @@
             {
                 "name": "Devin Davies",
                 "image": "devin_davies",
-                "about": "Apple Design Award winner 2024 for Crouton, a simple recipe manager for Apple platforms."
+                "about": "Apple Design Award winner 2024 for Crouton, a simple recipe manager for Apple platforms.",
+                "links": {
+                    "bluesky": "https://bsky.app/profile/justmedevin.bsky.social",
+                    "mastodon": "https://mastodon.social/@JustMeDevin",
+                    "twitter": "https://twitter.com/JustMeDevin"
+                }
             }
         ]
     },
@@ -70,13 +75,17 @@
         ]
     },
     {
-        "id": "session-tbd-audio",
+        "id": "session-carlos-mbendera",
         "start": "2026-04-12T17:00:00-05:00",
         "end": "2026-04-12T17:45:00-05:00",
-        "description": "Thin Crust is Optional",
-        "subtitle": "Something with \"Audio\"",
-        "speakers": [],
-        "emoji": "🫥"
+        "description": "Extra Saucy Swift Audio APIs",
+        "speakers": [
+            {
+                "name": "Carlos Mbendera",
+                "image": "carlos_mbendera",
+                "about": "Former Apple engineer, WWDC23 Swift Student Challenge winner, and indie developer. Passionate about audio, Metal, and combining Swift with music."
+            }
+        ]
     },
     {
         "id": "breakfast-monday",
@@ -100,9 +109,9 @@
                 "image": "mustafa_yusuf",
                 "about": "Indie Developer building Tasks & Karo!",
                 "links": {
-                    "bluesky": "https://bsky.app/profile/mustafayusuf.dev",
-                    "mastodon": "https://mastodon.world/@mustafayusuf",
-                    "twitter": "https://twitter.com/mustafayusuf_"
+                    "bluesky": "https://bsky.app/profile/mufasayc.com",
+                    "mastodon": "https://mastodon.world/@mufasayc",
+                    "twitter": "https://twitter.com/mufasayc"
                 }
             }
         ]
@@ -117,13 +126,22 @@
         "emoji": "🤯"
     },
     {
-        "id": "session-tbd-swiftui",
+        "id": "session-peter-friese",
         "start": "2026-04-13T10:30:00-05:00",
         "end": "2026-04-13T11:15:00-05:00",
-        "description": "Session Hidden Behind a Paywall (Just Kidding)",
-        "subtitle": "Something with \"SwiftUI\"",
-        "speakers": [],
-        "emoji": "💰"
+        "description": "Don't call us - we'll call you",
+        "speakers": [
+            {
+                "name": "Peter Friese",
+                "image": "peter_friese",
+                "about": "Staff Developer Advocate on Firebase at Google. Author of Asynchronous Programming with SwiftUI and Combine, and host of Firebase After Hours on YouTube.",
+                "links": {
+                    "bluesky": "https://bsky.app/profile/peterfriese.dev",
+                    "mastodon": "https://iosdev.space/@peterfriese",
+                    "twitter": "https://twitter.com/peterfriese"
+                }
+            }
+        ]
     },
     {
         "id": "session-tbd-networking",
@@ -140,13 +158,22 @@
         "end": "2026-04-13T13:00:00-05:00"
     },
     {
-        "id": "session-tbd-indie-business",
+        "id": "session-john-marc-hickey",
         "start": "2026-04-13T13:00:00-05:00",
         "end": "2026-04-13T13:45:00-05:00",
-        "description": "Waiting for Josh Review",
-        "subtitle": "Something with \"Indie Business\"",
-        "speakers": [],
-        "emoji": "👀"
+        "description": "Before the Code: Testing & Building a Business",
+        "speakers": [
+            {
+                "name": "John Marc Hickey",
+                "image": "john_marc_hickey",
+                "about": "Former Apple engineer turned indie developer. Building Dewy Golf and other apps that blend machine learning with privacy-first design. Based in Colorado, usually on a golf course.",
+                "links": {
+                    "bluesky": "https://bsky.app/profile/ioloro.bsky.social",
+                    "mastodon": "https://mastodon.social/@ioloro",
+                    "twitter": "https://twitter.com/ioloro"
+                }
+            }
+        ]
     },
     {
         "id": "session-joe-allen",
@@ -159,21 +186,30 @@
                 "image": "joe_allen",
                 "about": "Indie iOS app developer for 15+ years and creator of Teleprompter Pro.",
                 "links": {
-                    "bluesky": "https://bsky.app/profile/joeallenpro.bsky.social",
-                    "mastodon": "https://iosdev.space/@joeallenpro",
+                    "bluesky": "https://bsky.app/profile/joeallenpro.com",
+                    "mastodon": "https://iosdev.space/@joeallen",
                     "twitter": "https://twitter.com/joeallenpro"
                 }
             }
         ]
     },
     {
-        "id": "session-tbd-soft-skills",
+        "id": "session-raj-bedi",
         "start": "2026-04-13T14:30:00-05:00",
         "end": "2026-04-13T15:15:00-05:00",
-        "description": "Even Spotlight Can’t Find This One Yet",
-        "subtitle": "Something with \"Soft Skills\"",
-        "speakers": [],
-        "emoji": "🔦"
+        "description": "Slices of Life: How Hobbies Make Us Better Developers",
+        "speakers": [
+            {
+                "name": "Raj Bedi",
+                "image": "raj_bedi",
+                "about": "Software Engineer, Pilot, and Adventurer fanning the embers in the quieter corners of Apple platforms through AR, sensors, and device-to-device connectivity.",
+                "links": {
+                    "bluesky": "https://bsky.app/profile/projectembers.bsky.social",
+                    "mastodon": "https://mastodon.social/@ProjectEmbers",
+                    "twitter": "https://twitter.com/ProjectEmbers"
+                }
+            }
+        ]
     },
     {
         "id": "session-riley-testut",
@@ -184,7 +220,10 @@
             {
                 "name": "Riley Testut",
                 "image": "riley_testut",
-                "about": "Creator of Delta, the popular retro game emulator, and AltStore, the EU-approved alternative app marketplace for iPhone."
+                "about": "Creator of Delta, the popular retro game emulator, and AltStore, the EU-approved alternative app marketplace for iPhone.",
+                "links": {
+                    "mastodon": "https://mastodon.social/@rileytestut"
+                }
             }
         ]
     },
@@ -204,11 +243,8 @@
                 "image": "charlie_chapman",
                 "about": "Host of Launched, creator of Dark Noise, and developer advocate at RevenueCat.",
                 "links": {
-                    "github": "https://github.com/charliemchapman",
                     "mastodon": "https://mastodon.social/@charliemchapman",
-                    "threads": "https://www.threads.net/@charliemchapman",
-                    "twitter": "https://twitter.com/_chuckyc",
-                    "website": "https://charliemchapman.com"
+                    "twitter": "https://twitter.com/_chuckyc"
                 }
             }
         ]
@@ -235,9 +271,9 @@
                 "image": "joe_fabisevich",
                 "about": "Creator of Plinky and former Twitter engineer. Native New Yorker passionate about indie apps, pizza, cats, and baseball.",
                 "links": {
-                    "bluesky": "https://bsky.app/profile/joefabisevich.com",
-                    "mastodon": "https://macaw.social/@joefabisevich",
-                    "threads": "https://www.threads.net/@joefabisevich"
+                    "bluesky": "https://bsky.app/profile/mergesort.me",
+                    "mastodon": "https://macaw.social/@mergesort",
+                    "threads": "https://www.threads.net/@mergesort"
                 }
             }
         ]
@@ -251,7 +287,11 @@
             {
                 "name": "David Beck",
                 "image": "david_beck",
-                "about": "iOS Software Engineer at DoorDash who has been building apps since the earliest days of the iPhone SDK."
+                "about": "iOS Software Engineer at DoorDash who has been building apps since the earliest days of the iPhone SDK.",
+                "links": {
+                    "mastodon": "https://tnku.co/@david",
+                    "twitter": "https://twitter.com/davbeck"
+                }
             }
         ]
     },
@@ -264,7 +304,11 @@
             {
                 "name": "Daniel Kennett",
                 "image": "daniel_kennett",
-                "about": "Career indie developer and founder of Cascable. Started developing for Apple platforms in the Mac OS 8 era, shipping shareware when customers mailed in checks. AppKit, UIKit, SwiftUI ... he's seen it all!"
+                "about": "Career indie developer and founder of Cascable. Started developing for Apple platforms in the Mac OS 8 era, shipping shareware when customers mailed in checks. AppKit, UIKit, SwiftUI ... he's seen it all!",
+                "links": {
+                    "bluesky": "https://bsky.app/profile/ikenndac.bsky.social",
+                    "mastodon": "https://mastodon.social/@iKenndac"
+                }
             }
         ]
     },
@@ -291,7 +335,12 @@
             {
                 "name": "Pedro Piñera Buendía",
                 "image": "pedro_pinera_buendia",
-                "about": "I'm a builder and the co-founder and CEO of Tuist. I love designing and building tools for developers and making them open source."
+                "about": "I'm a builder and the co-founder and CEO of Tuist. I love designing and building tools for developers and making them open source.",
+                "links": {
+                    "bluesky": "https://bsky.app/profile/pepicrft.bsky.social",
+                    "mastodon": "https://mastodon.pepicrft.me/@pedro",
+                    "twitter": "https://twitter.com/pepicrft"
+                }
             }
         ]
     },
@@ -304,7 +353,11 @@
             {
                 "name": "Chad Etzel",
                 "image": "chad_etzel",
-                "about": "Indie app developer and former Apple engineer on the Proactive Intelligence team. Building iOS apps since 2009, passionate about Swift, SwiftUI, and jazz."
+                "about": "Indie app developer and former Apple engineer on the Proactive Intelligence team. Building iOS apps since 2009, passionate about Swift, SwiftUI, and jazz.",
+                "links": {
+                    "mastodon": "https://definitely.social/@jazzychad",
+                    "twitter": "https://twitter.com/jazzychad"
+                }
             }
         ]
     },
@@ -324,7 +377,7 @@
                 "image": "mb_bischoff",
                 "about": "Poet & programmer in Brooklyn. Co-founder & CEO of Lickability, making apps for The Atlantic, Mastodon, The New Yorker, and more.",
                 "links": {
-                    "bluesky": "https://bsky.app/profile/mb.bischoff",
+                    "bluesky": "https://bsky.app/profile/mbbischoff.com",
                     "mastodon": "https://xoxo.zone/@mb",
                     "twitter": "https://twitter.com/mb"
                 }
