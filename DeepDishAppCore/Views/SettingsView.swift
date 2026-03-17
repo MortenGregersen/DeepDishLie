@@ -49,7 +49,7 @@ public struct SettingsView: View {
                         Label("Use local time zone", systemImage: "globe.europe.africa")
                     }
                     Picker(selection: $settingsController.use24hourClock) {
-                        Text("Limited (1.37 PM)")
+                        Text("Limited (1:37 PM)")
                             .tag(false)
                         Text("Beautiful (13.37)")
                             .tag(true)
