@@ -51,7 +51,7 @@ public struct SettingsView: View {
                     Picker(selection: $settingsController.use24hourClock) {
                         Text("Limited (1:37 PM)")
                             .tag(false)
-                        Text("Beautiful (13.37)")
+                        Text("Beautiful (13:37)")
                             .tag(true)
                     } label: {
                         Label("Time format", systemImage: "clock.badge.checkmark")
