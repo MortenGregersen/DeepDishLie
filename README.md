@@ -6,9 +6,9 @@
 
 **Deep Dish Unofficial** is an open-source iOS/macOS/watchOS/tvOS/visionOS application designed as the perfect companion for attendees of the [Deep Dish Swift](https://deepdishswift.com/) conference in Chicago. The app provides easy access to the full conference schedule and offers amusing, real-time weather updates based on [Chris Wu](https://chriswu.com)'s preferences.
 
-<p align="center">
+<p>
   <a href="https://apps.apple.com/app/id1612325183">
-    <img src="docs/assets/app-store-badge.svg" alt="Download Deep Dish Unofficial on the App Store" />
+    <img src="docs/assets/app-store-badge.svg" alt="Download Deep Dish Unofficial on the App Store" height="80" />
   </a>
 </p>
 
