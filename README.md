@@ -6,6 +6,12 @@
 
 **Deep Dish Unofficial** is an open-source iOS/macOS/watchOS/tvOS/visionOS application designed as the perfect companion for attendees of the [Deep Dish Swift](https://deepdishswift.com/) conference in Chicago. The app provides easy access to the full conference schedule and offers amusing, real-time weather updates based on [Chris Wu](https://chriswu.com)'s preferences.
 
+<p align="center">
+  <a href="https://apps.apple.com/app/id1612325183">
+    <img src="docs/assets/app-store-badge.svg" alt="Download Deep Dish Unofficial on the App Store" />
+  </a>
+</p>
+
 ## Why "DeepDishLie"?
 
 In the first year of Deep Dish Swift, [Kai Dombrowski](https://kaidombrowski.com) and [Malin Sundberg](https://malinsundberg.com) created the [Slices podcast](https://podcasts.apple.com/us/podcast/slices-the-deep-dish-swift-podcast/id1670026071), featuring an episode for each speaker. In every episode, they asked the speaker for two truths and a lie. The initial version of the app, besides providing the schedule, included all the truths and lies, allowing attendees to guess which one was the lie. The name is also a pun on the controversy surrounding whether deep dish pizza is truly pizza.
