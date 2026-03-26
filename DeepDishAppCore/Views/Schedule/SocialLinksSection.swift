@@ -34,7 +34,7 @@ struct SocialLinksSection<HeaderView: View>: View {
                 socialButton(url: twitterURL, text: "Twitter", image: Image("twitter", bundle: .core))
             }
             if let linkedinURL = links.linkedin {
-                socialButton(url: linkedinURL, text: "LinkedIn", image: Image(systemName: "link.circle"))
+                socialButton(url: linkedinURL, text: "LinkedIn", image: Image("linkedin", bundle: .core))
             }
             if let youtubeURL = links.youtube {
                 socialButton(url: youtubeURL, text: "YouTube", image: Image("youtube", bundle: .core))
