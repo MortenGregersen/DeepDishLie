@@ -25,6 +25,26 @@ struct DeepDishCoreTests {
         #expect(events.count == 33)
     }
 
+    @Test func schedule2026ContainsRevealedSessionIds() throws {
+        let url = try #require(Bundle.core.url(forResource: ScheduleController.bundledScheduleResourceName, withExtension: "json"))
+        let data = try Data(contentsOf: url)
+        let events = try decoder.decode([Event].self, from: data)
+        let ids = Set(events.map(\.id))
+
+        #expect(ids.contains("session-adam-tow"))
+        #expect(ids.contains("session-alaina-kafkes"))
+        #expect(ids.contains("session-jon-shier"))
+        #expect(ids.contains("session-ben-rosen"))
+    }
+
+    @Test func schedule2026ContainsNoTbdSessionIds() throws {
+        let url = try #require(Bundle.core.url(forResource: ScheduleController.bundledScheduleResourceName, withExtension: "json"))
+        let data = try Data(contentsOf: url)
+        let events = try decoder.decode([Event].self, from: data)
+
+        #expect(events.allSatisfy { !$0.id.hasPrefix("session-tbd") })
+    }
+
     @Test func scheduleControllerLoadsSchedule2026() throws {
         let controller = ScheduleController()
         let allEvents = controller.days.flatMap(\.events)
@@ -68,5 +88,17 @@ struct DeepDishCoreTests {
         let event = try #require(events.first)
 
         #expect(event.toBeDetermined)
+    }
+
+    @Test func linksDecodeLinkedinUrl() throws {
+        let data = Data("""
+        {
+            "linkedin": "https://www.linkedin.com/in/example-person/"
+        }
+        """.utf8)
+
+        let links = try JSONDecoder().decode(Links.self, from: data)
+
+        #expect(links.linkedin?.absoluteString == "https://www.linkedin.com/in/example-person/")
     }
 }

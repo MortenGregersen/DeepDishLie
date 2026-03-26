@@ -11,16 +11,18 @@ public struct Links: Decodable, Equatable, Hashable {
     public let name: String?
     public let bluesky: URL?
     public let github: URL?
+    public let linkedin: URL?
     public let mastodon: URL?
     public let threads: URL?
     public let twitter: URL?
     public let youtube: URL?
     public let website: URL?
     
-    public init(name: String?, bluesky: URL?, github: URL?, mastodon: URL?, threads: URL?, twitter: URL?, youtube: URL?, website: URL?) {
+    public init(name: String?, bluesky: URL?, github: URL?, linkedin: URL?, mastodon: URL?, threads: URL?, twitter: URL?, youtube: URL?, website: URL?) {
         self.name = name
         self.bluesky = bluesky
         self.github = github
+        self.linkedin = linkedin
         self.mastodon = mastodon
         self.threads = threads
         self.twitter = twitter
