@@ -8,7 +8,7 @@
 
 <p>
   <a href="https://apps.apple.com/app/id1612325183">
-    <img src="docs/assets/app-store-badge.svg" alt="Download Deep Dish Unofficial on the App Store" height="80" />
+    <img src="docs/assets/app-store-badge.svg" alt="Download Deep Dish Unofficial on the App Store" style="height: 80px;" />
   </a>
 </p>
 
