@@ -52,8 +52,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgments 🙏
 
-- [Chris Wu](https://chriswu.com) for inspiring the weather feature.
+- Kari and [Josh Holtz](https://www.joshholtz.com) for organizing the Deep Dish Swift conference.
 - The [Deep Dish Swift](https://deepdishswift.com/) community for their support.
+- [Chris Wu](https://chriswu.com) for inspiring the weather feature.
 
 ---
 
