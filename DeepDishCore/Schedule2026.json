@@ -30,13 +30,22 @@
         ]
     },
     {
-        "id": "session-tbd-career-longevity",
+        "id": "session-adam-tow",
         "start": "2026-04-12T13:45:00-05:00",
         "end": "2026-04-12T14:45:00-05:00",
-        "description": "Josh Won’t Tell... Yet",
-        "subtitle": "Something with \"Career & Longevity\"",
-        "speakers": [],
-        "emoji": "🤫"
+        "description": "Playing the Long Game as an Indie Developer",
+        "speakers": [
+            {
+                "name": "Adam Tow",
+                "image": "adam_tow",
+                "about": "Three decades shipping software across Apple platforms. Full-time indie building MixEffect, ActionPhrase, RouteEffect, and MsgFiler.",
+                "links": {
+                    "mastodon": "https://mastodon.social/@atow",
+                    "twitter": "https://twitter.com/atow",
+                    "linkedin": "https://linkedin.com/in/adamtow"
+                }
+            }
+        ]
     },
     {
         "id": "session-devin-davies",
@@ -50,6 +59,7 @@
                 "about": "Apple Design Award winner 2024 for Crouton, a simple recipe manager for Apple platforms.",
                 "links": {
                     "bluesky": "https://bsky.app/profile/justmedevin.bsky.social",
+                    "linkedin": "https://www.linkedin.com/in/devin-davies/",
                     "mastodon": "https://mastodon.social/@JustMeDevin",
                     "twitter": "https://twitter.com/JustMeDevin"
                 }
@@ -70,7 +80,10 @@
             {
                 "name": "Erica Engle",
                 "image": "erica_engle",
-                "about": "Staff Software Engineer at Slack, focusing on iOS development on core features like messaging and sign in. When not building mobile apps, she can be found running, cycling, and spending time with her dog Eddie."
+                "about": "Staff Software Engineer at Slack, focusing on iOS development on core features like messaging and sign in. When not building mobile apps, she can be found running, cycling, and spending time with her dog Eddie.",
+                "links": {
+                    "linkedin": "https://www.linkedin.com/in/erica-engle-b4906167"
+                }
             }
         ]
     },
@@ -83,7 +96,10 @@
             {
                 "name": "Carlos Mbendera",
                 "image": "carlos_mbendera",
-                "about": "Former Apple engineer, WWDC23 Swift Student Challenge winner, and indie developer. Passionate about audio, Metal, and combining Swift with music."
+                "about": "Former Apple engineer, WWDC23 Swift Student Challenge winner, and indie developer. Passionate about audio, Metal, and combining Swift with music.",
+                "links": {
+                    "linkedin": "https://www.linkedin.com/in/carlosmbe/"
+                }
             }
         ]
     },
@@ -110,6 +126,7 @@
                 "about": "Indie Developer building Tasks & Karo!",
                 "links": {
                     "bluesky": "https://bsky.app/profile/mufasayc.com",
+                    "linkedin": "https://www.linkedin.com/in/mufasayc",
                     "mastodon": "https://mastodon.world/@mufasayc",
                     "twitter": "https://twitter.com/mufasayc"
                 }
@@ -117,13 +134,20 @@
         ]
     },
     {
-        "id": "session-tbd-testing-ai",
+        "id": "session-alaina-kafkes",
         "start": "2026-04-13T09:45:00-05:00",
         "end": "2026-04-13T10:30:00-05:00",
-        "description": "func reveal() -> Never",
-        "subtitle": "Something with \"Testing & AI\"",
-        "speakers": [],
-        "emoji": "🤯"
+        "description": "Smoke and mirrors: on humans, agents, and speedier smoke tests",
+        "speakers": [
+            {
+                "name": "Alaina Kafkes",
+                "image": "alaina_kafkes",
+                "about": "Senior iOS engineer at Calm. She wrote her first lines of code in Chicagoland and is excited to be speaking at Deep Dish Swift!",
+                "links": {
+                    "linkedin": "https://linkedin.com/in/alainakafkes"
+                }
+            }
+        ]
     },
     {
         "id": "session-peter-friese",
@@ -137,6 +161,7 @@
                 "about": "Staff Developer Advocate on Firebase at Google. Author of Asynchronous Programming with SwiftUI and Combine, and host of Firebase After Hours on YouTube.",
                 "links": {
                     "bluesky": "https://bsky.app/profile/peterfriese.dev",
+                    "linkedin": "https://www.linkedin.com/in/peterfriese/",
                     "mastodon": "https://iosdev.space/@peterfriese",
                     "twitter": "https://twitter.com/peterfriese"
                 }
@@ -144,13 +169,17 @@
         ]
     },
     {
-        "id": "session-tbd-networking",
+        "id": "session-jon-shier",
         "start": "2026-04-13T11:15:00-05:00",
         "end": "2026-04-13T12:00:00-05:00",
-        "description": "Awaiting Toppings...",
-        "subtitle": "Something with \"Networking\"",
-        "speakers": [],
-        "emoji": "😶"
+        "description": "Mistakes I Made In Alamofire 5",
+        "speakers": [
+            {
+                "name": "Jon Shier",
+                "image": "jon_shier",
+                "about": "25 years developing on Apple platforms. Alamofire developer for over a decade and board member of the Alamofire Foundation."
+            }
+        ]
     },
     {
         "id": "lunch-monday",
@@ -272,6 +301,7 @@
                 "about": "Creator of Plinky and former Twitter engineer. Native New Yorker passionate about indie apps, pizza, cats, and baseball.",
                 "links": {
                     "bluesky": "https://bsky.app/profile/mergesort.me",
+                    "linkedin": "https://www.linkedin.com/in/devjoe/",
                     "mastodon": "https://macaw.social/@mergesort",
                     "threads": "https://www.threads.net/@mergesort"
                 }
@@ -289,6 +319,7 @@
                 "image": "david_beck",
                 "about": "iOS Software Engineer at DoorDash who has been building apps since the earliest days of the iPhone SDK.",
                 "links": {
+                    "linkedin": "https://www.linkedin.com/in/david-beck-27930b17/",
                     "mastodon": "https://tnku.co/@david",
                     "twitter": "https://twitter.com/davbeck"
                 }
@@ -307,6 +338,7 @@
                 "about": "Career indie developer and founder of Cascable. Started developing for Apple platforms in the Mac OS 8 era, shipping shareware when customers mailed in checks. AppKit, UIKit, SwiftUI ... he's seen it all!",
                 "links": {
                     "bluesky": "https://bsky.app/profile/ikenndac.bsky.social",
+                    "linkedin": "https://www.linkedin.com/in/ikenndac/",
                     "mastodon": "https://mastodon.social/@iKenndac"
                 }
             }
@@ -318,13 +350,21 @@
         "end": "2026-04-14T13:00:00-05:00"
     },
     {
-        "id": "session-tbd-server-side-swift",
+        "id": "session-ben-rosen",
         "start": "2026-04-14T13:00:00-05:00",
         "end": "2026-04-14T14:00:00-05:00",
-        "description": "This Talk is Private(set)",
-        "subtitle": "Something with \"Server-side Swift\"",
-        "speakers": [],
-        "emoji": "🔒"
+        "description": "From Food Truck to Deep-Dish Kitchen",
+        "speakers": [
+            {
+                "name": "Ben Rosen",
+                "image": "ben_rosen",
+                "about": "Co-founder and co-CEO of SongShift. Chicago native and Server-Side Swift advocate.",
+                "links": {
+                    "linkedin": "https://www.linkedin.com/in/ben-rosen-93023218a/",
+                    "twitter": "https://twitter.com/benmrosen"
+                }
+            }
+        ]
     },
     {
         "id": "session-pedro-pinera-buendia",
@@ -338,6 +378,7 @@
                 "about": "I'm a builder and the co-founder and CEO of Tuist. I love designing and building tools for developers and making them open source.",
                 "links": {
                     "bluesky": "https://bsky.app/profile/pepicrft.bsky.social",
+                    "linkedin": "https://www.linkedin.com/in/pedro-pi%C3%B1era-buendia-9765a9125/",
                     "mastodon": "https://mastodon.pepicrft.me/@pedro",
                     "twitter": "https://twitter.com/pepicrft"
                 }
