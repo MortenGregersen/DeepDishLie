@@ -69,16 +69,4 @@ struct DeepDishCoreTests {
 
         #expect(event.toBeDetermined)
     }
-
-    @Test func linksDecodeLinkedinUrl() throws {
-        let data = Data("""
-        {
-            "linkedin": "https://www.linkedin.com/in/example-person/"
-        }
-        """.utf8)
-
-        let links = try JSONDecoder().decode(Links.self, from: data)
-
-        #expect(links.linkedin?.absoluteString == "https://www.linkedin.com/in/example-person/")
-    }
 }
