@@ -86,7 +86,7 @@ struct SocialLinksSection<HeaderView: View>: View {
             name: "Morten Bjerg Gregersen",
             bluesky: URL(string: "https://bsky.app/profile/mortengregersen.dk")!,
             github: URL(string: "https://github.com/MortenGregersen")!,
-            linkedin: URL(string: "https://www.linkedin.com/in/morten-gregersen")!,
+            linkedin: URL(string: "https://www.linkedin.com/in/mortengregersen")!,
             mastodon: URL(string: "https://mastodon.social/@mortengregersen")!,
             threads: URL(string: "https://www.threads.net/@mortengregersen")!,
             twitter: URL(string: "https://x.com/mortengregersen")!,
