@@ -3,13 +3,13 @@
         "id": "practical-registration-opens",
         "start": "2026-04-12T11:00:00-05:00",
         "end": "2026-04-12T12:45:00-05:00",
-        "description": "Registration opens"
+        "description": "Registration Opens"
     },
     {
         "id": "practical-intro",
         "start": "2026-04-12T12:45:00-05:00",
         "end": "2026-04-12T13:00:00-05:00",
-        "description": "Event intro"
+        "description": "Event Intro"
     },
     {
         "id": "special-opening-keynote",
@@ -112,7 +112,7 @@
         "id": "practical-morning-welcome-monday",
         "start": "2026-04-13T08:55:00-05:00",
         "end": "2026-04-13T09:00:00-05:00",
-        "description": "Morning welcome"
+        "description": "Morning Welcome"
     },
     {
         "id": "session-mustafa-yusuf",
@@ -275,6 +275,14 @@
                     "mastodon": "https://mastodon.social/@charliemchapman",
                     "twitter": "https://twitter.com/_chuckyc"
                 }
+            },
+            {
+                "name": "Eric Duffett",
+                "image": "eric_duffett",
+                "about": "High school teacher, indie app developer, and founder of Shot Pattern: A Golf GPS app with a focus on strategy and analytics.",
+                "links": {
+                    "twitter": "https://twitter.com/shotpattern"
+                }
             }
         ]
     },
@@ -287,23 +295,23 @@
         "id": "practical-morning-welcome-tuesday",
         "start": "2026-04-14T08:55:00-05:00",
         "end": "2026-04-14T09:00:00-05:00",
-        "description": "Morning welcome"
+        "description": "Morning Welcome"
     },
     {
-        "id": "session-joe-fabisevich",
+        "id": "session-pedro-pinera-buendia",
         "start": "2026-04-14T09:00:00-05:00",
         "end": "2026-04-14T10:00:00-05:00",
-        "description": "AI (Without the Hype)",
+        "description": "From generating projects to generating revenue",
         "speakers": [
             {
-                "name": "Joe Fabisevich",
-                "image": "joe_fabisevich",
-                "about": "Creator of Plinky and former Twitter engineer. Native New Yorker passionate about indie apps, pizza, cats, and baseball.",
+                "name": "Pedro Piñera Buendía",
+                "image": "pedro_pinera_buendia",
+                "about": "I'm a builder and the co-founder and CEO of Tuist. I love designing and building tools for developers and making them open source.",
                 "links": {
-                    "bluesky": "https://bsky.app/profile/mergesort.me",
-                    "linkedin": "https://www.linkedin.com/in/devjoe/",
-                    "mastodon": "https://macaw.social/@mergesort",
-                    "threads": "https://www.threads.net/@mergesort"
+                    "bluesky": "https://bsky.app/profile/pepicrft.bsky.social",
+                    "linkedin": "https://www.linkedin.com/in/pedro-pi%C3%B1era-buendia-9765a9125/",
+                    "mastodon": "https://mastodon.pepicrft.me/@pedro",
+                    "twitter": "https://twitter.com/pepicrft"
                 }
             }
         ]
@@ -367,20 +375,20 @@
         ]
     },
     {
-        "id": "session-pedro-pinera-buendia",
+        "id": "session-joe-fabisevich",
         "start": "2026-04-14T14:00:00-05:00",
         "end": "2026-04-14T15:00:00-05:00",
-        "description": "From generating projects to generating revenue",
+        "description": "AI (Without the Hype)",
         "speakers": [
             {
-                "name": "Pedro Piñera Buendía",
-                "image": "pedro_pinera_buendia",
-                "about": "I'm a builder and the co-founder and CEO of Tuist. I love designing and building tools for developers and making them open source.",
+                "name": "Joe Fabisevich",
+                "image": "joe_fabisevich",
+                "about": "Creator of Plinky and former Twitter engineer. Native New Yorker passionate about indie apps, pizza, cats, and baseball.",
                 "links": {
-                    "bluesky": "https://bsky.app/profile/pepicrft.bsky.social",
-                    "linkedin": "https://www.linkedin.com/in/pedro-pi%C3%B1era-buendia-9765a9125/",
-                    "mastodon": "https://mastodon.pepicrft.me/@pedro",
-                    "twitter": "https://twitter.com/pepicrft"
+                    "bluesky": "https://bsky.app/profile/mergesort.me",
+                    "linkedin": "https://www.linkedin.com/in/devjoe/",
+                    "mastodon": "https://macaw.social/@mergesort",
+                    "threads": "https://www.threads.net/@mergesort"
                 }
             }
         ]
