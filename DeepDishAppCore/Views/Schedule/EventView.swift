@@ -109,7 +109,7 @@ struct EventView: View {
                     }
                     if let links = speaker.links {
                         SocialLinksSection(links: links, shownUrl: $shownUrl, header: {
-                            speakerHeader(prefix: "Connect with ", speaker: speaker, showImage: event.links != nil || speakers.count > 1)
+                            speakerHeader(prefix: "Connect with ", speaker: speaker, showImage: event.links != nil)
                         })
                     }
                 }

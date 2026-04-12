@@ -244,7 +244,7 @@
         "id": "session-riley-testut",
         "start": "2026-04-13T15:15:00-05:00",
         "end": "2026-04-13T16:00:00-05:00",
-        "description": "10 Years In: Delta Story",
+        "description": "AltStore: From Hacky Side Project to Legitimate App Store",
         "speakers": [
             {
                 "name": "Riley Testut",
@@ -282,6 +282,16 @@
                 "about": "High school teacher, indie app developer, and founder of Shot Pattern: A Golf GPS app with a focus on strategy and analytics.",
                 "links": {
                     "twitter": "https://twitter.com/shotpattern"
+                }
+            },
+            {
+                "name": "Neem Serra",
+                "image": "neem_serra",
+                "about": "iOS and Ruby developer in the St. Louis area. She loves to teach programming through Software Carpentry and at a variety of conferences.",
+                "links": {
+                    "github": "https://github.com/teamneem",
+                    "twitter": "https://twitter.com/TeamNeem",
+                    "website": "https://neemserra.com/about/"
                 }
             }
         ]
